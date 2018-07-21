@@ -36,7 +36,7 @@ Arguments:
     -o  Output file with the filtered ROMs
     -x  Creates a XML Dat file
     -pd Print description of the rom and size (uncompressed)
-    -m  Filter only ROMs of the given manufacturer
+    -m  Filter only ROMs of the given manufacturer (case-insensitive)
     -s  Skip ROMs that matches the comma-separated list of attributes (case-insensitive)
     -d  Doesn't output any file. Prints output in the terminal
     -h  Display this help
@@ -50,7 +50,7 @@ unless ARGV.empty?
     elsif item == "-x"
       output_xml = ARGV[i+1]
     elsif item == "-m"
-      manufacturer = ARGV[i+1]
+      manufacturer = ARGV[i+1].downcase
     elsif item == "-pd"
       print_desc = true
     elsif item == "-d"
@@ -133,7 +133,7 @@ doc.xpath('/datafile/game[not(@isbios)]').each do |game|
 end
 
 roms.each do |key, rom|
-  next if manufacturer && rom.at('manufacturer').content != manufacturer
+  next if manufacturer && rom.at('manufacturer').content.downcase != manufacturer
 
   output += rom['name']
   if print_desc
@@ -146,7 +146,10 @@ roms.each do |key, rom|
     clones[key].each do |clone|
       desc = clone.at('description').content
       if desc =~ /\bPlayers\b/i  # Valid clone
-        output += '    ' + clone['name']
+        if print_desc
+          output += '    '
+        end
+        output += clone['name']
         if print_desc
           output += ' ' * (16-clone['name'].length) + ' -- ' + desc
           output += " (#{getRomSize(rom)})"
