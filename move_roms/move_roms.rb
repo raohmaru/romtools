@@ -26,7 +26,7 @@ Arguments:
     -t  Target dir with the zipped ROMs
     -o  Output dir were to move the ROMs found at romlist
     -c  Include clones
-    -d  Dry run mode (any file is moved)
+    -d  Dry run mode (no file is moved)
     -h  Display this help
 eof
 
@@ -94,7 +94,7 @@ File.open(romlist, "rt") do |f|
       end
     end
   end
-  puts "\nMoved #{rom_count}/#{rom_total} roms"
+  puts "\nMoved #{rom_count}/#{rom_total} roms to folder #{output_dir}"
   if missing.length > 0
     puts "#{missing.length} rom(s) not found: " + missing.join(", ")
   end
