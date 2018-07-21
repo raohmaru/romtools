@@ -9,5 +9,5 @@ Arguments:
 - `-t`  Target dir with the zipped ROMs
 - `-o`  Output dir were to move the ROMs found at romlist
 - `-c`  Include clones
-- `-d`  Dry run mode (any file is moved)
+- `-d`  Dry run mode (no file is moved)
 - `-h`  Display this help
