@@ -7,7 +7,7 @@ The filter selects one ROM from a group of ROMs with the same name using the fol
 - GameCube reedition
 
 Usage:
-    `ruby roms_filter.rb -t [targetdir] [-o [output.file] -a -s [attr1,attr2]]`
+    `ruby roms_filter.rb -t [targetdir] [-o [output.file] -a -s [attr1[,attrN]]`
 
 Arguments:
 - `-t`  Target dir with the zipped ROMs
