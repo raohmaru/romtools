@@ -8,9 +8,12 @@ output_xml = false
 print_desc = false
 dryrun = false
 manufacturer = false
+skip_attrs = false
 # Variables
+roms_total = 0
 rom_count = 0
 clones_count = 0
+roms_skipped = 0
 output = ''
 roms = {}
 clones = {}
@@ -26,7 +29,7 @@ The filter excludes by default:
 - Clones, except if they support a number of players different form the parent ROM
 
 Usage:
-  ruby arcade_roms_filter.rb [romlist] [-o [output.file] -x [xml.file] -pd -m [manufacturer] -d]
+  ruby arcade_roms_filter.rb [romlist] [-o [output.file] -x [xml.file] -pd -m [manufacturer] -s [attr1[,attrN]] -d]
   
 Arguments:
     romlist XML Dat file with the ROMs
@@ -34,6 +37,7 @@ Arguments:
     -x  Creates a XML Dat file
     -pd Print description of the rom and size (uncompressed)
     -m  Filter only ROMs of the given manufacturer
+    -s  Skip ROMs that matches the comma-separated list of attributes (case-insensitive)
     -d  Doesn't output any file. Prints output in the terminal
     -h  Display this help
 eof
@@ -51,6 +55,8 @@ unless ARGV.empty?
       print_desc = true
     elsif item == "-d"
       dryrun = true
+    elsif item == "-s"
+      skip_attrs = ARGV[i+1].downcase.split(',')
     elsif item == "-h"
       puts HELP
       exit
@@ -106,13 +112,22 @@ if output_xml
 end
 
 doc.xpath('/datafile/game[not(@isbios)]').each do |game|
+  roms_total += 1
   cloneof = game['cloneof']
   if cloneof
     if !clones.key?(cloneof)
       clones[cloneof] = []
     end
     clones[cloneof].push game
-  elsif !game.key?('romof')  # Skip Neo Geo roms
+  else
+    next if game.key?('romof')  # Skip Neo Geo roms
+    if skip_attrs
+      descr = game.at('description').content.downcase
+      if skip_attrs.any? { |word| descr.include?(word) }
+        roms_skipped += 1
+        next
+      end
+    end
     roms[game['name']] = game
   end
 end
@@ -130,7 +145,7 @@ roms.each do |key, rom|
   if clones.key?(key)
     clones[key].each do |clone|
       desc = clone.at('description').content
-      if desc =~ /\bPlayers\b/i
+      if desc =~ /\bPlayers\b/i  # Valid clone
         output += '    ' + clone['name']
         if print_desc
           output += ' ' * (16-clone['name'].length) + ' -- ' + desc
@@ -160,4 +175,12 @@ else
   end
 end
 
-puts "Found #{rom_count} roms and #{clones_count} clones (#{rom_count+clones_count} total)"
+puts "ROMs in DAT file: #{roms_total}"
+puts "Found #{rom_count} roms and #{clones_count} valid clones (#{rom_count+clones_count} total)"
+if skip_attrs
+  puts "Skipped #{roms_skipped} ROMs that matched criteria \"#{skip_attrs.join(', ')}\""
+end
+unless dryrun
+  puts $/
+  puts "Created file \"#{output_file}\" with filtered ROM list"
+end
