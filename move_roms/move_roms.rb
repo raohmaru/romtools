@@ -51,8 +51,13 @@ unless ARGV.empty?
   }
 end
 
-if !romlist || !File.directory?(working_dir)
-  puts HELP
+if !romlist
+  puts "ERROR: romlist file not found. Type `ruby move_roms.rb -h` for help."
+  exit
+end
+
+if !File.directory?(working_dir)
+  puts "ERROR: Target directory does not exists. Type `ruby move_roms.rb -h` for help."
   exit
 end
 
