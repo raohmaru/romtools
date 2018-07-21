@@ -32,12 +32,13 @@ Arguments:
     romlist XML Dat file with the ROMs
     -o  Output file with the filtered ROMs
     -x  Creates a XML Dat file
-    -pd Print description of the rom
+    -pd Print description of the rom and size (uncompressed)
     -m  Filter only ROMs of the given manufacturer
     -d  Doesn't output any file. Prints output in the terminal
     -h  Display this help
 eof
 
+# Get arguments
 unless ARGV.empty?
   ARGV.each_with_index { |item, i|
     if item == "-o"
@@ -66,6 +67,23 @@ if !romlist
   exit
 end
 
+# Functions
+def getRomSize(rom)
+    rom_bytes = rom.xpath('rom').to_a.inject(0) do |sum, r|
+      sum + r['size'].to_i
+    end
+    
+    rom_size = rom_bytes / 1024  # KB
+    unit = 'KB'
+    if rom_size.to_s.length > 3
+      rom_size = (rom_size / 1024.0).round(2)  # MB
+      unit = 'MB'
+    end
+    
+    return rom_size.to_s + ' ' + unit
+end
+
+# Do the magic
 doc = File.open(romlist) { |f| Nokogiri::XML(f) }
 if output_xml
   builder = Nokogiri::XML::Builder.new do |xml|
@@ -105,6 +123,7 @@ roms.each do |key, rom|
   output += rom['name']
   if print_desc
     output += ' ' * (12-rom['name'].length) + ' -- ' + rom.at('description').content
+    output += " (#{getRomSize(rom)})"
   end
   output += $/
   rom_count += 1
@@ -115,6 +134,7 @@ roms.each do |key, rom|
         output += '    ' + clone['name']
         if print_desc
           output += ' ' * (16-clone['name'].length) + ' -- ' + desc
+          output += " (#{getRomSize(rom)})"
         end
         output += $/
         clones_count += 1
