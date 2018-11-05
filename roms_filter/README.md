@@ -10,8 +10,8 @@ Usage:
     `ruby roms_filter.rb -t [targetdir] [-o [output.file] -a -s [attr1[,attrN]]`
 
 Arguments:
-- `-t`  Target dir with the zipped ROMs
-- `-o`  Output file were write the filtered ROMs
-- `-a`  Analyze mode. Prints output in the terminal
-- `-s`  Skip ROMs that matches the comma-separated list of attributes
-- `-h`  Display this help
+- `-t`  Target dir with the zipped ROMs.
+- `-o`  Output file where write the filtered ROMs list
+- `-a`  Analyze mode. Prints output in the terminal.
+- `-s`  Skip ROMs that matches the comma-separated list of attributes.
+- `-h`  Display this help.
