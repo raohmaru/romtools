@@ -11,14 +11,14 @@ tmp_roms = []
 roms = []
 roms_attrs = {}
 last_match = false
-# Const
+# Constants
 RX_ATTRS = /\(([^()]+)\)/
-RX_IS_USA = /\(.*USA[^)]*\)/
-RX_IS_WORLD = /\(.*World[^)]*\)/
-RX_IS_EUROPE = /\(.*Europe[^)]*\)/
-RX_GAMECUBE = /\(.*GameCube[^)]*\)/
-RX_HAS_VERSION_NUMBER = /\((Rev|v)[^)]*\)/
-RX_NAME = /([^(]+)/
+RX_IS_USA = /\(.*USA[^)]*\)/i
+RX_IS_WORLD = /\(.*World[^)]*\)/i
+RX_IS_EUROPE = /\(.*Europe[^)]*\)/i
+RX_GAMECUBE = /\(.*GameCube[^)]*\)/i
+RX_HAS_VERSION_NUMBER = /\((Rev|v)[^)]*\)/i
+RX_NAME = /(^[^(]+)/
 HELP = <<eof
 ROMs filter 1.0
 ---------------
@@ -29,14 +29,15 @@ The filter selects one ROM from a group of ROMs with the same name using the fol
 - GameCube reedition
 
 Usage:
-    ruby roms_filter.rb -t [targetdir] [-o [output.file] -a -s [attr1[,attrN]]]
+    ruby roms_filter.rb -t [targetdir] [-o [output.file] -d -s [attr1[,attrN]]]
 
 Arguments:
-    -t  Target dir with the zipped ROMs
-    -o  Output file were write the filtered ROMs
-    -a  Analyze mode. Prints output in the terminal
-    -s  Skip ROMs that matches the comma-separated list of attributes
-    -h  Display this help
+    -t  Target dir with the zipped ROMs.
+    -o  Output file were write the filtered ROMs.
+    -d  Dry run/Analyze mode. Prints output in the terminal.
+    -s  Skip ROMs that matches the comma-separated list of attributes. Case insensitive.
+    -np Skip ROMs with the attributes "Beta", "Proto" or "Sample".
+    -h  Display this help.
 eof
 
 unless ARGV.empty?
@@ -45,15 +46,23 @@ unless ARGV.empty?
       working_dir = ARGV[i+1]
     elsif item == "-o"
       output = ARGV[i+1]
-    elsif item == "-a"
+    elsif item == "-d"
       $analyze = true
     elsif item == "-s"
       $skip_attrs = ARGV[i+1].split(',')
+    elsif item == "-np"
+      if !$skip_attrs
+        $skip_attrs = []
+      end
+      $skip_attrs.push "Beta", "Proto", "Sample"
     elsif item == "-h"
       puts HELP
       exit
     end
   }
+else
+  puts HELP
+  exit
 end
 
 if !File.directory?(working_dir)
@@ -68,11 +77,11 @@ def filter_roms(roms, roms_attrs)
   roms.each_with_index { |rom, i|
     attrs = rom.scan(RX_ATTRS).flatten
     if attrs.length == 0
-      puts "Invalid rom (missing region): " + rom
+      puts "Invalid ROM (missing region): " + rom
       next
     end
     
-    attrs.each {|v| roms_attrs[v] = true}
+    attrs.each {|v| roms_attrs[v] = 1}
     
     if rom =~ RX_IS_USA
       points[i] += 3
@@ -81,7 +90,7 @@ def filter_roms(roms, roms_attrs)
     elsif rom =~ RX_IS_EUROPE
       points[i] += 1
     end
-    # Reedition of some NES games for the Gamecube
+    # Re-edition of some NES games for the GameCube
     if rom =~ RX_GAMECUBE
       points[i] += 1
     end
@@ -93,8 +102,17 @@ def filter_roms(roms, roms_attrs)
       points[i] += 0.1 * revs[attrs[0]]
     end
     if $skip_attrs
-      skip_intersect = attrs & $skip_attrs
-      points[i] = -1 if skip_intersect.length > 0      
+      skip = false
+      attrs.each { |a|
+        a = a.downcase
+        $skip_attrs.each { |sa|
+          if a.include? sa.downcase
+            skip = true
+            break
+          end
+        }
+      }
+      points[i] = -1 if skip
     end
     
     chosen = i if points[i] >= points[chosen]
@@ -102,7 +120,7 @@ def filter_roms(roms, roms_attrs)
   
   if $analyze
     roms.each_with_index { |rom, i|
-      mark = i == chosen ? '*' : ' '
+      mark = i == chosen && points[i] > -1 ? '*' : ' '
       puts sprintf('%-4g %s%s', points[i], mark, rom)
     }
     puts ''
@@ -135,12 +153,13 @@ puts summary
 
 if !$analyze
   open(output, 'w') { |f|
-    f.puts summary
-    f.puts ARGV.join(' ')
-    f.puts ''
+    # f.puts summary
+    # f.puts ARGV.join(' ')
+    # f.puts ''
     f.puts roms
   }
+  puts "List of filtered ROMs written to #{File.expand_path(output)}"
 else
-  puts '', 'All rom attributes:', ''
+  puts "", "All rom attributes:", ""
   puts roms_attrs.keys.sort
 end
