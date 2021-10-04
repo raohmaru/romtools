@@ -6,10 +6,10 @@ The filter excludes by default:
 - Neo Geo ROMs
 - Clones, except if they support a number of players different form the parent ROM
 
-Usage:
-  `ruby arcade_roms_filter.rb [romlist] [-o [output.file] -x [xml.file] -pd -m [manufacturer] -s [attr1[,attrN]] -d]`
+## Usage
+`ruby arcade_roms_filter.rb [romlist.xml] [-o [output.file] -x [file.xml] -pd -m [manufacturer] -s [attr1[,attrN]] -d]`
   
-Arguments:
+### Arguments
 - `romlist` XML Dat file with the ROMs
 - `-o`  Output file with the filtered ROMs
 - `-x`  Creates a XML Dat file
