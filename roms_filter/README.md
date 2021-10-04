@@ -14,5 +14,5 @@ The filter selects one ROM from a group of ROMs with the same name using the fol
 - `-o`  Output file where to write the filtered ROMs list.
 - `-d`  Dry run/Analyze mode. Prints output in the terminal.
 - `-s`  Skip ROMs that matches the comma-separated list of attributes.
-- `-np` Skip ROMs with the attributes "Beta", "Proto" or "Sample".
+- `-np` Skip ROMs with the attributes "Beta", "Proto", "Sample" or "Demo".
 - `-h`  Display this help.

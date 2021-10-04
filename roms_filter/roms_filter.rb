@@ -36,7 +36,7 @@ Arguments:
     -o  Output file were write the filtered ROMs.
     -d  Dry run/Analyze mode. Prints output in the terminal.
     -s  Skip ROMs that matches the comma-separated list of attributes. Case insensitive.
-    -np Skip ROMs with the attributes "Beta", "Proto" or "Sample".
+    -np Skip ROMs with the attributes "Beta", "Proto", "Sample" or "Demo".
     -h  Display this help.
 eof
 
@@ -54,7 +54,7 @@ unless ARGV.empty?
       if !$skip_attrs
         $skip_attrs = []
       end
-      $skip_attrs.push "Beta", "Proto", "Sample"
+      $skip_attrs.push "Beta", "Proto", "Sample", "Demo"
     elsif item == "-h"
       puts HELP
       exit
