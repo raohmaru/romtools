@@ -22,7 +22,7 @@ HELP = <<eof
 
 Arcade ROMs Filter 1.0
 ----------------------
-Generates a list of filtered arcade ROMs given a romlist XML Dat file.
+Generates an opinionated list of filtered arcade ROMs given a romlist XML Dat file.
 The filter excludes by default:
 - BIOS files
 - Neo Geo ROMs
