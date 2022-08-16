@@ -6,6 +6,7 @@ output_dir = ''
 romlist = false
 inc_clones = false
 dry_run = false
+copy = false
 # Variables
 rom_count = 0
 rom_total = 0
@@ -23,24 +24,27 @@ Usage:
     
 Arguments:
     romlist Source file with the ROMs
-    -t      Directory with the zipped ROMs
-    -o      Output directory were to move the ROMs found at romlist
-    -c      Include clones
-    -d      Dry run mode (no file is moved)
-    -h      Display this help
+    -t, --target    Directory with the zipped ROMs
+    -o, --output    Output directory were to move the ROMs found at romlist
+    -c, --clones    Include clones
+    -d, --dryrun    Dry run mode (no file is moved)
+    -cp, --copy     Copy the ROMs to the output directory instead of moving them
+    -h, --help      Display this help
 eof
 
 unless ARGV.empty?
   ARGV.each_with_index { |item, i|
-    if item == "-t"
+    if item == "-t" || item == "--target"
       working_dir = ARGV[i+1]
-    elsif item == "-o"
+    elsif item == "-o" || item == "--output"
       output_dir = ARGV[i+1]
-    elsif item == "-c"
+    elsif item == "-c" || item == "--clones"
       inc_clones = true
-    elsif item == "-d"
+    elsif item == "-d" || item == "--dryrun"
       dry_run = true
-    elsif item == "-h"
+    elsif item == "-cp" || item == "--copy"
+      copy = true
+    elsif item == "-h" || item == "--help"
       puts HELP
       exit
     else
@@ -95,8 +99,14 @@ File.open(romlist, "rt") do |f|
       if File.exists? romfile
         rom_count += 1
         unless dry_run
-          puts "Moving #{r}..."
-          FileUtils.mv(romfile, File.join(output_dir, r))
+          args = [romfile, File.join(output_dir, r)]
+          if copy
+            puts "Copying #{r}..."
+            FileUtils.cp(*args)
+          else
+            puts "Moving #{r}..."
+            FileUtils.mv(*args)
+          end
         end
       else
         puts "ROM not found: #{r}"
