@@ -3,9 +3,11 @@ require 'fileutils'
 # Options
 working_dir = '.'
 output = '_selection.txt'
+$countries = ["USA", "World", "Europe"]
 $analyze = false
 $skip_attrs = false
 $bios = true
+$exclude = false
 # Variables
 rom_count = 0
 tmp_roms = []
@@ -14,10 +16,6 @@ roms_attrs = {}
 last_match = false
 # Constants
 RX_ATTRS = /\(([^()]+)\)/
-RX_IS_USA = /\(.*USA[^)]*\)/i
-RX_IS_WORLD = /\(.*World[^)]*\)/i
-RX_IS_EUROPE = /\(.*Europe[^)]*\)/i
-RX_GAMECUBE = /\(.*GameCube[^)]*\)/i
 RX_HAS_VERSION_NUMBER = /\((Rev|v)[^)]*\)/i
 RX_NAME = /(^[^(]+)/
 HELP = <<eof
@@ -33,13 +31,17 @@ Usage:
     ruby roms_filter.rb -t [targetdir] [-o [output.file] -d -s [attr1[,attrN]]]
 
 Arguments:
-    -t, --target    Target dir with the zipped ROMs.
-    -o, --output    Output file where to write the filtered ROMs list. If omitted the file _selection.txt will be used.
-    -d, --dryrun    Dry run/Analyze mode. Prints output in the terminal.
-    -s, --skip      Skip ROMs that matches the comma-separated list of attributes. Case insensitive.
-    -np, --noproto  Skip ROMs with the attributes "Beta", "Proto", "Sample" or "Demo".
-    -nb, --nobios   Skip BIOS roms.
-    -h, --help      Display this help.
+    -t, --target     Target dir with the zipped ROMs.
+    -o, --output     Output file where to write the filtered ROMs list. If omitted the file _selection.txt will be used.
+    -c, --countries  Country preference: a comma-separated list of countries, from more relevant to less. Default is USA,World,Europe
+    -e, --exclude    Countries that are not in the list of preferred countries will be skipped.
+    -d, --dryrun     Dry run/Analyze mode. Prints output in the terminal.
+    -s, --skip       Skip ROMs that matches the comma-separated list of attributes. Case insensitive.
+    -np, --noproto   Skip ROMs with the attributes Beta, Proto, Sample, Demo or Program.
+    -nu, --nounl     Skip ROMs with the attributes Homebrew, Unl, Aftermarket, Pirate or Unknown.
+    -nm, --nomini    Skip mini console ROMs and virtual console ROMs.
+    -nb, --nobios    Skip BIOS ROMs.
+    -h, --help       Display this help.
 eof
 
 unless ARGV.empty?
@@ -50,18 +52,24 @@ unless ARGV.empty?
       output = ARGV[i+1]
     elsif item == "-d" || item == "--dryrun"
       $analyze = true
+    elsif item == "-c" || item == "--countries"
+      $countries = ARGV[i+1].split(',')
     elsif item == "-s" || item == "--skip"
-      if !$skip_attrs
-        $skip_attrs = []
-      end
+      $skip_attrs = [] if !$skip_attrs
       $skip_attrs += ARGV[i+1].split(',')
     elsif item == "-np" || item == "--noproto"
-      if !$skip_attrs
-        $skip_attrs = []
-      end
-      $skip_attrs.push "Beta", "Proto", "Sample", "Demo"
+      $skip_attrs = [] if !$skip_attrs
+      $skip_attrs.push "Beta", "Proto", "Sample", "Demo", "Program"
+    elsif item == "-nu" || item == "--nounl"
+      $skip_attrs = [] if !$skip_attrs
+      $skip_attrs.push "Homebrew", "Unl", "Aftermarket", "Pirate", "Unknown"
+    elsif item == "-nm" || item == "--nomini"
+      $skip_attrs = [] if !$skip_attrs
+      $skip_attrs.push "Virtual Console", "Genesis Mini", "Mega Drive Mini", "Switch Online"
     elsif item == "-nb" || item == "--nobios"
       $bios = false
+    elsif item == "-e" || item == "--exclude"
+      $exclude = true
     elsif item == "-h" || item == "--help"
       puts HELP
       exit
@@ -89,24 +97,27 @@ def filter_roms(roms, roms_attrs)
     end
     
     attrs.each {|v| roms_attrs[v] = 1}
-    
-    if rom =~ RX_IS_USA
-      points[i] += 3
-    elsif rom =~ RX_IS_WORLD
-      points[i] += 2
-    elsif rom =~ RX_IS_EUROPE
-      points[i] += 1
-    end
+    countries = attrs[0].split(', ')
+    # Country points
+    cp = 0
+    cp = -1 if $exclude
+    countries.each { |c|
+      idx = $countries.index(c)
+      if idx && cp < $countries.length - idx
+        cp = $countries.length - idx
+      end
+    }
+    points[i] += cp
     # Re-edition of some NES games for the GameCube
-    if rom =~ RX_GAMECUBE
+    if rom.include?("GameCube Edition")
       points[i] += 1
     end
     if rom =~ RX_HAS_VERSION_NUMBER
-      if !revs[attrs[0]]
-        revs[attrs[0]] = 0
+      if !revs[countries[0]]
+        revs[countries[0]] = 0
       end
-      revs[attrs[0]] += 1
-      points[i] += 0.1 * revs[attrs[0]]
+      revs[countries[0]] += 1
+      points[i] += 0.1 * revs[countries[0]]
     end
     if $skip_attrs
       skip = false
@@ -131,13 +142,13 @@ def filter_roms(roms, roms_attrs)
   
   if $analyze
     roms.each_with_index { |rom, i|
-      mark = i == chosen && points[i] > -1 ? '*' : ' '
+      mark = i == chosen && points[i] >= 0 ? '*' : ' '
       puts sprintf('%-4g %s%s', points[i], mark, rom)
     }
     puts ''
   end
   
-  return points[chosen] > -1 ? roms[chosen] : nil
+  return points[chosen] >= 0 ? roms[chosen] : nil
 end
 
 Dir.chdir(working_dir) do
@@ -159,7 +170,7 @@ Dir.chdir(working_dir) do
 end
 
 roms.compact!
-summary = "Selected #{roms.length} of #{rom_count} roms"
+summary = "Selected #{roms.length} of #{rom_count} ROMs"
 puts summary
 
 if !$analyze
@@ -171,6 +182,6 @@ if !$analyze
   }
   puts "List of filtered ROMs written to #{File.expand_path(output)}"
 else
-  puts "", "All rom attributes:", ""
+  puts "", "All ROM attributes:", ""
   puts roms_attrs.keys.sort
 end

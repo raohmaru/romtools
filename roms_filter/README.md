@@ -12,11 +12,15 @@ The filter selects one ROM from a group of ROMs with the same name using the fol
 ### Parameters
 
 | Parameter | Description |
-|-----------|-------------|
-| `-t`, `--target` | Target directory with the zipped ROMs. |
-| `-o`, `--output` | Output file where to write the filtered ROMs list. If omitted the file _selection.txt will be used. |
-| `-d`, `--dryrun` | Dry run/Analyze mode. Prints output in the terminal. |
-| `-s`, `--skip` | Skip ROMs that matches the comma-separated list of attributes. |
-| `-np`, `--noproto` | Skip ROMs with the attributes "Beta", "Proto", "Sample" or "Demo". |
-| `-np`, `--nobios` | Skip BIOS roms. |
-| `-h`, `--help` | Display this help. |
+|:----------|:------------|
+| `-t`, `--target`     | Target dir with the zipped ROMs. |
+| `-o`, `--output`     | Output file where to write the filtered ROMs list. If omitted the file _selection.txt will be used. |
+| `-c`, `--countries`  | Country preference: a comma-separated list of countries, from more relevant to less. Default is USA,World,Europe |
+| `-e`, `--exclude`    | Countries that are not in the list of preferred countries will be skipped. |
+| `-d`, `--dryrun`     | Dry run/Analyze mode. Prints output in the terminal. |
+| `-s`, `--skip`       | Skip ROMs that matches the comma-separated list of attributes. Case insensitive. |
+| `-np`, `--noproto`   | Skip ROMs with the attributes Beta, Proto, Sample, Demo or Program. |
+| `-nu`, `--nounl`     | Skip ROMs with the attributes Homebrew, Unl, Aftermarket, Pirate or Unknown. |
+| `-nm`, `--nomini`    | Skip mini console ROMs and virtual console ROMs. |
+| `-nb`, `--nobios`    | Skip BIOS ROMs. |
+| `-h`, `--help`       | Display the help. |
