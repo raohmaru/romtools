@@ -9,11 +9,10 @@ $skip_attrs = false
 $bios = true
 $exclude = false
 # Variables
-rom_count = 0
-tmp_roms = []
-roms = []
-roms_attrs = {}
-last_match = false
+$rom_count = 0
+$tmp_roms = []
+$roms = []
+$roms_attrs = {}
 # Constants
 RX_ATTRS = /\(([^()]+)\)/
 RX_HAS_VERSION_NUMBER = /\((Rev|v)[^)]*\)/i
@@ -28,10 +27,10 @@ The filter selects one ROM from a group of ROMs with the same name using the fol
 - GameCube reedition
 
 Usage:
-    ruby roms_filter.rb -t [targetdir] [-o [output.file] -d -s [attr1[,attrN]]]
+    ruby roms_filter.rb -t [dir or file] [-o [output.file] -d -s [attr1[,attrN]]]
 
 Arguments:
-    -t, --target     Target dir with the zipped ROMs.
+    -t, --target     Target dir with the zipped ROMs, or a file with a carriage return-separated list of ROMs.
     -o, --output     Output file where to write the filtered ROMs list. If omitted the file _selection.txt will be used.
     -c, --countries  Country preference: a comma-separated list of countries, from more relevant to less. Default is USA,World,Europe
     -e, --exclude    Countries that are not in the list of preferred countries will be skipped.
@@ -65,7 +64,7 @@ unless ARGV.empty?
       $skip_attrs.push "Homebrew", "Unl", "Aftermarket", "Pirate", "Unknown"
     elsif item == "-nm" || item == "--nomini"
       $skip_attrs = [] if !$skip_attrs
-      $skip_attrs.push "Virtual Console", "Genesis Mini", "Mega Drive Mini", "Switch Online"
+      $skip_attrs.push "Virtual Console", "Genesis Mini", "Mega Drive Mini", "Switch Online", "Classic Mini"
     elsif item == "-nb" || item == "--nobios"
       $bios = false
     elsif item == "-e" || item == "--exclude"
@@ -80,12 +79,7 @@ else
   exit
 end
 
-if !File.directory?(working_dir)
-  puts HELP
-  exit
-end
-
-def filter_roms(roms, roms_attrs)
+def filter_roms(roms)
   points = Array.new(roms.length, 0)
   revs = {}
   chosen = 0
@@ -96,7 +90,7 @@ def filter_roms(roms, roms_attrs)
       next
     end
     
-    attrs.each {|v| roms_attrs[v] = 1}
+    attrs.each {|v| $roms_attrs[v] = 1}
     countries = attrs[0].split(', ')
     # Country points
     cp = 0
@@ -151,26 +145,35 @@ def filter_roms(roms, roms_attrs)
   return points[chosen] >= 0 ? roms[chosen] : nil
 end
 
-Dir.chdir(working_dir) do
-  Dir.glob("*.zip") do |file|
-    next if File.directory?(file)
-    rom_count += 1
-    match = RX_NAME.match(file)
-    if match
-      match = match.to_s.rstrip!
-      if last_match && last_match != match
-        roms.push filter_roms(tmp_roms, roms_attrs)
-        tmp_roms = []
-      end
-      tmp_roms.push(file)
-      last_match = match
+def filter_rom(file)
+  return if File.directory?(file)
+  $rom_count += 1
+  match = RX_NAME.match(file)
+  if match
+    match = match.to_s.rstrip!
+    if $last_match && $last_match != match
+      $roms.push filter_roms($tmp_roms)
+      $tmp_roms = []
     end
+    $tmp_roms.push(file)
+    $last_match = match
   end
-  roms.push filter_roms(tmp_roms, roms_attrs)
 end
 
-roms.compact!
-summary = "Selected #{roms.length} of #{rom_count} ROMs"
+if File.directory?(working_dir)
+  Dir.chdir(working_dir) do
+    Dir.glob("*.zip") do |file|
+      filter_rom(file)
+    end
+  end
+else
+  File.readlines(working_dir).each do |line|
+    filter_rom(line)
+  end
+end
+$roms.push filter_roms($tmp_roms)
+$roms.compact!
+summary = "Selected #{$roms.length} of #{$rom_count} ROMs"
 puts summary
 
 if !$analyze
@@ -178,10 +181,10 @@ if !$analyze
     # f.puts summary
     # f.puts ARGV.join(' ')
     # f.puts ''
-    f.puts roms
+    f.puts $roms
   }
   puts "List of filtered ROMs written to #{File.expand_path(output)}"
 else
   puts "", "All ROM attributes:", ""
-  puts roms_attrs.keys.sort
+  puts $roms_attrs.keys.sort
 end
