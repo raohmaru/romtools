@@ -20,7 +20,7 @@ RX_ATTRS = /\(([^()]+)\)/
 RX_HAS_VERSION_NUMBER = /\((Rev|v)[^)]*\)/i
 RX_NAME = /(^[^(]+)/
 HELP = <<eof
-ROMs filter 1.0
+ROMs filter 1.1
 ---------------
 Generates an opinionated list of filtered ROMs given a folder with zipped ROMs. Works best with No-Intro ROMs.
 The filter selects one ROM from a group of ROMs with the same name using the following criteria:
