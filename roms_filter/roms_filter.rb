@@ -6,6 +6,7 @@ output = '_rom-selection.txt'
 $countries = ["USA", "World", "Europe"]
 $analyze = false
 $skip_attrs = false
+$force_attrs = false
 $bios = true
 $exclude = false
 # Variables
@@ -27,7 +28,7 @@ The filter selects one ROM from a group of ROMs with the same name using the fol
 - GameCube reedition of NES games.
 
 Usage:
-    ruby roms_filter.rb -i dirOrFile [-o output.file -s attr1[,attrN] -c country1[,countryN] -e -np -nu -nm -nb -d]
+    ruby roms_filter.rb -i dirOrFile [-o output.file -sa attr1[,attrN] -c country1[,countryN] -e -np -nu -nm -nb -d]
 
 Arguments:
     -i, --input      Target dir with the zipped ROMs, or a file with a carriage return-separated list of ROMs.
@@ -36,6 +37,7 @@ Arguments:
     -e, --exclude    Countries that are not in the list of preferred countries will be skipped.
     -d, --dryrun     Dry run/Analyze mode. Prints output in the terminal.
     -s, --skip       Skip ROMs that matches the comma-separated list of attributes. Case insensitive.
+    -fa, --forceattr Force include ROMs that matches any of the comma-separated list of attributes. Case insensitive.
     -np, --noproto   Skip ROMs with the attributes Beta, Proto, Sample, Demo or Program.
     -nu, --nounl     Skip ROMs with the attributes Homebrew, Unl, Aftermarket, Pirate or Unknown.
     -nm, --nomini    Skip mini console ROMs and virtual console ROMs.
@@ -56,6 +58,9 @@ unless ARGV.empty?
     elsif item == "-s" || item == "--skip"
       $skip_attrs = [] if !$skip_attrs
       $skip_attrs += ARGV[i+1].split(',')
+    elsif item == "-fa" || item == "--forceattr"
+      $force_attrs = [] if !$force_attrs
+      $force_attrs += ARGV[i+1].split(',')
     elsif item == "-np" || item == "--noproto"
       $skip_attrs = [] if !$skip_attrs
       $skip_attrs.push "Beta", "Proto", "Sample", "Demo", "Program"
@@ -113,6 +118,7 @@ def filter_roms(roms)
       revs[countries[0]] += 1
       points[i] += 0.1 * revs[countries[0]]
     end
+    
     if $skip_attrs
       skip = false
       attrs.each { |a|
@@ -125,6 +131,17 @@ def filter_roms(roms)
         }
       }
       points[i] = -1 if skip
+    end
+    
+    if $force_attrs
+      attrs.each { |a|
+        a = a.downcase
+        $force_attrs.each { |fa|
+          if a.include? fa.downcase
+            points[i] += 0.1
+          end
+        }
+      }
     end
     
     if !$bios && rom.include?("[BIOS]")
