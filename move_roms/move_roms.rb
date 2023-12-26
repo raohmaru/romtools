@@ -23,10 +23,10 @@ Usage:
     ruby move_roms.rb [romlist] -t [romddir] [-o [outputdir] -c -d]
     
 Arguments:
-    romlist Source file with the ROMs
-    -t, --target    Directory with the zipped ROMs
-    -o, --output    Output directory were to move the ROMs found at romlist
-    -c, --clones    Include clones
+    romlist         Source file with the ROM list
+    -i, --input     Directory with the zipped ROMs
+    -o, --output    Output directory were to move the ROMs. If omitted will create the dir moved/.
+    -c, --clones    Include clones (MAME)
     -d, --dryrun    Dry run mode (no file is moved)
     -cp, --copy     Copy the ROMs to the output directory instead of moving them
     -h, --help      Display this help
@@ -34,7 +34,7 @@ eof
 
 unless ARGV.empty?
   ARGV.each_with_index { |item, i|
-    if item == "-t" || item == "--target"
+    if item == "-i" || item == "--input"
       working_dir = ARGV[i+1]
     elsif item == "-o" || item == "--output"
       output_dir = ARGV[i+1]
@@ -42,6 +42,7 @@ unless ARGV.empty?
       inc_clones = true
     elsif item == "-d" || item == "--dryrun"
       dry_run = true
+      puts "Running in dry-run mode"
     elsif item == "-cp" || item == "--copy"
       copy = true
     elsif item == "-h" || item == "--help"
@@ -75,8 +76,6 @@ end
 unless File.directory? output_dir
   Dir.mkdir output_dir
 end
-
-puts "Running in dry-run mode"
 
 File.open(romlist, "rt") do |f|
   f.each_line do |line|

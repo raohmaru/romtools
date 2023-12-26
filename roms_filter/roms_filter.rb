@@ -2,7 +2,7 @@ require 'fileutils'
 
 # Options
 working_dir = '.'
-output = '_selection.txt'
+output = '_rom-selection.txt'
 $countries = ["USA", "World", "Europe"]
 $analyze = false
 $skip_attrs = false
@@ -22,16 +22,16 @@ ROMs filter 1.0
 ---------------
 Generates an opinionated list of filtered ROMs given a folder with zipped ROMs. Works best with No-Intro ROMs.
 The filter selects one ROM from a group of ROMs with the same name using the following criteria:
-- Country preference: USA, World, Europe, other countries
-- Highest version/revision number
-- GameCube reedition
+- Country preference: USA, World, Europe (and other countries unless `--skip` is present).
+- Highest version/revision number.
+- GameCube reedition of NES games.
 
 Usage:
-    ruby roms_filter.rb -t [dir or file] [-o [output.file] -d -s [attr1[,attrN]]]
+    ruby roms_filter.rb -i dirOrFile [-o output.file -s attr1[,attrN] -c country1[,countryN] -e -np -nu -nm -nb -d]
 
 Arguments:
-    -t, --target     Target dir with the zipped ROMs, or a file with a carriage return-separated list of ROMs.
-    -o, --output     Output file where to write the filtered ROMs list. If omitted the file _selection.txt will be used.
+    -i, --input      Target dir with the zipped ROMs, or a file with a carriage return-separated list of ROMs.
+    -o, --output     Output file where to write the filtered ROMs list. If omitted the file _rom-selection.txt will be used.
     -c, --countries  Country preference: a comma-separated list of countries, from more relevant to less. Default is USA,World,Europe
     -e, --exclude    Countries that are not in the list of preferred countries will be skipped.
     -d, --dryrun     Dry run/Analyze mode. Prints output in the terminal.
@@ -45,7 +45,7 @@ eof
 
 unless ARGV.empty?
   ARGV.each_with_index { |item, i|
-    if item == "-t" || item == "--target"
+    if item == "-i" || item == "--input"
       working_dir = ARGV[i+1]
     elsif item == "-o" || item == "--output"
       output = ARGV[i+1]
