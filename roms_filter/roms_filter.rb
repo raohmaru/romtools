@@ -5,6 +5,7 @@ working_dir = '.'
 output = '_rom-selection.txt'
 $countries = ["USA", "World", "Europe"]
 $analyze = false
+$skip_names = false
 $skip_attrs = false
 $force_attrs = false
 $bios = true
@@ -23,7 +24,7 @@ ROMs filter 1.0
 ---------------
 Generates an opinionated list of filtered ROMs given a folder with zipped ROMs. Works best with No-Intro ROMs.
 The filter selects one ROM from a group of ROMs with the same name using the following criteria:
-- Country preference: USA, World, Europe (and other countries unless `--skip` is present).
+- Country preference: USA, World, Europe (and other countries unless `--exclude` is present).
 - Highest version/revision number.
 - GameCube reedition of NES games.
 
@@ -36,6 +37,7 @@ Arguments:
     -c, --countries  Country preference: a comma-separated list of countries, from more relevant to less. Default is USA,World,Europe
     -e, --exclude    Countries that are not in the list of preferred countries will be skipped.
     -d, --dryrun     Dry run/Analyze mode. Prints output in the terminal.
+    -sn, --skipname  Skip ROMs which name matches a word of the comma-separated list. Case insensitive.
     -sa, --skipattr  Skip ROMs that matches the comma-separated list of attributes. Case insensitive.
     -fa, --forceattr Force include ROMs that matches any of the comma-separated list of attributes. Case insensitive.
     -np, --noproto   Skip ROMs with the attributes Beta, Proto, Sample, Demo or Program.
@@ -55,6 +57,9 @@ unless ARGV.empty?
       $analyze = true
     elsif item == "-c" || item == "--countries"
       $countries = ARGV[i+1].split(',')
+    elsif item == "-sn" || item == "--skipname"
+      $skip_names = [] if !$skip_names
+      $skip_names += ARGV[i+1].split(',')
     elsif item == "-sa" || item == "--skipattr"
       $skip_attrs = [] if !$skip_attrs
       $skip_attrs += ARGV[i+1].split(',')
@@ -85,19 +90,19 @@ else
 end
 
 def filter_roms(roms)
-  points = Array.new(roms.length, 0)
+  score = Array.new(roms.length, 0)
   revs = {}
   chosen = 0
-  roms.each_with_index { |rom, i|  
+  roms.each_with_index { |rom, i|
     attrs = rom.scan(RX_ATTRS).flatten
     if attrs.length == 0
       puts "Invalid ROM (missing region): " + rom
       next
-    end
-    
+    end    
     attrs.each {|v| $roms_attrs[v] = 1}
+    name = rom[RX_NAME].downcase
     countries = attrs[0].split(', ')
-    # Country points
+    # Country score
     cp = 0
     cp = -1 if $exclude
     countries.each { |c|
@@ -106,17 +111,40 @@ def filter_roms(roms)
         cp = $countries.length - idx
       end
     }
-    points[i] += cp
+    score[i] += cp
     # Re-edition of some NES games for the GameCube
     if rom.include?("GameCube Edition")
-      points[i] += 1
+      score[i] += 1
     end
+    # Prefer latest versions
     if rom =~ RX_HAS_VERSION_NUMBER
       if !revs[countries[0]]
         revs[countries[0]] = 0
       end
       revs[countries[0]] += 1
-      points[i] += 0.1 * revs[countries[0]]
+      score[i] += 0.1 * revs[countries[0]]
+    end
+    
+    if $force_attrs
+      attrs.each { |a|
+        a = a.downcase
+        $force_attrs.each { |fa|
+          if a.include? fa.downcase
+            score[i] += 0.1
+          end
+        }
+      }
+    end
+    
+    if $skip_names
+      catch :skipped do
+        $skip_names.each { |n|
+          if name.include? n.downcase
+            score[i] = -1
+            throw :skipped
+          end
+        }
+      end
     end
     
     if $skip_attrs
@@ -125,7 +153,7 @@ def filter_roms(roms)
           a = a.downcase
           $skip_attrs.each { |sa|
             if a.include? sa.downcase
-              points[i] = -1
+              score[i] = -1
               throw :skipped
             end
           }
@@ -133,33 +161,22 @@ def filter_roms(roms)
       end
     end
     
-    if $force_attrs
-      attrs.each { |a|
-        a = a.downcase
-        $force_attrs.each { |fa|
-          if a.include? fa.downcase
-            points[i] += 0.1
-          end
-        }
-      }
-    end
-    
     if !$bios && rom.include?("[BIOS]")
-      points[i] = -1
+      score[i] = -1
     end
     
-    chosen = i if points[i] >= points[chosen]
+    chosen = i if score[i] >= score[chosen]
   }
   
   if $analyze
     roms.each_with_index { |rom, i|
-      mark = i == chosen && points[i] >= 0 ? '*' : ' '
-      puts sprintf('%-4g %s%s', points[i], mark, rom)
+      mark = i == chosen && score[i] >= 0 ? '*' : ' '
+      puts sprintf('%-4g %s%s', score[i], mark, rom)
     }
     puts ''
   end
   
-  return points[chosen] >= 0 ? roms[chosen] : nil
+  return score[chosen] >= 0 ? roms[chosen] : nil
 end
 
 def filter_rom(file)
@@ -188,6 +205,7 @@ else
     filter_rom(line)
   end
 end
+# Filter last roms of the list
 $roms.push filter_roms($tmp_roms)
 $roms.compact!
 summary = "Selected #{$roms.length} of #{$rom_count} ROMs"
@@ -195,9 +213,6 @@ puts summary
 
 if !$analyze
   open(output, 'w') { |f|
-    # f.puts summary
-    # f.puts ARGV.join(' ')
-    # f.puts ''
     f.puts $roms
   }
   puts "List of filtered ROMs written to #{File.expand_path(output)}"

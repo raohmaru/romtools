@@ -3,7 +3,7 @@
 Generates an opinionated list of filtered ROMs given a folder with zipped ROMs. Works best with [No-Intro ROMs](https://no-intro.org/).
 
 The filter selects one ROM from a group of ROMs with the same name using the following criteria:
-- Country preference: USA, World, Europe (and other countries unless `--skip` is present).
+- Country preference: USA, World, Europe (and other countries unless `--exclude` is present).
 - Highest version/revision number.
 - GameCube reedition of NES games.
 
@@ -20,6 +20,7 @@ The filter selects one ROM from a group of ROMs with the same name using the fol
 | `-e`, `--exclude`    | Countries that are not in the list of preferred countries will be skipped. |
 | `-d`, `--dryrun`     | Dry run/Analyze mode. Prints output in the terminal. |
 | `-sa`, `--skipattr`  | Skip ROMs that matches the comma-separated list of attributes. Case insensitive. |
+| `-sn`, `--skipname`  | Skip ROMs which name matches a word of the comma-separated list. Case insensitive. |
 | `-fa`, `--forceattr` | Force include ROMs that matches any of the comma-separated list of attributes. Case insensitive. |
 | `-np`, `--noproto`   | Skip ROMs with the attributes Beta, Proto, Sample, Demo or Program. |
 | `-nu`, `--nounl`     | Skip ROMs with the attributes Homebrew, Unl, Aftermarket, Pirate or Unknown. |
