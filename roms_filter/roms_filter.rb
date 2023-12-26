@@ -36,7 +36,7 @@ Arguments:
     -c, --countries  Country preference: a comma-separated list of countries, from more relevant to less. Default is USA,World,Europe
     -e, --exclude    Countries that are not in the list of preferred countries will be skipped.
     -d, --dryrun     Dry run/Analyze mode. Prints output in the terminal.
-    -s, --skip       Skip ROMs that matches the comma-separated list of attributes. Case insensitive.
+    -sa, --skipattr  Skip ROMs that matches the comma-separated list of attributes. Case insensitive.
     -fa, --forceattr Force include ROMs that matches any of the comma-separated list of attributes. Case insensitive.
     -np, --noproto   Skip ROMs with the attributes Beta, Proto, Sample, Demo or Program.
     -nu, --nounl     Skip ROMs with the attributes Homebrew, Unl, Aftermarket, Pirate or Unknown.
@@ -55,7 +55,7 @@ unless ARGV.empty?
       $analyze = true
     elsif item == "-c" || item == "--countries"
       $countries = ARGV[i+1].split(',')
-    elsif item == "-s" || item == "--skip"
+    elsif item == "-sa" || item == "--skipattr"
       $skip_attrs = [] if !$skip_attrs
       $skip_attrs += ARGV[i+1].split(',')
     elsif item == "-fa" || item == "--forceattr"
@@ -120,17 +120,17 @@ def filter_roms(roms)
     end
     
     if $skip_attrs
-      skip = false
-      attrs.each { |a|
-        a = a.downcase
-        $skip_attrs.each { |sa|
-          if a.include? sa.downcase
-            skip = true
-            break
-          end
+      catch :skipped do
+        attrs.each { |a|
+          a = a.downcase
+          $skip_attrs.each { |sa|
+            if a.include? sa.downcase
+              points[i] = -1
+              throw :skipped
+            end
+          }
         }
-      }
-      points[i] = -1 if skip
+      end
     end
     
     if $force_attrs
