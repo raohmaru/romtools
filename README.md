@@ -13,7 +13,7 @@ Navigate to the sub folders to find the available tools.
 
 ## Requeriments
 - Ruby 2.0 or higher.
-- [Bundler](https://bundler.io/) to install the dependencies (mainly [Nokogiri](http://www.nokogiri.org/)).
+- [Bundler](https://bundler.io/) to install the dependencies ([Nokogiri](http://www.nokogiri.org/) and [rubyzip](https://www.rubydoc.info/gems/rubyzip)).
 
 ## License
 Released under the MIT License.
