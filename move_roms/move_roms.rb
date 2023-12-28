@@ -44,7 +44,7 @@ unless ARGV.empty?
       inc_clones = true
     elsif item == "-d" || item == "--dryrun"
       dry_run = true
-      puts "Running in dry-run mode"
+      puts "\n\e[1mRunning in dry-run mode\e[0m\n\n"
     elsif item == "-cp" || item == "--copy"
       copy = true
     elsif item == "-h" || item == "--help"
