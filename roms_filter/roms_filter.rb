@@ -22,7 +22,9 @@ RX_NAME = /(^[^(]+)/
 HELP = <<eof
 ROMs filter 1.1
 ---------------
-Generates an opinionated list of filtered ROMs given a folder with zipped ROMs. Works best with No-Intro ROMs.
+Generates an opinionated list of filtered ROMs given a folder with zipped ROMs or a file with a carriage return-separated list of ROMs.
+Works best with No-Intro ROMs.
+
 The filter selects one ROM from a group of ROMs with the same name using the following criteria:
 - Country preference: USA, World, Europe (and other countries unless `--exclude` is present).
 - Highest version/revision number.
@@ -31,11 +33,11 @@ Usage:
     ruby roms_filter.rb -i dirOrFile [-o output.file -sa attr1[,attrN] -c country1[,countryN] -e -np -nu -nm -nb -d]
 
 Arguments:
-    -i, --input       Target dir with the zipped ROMs, or a file with a carriage return-separated list of ROMs.
-    -o, --output      Output file where to write the filtered ROMs list. If omitted the file _rom-selection.txt will be used.
-    -c, --countries   Country preference: a comma-separated list of countries, from more relevant to less. Default is USA,World,Europe
-    -e, --exclude     Countries that are not in the list of preferred countries will be skipped.
-    -d, --dryrun      Dry run/Analyze mode. Prints output in the terminal.
+    -i,  --input      Target dir with the zipped ROMs, or a file with a carriage return-separated list of ROMs.
+    -o,  --output     Output file where to write the filtered ROMs list. If omitted the file _rom-selection.txt will be created or overwriten.
+    -c,  --countries  Country preference: a comma-separated list of countries, from more relevant to less. Default is USA,World,Europe
+    -e,  --exclude    Countries that are not in the list of preferred countries will be skipped.
+    -d,  --dryrun     Dry run/Analyze mode. Prints output in the terminal.
     -sn, --skipname   Skip ROMs which name matches a word of the comma-separated list. Case insensitive.
     -sa, --skipattr   Skip ROMs that matches the comma-separated list of attributes. Case insensitive.
     -pa, --preferattr Includes ROMs that matches any of the comma-separated list of attributes. Case insensitive.
@@ -43,7 +45,7 @@ Arguments:
     -nu, --nounl      Skip ROMs with the attributes Homebrew, Unl, Aftermarket, Pirate or Unknown.
     -nm, --nomini     Skip mini console ROMs and virtual console ROMs.
     -nb, --nobios     Skip BIOS ROMs.
-    -h, --help        Display this help.
+    -h,  --help       Display this help.
 eof
 
 unless ARGV.empty?
@@ -206,12 +208,15 @@ if File.directory?(working_dir)
       filter_rom(file)
     end
   end
+elsif File.file?(working_dir)
+  file = File.readlines(working_dir)
+  file.sort.each { |line|
+    filter_rom(line.strip)
+  }
 else
-  File.readlines(working_dir).each do |line|
-    filter_rom(line)
-  end
+  abort("Missing input or invalid input.")
 end
-# Filter last roms of the list
+# Filter last rom of the list
 $roms.push filter_roms($tmp_roms)
 $roms.compact!
 summary = "Selected #{$roms.length} of #{$rom_count} ROMs"
