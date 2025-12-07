@@ -70,7 +70,7 @@ unless ARGV.empty?
       $prefer_attrs += ARGV[i+1].split(',')
     elsif item == "-np" || item == "--noproto"
       $skip_attrs = [] if !$skip_attrs
-      $skip_attrs.push "Beta", "Proto", "Sample", "Demo", "Program", "Debug"
+      $skip_attrs.push "beta", "proto", "sample", "demo", "program", "debug"
     elsif item == "-nu" || item == "--nounl"
       $skip_attrs = [] if !$skip_attrs
       $skip_attrs.push "Homebrew", "Unl", "Aftermarket", "Pirate", "Unknown"

@@ -1,6 +1,8 @@
 # romtools
 
-A set of tools written in Ruby to manage ROMs.
+A set of tools to manage ROM sets written in Ruby.
+
+## How to Use
 
 Navigate to the sub folders to find the available tools.
 
