@@ -23,7 +23,7 @@ Below there is a search results to display the results from the query.
 1. The user inputs one or several arcade video game name, one per line.
 2. Selects which SQLite database to use.
 3. Users clicks on search.
-4. A call is made to the search service (Prisma ORM + SQLite) with the value of the textarea.
+4. A call is made to the search service (SQLite) with the value of the textarea.
 5. A query is performed with the search string using the `LIKE` operator. For each arcade video game name in the search string, whitespaces are replaced with "%" and the arcade video game name are joined using the `OR` operator.
     ```sql
     SELECT

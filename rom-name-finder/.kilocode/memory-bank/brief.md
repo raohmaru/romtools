@@ -1,17 +1,17 @@
 # ROM Name Finder
 
-React application that helps users find MAME ROM names for arcade video games by searching in a local SQLite database using Prisma ORM. All functionality is implemented in the frontend with no backend server.
+React application that helps users find MAME ROM names for arcade video games by searching in a local SQLite database using SQL.js. All functionality is implemented in the frontend with no backend server.
 
 ## Project Overview
 
 **Application**: ROM Name Finder
-**Stack**: TypeScript, React, Vite, Prisma, SQLite, CSS Modules, Vitest
+**Stack**: TypeScript, React, Vite, SQLite, CSS Modules, Vitest
 **Features**:
-- UI to search for arcade game names in a local SQLite database using Prisma
+- UI to search for arcade game names in a local SQLite database using SQL.js
 - SQLite databases stored as local files
 - User can select which SQLite database file to use
 - Input multiple arcade game names (one per line)
-- Search performed using Prisma ORM with @prisma/adapter-better-sqlite3 adapter
+- Search performed using SQL.js
 - Displays matching MAME ROM names
 **User flow**:
 1. User is presented with a form containing:

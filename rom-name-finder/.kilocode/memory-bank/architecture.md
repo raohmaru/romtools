@@ -4,20 +4,13 @@ This document describes the system architecture for the ROM Name Finder applicat
 
 ## Architecture Overview
 
-The application follows a client architecture where the frontend is a React application that communicates with a SQLite database through Prisma ORM.
+The application follows a client architecture where the frontend is a React application that communicates with a SQLite database through SQL.js.
 There is no server, everything is implemented in the frontend
 
 ```
 ┌─────────────────────┐
 │   React Frontend    │
 │   (TypeScript)      │
-├─────────────────────┤
-│   Prisma Client     │
-│   (@prisma/client)  │
-├─────────────────────┤
-│   Prisma Adapter    │
-│   (@prisma/adapter- │
-│    better-sqlite3)  │
 ├─────────────────────┤
 │   SQLite Database   │
 │   (File-based)      │
@@ -35,14 +28,11 @@ There is no server, everything is implemented in the frontend
 - **State Management**: Zustand for global state management
 - **Form Handling**: React Hook Form for form validation
 - **Validation**: Zod for schema validation
-- **Services**: Game search service that interacts with Prisma Client
+- **Services**: Game search service that interacts with SQL.js
 
-### Data Layer (Prisma ORM)
+### Data Layer
 
-- **Prisma Schema**: Defines the Game model with rom and name fields
-- **Prisma Client**: Generated client for database operations
-- **Prisma Adapter**: Uses @prisma/adapter-better-sqlite3 for SQLite integration
-- **Database**: File-based SQLite database
+- **Database**: File-based SQLite database using SQL.js
 
 ### Project Structure
 
@@ -60,11 +50,9 @@ project-root/
 │   │   ├── utils/           # Utility functions
 │   │   └── contexts/        # React contexts
 │   ├── public/              # Static assets
+│   │   └── db/              # SQLite database files
 │   └── index.html           # Entry point
-├── prisma/
-│   ├── schema.prisma        # Prisma schema definition
-│   └── migrations/          # Database migrations
-├── db/                      # SQLite database files
+├── db/                      # SQL.js script files
 ├── docs/                    # Project documentation
 └── tests/                   # Test files
 ```
@@ -74,9 +62,7 @@ project-root/
 1. **Frontend Framework**: React with TypeScript for type safety and component-based architecture
 2. **Build Tool**: Vite for fast development and optimized production builds
 3. **State Management**: Zustand for simple and efficient global state management
-4. **Database**: SQLite for local file-based storage with good performance
-5. **ORM**: Prisma for type-safe database operations
-6. **Database Adapter**: @prisma/adapter-better-sqlite3 for better SQLite integration
+4. **Database**: SQLite for local file-based storage with good performance using SQL.js (sql-wasm.js)
 7. **Styling**: CSS Modules for scoped styling
 8. **Testing**: Vitest for unit testing
 9. **Form Handling**: React Hook Form for efficient form management
@@ -87,8 +73,7 @@ project-root/
 1. User interacts with SearchForm component
 2. Form data is validated using Zod schemas
 3. Search request is sent to gameSearchService
-4. gameSearchService uses Prisma Client to query SQLite database
-5. Prisma Client uses @prisma/adapter-better-sqlite3 to communicate with SQLite
+4. gameSearchService uses SQLite database
 6. Results are returned to the frontend
 7. SearchResults component displays the results
 
@@ -97,5 +82,5 @@ project-root/
 - **Component-Based Architecture**: Reusable and composable React components
 - **Separation of Concerns**: Clear separation between UI, business logic, and data access
 - **State Management**: Centralized state management with Zustand
-- **Repository Pattern**: Prisma Client acts as a repository for database operations
+- **Repository Pattern**: SQL.js acts as a repository for database operations
 - **Service Layer**: gameSearchService encapsulates business logic

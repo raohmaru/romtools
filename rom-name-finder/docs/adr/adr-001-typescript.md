@@ -14,7 +14,7 @@ Key considerations:
 - Type safety to reduce runtime errors
 - Developer productivity and tooling support
 - Ecosystem and community support
-- Integration with React and Prisma ORM
+- Integration with React and SQL.js
 - Team familiarity and learning curve
 
 ## Decision
@@ -26,7 +26,6 @@ TypeScript was chosen because:
 - Excellent tooling support in modern IDEs
 - Strong ecosystem with extensive library support
 - Seamless integration with React through type definitions
-- First-class support for Prisma Client generation
 - Compiles to JavaScript, maintaining compatibility with web standards
 
 ## Consequences

@@ -1,19 +1,19 @@
 # SQLite Search Web Application - Implementation Plan
 
-This document outlines the step-by-step implementation plan for a search application that searches in a local SQLite database using Prisma. All the implementation is done in the frontend (there is no backend).
+This document outlines the step-by-step implementation plan for a search application that searches in a local SQLite database. All the implementation is done in the frontend (there is no backend).
 Please only implement one feature at a time, stop the implementation after the feature and update the PLAN.md file.
 All tasks follow the best practices documented in the `.kilocode/rules/` folder.
 
 ## Project Overview
 
 **Application**: Web SQLite Search
-**Stack**: TypeScript, React, Vite, Prisma, SQLite, CSS Modules, Vitest
+**Stack**: TypeScript, React, Vite, SQLite, CSS Modules, Vitest
 **Features**:
-- UI to search in a local SQLite database using Prisma
+- UI to search in a local SQLite database
 - The SQLite databases are stored in files
 - The user can select which SQLite database to use
 - The user can input search terms
-- The search is performed using Prisma ORM with the @prisma/adapter-better-sqlite3 driver adapter
+- The search is performed using SQL.js as web worker
 - Prints the matches
 **User flow**:
 1. User is presented with a form that contains:
@@ -40,15 +40,14 @@ All tasks follow the best practices documented in the `.kilocode/rules/` folder.
 ## Phase 1: Project Setup & Foundation
 
 ### Task 1.1: Initialize Project Structure
-**Status**: ⬜ Pending
+**Status**: ✅ Completed
 
-- [ ] Create project root directory structure following React and Prisma best practices
+- [ ] Create project root directory structure following React best practices
   ```
   project-root/
   ├── frontend/
-  ├── prisma/
-  ├── docs/
-  └── db/
+  ├── db/
+  └── docs/
   ```
 - [ ] Initialize frontend with Vite + React + TypeScript + Vitest
   - Configure EditorConfig, ESLint and Prettier
@@ -60,44 +59,31 @@ All tasks follow the best practices documented in the `.kilocode/rules/` folder.
 
 ---
 
-### Task 1.2: Configure Prisma with SQLite using the better-sqlite3 driver
-**Status**: ⬜ Pending
+### Task 1.2: Configure SQLite Database
+**Status**: ✅ Completed
 
-- [ ] Install Prisma CLI: `npm install -D prisma`
-- [ ] Install Prisma Client: `npm install @prisma/client dotenv`
-- [ ] Install better-sqlite3 driver: `npm install @prisma/adapter-better-sqlite3`
-- [ ] Initialize and configure Prisma: `npx prisma init`
-- [ ] Configure `prisma/schema.prisma`:
-  - Set provider to `sqlite`
-- Create `prisma.config.ts` in the root of the project:
-```ts
-import 'dotenv/config'
-import { defineConfig, env } from "prisma/config";
-export default defineConfig({
-  schema: "prisma/schema.prisma",
-  migrations: {
-    path: "prisma/migrations",
-  },
-  datasource: {
-    url: 'file:./db/dev.db',
-  },
-});
-```
-- [ ] Create initial schema with Game model (basic fields only)
-  ```prisma
-  model Game {
-    id    Int     @id @default(autoincrement())
-    rom   String
-    name  String
-  }
-  ```
-- [ ] Run first migration: `npx prisma migrate dev --name init`
-- [ ] Generate Prisma Client: `npx prisma generate`
-
+- [ ] Install SQL.js: `npm install -D sql.js`
+- [ ] Initialize SQLite
+  - Create file `db/init.ts`
+  - Import `sql-wasm.js` and `dotenv/config`
+  - Create a database using `sql-wasm.js`
+  - Create a table with the following schema:
+    ```sql
+    DROP TABLE IF EXISTS games;
+    CREATE TABLE games (
+      id INTEGER PRIMARY KEY,
+      rom TEXT NOT NULL,
+      name TEXT NOT NULL
+    );
+    ```
+  - Write the database into the file defined in the environmental variable `DATABASE_URL`
+- [ ] Execute `npx tsx ./db/init.ts`
+  - Verify that the file defined in the environmental variable `DATABASE_URL` in the `.env` file exist
+  
 ---
 
 ### Task 1.3: Set Up Development Environment
-**Status**: ⬜ Pending
+**Status**: ✅ Completed
 
 - [ ] Set up environment variables:
   - Frontend: `VITE_API_URL`, `VITE_APP_NAME`
@@ -112,41 +98,25 @@ export default defineConfig({
 
 ## Phase 2: Database Schema & Models
 
-### Task 2.1: Design Database Schema
-**Status**: ⬜ Pending  
+### Task 2.1: Seed Database With Data
+**Status**: ✅ Completed
 
-- [ ] Design Game model:
-  ```prisma
-  model Game {
-    id    Int     @id @default(autoincrement())
-    rom   String
-    name  String
-  }
-  ```
+- [ ] Create file `db/seed.ts`
+- [ ] Import `sql.js` and `dotenv/config`
+- [ ] Load the database defined in the environmental variable `DATABASE_URL` using `sql-wasm.js`
+- [ ] Fill the table `games` with 10 entries of MAME arcade ROMS data
+- [ ] Write the database into the file defined in the environmental variable `DATABASE_URL`
+- [ ] Execute `npx tsx ./db/seed.ts`
 
----
+### Task 2.2: Validate Data
+**Status**: ✅ Completed
 
-### Task 2.2: Create Database Migrations
-**Status**: ⬜ Pending  
-
-- [ ] Write Prisma schema in `prisma/schema.prisma`
-- [ ] Create migration: `npx prisma migrate dev --name add_game_model`
-- [ ] Review generated SQL migration file
-- [ ] Test migration rollback (if needed)
-- [ ] Seed database with test data:
-  - Create `prisma/seed.ts`
-  - Add test games
-  - Run: `npx prisma db seed`
-
----
-
-### Task 2.3: Generate TypeScript Types
-**Status**: ⬜ Pending  
-
-- [ ] Run `npx prisma generate` to create Prisma Client types
-- [ ] Create DTO types for API:
-  - `GameDTO`
-- [ ] Create Zod schemas for validation (see Task 3.1)
+- [ ] Create file `db/validate.ts`
+- [ ] Import `sql.js` and `dotenv/config`
+- [ ] Load the database defined in the environmental variable `DATABASE_URL` using `sql-wasm.js`
+- [ ] Run a query to show the first 10 results
+- [ ] Print the results into the terminal
+- [ ] Execute `npx tsx ./db/validate.ts`
 
 ---
 
@@ -242,17 +212,31 @@ export default defineConfig({
 
 - [ ] Create `src/services/gameSearchService.ts`:
   - `findMany` - Search by name
-- [ ] Use Prisma Client for all database operations
-- [ ] Instantiate Prisma Client using the driver @prisma/adapter-better-sqlite3
-```ts
-import { PrismaBetterSqlite3 } from '@prisma/adapter-better-sqlite3';
-import { PrismaClient } from './generated/prisma';
+- [ ] Use SQL.js for all database operations
+  - Load the database selected by the user using `sql-wasm.js`
+  - Use as web worker
+    ```ts
+    const worker = new Worker('/db/worker.sql-wasm.js');
+    worker.onmessage = () => {
+      worker.onmessage = event => {
+        console.log(event.data); // The result of the query
+      };
 
-const adapter = new PrismaBetterSqlite3({
-  url: "file:./db/dev.db"
-})
-const prisma = new PrismaClient({ adapter })
-```
+      worker.postMessage({
+        id: 2,
+        action: 'exec',
+        sql: 'SELECT age,name FROM test WHERE id=$id',
+        params: { '$id': 1 }
+      });
+    };
+
+    worker.onerror = e => console.log('Worker error: ', e);
+    worker.postMessage({
+      id: 1,
+      action: 'open',
+      buffer: buf, // An ArrayBuffer representing an SQLite Database file
+    });
+    ```
 - [ ] Handle errors appropriately
 - [ ] Add TypeScript types for all methods
 
@@ -396,7 +380,6 @@ const prisma = new PrismaClient({ adapter })
 
 - [ ] Review security:
   - Input validation
-  - SQL injection prevention (Prisma handles this)
   - XSS prevention
 - [ ] Run security scanning tools
 - [ ] Fix security issues
@@ -431,7 +414,7 @@ const prisma = new PrismaClient({ adapter })
 ## Best Practices Reminders
 
 - Follow TypeScript strict mode
-- Use Prisma for all database operations (no raw SQL)
+- Use sql-wasm.js for all database operations (no raw SQL)
 - Implement proper error handling at all layers
 - Write tests for all business logic
 - Ensure WCAG 2.1 AA accessibility compliance

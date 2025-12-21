@@ -26,8 +26,7 @@ See [template.md](./template.md) for the ADR template to use when creating new r
 <!-- Add links to ADRs as they are created -->
 - [ADR-001: TypeScript as Primary Language](./adr-001-typescript.md)
 - [ADR-002: React Functional Components with Hooks](./adr-002-react-hooks.md)
-- [ADR-003: Prisma as ORM](./adr-003-prisma-orm.md)
-- [ADR-004: React CSS Modules](./adr-004-react-css-modules.md)
+- [ADR-003: React CSS Modules](./adr-004-react-css-modules.md)
 
 ## For AI Agents
 

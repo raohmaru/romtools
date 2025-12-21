@@ -14,12 +14,12 @@ This document defines key terms, concepts, and domain-specific language used thr
 
 ### Development
 
-- **Repository Pattern** - A design pattern that abstracts data access logic and provides a more object-oriented view of the persistence layer. In this project, repositories encapsulate Prisma queries.
+- **Repository Pattern** - A design pattern that abstracts data access logic and provides a more object-oriented view of the persistence layer.
 - **Hook** - A React Hook (useState, useEffect, useContext, etc.) that allows functional components to use state and lifecycle features.
 - **Custom Hook** - A reusable function that encapsulates component logic and can be shared across components (e.g., `useAuth`, `useApi`).
 - **Type Guard** - A TypeScript function that narrows the type of a variable within a conditional block.
 - **DTO (Data Transfer Object)** - An object that carries data between processes, typically used for API request/response payloads.
-- **Entity** - A domain model object that represents a database table, typically defined in Prisma schema.
+- **Entity** - A domain model object that represents a database table.
 
 ### TypeScript
 
@@ -47,8 +47,7 @@ This document defines key terms, concepts, and domain-specific language used thr
 
 ### Database
 
-- **Migration** - A script that modifies the database schema, managed by Prisma Migrate.
-- **Query** - A database operation to retrieve data, typically using Prisma Client.
+- **Query** - A database operation to retrieve data, typically using SQL.js.
 - **Transaction** - A sequence of database operations that execute atomically (all succeed or all fail).
 
 ### Infrastructure

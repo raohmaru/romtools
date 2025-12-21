@@ -19,7 +19,7 @@ This document tracks the current tasks and implementation plan for the project, 
 
 ### Phase 1: Project Setup & Foundation
 - [ ] Task 1.1: Initialize Project Structure
-- [ ] Task 1.2: Configure Prisma with SQLite using the better-sqlite3 driver
+- [ ] Task 1.2: Configure SQLite database using SQL.js (sql-wasm.js)
 - [ ] Task 1.3: Set Up Development Environment
 
 ### Phase 2: Database Schema & Models

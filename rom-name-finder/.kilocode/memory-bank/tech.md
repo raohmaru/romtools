@@ -4,8 +4,7 @@
 + TypeScript
 + Zustand (state management)
 + Zod (schema validation)
-+ Prisma
 + SQLite
 + CSS Modules
 + Vitest
-+ @prisma/adapter-better-sqlite3
++ SQL.js (sql-wasm.js)

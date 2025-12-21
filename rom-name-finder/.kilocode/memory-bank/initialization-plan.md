@@ -18,10 +18,7 @@ The memory bank initialization involves setting up the foundational components n
 ```
 project-root/
 ├── frontend/           # React application
-├── prisma/             # Prisma ORM configuration
-│   ├── schema.prisma   # Database schema
-│   └── migrations/     # Database migrations
-├── db/                 # SQLite database files
+├── db/                 # SQL.js script files
 ├── docs/               # Project documentation
 │   ├── adr/            # Architecture Decision Records
 │   ├── GLOSSARY.md     # Project terminology
@@ -65,8 +62,8 @@ project-root/
 ### 4. Architecture Decisions
 
 #### 4.1. Technology Stack
-- **Frontend**: TypeScript, React, Vite, CSS Modules, Prisma ORM, SQLite
-- **Database**: Prisma ORM, SQLite
+- **Frontend**: TypeScript, React, Vite, CSS Modules, SQLite
+- **Database**: SQLite
 - **Testing**: Vitest
 - **State Management**: Zustand
 
