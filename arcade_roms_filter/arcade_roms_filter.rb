@@ -26,7 +26,7 @@ Generates an opinionated list of filtered arcade ROMs given a romlist XML Dat fi
 The filter excludes by default:
 - BIOS files
 - Neo Geo ROMs
-- Clones, except if they support a number of players different form the parent ROM
+- Clones, except if the clone supports a number of players different form the parent ROM
 
 Usage:
   ruby arcade_roms_filter.rb romlist.xml [-o output.file -x file.xml -pd -m manufacturer -s attr1[,attrN] -d]
