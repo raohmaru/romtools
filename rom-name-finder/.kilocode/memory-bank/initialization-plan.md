@@ -65,8 +65,8 @@ project-root/
 ### 4. Architecture Decisions
 
 #### 4.1. Technology Stack
-- **Frontend**: TypeScript, React, Vite, CSS Modules
-- **Backend**: Prisma ORM, SQLite
+- **Frontend**: TypeScript, React, Vite, CSS Modules, Prisma ORM, SQLite
+- **Database**: Prisma ORM, SQLite
 - **Testing**: Vitest
 - **State Management**: Zustand
 

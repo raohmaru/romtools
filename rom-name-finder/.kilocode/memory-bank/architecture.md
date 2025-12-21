@@ -1,10 +1,11 @@
 # System Architecture
 
-This document describes the system architecture for the SQLite Search Web Application.
+This document describes the system architecture for the ROM Name Finder application.
 
 ## Architecture Overview
 
-The application follows a client-server architecture where the frontend is a React application that communicates with a SQLite database through Prisma ORM.
+The application follows a client architecture where the frontend is a React application that communicates with a SQLite database through Prisma ORM.
+There is no server, everything is implemented in the frontend
 
 ```
 ┌─────────────────────┐

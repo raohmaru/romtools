@@ -1,6 +1,6 @@
 # SQLite Search Web Application - Implementation Plan
 
-This document outlines the step-by-step implementation plan for a search application that searches in a local SQLite database using Prisma.
+This document outlines the step-by-step implementation plan for a search application that searches in a local SQLite database using Prisma. All the implementation is done in the frontend (there is no backend).
 Please only implement one feature at a time, stop the implementation after the feature and update the PLAN.md file.
 All tasks follow the best practices documented in the `.kilocode/rules/` folder.
 
@@ -439,3 +439,4 @@ const prisma = new PrismaClient({ adapter })
 - Validate all inputs with Zod
 - Use semantic HTML and ARIA attributes
 - Implement proper loading and error states
+- There is no backend, everything is handled by the frontend

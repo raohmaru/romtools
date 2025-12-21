@@ -1,6 +1,7 @@
 # Rationale
 
 This project is a React application where the user can input an arcade video game name, and perform a query in a SQLite database to retrieve a MAME ROM name for the given arcade video game name.
+There is no server, everything is implemented in the frontend.
 
 Example:
 + User searches for "Ms. Pac-Man"
