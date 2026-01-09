@@ -12,18 +12,19 @@ The filter selects one ROM from a group of ROMs with the same name using the fol
 
 ### Arguments
 
-| Argument              | Description |
-|:----------------------|:------------|
-| `-i`, `--input`       | Input dir with the zipped ROMs, or a file with a carriage return-separated list of ROMs. |
-| `-o`, `--output`      | Output file where to write the filtered ROMs list. If omitted the file _rom-selection.txt will be created or overwriten. |
-| `-c`, `--countries`   | Country preference: a comma-separated list of countries, from more relevant to less. Default is `USA,World,Europe` |
-| `-e`, `--exclude`     | Countries that are not in the list of preferred countries will be skipped. |
-| `-d`, `--dryrun`      | Dry run/Analyze mode. Prints output in the terminal. |
-| `-sa`, `--skipattr`   | Skip ROMs that matches the comma-separated list of attributes. Case insensitive. |
-| `-sn`, `--skipname`   | Skip ROMs which name matches a word of the comma-separated list. Case insensitive. |
-| `-pa`, `--preferattr` | Includes ROMs that matches any of the comma-separated list of attributes. Case insensitive. |
-| `-np`, `--noproto`    | Skip ROMs with the attributes Beta, Proto, Sample, Demo or Program. |
-| `-nu`, `--nounl`      | Skip ROMs with the attributes Homebrew, Unl, Aftermarket, Pirate or Unknown. |
-| `-nm`, `--nomini`     | Skip mini console ROMs and virtual console ROMs. |
-| `-nb`, `--nobios`     | Skip BIOS ROMs. |
-| `-h`, `--help`        | Display the help. |
+| Argument                  | Description |
+|:--------------------------|:------------|
+| `-i`, `--input`           | Input dir with the zipped ROMs, or a file with a carriage return-separated list of ROMs. |
+| `-o`, `--output`          | Output file where to write the filtered ROMs list. If omitted the file _rom-selection.txt will be created or overwriten. |
+| `-c`, `--countries`       | Country preference: a comma-separated list of countries, from more relevant to less. Default is `USA,World,Europe` |
+| `-e`, `--exclude`         | Countries that are not in the list of preferred countries will be skipped. |
+| `-d`, `--dryrun`          | Dry run/Analyze mode. Prints output in the terminal. |
+| `-sa`, `--skipattr`       | Skip ROMs that matches the comma-separated list of attributes. Case insensitive. |
+| `-sn`, `--skipname`       | Skip ROMs which name matches a word of the comma-separated list. Case insensitive. |
+| `-sb`, `--skipbaddumps`   | Skip bad ROM dumps (attribute "[[b](https://wiki.no-intro.org/index.php?title=Naming_Convention#Status)]"). |
+| `-pa`, `--preferattr`     | Includes ROMs that matches any of the comma-separated list of attributes. Case insensitive. |
+| `-np`, `--noproto`        | Skip ROMs with the attributes Beta, Proto, Sample, Demo or Program. |
+| `-nu`, `--nounl`          | Skip ROMs with the attributes Homebrew, Unl, Aftermarket, Pirate or Unknown. |
+| `-nm`, `--nomini`         | Skip mini console ROMs and virtual console ROMs. |
+| `-nb`, `--nobios`         | Skip BIOS ROMs. |
+| `-h`, `--help`            | Display the help. |
