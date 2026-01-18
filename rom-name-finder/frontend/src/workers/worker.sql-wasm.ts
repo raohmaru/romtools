@@ -27,9 +27,7 @@ let sqlJsInstance: SqlJsInstance | null = null;
 // Initialize SQL.js
 async function initializeSqlJs(): Promise<void> {
     if (!sqlJsInstance) {
-        sqlJsInstance = await initSqlJs({
-            locateFile: (file: string) => `wasm/${file}`,
-        });
+        sqlJsInstance = await initSqlJs();
     }
 }
 
