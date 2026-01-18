@@ -40,9 +40,9 @@
                 width: 70px;
                 height: 120px;
                 /* background-color: var(--color-text-primary);
-                mask: url('img/arcade-outline.svg') no-repeat;
+                mask: url('../img/arcade-outline.svg') no-repeat;
                 opacity: 0.5; */
-                background: url('img/arcade.svg') no-repeat;
+                background: url('../img/arcade.svg') no-repeat;
                 flex-shrink: 0;
             }
 
