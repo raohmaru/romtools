@@ -26,7 +26,10 @@ function SearchApp() {
 
     // Get select database options from .env
     const databaseOptions = JSON.parse(import.meta.env.VITE_DBS).map((db: string) => {
-        return { value: db };
+        return {
+            value: db,
+            label: db.replaceAll('_', ' ')
+        };
     });
 
     // Initialize database on mount

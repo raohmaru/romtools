@@ -113,7 +113,7 @@ export const SearchResults = ({
             <div className={styles.container} role="status" aria-live="polite">
                 <div className={styles['empty-state']}>
                     <span className={styles['empty-icon']} aria-hidden="true">
-                        <img src="/img/empty.svg" alt="No results" width={100} />
+                        <img src="img/empty.svg" alt="No results" width={100} />
                     </span>
                     <p className={styles['empty-message']}>
                         No games found

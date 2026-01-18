@@ -52,7 +52,7 @@ describe('GameSearchService', () => {
         it('should initialize the worker if not already initialized', async () => {
             expect(service['worker']).toBeNull();
             await service.initialize();
-            expect(window.Worker).toHaveBeenCalledWith('/wasm/worker.sql-wasm.js'/* , { type: 'module' } */); // Corrected expectation
+            expect(window.Worker).toHaveBeenCalledWith('wasm/worker.sql-wasm.js'/* , { type: 'module' } */); // Corrected expectation
         });
 
         it('should not re-initialize the worker if already initialized', async () => {
@@ -123,7 +123,7 @@ describe('GameSearchService', () => {
         it('should fetch the database and send it to the worker', async () => {
             await service.loadDatabase('testdb');
 
-            expect(mockFetch).toHaveBeenCalledWith('/db/testdb.db');
+            expect(mockFetch).toHaveBeenCalledWith('db/testdb.db');
             expect(service['sendMessage']).toHaveBeenCalledWith({
                 id: expect.any(Number),
                 action: 'open',

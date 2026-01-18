@@ -11,9 +11,9 @@ export interface SearchResultViewPros {
 // Detailed view component
 export const DetailedResults = ({ results }: SearchResultViewPros) => {
     return (
-        <ul className={styles['detailed-list']} aria-label="Results list">
+        <ul className={styles['detailed-list']} aria-label='Results list'>
             {results.map((result, index) => (
-                <li key={index} className={styles['detailed-result']}>                    
+                <li key={index} className={styles['detailed-result']}>
                     <img
                         src={`${import.meta.env.VITE_ICONS_HOST}/img/icons/${result.metadata?.ROM}.png`}
                         width={32}
@@ -23,7 +23,7 @@ export const DetailedResults = ({ results }: SearchResultViewPros) => {
                         onError={(e) => {
                             const currentTarget = e.target as HTMLImageElement;
                             currentTarget.onerror = null; // prevents looping
-                            currentTarget.src = '/img/not-found-rom.png';
+                            currentTarget.src = 'img/not-found-rom.png';
                         }}
                     />
 
@@ -60,8 +60,8 @@ export const DetailedResults = ({ results }: SearchResultViewPros) => {
                                                     {String(value)}
                                                 </ExternalLink>
                                             ) || (
-                                                <span>{String(value)}</span>
-                                            )}
+                                                    <span>{String(value)}</span>
+                                                )}
                                         </span>
                                     );
                                 })}
@@ -76,8 +76,8 @@ export const DetailedResults = ({ results }: SearchResultViewPros) => {
                             className={styles['external-icon']}
                         >
                             <img
-                                src="/img/adb.png"
-                                alt="Check the game in Arcade Database"
+                                src='img/adb.png'
+                                alt='Check the game in Arcade Database'
                                 width={20}
                             />
                         </ExternalLink>
@@ -87,8 +87,8 @@ export const DetailedResults = ({ results }: SearchResultViewPros) => {
                             className={styles['external-icon']}
                         >
                             <img
-                                src="/img/moby.png"
-                                alt="Check the game in MobyGames "
+                                src='img/moby.png'
+                                alt='Check the game in MobyGames '
                                 width={20}
                             />
                         </ExternalLink>
@@ -98,8 +98,8 @@ export const DetailedResults = ({ results }: SearchResultViewPros) => {
                             className={styles['external-icon']}
                         >
                             <img
-                                src="/img/igdb.svg"
-                                alt="Check the game in IGDB "
+                                src='img/igdb.svg'
+                                alt='Check the game in IGDB '
                                 width={20}
                             />
                         </ExternalLink>

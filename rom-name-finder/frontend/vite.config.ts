@@ -16,6 +16,7 @@ export default ({ mode }: { mode?: string }) => {
         plugins: [
             react(),
         ],
+        base: './',
         resolve: {
             alias: {
                 '@': path.resolve(__dirname, './src'),

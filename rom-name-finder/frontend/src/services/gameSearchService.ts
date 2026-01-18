@@ -41,7 +41,7 @@ export class GameSearchService {
         }
 
         return new Promise((resolve, reject) => {
-            this.worker = new Worker('/wasm/worker.sql-wasm.js', /*{ type: 'module' }*/);
+            this.worker = new Worker('wasm/worker.sql-wasm.js', /*{ type: 'module' }*/);
 
             this.worker.onmessage = (event: MessageEvent<WorkerResponse>) => {
                 const { id, success, data, error } = event.data;
@@ -88,7 +88,7 @@ export class GameSearchService {
         }
 
         // Fetch the database file
-        const response = await fetch(`/db/${dbPath}.db`);
+        const response = await fetch(`db/${dbPath}.db`);
         if (!response.ok) {
             throw new Error(`Failed to fetch database: ${response.statusText}`);
         }
