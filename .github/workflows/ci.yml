@@ -16,6 +16,7 @@ jobs:
         with:
           node-version: 22
           cache: 'npm'
+          cache-dependency-path: rom-name-finder/package-lock.json
       - run: npm ci
       - run: npm run db
 
@@ -31,6 +32,7 @@ jobs:
         with:
           node-version: 22
           cache: 'npm'
+          cache-dependency-path: rom-name-finder/frontend/package-lock.json
       - run: npm ci
       - run: npm run lint
 
@@ -46,6 +48,7 @@ jobs:
         with:
           node-version: 22
           cache: 'npm'
+          cache-dependency-path: rom-name-finder/frontend/package-lock.json
       - run: npm ci
       - run: npm run test:run
 
@@ -60,6 +63,7 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: 22
+          cache-dependency-path: rom-name-finder/frontend/package-lock.json
           cache: 'npm'
       - run: npm ci
       - run: npm run build
