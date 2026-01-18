@@ -10,7 +10,7 @@ interface GameRow {
 
 async function validateDatabases(): Promise<void> {
     // Get all files in the database directory
-    const databases = getFiles(DB_PATH);
+    const databases = getFiles(DB_PATH, '.db');
     // Initialize SQL.js
     const SQL = await initSqlJs();
 

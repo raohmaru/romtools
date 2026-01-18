@@ -26,14 +26,17 @@ export { ROMSETS_PATH };
  * @param dirPath - Directory path
  * @returns Array of database file names
  */
-export function getFiles(dirPath: string | undefined) {
+export function getFiles(dirPath: string | undefined, extension?: string | undefined) {
     if (!dirPath) {
         return [];
     }
+    const ext = extension?.startsWith('.') ? extension.substring(1) : extension;
     const files = fs.readdirSync(dirPath!).filter((file: string) => {
-        return fs.statSync(path.join(dirPath!, file)).isFile();
+        const stat = fs.statSync(path.join(dirPath!, file));
+        return !stat.isFile()
+            || !ext
+            || path.extname(file).toLowerCase() === `.${ext.toLowerCase()}`;
     });
-
     if (files.length === 0) {
         console.log('No files found in directory', dirPath);
         process.exit(1);
