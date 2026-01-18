@@ -29,7 +29,7 @@ export function getFiles(dirPath: string | undefined) {
     if (!dirPath) {
         return [];
     }
-    const files = fs.readdirSync(dirPath!).filter(file => {
+    const files = fs.readdirSync(dirPath!).filter((file: string) => {
         return fs.statSync(path.join(dirPath!, file)).isFile();
     });
 

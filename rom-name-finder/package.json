@@ -16,7 +16,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^25.0.3",
+    "@types/node": "^25.0.9",
     "@types/sql.js": "^1.4.9",
     "dotenv": "^17.2.3",
     "sql.js": "^1.13.0",
