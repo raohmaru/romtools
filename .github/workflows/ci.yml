@@ -1,5 +1,10 @@
 name: CI
 
+env:
+  NODE_VERSION: 22
+  WDIR: rom-name-finder
+  FE_WDIR: rom-name-finder/frontend
+
 on:
   push:
     branches: ["master"]
@@ -9,14 +14,14 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: rom-name-finder
+        working-directory:  ${{ env.WDIR }}
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
         with:
-          node-version: 22
+          node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
-          cache-dependency-path: rom-name-finder/package-lock.json
+          cache-dependency-path: ${{ env.WDIR }}/package-lock.json
       - run: npm ci
       - run: npm run db
 
@@ -25,14 +30,14 @@ jobs:
     needs: build-db
     defaults:
       run:
-        working-directory: rom-name-finder/frontend
+        working-directory: ${{ env.FE_WDIR }}
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
         with:
-          node-version: 22
+          node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
-          cache-dependency-path: rom-name-finder/frontend/package-lock.json
+          cache-dependency-path: ${{ env.FE_WDIR }}/package-lock.json
       - run: npm ci
       - run: npm run lint
 
@@ -41,14 +46,14 @@ jobs:
     needs: lint
     defaults:
       run:
-        working-directory: rom-name-finder/frontend
+        working-directory: ${{ env.FE_WDIR }}
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
         with:
-          node-version: 22
+          node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
-          cache-dependency-path: rom-name-finder/frontend/package-lock.json
+          cache-dependency-path: ${{ env.FE_WDIR }}/package-lock.json
       - run: npm ci
       - run: npm run test:run
 
@@ -57,13 +62,13 @@ jobs:
     needs: test
     defaults:
       run:
-        working-directory: rom-name-finder/frontend
+        working-directory: ${{ env.FE_WDIR }}
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
         with:
-          node-version: 22
+          node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
-          cache-dependency-path: rom-name-finder/frontend/package-lock.json
+          cache-dependency-path: ${{ env.FE_WDIR }}/package-lock.json
       - run: npm ci
       - run: npm run build

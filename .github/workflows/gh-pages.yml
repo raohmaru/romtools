@@ -1,5 +1,11 @@
 name: Deploy to GitHub Pages
 
+env:
+  NODE_VERSION: 22
+  WDIR: rom-name-finder
+  FE_WDIR: rom-name-finder/frontend
+  ARTIFACT_NAME: dist
+
 on:
   push:
     branches: ["release"]
@@ -24,14 +30,14 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: rom-name-finder
+        working-directory:  ${{ env.WDIR }}
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
         with:
-          node-version: 22
+          node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
-          cache-dependency-path: rom-name-finder/package-lock.json
+          cache-dependency-path: ${{ env.WDIR }}/package-lock.json
       - run: npm ci
       - run: npm run db
 
@@ -40,20 +46,20 @@ jobs:
     needs: build-db
     defaults:
       run:
-        working-directory: rom-name-finder/frontend
+        working-directory: ${{ env.FE_WDIR }}
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
         with:
-          node-version: 22
+          node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
-          cache-dependency-path: rom-name-finder/frontend/package-lock.json
+          cache-dependency-path: ${{ env.FE_WDIR }}/package-lock.json
       - run: npm ci
       - run: npm run build
       - uses: actions/upload-artifact@v5
         with:
-          name: dist
-          path: ./rom-name-finde/frontend/dist
+          name: ${{ env.ARTIFACT_NAME }}
+          path: ./${{ env.FE_WDIR }}/${{ env.ARTIFACT_NAME }}
       
   deploy:
     environment:
@@ -66,10 +72,10 @@ jobs:
       - uses: actions/configure-pages@v5
       - uses: actions/download-artifact@v5
         with:
-          name: dist
-          path: ./dist
+          name: ${{ env.ARTIFACT_NAME }}
+          path: ./${{ env.ARTIFACT_NAME }}
       - uses: actions/upload-pages-artifact@v4
         with:
-          path: './dist'
+          path: ./${{ env.ARTIFACT_NAME }}
       - uses: actions/deploy-pages@v4
         id: deployment
