@@ -31,6 +31,7 @@ jobs:
         with:
           node-version: 22
           cache: 'npm'
+          cache-dependency-path: rom-name-finder/package-lock.json
       - run: npm ci
       - run: npm run db
 
@@ -46,9 +47,9 @@ jobs:
         with:
           node-version: 22
           cache: 'npm'
+          cache-dependency-path: rom-name-finder/frontend/package-lock.json
       - run: npm ci
       - run: npm run build
-
       - uses: actions/upload-artifact@v5
         with:
           name: dist
