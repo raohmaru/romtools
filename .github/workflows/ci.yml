@@ -12,6 +12,8 @@ on:
 jobs:
   build-db:
     runs-on: ubuntu-latest
+    env:
+      NODE_ENV: production
     defaults:
       run:
         working-directory:  ${{ env.WDIR }}

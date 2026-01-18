@@ -1,6 +1,21 @@
-import 'dotenv/config';
+import dotenv from 'dotenv';
 import fs from 'node:fs';
 import path from 'node:path';
+
+const mode = process.env.NODE_ENV || 'development';
+
+const dotenvConfig = dotenv.config({
+    path: [
+        `.env.${mode}`,
+        '.env'
+    ]
+});
+
+// Force dotenv to overwrite env variables
+process.env = { ...process.env, ...dotenvConfig.parsed };
+
+console.log('BUILDING DB');
+console.log('Mode:', mode);
 
 const DB_PATH = process.env.DATABASE_PATH;
 if (!DB_PATH) {

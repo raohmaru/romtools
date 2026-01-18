@@ -13,7 +13,7 @@ export default ({ mode }: { mode?: string }) => {
 
     console.log('BUILDING WEBWORKER');
     console.log('Vite mode:', mode);
-    console.log('Output dir:', process.env.WORKER_OUT_DIR);
+    console.log('Output dir:', process.env.OUTPUT_DIR);
 
     // https://vite.dev/config/
     return defineConfig({
@@ -22,7 +22,7 @@ export default ({ mode }: { mode?: string }) => {
                 targets: [
                     {
                         src: 'node_modules/sql.js/dist/sql-wasm.wasm',
-                        dest: `../${process.env.WORKER_OUT_DIR}/wasm/`
+                        dest: `../${process.env.OUTPUT_DIR}/wasm/`
                     }
                 ]
             })
@@ -36,7 +36,7 @@ export default ({ mode }: { mode?: string }) => {
                 },
                 output: {
                     entryFileNames: '[name].js',
-                    dir: process.env.WORKER_OUT_DIR
+                    dir: process.env.OUTPUT_DIR
                 },
             },
         },
