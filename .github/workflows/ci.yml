@@ -7,6 +7,9 @@ on:
 jobs:
   build-db:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: rom-name-finder
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
@@ -19,35 +22,44 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     needs: build-db
+    defaults:
+      run:
+        working-directory: rom-name-finder/frontend
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: 'npm'
-      - run: npm ci --prefix frontend
+      - run: npm ci
       - run: npm run lint
 
   test:
     runs-on: ubuntu-latest
     needs: lint
+    defaults:
+      run:
+        working-directory: rom-name-finder/frontend
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: 'npm'
-      - run: npm ci --prefix frontend
+      - run: npm ci
       - run: npm run test:run
 
   build:
     runs-on: ubuntu-latest
     needs: test
+    defaults:
+      run:
+        working-directory: rom-name-finder/frontend
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: 'npm'
-      - run: npm ci --prefix frontend
+      - run: npm ci
       - run: npm run build

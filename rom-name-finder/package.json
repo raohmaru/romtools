@@ -7,17 +7,10 @@
     "doc": "docs"
   },
   "scripts": {
-    "dev": "cd frontend && npm run dev",
-    "build": "cd frontend && npm run build",
-    "preview": "cd frontend && npm run preview",
     "db": "npm run db:init && npm run db:seed && npm run db:validate",
     "db:init": "npx tsx ./db/init.ts",
     "db:seed": "npx tsx ./db/seed.ts",
-    "db:validate": "npx tsx ./db/validate.ts",
-    "lint": "cd frontend && npm run lint",
-    "test": "cd frontend && npm run test",
-    "test:run": "cd frontend && npm run test:run",
-    "coverage": "cd frontend && npm run coverage"
+    "db:validate": "npx tsx ./db/validate.ts"
   },
   "keywords": [],
   "author": "",
