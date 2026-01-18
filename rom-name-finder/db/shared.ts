@@ -7,7 +7,8 @@ if (!DB_PATH) {
     throw new Error('DATABASE_PATH environment variable is not set');
 }
 if (!fs.existsSync(DB_PATH)) {
-    throw new Error(`Database directory not found at: ${DB_PATH}`);
+    console.log(`Creating directory ${DB_PATH}`);
+    fs.mkdirSync(DB_PATH, { recursive: true });
 }
 export { DB_PATH };
 
