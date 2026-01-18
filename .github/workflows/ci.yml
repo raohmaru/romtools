@@ -13,6 +13,7 @@ jobs:
         with:
           node-version: 22
           cache: 'npm'
+          cache-dependency-path: rom-name-finder/package-lock.json
       - run: |
           cd rom-name-finder
           npm ci
@@ -27,6 +28,7 @@ jobs:
         with:
           node-version: 22
           cache: 'npm'
+          cache-dependency-path: rom-name-finder/frontend/package-lock.json
       - run: |
           cd rom-name-finder/frontend
           npm ci
@@ -41,6 +43,7 @@ jobs:
         with:
           node-version: 22
           cache: 'npm'
+          cache-dependency-path: rom-name-finder/frontend/package-lock.json
       - run: |
           cd rom-name-finder/frontend
           npm ci
@@ -55,6 +58,7 @@ jobs:
         with:
           node-version: 22
           cache: 'npm'
+          cache-dependency-path: rom-name-finder/frontend/package-lock.json
       - run: |
           cd rom-name-finder/frontend
           npm ci
