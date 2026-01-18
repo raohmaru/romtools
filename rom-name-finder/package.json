@@ -1,0 +1,35 @@
+{
+  "name": "mame-rom-name-finder",
+  "version": "1.0.0",
+  "description": "A web application for searching MAME ROM names in local SQLite databases.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "preview": "cd frontend && npm run preview",
+    "db": "npm run db:init && npm run db:seed && npm run db:validate",
+    "db:init": "npx tsx ./db/init.ts",
+    "db:seed": "npx tsx ./db/seed.ts",
+    "db:validate": "npx tsx ./db/validate.ts",
+    "lint": "cd frontend && npm run lint",
+    "test": "cd frontend && npm run test",
+    "test:run": "cd frontend && npm run test:run",
+    "coverage": "cd frontend && npm run coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^25.0.3",
+    "@types/sql.js": "^1.4.9",
+    "dotenv": "^17.2.3",
+    "sql.js": "^1.13.0",
+    "tsx": "^4.7.0"
+  },
+  "dependencies": {
+    "csv-parse": "^6.1.0"
+  }
+}

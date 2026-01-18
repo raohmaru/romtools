@@ -1,0 +1,5254 @@
+name,cloneOf,description
+puckman,,PuckMan (Japan set 1)
+puckmana,1,PuckMan (Japan set 2)
+pacman,1,Pac-Man (Midway)
+pacmanf,1,Pac-Man (speedup hack)
+puckmod,1,PuckMan (harder[Q])
+pacmod,1,"Pac-Man (Midway, harder)"
+hangly,1,Hangly-Man (set 1)
+hangly2,1,Hangly-Man (set 2)
+hangly3,1,Hangly-Man (set 3)
+newpuckx,1,New Puck-X
+pacheart,1,Pac-Man (Hearts)
+joyman,1,Joyman
+newpuc2,1,Newpuc2
+newpuc2b,1,Newpuc2 (set 2)
+piranha,1,Piranha
+piranhao,1,Piranha (older)
+piranhah,1,Piranha (hack)
+nmouse,,Naughty Mouse (set 1)
+nmouseb,18,Naughty Mouse (set 2)
+woodpeck,,Woodpecker (set 1)
+woodpeca,20,Woodpecker (set 2)
+pacplus,,Pac-Man Plus
+mspacman,,Ms. Pac-Man
+mspacmnf,23,Ms. Pac-Man (speedup hack)
+mspacmab,23,Ms. Pac-Man (bootleg)
+mspacmat,23,Ms. Pac Attack
+mspacpls,23,Ms. Pac-Man Plus
+pacgal,23,Pac-Gal
+mschamp,23,Ms. Pacman Champion Edition - Super Zola Pac Gal
+mspactwin,,Ms. Pac-Man Twin (Argentina)
+maketrax,34,Make Trax (set 1)
+maketrxb,34,Make Trax (set 2)
+korosuke,34,Korosuke Roller
+crush,,Crush Roller (Kural Samno)
+crush2,34,Crush Roller (Kural Esco - bootleg[Q])
+crush3,34,Crush Roller (Kural - bootleg[Q])
+mbrush,34,Magic Brush
+paintrlr,34,Paint Roller
+eyes,,Eyes (Digitrex Techstar)
+eyes2,39,Eyes (Techstar)
+mrtnt,,Mr. TNT
+gorkans,41,Gorkans
+eggor,,Eggor
+ponpoko,,Ponpoko
+ponpokov,44,Ponpoko (Venture Line)
+lizwiz,,Lizard Wizard
+theglobp,76,The Glob (Pac-Man hardware)
+beastf,76,Beastie Feastie
+acitya,50,Atlantic City Action
+bwcasino,,Boardwalk Casino
+dremshpr,,Dream Shopper
+vanvan,,Van-Van Car
+vanvank,52,Van-Van Car (Karateco)
+alibaba,,Ali Baba and 40 Thieves
+alibabab,54,Mustafa and 40 Thieves (bootleg)
+pengo,,"Pengo (World, not encrypted, rev A)"
+pengoa,56,"Pengo (World, 315-5010 type, set 1)"
+pengob,56,"Pengo (World, 315-5010 type, set 2)"
+pengoc,56,"Pengo (World, 315-5010 type, set 3)"
+pengoj,56,"Pengo (Japan, not encrypted)"
+pengoja,56,"Pengo (Japan, 315-5010 type, rev C)"
+pengojb,56,"Pengo (Japan, 315-5007 type, rev A)"
+pengojbl,56,"Pengo (Japan, bootleg)"
+penta,56,Penta (bootleg)
+jrpacman,,Jr. Pac-Man
+jrpacmnf,65,Jr. Pac-Man (speedup hack)
+jumpshot,,Jump Shot
+shootbul,,Shoot the Bull
+bigbucks,,Big Bucks
+drivfrcp,,Driving Force (Pac-Man conversion)
+8bpm,704,Eight Ball Action (Pac-Man conversion)
+porky,,Porky
+megadon,,Megadon
+catapult,,Catapult
+eeekk,,Eeekk!
+suprglob,,Super Glob
+theglob,76,The Glob
+theglob2,76,The Glob (earlier)
+theglob3,76,The Glob (set 3)
+igmo,,IGMO
+dealer,,The Dealer
+galaxian,,Galaxian (Namco set 1)
+galaxiaj,82,Galaxian (Namco set 2)
+galmidw,82,Galaxian (Midway)
+galmidwo,82,"Galaxian (Midway, old rev)"
+superg,82,Super Galaxians
+galapx,82,Galaxian Part X
+moonaln,82,Moon Alien
+galap1,82,Space Invaders Galactica
+galap4,82,Galaxian Part 4
+galturbo,82,Galaxian Turbo
+swarm,82,Swarm
+zerotime,82,Zero Time
+tst_galx,82,Galaxian Test ROM
+gmgalax,,Ghostmuncher Galaxian (bootleg)
+pisces,,Pisces
+piscesb,96,Pisces (bootleg)
+uniwars,,UniWar S
+gteikoku,98,Gingateikoku No Gyakushu
+gteikokb,98,Gingateikoku No Gyakushu (bootleg set 1)
+gteikob2,98,Gingateikoku No Gyakushu (bootleg set 2)
+spacbatt,98,Space Battle
+skyraidr,98,Sky Raiders
+batman2,373,Batman Part 2
+warofbug,,War of the Bugs or Monsterous Manouvers in a Mushroom Maze
+redufo,,Defend the Terra Attack on the Red UFO
+exodus,106,Exodus (bootleg[Q])
+streakng,,Streaking
+pacmanbl,1,Pac-Man (Galaxian hardware)
+devilfsg,168,"Devil Fish (Galaxian hardware, bootleg[Q])"
+zigzag,,"Zig Zag (Galaxian hardware, set 1)"
+zigzag2,111,"Zig Zag (Galaxian hardware, set 2)"
+jumpbug,,Jump Bug
+jumpbugb,113,Jump Bug (bootleg)
+levers,,Levers
+azurian,,Azurian Attack
+orbitron,,Orbitron
+mooncrgx,119,Moon Cresta (Galaxian hardware)
+mooncrst,,Moon Cresta (Nichibutsu)
+mooncrsu,119,"Moon Cresta (Nichibutsu, unencrypted)"
+mooncrsa,119,"Moon Cresta (Nichibutsu, old rev)"
+mooncrsg,119,Moon Cresta (Gremlin)
+smooncrs,119,Super Moon Cresta
+mooncrsb,119,Moon Cresta (bootleg set 1)
+mooncrs2,119,Moon Cresta (bootleg set 2)
+fantazia,119,Fantazia
+moonqsr,,Moon Quasar
+mshuttle,,Moon Shuttle (US[Q])
+mshuttlj,128,Moon Shuttle (Japan)
+moonal2,,Moon Alien Part 2
+moonal2b,130,Moon Alien Part 2 (older version)
+eagle,119,Eagle (set 1)
+eagle2,119,Eagle (set 2)
+skybase,,Sky Base
+checkman,,Check Man
+checkmaj,135,Check Man (Japan)
+dingo,,Dingo
+blkhole,,Black Hole
+kingball,,King and Balloon (US)
+kingbalj,139,King and Balloon (Japan)
+scorpnmc,,Scorpion (Moon Cresta hardware)
+frogg,205,Frog (Galaxian hardware)
+4in1,,4 Fun in 1
+bagmanmc,4169,Bagman (Moon Cresta hardware)
+dkongjrm,688,Donkey Kong Jr. (Moon Cresta hardware)
+ozon1,,Ozon I
+ladybugg,640,Ladybug (bootleg on Galaxian hardware)
+vpool,202,Video Pool (bootleg on Moon Cresta hardware)
+drivfrcg,70,Driving Force (Galaxian conversion)
+rockclim,,Rock Climber
+scramble,,Scramble
+scrambls,151,Scramble (Stern)
+scramblb,151,Scramble (Galaxian hardware)
+explorer,151,Explorer
+atlantis,,Battle of Atlantis (set 1)
+atlants2,155,Battle of Atlantis (set 2)
+theend,,The End
+theends,157,The End (Stern)
+omega,157,Omega
+ckongs,228,Crazy Kong (Scramble hardware)
+froggers,205,Frog
+amidars,209,Amidar (Scramble hardware)
+triplep,,Triple Punch
+knockout,163,Knock Out!!
+mariner,,Mariner
+800fath,165,800 Fathoms
+mars,,Mars
+devilfsh,,Devil Fish
+newsin7,,New Sinbad 7
+mrkougar,,Mr. Kougar
+mrkougr2,170,Mr. Kougar (earlier)
+mrkougb,170,Mr. Kougar (bootleg)
+hotshock,,Hot Shocker
+hunchbks,940,Hunchback (Scramble hardware)
+cavelon,,Cavelon
+sfx,,SF-X
+mimonscr,178,Mighty Monkey (bootleg on Scramble hardware)
+mimonkey,,Mighty Monkey
+mimonsco,178,Mighty Monkey (bootleg on Super Cobra hardware)
+scobra,,Super Cobra
+scobras,180,Super Cobra (Stern)
+scobrase,180,Super Cobra (Sega)
+scobrab,180,Super Cobra (bootleg)
+stratgyx,,Strategy X
+stratgys,184,Strategy X (Stern)
+armorcar,,Armored Car (set 1)
+armorca2,186,Armored Car (set 2)
+moonwar,,Moonwar
+moonwara,188,Moonwar (older)
+spdcoin,,Speed Coin (prototype)
+darkplnt,,Dark Planet
+tazmania,,Tazz-Mania (set 1)
+tazmani2,192,Tazz-Mania (set 2)
+calipso,,Calipso
+anteater,,Anteater
+rescue,,Rescue
+aponow,196,Apocaljpse Now
+minefld,,Minefield
+losttomb,,Lost Tomb (easy)
+losttmbh,199,Lost Tomb (hard)
+superbon,,Agent Super Bond (Super Cobra conversion)
+hustler,,Video Hustler
+billiard,202,The Billiards
+hustlerb,202,Video Hustler (bootleg)
+frogger,,Frogger
+frogseg1,205,Frogger (Sega set 1)
+frogseg2,205,Frogger (Sega set 2)
+froggrmc,205,Frogger (Moon Cresta hardware)
+amidar,,Amidar
+amidaru,209,Amidar (Stern)
+amidaro,209,Amidar (Olympia)
+amigo,209,Amigo
+turtles,,Turtles
+turpin,213,Turpin
+600,213,600
+flyboy,,Fly-Boy
+flyboyb,216,Fly-Boy (bootleg)
+fastfred,216,Fast Freddie
+jumpcoas,,Jump Coaster
+boggy84,,Boggy '84
+redrobin,,Red Robin
+imago,,Imago (cocktail set)
+imagoa,222,Imago (no cocktail set)
+cclimber,,Crazy Climber (US)
+cclimbrj,224,Crazy Climber (Japan)
+ccboot,224,Crazy Climber (bootleg set 1)
+ccboot2,224,Crazy Climber (bootleg set 2)
+ckong,,Crazy Kong (set 1)
+ckonga,228,Crazy Kong (set 2)
+ckongjeu,228,Crazy Kong (Jeutel bootleg)
+ckongo,228,Crazy Kong (Orca bootleg)
+ckongalc,228,Crazy Kong (Alca bootleg)
+monkeyd,228,Monkey Donkey
+rpatrolb,,River Patrol (bootleg)
+silvland,234,Silver Land
+yamato,,Yamato (US)
+yamato2,236,Yamato (World?)
+toprollr,,Top Roller
+swimmer,,Swimmer (set 1)
+swimmera,239,Swimmer (set 2)
+swimmerb,239,Swimmer (set 3)
+guzzler,,Guzzler
+cannonb,,Cannon Ball (Crazy Climber hardware)
+gomoku,,Gomoku Narabe Renju
+wiping,,Wiping
+rugrats,245,Rug Rats
+friskyt,,Frisky Tom (set 1)
+friskyta,247,Frisky Tom (set 2)
+radrad,,Radical Radial
+seicross,,Seicross
+sectrzon,250,Sector Zone
+firebatl,,Fire Battle
+clshroad,,Clash-Road
+tubep,,Tube Panic
+rjammer,,Roller Jammer
+magmax,,Mag Max
+cop01,,Cop 01 (set 1)
+cop01a,257,Cop 01 (set 2)
+mightguy,,Mighty Guy
+terracre,,Terra Cresta (YM3526 set 1)
+terracrb,260,Terra Cresta (YM3526 set 2)
+terracra,260,Terra Cresta (YM2203)
+amazon,,Soldier Girl Amazon
+amatelas,263,Sei Senshi Amatelass
+horekid,,Kid no Hore Hore Daisakusen
+horekidb,265,Kid no Hore Hore Daisakusen (bootleg)
+galivan,,Galivan - Cosmo Police (12-16-1985)
+galivan2,267,Galivan - Cosmo Police (12-11-1985)
+dangar,,Dangar - Ufo Robo (12-1-1986)
+dangar2,269,Dangar - Ufo Robo (9-26-1986)
+dangarb,269,Dangar - Ufo Robo (bootleg)
+ninjemak,,Ninja Emaki (US)
+youma,272,Youma Ninpou Chou (Japan)
+legion,,Legion - Spinner-87 (World ver 2.03)
+legiono,274,Chouji Meikyuu Legion (Japan bootleg ver 1.05)
+terraf,,Terra Force
+terrafu,276,Terra Force (US)
+kodure,,Kodure Ookami (Japan)
+armedf,,Armed Formation
+cclimbr2,,Crazy Climber 2 (Japan)
+hyhoo,,Taisen Quiz HYHOO (Japan)
+hyhoo2,,Taisen Quiz HYHOO 2 (Japan)
+pastelgl,,Pastel Gal (Japan 851224)
+crystalg,,Crystal Gal (Japan 860512)
+crystal2,,Crystal Gal 2 (Japan 860620)
+citylove,,City Love (Japan 860908)
+apparel,,Apparel Night (Japan 860929)
+secolove,,Second Love (Japan 861201)
+housemnq,,House Mannequin (Japan 870217)
+housemn2,,House Mannequin Roppongi Live hen (Japan 870418)
+seiha,,Seiha (Japan 870725)
+seiham,291,Seiha [BET] (Japan 870723)
+bijokkoy,,Bijokko Yume Monogatari (Japan 870925)
+iemoto,,Iemoto (Japan 871020)
+ojousan,,Ojousan (Japan 871204)
+bijokkog,,Bijokko Gakuen (Japan 880116)
+orangec,,Orange Club - Maruhi Kagai Jugyou (Japan 880213)
+vipclub,297,Vip Club [BET] (Japan 880310)
+korinai,,Mahjong-zukino Korinai Menmen (Japan 880425)
+kaguya,,Mahjong Kaguyahime [BET] (Japan 880521)
+otonano,,Otona no Mahjong (Japan 880628)
+kanatuen,,Kanatsuen no Onna [BET] (Japan 880905)
+mjsikaku,,Mahjong Shikaku (Japan 880908)
+mjsikakb,303,Mahjong Shikaku (Japan 880722)
+mjcamera,,Mahjong Camera Kozou (Japan 881109)
+mmcamera,305,Mahjong Camera Kozou [BET] (Japan 890509)
+idhimitu,,Idol no Himitsu [BET] (Japan 890304)
+msjiken,,Mahjong Satsujin Jiken (Japan 881017)
+hanamomo,,Mahjong Hana no Momoko gumi (Japan 881201)
+telmahjn,,Telephone Mahjong (Japan 890111)
+gionbana,,Gionbana (Japan 890120)
+mjfocus,,Mahjong Focus (Japan 890313)
+mjfocusm,312,Mahjong Focus [BET] (Japan 890510)
+peepshow,312,Nozokimeguri Mahjong Peep Show (Japan 890404)
+scandal,,Scandal Mahjong (Japan 890213)
+scandalm,315,Scandal Mahjong [BET] (Japan 890217)
+mgmen89,,Mahjong G-MEN'89 (Japan 890425)
+mjnanpas,,Mahjong Nanpa Story (Japan 890713)
+mjnanpaa,318,Mahjong Nanpa Story (Japan 890712)
+mjnanpau,318,Mahjong Nanpa Story (Ura) (Japan 890805)
+pairsten,,Pairs (System Ten) (Japan 890826)
+bananadr,,Mahjong Banana Dream [BET] (Japan 891124)
+mladyhtr,,Mahjong THE LADY HUNTER (Japan 900509)
+chinmoku,,Mahjong Chinmoku no Hentai (Japan 900511)
+maiko,,Maikobana (Japan 900802)
+club90s,,Mahjong CLUB 90's (set 1) (Japan 900919)
+club90sa,326,Mahjong CLUB 90's (set 2) (Japan 900919)
+hanaoji,,Hana to Ojisan [BET] (Japan 911209)
+pstadium,,Mahjong Panic Stadium (Japan)
+triplew1,,Mahjong Triple Wars (Japan)
+triplew2,,Mahjong Triple Wars 2 (Japan)
+ntopstar,,Mahjong Nerae! Top Star (Japan)
+mjlstory,,Mahjong Jikken Love Story (Japan)
+vanilla,,Mahjong Vanilla Syndrome (Japan)
+finalbny,334,Mahjong Final Bunny [BET] (Japan)
+qmhayaku,,Quiz-Mahjong Hayaku Yatteyo! (Japan)
+galkoku,,Mahjong Gal no Kokuhaku (Japan)
+hyouban,337,Mahjong Hyouban Musume [BET] (Japan)
+galkaika,,Mahjong Gal no Kaika (Japan)
+tokyogal,,Tokyo Gal Zukan (Japan)
+tokimbsj,340,Tokimeki Bishoujo [BET] (Japan)
+mcontest,,Miss Mahjong Contest (Japan)
+uchuuai,,Mahjong Uchuu yori Ai wo komete (Japan)
+av2mj1bb,,AV2Mahjong No.1 Bay Bridge no Seijo (Japan)
+av2mj2rg,,AV2Mahjong No.2 Rouge no Kaori (Japan)
+mjuraden,,Mahjong Uranai Densetsu (Japan)
+koinomp,,Mahjong Koi no Magic Potion (Japan)
+patimono,,Mahjong Pachinko Monogatari (Japan)
+mjanbari,,Medal Mahjong Janjan Baribari [BET] (Japan)
+ultramhm,,Ultra Maru-hi Mahjong (Japan)
+gal10ren,,Mahjong Gal 10-renpatsu (Japan)
+renaiclb,,Mahjong Ren-ai Club (Japan)
+mjlaman,,Mahjong La Man (Japan)
+mkeibaou,,Mahjong Keibaou (Japan)
+pachiten,,Medal Mahjong Pachi-Slot Tengoku [BET] (Japan)
+sailorws,,Mahjong Sailor Wars (Japan)
+sailorwr,356,Mahjong Sailor Wars-R [BET] (Japan)
+psailor1,,Bishoujo Janshi Pretty Sailor 18-kin (Japan)
+psailor2,,Bishoujo Janshi Pretty Sailor 2 (Japan)
+otatidai,,Disco Mahjong Otachidai no Okite (Japan)
+ngpgal,,Nekketsu Grand-Prix Gal (Japan)
+mjgottsu,,Mahjong Gottsu ee-kanji (Japan)
+bakuhatu,362,Mahjong Bakuhatsu Junjouden (Japan)
+cmehyou,,Mahjong Circuit no Mehyou (Japan)
+mmehyou,,Medal Mahjong Circuit no Mehyou [BET] (Japan)
+mjkoiura,,Mahjong Koi Uranai (Japan)
+imekura,,Imekura Mahjong (Japan)
+mscoutm,,Mahjong Scout Man (Japan)
+mjegolf,,Mahjong Erotica Golf (Japan)
+niyanpai,,Niyanpai (Japan)
+safarir,,Safari Rally (World)
+safarirj,371,Safari Rally (Japan)
+phoenix,,Phoenix (Amstar)
+phoenixa,373,Phoenix (Centuri)
+phoenixt,373,Phoenix (Taito)
+phoenix3,373,Phoenix (T.P.N.)
+phoenixc,373,"Phoenix (IRECSA, G.G.I Corp)"
+condor,373,Condor
+falcon,373,Falcon
+vautour,373,Vautour (Jeutel France)
+pleiads,,Pleiads (Tehkan)
+pleiadbl,381,Pleiads (bootleg)
+pleiadce,381,Pleiads (Centuri)
+capitol,381,Capitol
+survival,,Survival
+naughtyb,,Naughty Boy
+naughtya,386,Naughty Boy (bootleg)
+naughtyc,386,Naughty Boy (Cinematronics)
+popflame,,Pop Flamer (protected)
+popflama,389,Pop Flamer (not protected)
+popflamb,389,Pop Flamer (hack[Q])
+geebee,,Gee Bee
+geebeeg,392,Gee Bee (Gremlin)
+bombbee,,Bomb Bee
+cutieq,,Cutie Q
+navalone,,Navarone
+kaitei,,Kaitei Takara Sagashi
+kaitein,,Kaitei Takara Sagashi (Namco)
+sos,,SOS
+tankbatt,,Tank Battalion
+warpwarp,,Warp and Warp
+warpwarr,401,Warp Warp (Rock-ola set 1)
+warpwar2,401,Warp Warp (Rock-ola set 2)
+rallyx,,Rally X
+rallyxm,404,Rally X (Midway)
+nrallyx,,New Rally X
+jungler,,Jungler
+junglers,407,Jungler (Stern)
+tactcian,,Tactician (set 1)
+tactcan2,409,Tactician (set 2)
+locomotn,,Loco-Motion
+gutangtn,411,Guttang Gottong
+cottong,411,Cotocoto Cottong
+commsega,,Commando (Sega)
+bosco,,Bosconian (new version)
+boscoo,415,Bosconian (old version)
+boscoo2,415,Bosconian (older version)
+boscomd,415,"Bosconian (Midway, new version)"
+boscomdo,415,"Bosconian (Midway, old version)"
+galaga,,Galaga (Namco rev. B)
+galagamw,420,Galaga (Midway set 1)
+galagamk,420,Galaga (Midway set 2)
+galagamf,420,Galaga (Midway set 1 with fast shoot hack)
+galagao,420,Galaga (Namco)
+gallag,420,Gallag
+nebulbee,420,Nebulous Bee
+gatsbee,420,Gatsbee
+digdug,,Dig Dug (rev 2)
+digdugb,428,Dig Dug (rev 1)
+digdugat,428,"Dig Dug (Atari, rev 2)"
+digduga1,428,"Dig Dug (Atari, rev 1)"
+dzigzag,428,Zig Zag (Dig Dug hardware)
+xevious,,Xevious (Namco)
+xeviousa,433,Xevious (Atari set 1)
+xeviousb,433,Xevious (Atari set 2)
+xeviousc,433,Xevious (Atari set 3)
+xevios,433,Xevios
+battles,433,Battles
+sxevious,433,Super Xevious
+superpac,,Super Pac-Man
+superpcm,440,Super Pac-Man (Midway)
+pacnpal,,Pac &amp; Pal
+pacnpal2,442,Pac &amp; Pal (older)
+pacnchmp,442,Pac-Man &amp; Chomp Chomp
+phozon,,Phozon (Japan)
+mappy,,Mappy (US)
+mappyj,446,Mappy (Japan)
+digdug2,,Dig Dug II (New Ver.)
+digdug2o,448,Dig Dug II (Old Ver.)
+todruaga,,Tower of Druaga (New Ver.)
+todruago,450,Tower of Druaga (Old Ver.)
+motos,,Motos
+grobda,,Grobda (New Ver.)
+grobda2,453,Grobda (Old Ver. set 1)
+grobda3,453,Grobda (Old Ver. set 2)
+gaplus,,Gaplus (rev. D)
+gaplusa,456,Gaplus (alternate hardware)
+gapluso,456,Gaplus (rev. B)
+galaga3,456,Galaga 3 (rev. C)
+galaga3m,456,Galaga 3 (set 3)
+galaga3a,456,Galaga 3 (set 2)
+liblrabl,,Libble Rabble
+toypop,,Toypop
+polepos,,Pole Position (World)
+poleposj,464,Pole Position (Japan)
+poleposa1,464,Pole Position (Atari version 1)
+poleposa1n,464,Pole Position (Atari version 1 on Namco PCB)
+poleposa2,464,Pole Position (Atari version 2)
+topracer,464,"Top Racer (with MB8841 + MB8842, 1984)"
+topracera,464,"Top Racer (with MB8841 + MB8842, 1983)"
+ppspeed,464,Speed Up (Spanish bootleg of Pole Position)
+polepos2,,Pole Position II (Japan)
+polepos2a,472,Pole Position II (Atari)
+polepos2b,472,Pole Position II (bootleg)
+pacland,,Pac-Land (set 1)
+pacland2,475,Pac-Land (set 2)
+pacland3,475,Pac-Land (set 3)
+paclandm,475,Pac-Land (Midway)
+drgnbstr,,Dragon Buster
+skykid,,Sky Kid (New Ver.)
+skykido,480,Sky Kid (Old Ver.)
+skykidd,480,Sky Kid (60A1 Ver.)
+baraduke,,Baraduke (set 1)
+baraduka,483,Baraduke (set 2)
+metrocrs,,Metro-Cross (set 1)
+metrocra,485,Metro-Cross (set 2)
+hopmappy,,Hopping Mappy
+skykiddx,,Sky Kid Deluxe (set 1)
+skykiddo,488,Sky Kid Deluxe (set 2)
+roishtar,,The Return of Ishtar
+genpeitd,,Genpei ToumaDen
+rthunder,,Rolling Thunder (new version)
+rthundro,492,Rolling Thunder (old version)
+wndrmomo,,Wonder Momo
+tceptor,,Thunder Ceptor
+tceptor2,495,Thunder Ceptor II
+shadowld,,Shadow Land
+youkaidk,497,Yokai Douchuuki (Japan new version)
+yokaidko,497,Yokai Douchuuki (Japan old version)
+dspirit,,Dragon Spirit (new version)
+dspirito,500,Dragon Spirit (old version)
+blazer,,Blazer (Japan)
+quester,,Quester (Japan)
+pacmania,,Pac-Mania
+pacmanij,504,Pac-Mania (Japan)
+galaga88,,Galaga '88 (set 1)
+galag88b,506,Galaga '88 (set 2)
+galag88j,506,Galaga '88 (Japan)
+ws,,World Stadium (Japan)
+berabohm,,Beraboh Man (Japan version C)
+beraboho,510,Beraboh Man (Japan version B)
+mmaze,,Marchen Maze (Japan)
+bakutotu,,Bakutotsu Kijuutei
+wldcourt,,World Court (Japan)
+splatter,,Splatter House (Japan)
+faceoff,,Face Off (Japan)
+rompers,,Rompers (Japan)
+romperso,517,Rompers (Japan old version)
+blastoff,,Blast Off (Japan)
+ws89,509,World Stadium '89 (Japan)
+dangseed,,Dangerous Seed (Japan)
+ws90,509,World Stadium '90 (Japan)
+pistoldm,,Pistol Daimyo no Bouken (Japan)
+boxyboy,,Boxy Boy (US)
+soukobdx,524,Souko Ban Deluxe (Japan)
+puzlclub,,Puzzle Club (Japan prototype)
+tankfrce,,Tank Force (US)
+tankfrcj,527,Tank Force (Japan)
+finallap,,Final Lap (Rev E)
+finalapd,529,Final Lap (Rev D)
+finalapc,529,Final Lap (Rev C)
+finlapjc,529,Final Lap (Japan - Rev C)
+finlapjb,529,Final Lap (Japan - Rev B)
+assault,,Assault
+assaultj,534,Assault (Japan)
+assaultp,534,Assault Plus (Japan)
+metlhawk,,Metal Hawk (Japan)
+ordyne,,Ordyne (Japan)
+mirninja,,Mirai Ninja (Japan)
+phelios,,Phelios (Japan)
+dirtfoxj,,Dirt Fox (Japan)
+fourtrax,,Four Trax
+valkyrie,,Valkyrie No Densetsu (Japan)
+finehour,,Finest Hour (Japan)
+burnforc,,Burning Force (Japan)
+marvland,,Marvel Land (US)
+marvlanj,546,Marvel Land (Japan)
+kyukaidk,,Kyuukai Douchuuki (Japan new version)
+kyukaido,548,Kyuukai Douchuuki (Japan old version)
+dsaber,,Dragon Saber
+dsaberj,550,Dragon Saber (Japan)
+finalap2,,Final Lap 2
+finalp2j,552,Final Lap 2 (Japan)
+gollygho,,Golly! Ghost!
+rthun2,,Rolling Thunder 2
+rthun2j,555,Rolling Thunder 2 (Japan)
+sgunner,,Steel Gunner
+sgunner2,,Steel Gunner 2 (US)
+sgunnr2j,558,Steel Gunner 2 (Japan)
+cosmogng,,Cosmo Gang the Video (US)
+cosmognj,560,Cosmo Gang the Video (Japan)
+finalap3,,Final Lap 3 (Japan set 1)
+finalp3a,562,Final Lap 3 (World)
+luckywld,,Lucky and Wild
+suzuka8h,,Suzuka 8 Hours (World[Q])
+suzuk8hj,565,Suzuka 8 Hours (Japan)
+sws92,,Super World Stadium '92 (Japan)
+sws92g,567,Super World Stadium '92 Gekitouban (Japan)
+suzuk8h2,,Suzuka 8 Hours 2 (Japan)
+sws93,,Super World Stadium '93 (Japan)
+bkrtmaq,,Bakuretsu Quiz Ma-Q Dai Bouken (Japan)
+cgangpzl,,Cosmo Gang the Puzzle (US)
+cgangpzj,572,Cosmo Gang the Puzzle (Japan)
+exvania,,Exvania (Japan)
+fghtatck,,Fighter and Attacker (US)
+fa,575,F-A (Japan)
+knckhead,,Knuckle Heads (World)
+knckhedj,577,Knuckle Heads (Japan)
+swcourt,,Super World Court (Japan)
+emeralda,,Emeraldia (Japan Version B)
+emerldaa,580,Emeraldia (Japan)
+numanath,,Numan Athletics (World)
+numanatj,582,Numan Athletics (Japan)
+quiztou,,Nettou! Gekitou! Quiztou!! (Japan)
+tinklpit,,Tinkle Pit (Japan)
+xday2,,X-Day 2 (Japan)
+nebulray,,Nebulas Ray (World)
+nebulryj,587,Nebulas Ray (Japan)
+ptblank,,Point Blank
+gunbulet,589,Gun Bullet (Japan)
+gslgr94u,,Great Sluggers '94
+sws95,,Super World Stadium '95 (Japan)
+sws96,,Super World Stadium '96 (Japan)
+sws97,,Super World Stadium '97 (Japan)
+vshoot,,J-League Soccer V-Shoot
+outfxies,,Outfoxies
+outfxesj,596,Outfoxies (Japan)
+machbrkr,,Mach Breakers (Japan)
+ncv1,,Namco Classics Collection Vol.1
+ncv1j,599,Namco Classics Collection Vol.1 (Japan set 1)
+ncv1j2,599,Namco Classics Collection Vol.1 (Japan set 2)
+ncv2,,Namco Classics Collection Vol.2
+ncv2j,602,Namco Classics Collection Vol.2 (Japan)
+winrun91,,Winning Run 91
+solvalou,,Solvalou (Japan)
+starblad,,Starblade
+aircombj,,Air Combat (Japan)
+aircombu,607,Air Combat (US)
+cybsled,,Cyber Sled
+alpinerd,,Alpine Racer (Rev. AR2 Ver.D)
+alpinerc,610,Alpine Racer (Rev. AR2 Ver.C)
+raveracw,,"Rave Racer (Rev. RV2, World)"
+ridgeraj,,"Ridge Racer (Rev. RR1, Japan)"
+ridger2j,,"Ridge Racer 2 (Rev. RRS1, Japan)"
+acedrvrw,,"Ace Driver (Rev. AD2, World)"
+victlapw,,"Ace Driver - Victory Lap (Rev. ADV2, World)"
+cybrcomm,,"Cyber Commando (Rev. CY1, Japan)"
+airco22b,,Air Combat 22 (Rev. ACS1 Ver.B)
+cybrcycc,,Cyber Cycles (Rev. CB2 Ver.C)
+timecrsa,,Time Crisis (Rev. TS2 Ver.A)
+propcycl,,Prop Cycle (Rev PR2 Ver.A)
+cosmicg,,Cosmic Guerilla
+cosmica,,Cosmic Alien
+cosmica2,623,Cosmic Alien (older)
+panic,,Space Panic (version E)
+panic2,625,Space Panic (set 2)
+panic3,625,Space Panic (set 3)
+panich,625,Space Panic (harder)
+panicger,625,Space Panic (German)
+zerohour,,Zero Hour
+redclash,,Red Clash
+redclask,631,Red Clash (Kaneko)
+magspot,,Magical Spot
+magspot2,,Magical Spot II
+devzone,,Devil Zone
+devzone2,635,Devil Zone (easier)
+nomnlnd,,No Man's Land
+nomnlndg,637,No Man's Land (Gottlieb)
+cheekyms,,Cheeky Mouse
+ladybug,,Lady Bug
+ladybugb,640,Lady Bug (bootleg)
+snapjack,,Snap Jack
+cavenger,,Cosmic Avenger
+dorodon,,Dorodon (set 1)
+dorodon2,644,Dorodon (set 2)
+sraider,,Space Raider
+mrsdyna,,Mrs. Dynamite
+mrdo,,Mr. Do!
+mrdoy,648,Mr. Do! (prototype)
+mrdot,648,Mr. Do! (Taito)
+mrdofix,648,Mr. Do! (bugfixed)
+mrlo,648,Mr. Lo!
+mrdu,648,Mr. Du!
+yankeedo,648,Yankee DO!
+docastle,,Mr. Do's Castle (set 1)
+docastl2,655,Mr. Do's Castle (set 2)
+docastlo,655,Mr. Do's Castle (older)
+douni,655,Mr. Do vs. Unicorns
+dorunrun,,Do! Run Run (set 1)
+dorunru2,659,Do! Run Run (set 2)
+dorunruc,659,Do! Run Run (Do's Castle hardware)
+spiero,659,Super Pierrot (Japan)
+dowild,,Mr. Do's Wild Ride
+jjack,,Jumping Jack
+kickridr,,Kick Rider
+idsoccer,,Indoor Soccer
+spacefev,,Space Fever (New Ver)
+spacefevo,667,Space Fever (Old Ver)
+highsplt,,Space Fever High Splitter (set 1)
+highspla,669,Space Fever High Splitter (set 2)
+spacelnc,,Space Launcher
+sheriff,,Sheriff
+bandido,672,Bandido
+helifire,,HeliFire (set 1)
+helifira,674,HeliFire (set 2)
+radarscp,,"Radar Scope (TRS02, rev. D)"
+radarscpc,676,"Radar Scope (TRS02?, rev. C)"
+radarscp1,676,Radar Scope (TRS01)
+dkong,,Donkey Kong (US set 1)
+dkongpe,679,Donkey Kong - Pauline Edition
+dkongo,679,Donkey Kong (US set 2)
+dkongjp,679,Donkey Kong (Japan set 1)
+dkongjo,679,Donkey Kong (Japan set 2)
+dkongjo1,679,Donkey Kong (Japan set 3) (bad dump[Q])
+dkongx,679,Donkey Kong II - Jumpman Returns (Hack V1.2)
+dkremix,679,Donkey Kong Remix
+dkchrmx,679,Donkey Kong Christmas Remix
+dkongjr,,Donkey Kong Junior (US)
+dkongjrj,688,Donkey Kong Jr. (Japan)
+dkngjnrj,688,Donkey Kong Junior (Japan[Q])
+dkongjrb,688,Donkey Kong Jr. (bootleg)
+dkngjnrb,688,Donkey Kong Junior (bootleg[Q])
+dkong3,,Donkey Kong 3 (US)
+dkong3j,693,Donkey Kong 3 (Japan)
+dkong3b,693,Donkey Kong 3 (bootleg on Donkey Kong Jr. hardware)
+mario,,"Mario Bros. (US, Revision G)"
+marioe,696,"Mario Bros. (US, Revision E)"
+mariof,696,"Mario Bros. (US, Revision F)"
+marioj,696,"Mario Bros. (Japan, Revision C)"
+masao,696,Masao
+pestplce,696,Pest Place
+spclforc,,Special Forces
+spcfrcii,,Special Forces II
+8ballact,,Eight Ball Action (DK conversion)
+8ballat2,704,Eight Ball Action (DKJr conversion)
+shootgal,,Shooting Gallery
+drakton,,Drakton
+strtheat,,Street Heat - Cardinal Amusements
+hunchbkd,940,Hunchback (DK conversion)
+sbdk,941,Super Bike (DK conversion)
+herbiedk,943,Herbie at the Olympics (DK conversion)
+herodk,942,Hero in the Castle of Doom (DK conversion)
+herodku,942,Hero in the Castle of Doom (DK conversion not encrypted)
+skyskipr,,Sky Skipper
+popeye,,Popeye (revision D)
+popeyeu,715,Popeye (revision D not protected)
+popeyef,715,Popeye (revision F)
+popeyebl,715,Popeye (bootleg)
+punchout,,Punch-Out!!
+spnchout,,Super Punch-Out!!
+spnchotj,720,Super Punch-Out!! (Japan)
+armwrest,,Arm Wrestling
+pc_tenis,,PlayChoice-10 - Tennis
+pc_mario,,PlayChoice-10 - Mario Bros.
+pc_bball,,PlayChoice-10 - Baseball
+pc_bfght,,PlayChoice-10 - Balloon Fight
+pc_ebike,,PlayChoice-10 - Excite Bike
+pc_golf,,PlayChoice-10 - Golf
+pc_kngfu,,PlayChoice-10 - Kung Fu
+pc_1942,,PlayChoice-10 - 1942
+pc_smb,,PlayChoice-10 - Super Mario Bros.
+pc_vball,,PlayChoice-10 - Volley Ball
+pc_duckh,,PlayChoice-10 - Duck Hunt
+pc_hgaly,,PlayChoice-10 - Hogan's Alley
+pc_wgnmn,,PlayChoice-10 - Wild Gunman
+pc_grdus,,PlayChoice-10 - Gradius
+pc_grdue,736,PlayChoice-10 - Gradius (older)
+pc_tkfld,,PlayChoice-10 - Track and Field
+pc_pwrst,,PlayChoice-10 - Pro Wrestling
+pc_trjan,,PlayChoice-10 - Trojan
+pc_cvnia,,PlayChoice-10 - Castlevania
+pc_dbldr,,PlayChoice-10 - Double Dribble
+pc_rnatk,,PlayChoice-10 - Rush N' Attack
+pc_rygar,,PlayChoice-10 - Rygar
+pc_cntra,,PlayChoice-10 - Contra
+pc_goons,,PlayChoice-10 - The Goonies
+pc_mtoid,,PlayChoice-10 - Metroid
+pc_radrc,,PlayChoice-10 - Rad Racer
+pc_miket,,PlayChoice-10 - Mike Tyson's Punchout
+pc_rcpam,,PlayChoice-10 - RC Pro Am
+pc_ngaid,,PlayChoice-10 - Ninja Gaiden
+pc_tmnt,,PlayChoice-10 - Teenage Mutant Ninja Turtles
+pc_ftqst,,PlayChoice-10 - Uncle Fester's Quest - The Addams Family
+pc_bstar,,PlayChoice-10 - Baseball Stars
+pc_tbowl,,PlayChoice-10 - Tecmo Bowl
+pc_drmro,,PlayChoice-10 - Dr. Mario
+pc_ynoid,,PlayChoice-10 - Yo! Noid
+pc_rrngr,,PlayChoice-10 - Chip'n Dale - Rescue Rangers
+pc_ddrgn,,PlayChoice-10 - Double Dragon
+pc_gntlt,,PlayChoice-10 - Gauntlet
+pc_smb2,,PlayChoice-10 - Super Mario Bros. 2
+pc_smb3,,PlayChoice-10 - Super Mario Bros. 3
+pc_mman3,,PlayChoice-10 - Mega Man 3
+pc_radr2,,PlayChoice-10 - Rad Racer II
+pc_suprc,,PlayChoice-10 - Super C
+pc_tmnt2,,PlayChoice-10 - Teenage Mutant Ninja Turtles II
+pc_wcup,,PlayChoice-10 - Nintendo World Cup
+pc_ngai2,,PlayChoice-10 - Ninja Gaiden 2
+pc_ngai3,,PlayChoice-10 - Ninja Gaiden 3
+pc_pwbld,,PlayChoice-10 - Power Blade
+pc_rkats,,PlayChoice-10 - Rockin' Kats
+pc_pinbt,,PlayChoice-10 - PinBot
+pc_cshwk,,PlayChoice-10 - Captain Sky Hawk
+pc_sjetm,,PlayChoice-10 - Solar Jetman
+pc_moglf,,PlayChoice-10 - Mario's Open Golf
+btlecity,,Vs. Battle City
+starlstr,,Vs. Star Luster
+cstlevna,,Vs. Castlevania
+cluclu,,Vs. Clu Clu Land
+drmario,,Vs. Dr. Mario
+duckhunt,,Vs. Duck Hunt
+excitebk,,Vs. Excitebike
+excitbkj,782,Vs. Excitebike (Japan)
+goonies,,Vs. The Goonies
+hogalley,,Vs. Hogan's Alley
+iceclimb,,Vs. Ice Climber
+iceclmbj,786,Vs. Ice Climber (Japan)
+ladygolf,,Vs. Stroke and Match Golf (Ladies Version)
+machridr,,Vs. Mach Rider (Endurance Course Version)
+machridj,789,"Vs. Mach Rider (Japan, Fighting Course Version)"
+rbibb,,Vs. Atari R.B.I. Baseball (set 1)
+rbibba,791,Vs. Atari R.B.I. Baseball (set 2)
+suprmrio,,Vs. Super Mario Bros.
+vsskykid,,Vs. Super SkyKid
+tkoboxng,,Vs. TKO Boxing
+smgolf,,Vs. Stroke and Match Golf (Men Version)
+smgolfj,796,Vs. Stroke and Match Golf (Men Version) (Japan)
+vspinbal,,Vs. Pinball
+vspinblj,798,Vs. Pinball (Japan)
+vsslalom,,Vs. Slalom
+vssoccer,,Vs. Soccer
+vsgradus,,Vs. Gradius
+platoon,,Vs. Platoon
+vstetris,,Vs. Tetris
+mightybj,,Vs. Mighty Bomb Jack (Japan)
+jajamaru,,Vs. Ninja Jajamaru Kun (Japan)
+topgun,,Vs. Top Gun
+bnglngby,,Vs. Raid on Bungeling Bay (Japan)
+vstennis,,Vs. Tennis
+wrecking,,Vs. Wrecking Crew
+balonfgt,,Vs. Balloon Fight
+vsmahjng,,Vs. Mahjang (Japan)
+vsbball,,Vs. BaseBall
+vsbballj,813,Vs. BaseBall (Japan set 1)
+vsbbalja,813,Vs. BaseBall (Japan set 2)
+iceclmrj,,Vs. Ice Climber Dual (Japan)
+vsgshoe,,Vs. Gumshoe
+supxevs,,Vs. Super Xevious
+vsfdf,,Vs. Freedom Force
+smgolfb,796,Vs. Stroke and Match Golf (Men set 2)
+vsbbaljb,813,Vs. BaseBall (Japan set 3)
+nss_ssoc,,Nintendo Super System - Super Soccer
+nss_actr,,Nintendo Super System - Act Raiser
+nss_con3,,Nintendo Super System - Contra 3 - The Alien Wars
+nss_adam,,Nintendo Super System - The Addams Family
+nss_aten,,Nintendo Super System - David Crane's Amazing Tennis
+nss_rob3,,Nintendo Super System - Robocop 3
+nss_ncaa,,Nintendo Super System - NCAA Basketball
+nss_skin,,Nintendo Super System - Skins Game
+nss_lwep,,Nintendo Super System - Lethal Weapon
+nss_smw,,Nintendo Super System - Super Mario World
+nss_fzer,,Nintendo Super System - F-Zero
+nss_sten,,Nintendo Super System - Super Tennis
+seawolf,,Sea Wolf
+gunfight,,Gun Fight
+tornbase,,Tornado Baseball
+280zzzap,,Datsun 280 Zzzap
+maze,,Amazing Maze
+boothill,,Boot Hill
+checkmat,,Checkmate
+desertgu,,Desert Gun
+dplay,848,Double Play
+lagunar,,Laguna Racer
+gmissile,,Guided Missile
+m4,,M-4
+clowns,,Clowns (rev. 2)
+clowns1,846,Clowns (rev. 1)
+einnings,,Extra Inning
+shuffle,,Shuffleboard
+dogpatch,,Dog Patch
+spcenctr,,Space Encounters
+phantom2,,Phantom II
+bowler,,4 Player Bowling Alley
+invaders,,Space Invaders
+blueshrk,,Blue Shark
+invad2ct,,"Space Invaders II (Midway, cocktail)"
+invadpt2,,Space Invaders Part II (Taito)
+invaddlx,857,Space Invaders Deluxe
+moonbase,857,Moon Base
+indianbt,,Indian Battle
+earthinv,854,Super Earth Invasion
+spaceatt,854,Space Attack
+spaceat2,854,Space Attack II
+sinvzen,854,Super Invaders (Zenitone-Microsec)
+superinv,854,Super Invaders
+sstrangr,,Space Stranger
+sstrngr2,,Space Stranger 2
+sinvemag,854,Super Invaders (EMAG)
+jspecter,854,Jatre Specter (set 1)
+jspectr2,854,Jatre Specter (set 2)
+invrvnge,,Invader's Revenge
+invrvnga,871,Invader's Revenge (Dutchford)
+galxwars,,Galaxy Wars (Universal set 1)
+galxwar2,873,Galaxy Wars (Universal set 2)
+galxwart,873,Galaxy Wars (Taito[Q])
+starw,873,Star Wars
+lrescue,,Lunar Rescue
+grescue,877,Galaxy Rescue
+desterth,877,Destination Earth
+cosmicmo,,Cosmic Monsters
+cosmicm2,,Cosmic Monsters II
+rollingc,,Rolling Crash / Moon Base
+ozmawars,,Ozma Wars (set 1)
+ozmawar2,883,Ozma Wars (set 2)
+solfight,883,Solar Fight
+spaceph,883,Space Phantoms
+schaser,,Space Chaser
+schasrcv,887,Space Chaser (CV version)
+lupin3,,Lupin III
+spclaser,,Space Laser
+laser,890,Laser
+spcewarl,890,Space War (Leijac)
+polaris,,Polaris (set 1)
+polarisa,893,Polaris (set 2)
+ballbomb,,Balloon Bomber
+steelwkr,,Steel Worker
+m79amb,,M79 Ambush
+alieninv,854,Alien Invasion Part II
+tst_invd,854,Space Invaders Test ROM
+sitv,854,Space Invaders (TV Version)
+sicv,854,Space Invaders (CV Version)
+sisv,854,Space Invaders (SV Version)
+sisv2,854,Space Invaders (SV Version 2)
+spacewr3,854,Space War Part 3
+invaderl,854,Space Invaders (Logitec)
+yosakdoa,907,Yosaku To Donbei (set 2)
+yosakdon,,Yosaku To Donbei (set 1)
+spceking,854,Space King
+spcewars,854,Space War (Sanritsu)
+cosmo,,Cosmo
+astropal,,Astropal
+invasion,,Invasion (Sidam)
+invasioa,912,"Invasion (bootleg, set 1, normal graphics)"
+invasiob,912,"Invasion (bootleg, set 2, no copyright)"
+galactic,,Galactica - Batalha Espacial
+spacmiss,915,Space Missile - Space Fighting Game
+sspeedr,,Super Speed Race
+sflush,,Straight Flush
+lazercmd,,Lazer Command
+bbonk,,Bigfoot Bonkers
+deadeye,,Dead Eye
+gypsyjug,,Gypsy Juggler
+minferno,,Inferno (S2650)
+medlanes,,Meadows Lanes
+cosmos,,Cosmos
+darkwar,,Dark Warrior
+spacefrt,,Space Fortress
+8ball,,Video Eight Ball
+8ball1,928,Video Eight Ball (Rev.1)
+logger,,Logger
+dazzler,,Dazzler
+wallst,,Wall Street
+radarzon,,Radar Zone
+radarzn1,933,Radar Zone (Rev.1)
+radarznt,933,Radar Zone (Tuni)
+outline,933,Outline
+goldbug,,Gold Bug
+diggerc,,Digger (CVS)
+heartatk,,Heart Attack
+hunchbak,,Hunchback
+superbik,,Superbike
+hero,,Hero
+huncholy,,Hunchback Olympic
+seawolf2,,Sea Wolf II
+spacezap,,Space Zap
+ebases,,Extra Bases
+wow,,Wizard of Wor
+gorf,,Gorf
+gorfpgm1,948,Gorf (Program 1)
+robby,,Robby Roto
+profpac,,Professor PacMan
+solarfox,,Solar Fox
+kick,,Kick (upright)
+kicka,953,Kick (cocktail)
+shollow,,Satan's Hollow (set 1)
+shollow2,955,Satan's Hollow (set 2)
+tron,,Tron (set 1)
+tron2,957,Tron (set 2)
+tronfp,957,Tron (freeplay)
+kroozr,,Kozmik Kroozr
+domino,,Domino Man
+wacko,,Wacko
+twotiger,,Two Tigers
+twotigra,963,Two Tigers (dedicated)
+journey,,Journey
+tapper,,Tapper (Budweiser)
+tappera,966,Tapper (alternate)
+sutapper,966,Tapper (Suntory)
+rbtapper,966,Tapper (Root Beer)
+timber,,Timber
+dotron,,Discs of Tron (Upright)
+dotrona,971,Discs of Tron (Upright alternate)
+dotrone,971,Discs of Tron (Environmental)
+demoderb,,Demolition Derby
+demoderm,974,Demolition Derby (2-Player Mono Board Version)
+sarge,,Sarge
+rampage,,Rampage (revision 3)
+rampage2,977,Rampage (revision 2)
+powerdrv,,Power Drive
+stargrds,,Star Guards
+maxrpm,,Max RPM
+spyhunt,,Spy Hunter
+turbotag,,Turbo Tag (prototype)
+crater,,Crater Raider
+zwackery,,Zwackery
+xenophob,,Xenophobe
+spyhunt2,,Spy Hunter 2 (rev 2)
+spyhnt2a,987,Spy Hunter 2 (rev 1)
+blasted,,Blasted
+archrivl,,Arch Rivals (rev 4.0)
+archriv2,990,Arch Rivals (rev 2.0)
+trisport,,Tri-Sports
+pigskin,,Pigskin 621AD
+sentetst,,Sente Diagnostic Cartridge
+cshift,,Chicken Shift
+gghost,,Goalie Ghost
+hattrick,,Hat Trick
+otwalls,,Off the Wall (Sente)
+snakepit,,Snake Pit
+snakjack,,Snacks'n Jaxson
+stocker,,Stocker
+triviag1,,Trivial Pursuit (Genus I)
+triviag2,,Trivial Pursuit (Genus II)
+triviasp,,Trivial Pursuit (All Star Sports Edition)
+triviayp,,Trivial Pursuit (Young Players Edition)
+triviabb,,Trivial Pursuit (Baby Boomer Edition)
+gimeabrk,,Gimme A Break
+minigolf,,Mini Golf (set 1)
+minigol2,1008,Mini Golf (set 2)
+toggle,,Toggle (prototype)
+nametune,,Name That Tune
+nstocker,,Night Stocker
+sfootbal,,Street Football
+spiker,,Spiker
+stompin,,Stompin'
+rescraid,,Rescue Raider
+rescrdsa,1016,Rescue Raider (Stand-Alone)
+grudge,,Grudge Match (prototype)
+shrike,,Shrike Avenger (prototype)
+gridlee,,Gridlee
+andromed,,Andromeda (Japan[Q])
+ipminvad,,IPM Invader
+skychut,,Sky Chuter
+spacbeam,,Space Beam
+greenber,,Green Beret (Irem)
+redalert,,Red Alert
+demoneye,,Demoneye-X
+olibochu,,Oli-Boo-Chu
+mpatrol,,Moon Patrol
+mpatrolw,1029,Moon Patrol (Williams)
+troangel,,Tropical Angel
+yard,,10 Yard Fight (Japan)
+vsyard,1032,"10 Yard Fight (Vs. version World, 11-05-84)"
+vsyard2,1032,"10 Yard Fight (Vs. version Japan, set 2)"
+travrusa,,Traverse USA - Zippy Race
+motorace,1035,MotoRace USA
+shtrider,,Shot Rider
+wilytowr,,Wily Tower
+atomboy,1038,Atomic Boy
+kungfum,,Kung-Fu Master
+kungfud,1040,Kung-Fu Master (Data East)
+spartanx,1040,Spartan X (Japan)
+kungfub,1040,Kung-Fu Master (bootleg set 1)
+kungfub2,1040,Kung-Fu Master (bootleg set 2)
+battroad,,The Battle-Road
+ldrun,,Lode Runner (set 1)
+ldruna,1046,Lode Runner (set 2)
+ldrun2,,Lode Runner II - The Bungeling Strikes Back
+ldrun3,,Lode Runner III - The Golden Labyrinth
+ldrun3jp,1049,Lode Runner III - Majin No Fukkatsu
+ldrun4,,Lode Runner IV - Teikoku Karano Dasshutsu
+lotlot,,Lot Lot
+kidniki,,Kid Niki - Radical Ninja (US)
+yanchamr,1053,Kaiketsu Yanchamaru (Japan)
+spelunkr,,Spelunker
+spelnkrj,1055,Spelunker (Japan)
+spelunk2,,Spelunker II
+horizon,,Horizon
+youjyudn,,Youjyuden (Japan)
+vigilant,,Vigilante (World)
+vigilntu,1060,Vigilante (US)
+vigilntj,1060,Vigilante (Japan)
+kikcubic,,Meikyu Jima (Japan)
+buccanrs,,Buccaneers (set 1)
+buccanra,1064,Buccaneers (set 2)
+rtype,,R-Type (Japan)
+rtypepj,1066,R-Type (Japan prototype)
+rtypeu,1066,R-Type (US)
+bchopper,,Battle Chopper
+mrheli,1069,Mr. HELI no Dai-Bouken
+nspirit,,Ninja Spirit
+nspiritj,1071,Saigo no Nindou (Japan)
+imgfight,,Image Fight (Japan)
+loht,,Legend of Hero Tonma
+xmultipl,,X Multiply (Japan)
+dbreed,,Dragon Breed
+rtype2,,R-Type II
+rtype2j,1077,R-Type II (Japan)
+majtitle,,Major Title (Japan)
+hharry,,Hammerin' Harry (World)
+hharryu,1080,Hammerin' Harry (US)
+dkgensan,1080,Daiku no Gensan (Japan)
+dkgenm72,1080,"Daiku no Gensan (Japan, M72)"
+poundfor,,Pound for Pound (World)
+poundfou,1084,Pound for Pound (US)
+airduel,,Air Duel (Japan)
+cosmccop,,Cosmic Cop (World)
+gallop,1087,Gallop - Armed police Unit (Japan)
+kengo,,Ken-Go
+sichuan2,,Sichuan II (hack[Q]) (set 1)
+sichuana,1090,Sichuan II (hack[Q]) (set 2)
+shisen,1090,Shisensho - Joshiryo-Hen (Japan)
+matchit,1090,Match It
+hasamu,,Hasamu (Japan)
+dynablst,,Dynablaster (World)
+dynablsb,1095,Dynablaster (bootleg)
+dicegame,,Dice - The Dice Game!
+bombrman,1095,Bomberman (Japan)
+bbmanw,,Bomber Man World (World)
+bbmanwj,1099,Bomber Man World (Japan)
+atompunk,1099,New Atomic Punk - Global Quest (US)
+quizf1,,"Quiz F-1 1,2finish"
+riskchal,,Risky Challenge
+gussun,1103,Gussun Oyoyo (Japan)
+matchit2,,Match It II
+shisen2,1105,Shisensho II
+gunforce,,Gunforce - Battle Fire Engulfed Terror Island (World)
+gunforcu,1107,Gunforce - Battle Fire Engulfed Terror Island (US)
+gunforcj,1107,Gunforce - Battle Fire Engulfed Terror Island (Japan)
+bmaster,,Blade Master (World)
+lethalth,,Lethal Thunder (World)
+thndblst,1111,Thunder Blaster (Japan)
+uccops,,Undercover Cops (World)
+uccopsar,1113,Undercover Cops (Alpha Renewal Version)
+uccopsj,1113,Undercover Cops (Japan)
+mysticri,,Mystic Riders (World)
+gunhohki,1116,Gun Hohki (Japan)
+majtitl2,,Major Title 2 (World)
+skingame,1118,The Irem Skins Game (US set 1)
+skingam2,1118,The Irem Skins Game (US set 2)
+hook,,Hook (World)
+hooku,1121,Hook (US)
+hookj,1121,Hook (Japan)
+rtypeleo,,R-Type Leo (World rev. C)
+rtypelej,1124,R-Type Leo (Japan rev. D)
+inthunt,,In The Hunt (World)
+inthuntu,1126,In The Hunt (US)
+kaiteids,1126,Kaitei Daisensou (Japan)
+nbbatman,,Ninja Baseball Batman (US)
+leaguemn,1129,Yakyuu Kakutou League-Man (Japan)
+ssoldier,,Superior Soldiers (US)
+psoldier,1131,Perfect Soldiers (Japan)
+dsccr94j,1137,Dream Soccer '94 (Japan)
+gunforc2,,Gunforce 2 (US)
+geostorm,1134,Geostorm (Japan)
+firebarr,,Fire Barrel (Japan)
+dsoccr94,,Dream Soccer '94
+wpksoc,,World PK Soccer
+reactor,,Reactor
+mplanets,,Mad Planets
+mplanuk,1140,Mad Planets (UK)
+qbert,,Q*bert (US set 1)
+qbertjp,1142,Q*bert (Japan)
+myqbert,1142,Mello Yello Q*bert
+qberttst,1142,Q*bert (early test version)
+insector,,Insector (prototype)
+tylz,,Tylz (prototype)
+argusg,,"Argus (Gottlieb, prototype)"
+krull,,Krull
+kngtmare,,Knightmare (prototype)
+sqbert,,"Faster, Harder, More Challenging Q*bert (prototype)"
+mach3,,M.A.C.H. 3
+usvsthem,,Us vs. Them
+3stooges,,The Three Stooges In Brides Is Brides
+qbertqub,,Q*bert's Qubes
+screwloo,,Screw Loose (prototype)
+curvebal,,Curve Ball
+wizwarz,,Wiz Warz (prototype)
+qix,,Qix (set 1)
+qixa,1159,Qix (set 2)
+qixb,1159,Qix (set 3)
+qix2,1159,Qix II (Tournament)
+sdungeon,,Space Dungeon
+elecyoyo,,The Electric Yo-Yo (set 1)
+elecyoy2,1164,The Electric Yo-Yo (set 2)
+kram,,Kram (set 1)
+kram2,1166,Kram (set 2)
+kram3,1166,Kram (encrypted)
+zookeep,,Zoo Keeper (set 1)
+zookeep2,1169,Zoo Keeper (set 2)
+zookeep3,1169,Zoo Keeper (set 3)
+slither,,Slither (set 1)
+slithera,1172,Slither (set 2)
+complexx,,Complex X
+spaceskr,,Space Seeker
+spacecr,,Space Cruiser
+junglek,,Jungle King (Japan)
+junglkj2,1177,"Jungle King (Japan, earlier)"
+jungleh,1177,Jungle Hunt (US)
+junglhbr,1177,Jungle Hunt (Brazil)
+piratpet,1177,Pirate Pete
+alpine,,Alpine Ski (set 1)
+alpinea,1182,Alpine Ski (set 2)
+timetunl,,Time Tunnel
+wwestern,,Wild Western (set 1)
+wwester1,1185,Wild Western (set 2)
+frontlin,,Front Line
+elevator,,Elevator Action
+elevatob,1188,Elevator Action (bootleg)
+tinstar,,The Tin Star
+waterski,,Water Ski
+bioatack,,Bio Attack
+hwrace,,High Way Race
+sfposeid,,Sea Fighter Poseidon
+kikstart,,Kick Start Wheelie King
+crbaloon,,Crazy Balloon (set 1)
+crbalon2,1196,Crazy Balloon (set 2)
+sbowling,,Strike Bowling
+grchamp,,Grand Champion
+marinedt,,Marine Date
+fspiderb,,Frog &amp; Spiders (bootleg?)
+jollyjgr,,Jolly Jogger
+bking,,Birdie King
+bking2,,Birdie King 2
+bking3,,Birdie King 3
+chaknpop,,Chack'n Pop
+josvolly,,Joshi Volleyball
+gsword,,Great Swordsman
+pitnrun,,Pit and Run
+lkage,,The Legend of Kage
+lkageb,1210,The Legend of Kage (bootleg set 1)
+lkageb2,1210,The Legend of Kage (bootleg set 2)
+lkageb3,1210,The Legend of Kage (bootleg set 3)
+msisaac,,Metal Soldier Isaac II
+retofinv,,Return of the Invaders
+retofin1,1215,Return of the Invaders (bootleg set 1)
+retofin2,1215,Return of the Invaders (bootleg set 2)
+fightrol,,Fighting Roller
+rollace,1218,Roller Aces (set 1)
+rollace2,1218,Roller Aces (set 2)
+vsgongf,,VS Gong Fight
+ringfgt,1221,Ring Fighter (set 1)
+ringfgt2,1221,Ring Fighter (set 2)
+fieldday,,Field Day
+undoukai,1224,The Undoukai (Japan)
+40love,,Forty-Love
+tsamurai,,Samurai Nihon-ichi (set 1)
+tsamura2,1227,Samurai Nihon-ichi (set 2)
+nunchaku,,Nunchackun
+yamagchi,,Go Go Mr. Yamaguchi - Yuke Yuke Yamaguchi-kun
+m660,,Mission 660 (US)
+m660j,1231,Mission 660 (Japan)
+m660b,1231,Mission 660 (bootleg)
+alphaxz,1231,The Alphax Z (Japan)
+buggychl,,Buggy Challenge
+buggycht,1235,Buggy Challenge (Tecfri)
+ssrj,,Super Speed Race Junior (Japan)
+bigevglf,,Big Event Golf
+flstory,,The FairyLand Story
+flstoryj,1239,The FairyLand Story (Japan)
+onna34ro,,Onna Sansirou - Typhoon Gal
+onna34ra,1241,Onna Sansirou - Typhoon Gal (bootleg)
+victnine,,Victorious Nine
+rumba,,Rumba Lumber
+gladiatr,,Gladiator (US)
+ogonsiro,1245,Ohgon no Siro (Japan)
+nycaptor,,N.Y. Captor
+cyclshtg,,Cycle Shooting
+bronx,1248,Bronx
+benberob,,Ben Bero Beh (Japan)
+halleys,,Halley's Comet (US)
+halleysc,1251,Halley's Comet (Japan set 1)
+halleycj,1251,Halley's Comet (Japan set 2)
+lsasquad,,Land Sea Air Squad - Riku Kai Kuu Saizensen
+storming,1254,Storming Party - Riku Kai Kuu Saizensen
+daikaiju,,Daikaiju no Gyakushu
+tokio,,Tokio / Scramble Formation (US)
+tokiob,1257,Tokio / Scramble Formation (bootleg)
+bublbobl,,Bubble Bobble
+bublbob1,1259,Bubble Bobble (older)
+bublbobr,1259,Bubble Bobble (US with mode select)
+bubbobr1,1259,Bubble Bobble (US)
+bublboblp,1259,Bubble Bobble (prototype on Tokio hardware)
+boblbobl,1259,Bobble Bobble
+sboblbob,1259,Super Bobble Bobble
+bublboblu,1259,Bubble Bobble (Ultra Version)(USA)
+bublcave,1259,Bubble Bobble: Lost Cave V1.2
+missb2,1259,Miss Bubble 2
+kikikai,,KiKi KaiKai
+kicknrun,,Kick and Run
+mexico86,1270,Mexico 86
+darius,,Darius (World)
+dariusj,1272,Darius (Japan)
+dariuso,1272,Darius (Japan old version)
+dariuse,1272,Darius (Extra) (Japan)
+rastan,,Rastan (World)
+rastanu,1276,Rastan (US set 1)
+rastanu2,1276,Rastan (US set 2)
+rastsaga,1276,Rastan Saga (Japan)
+topspeed,,Top Speed (World)
+topspedu,1280,Top Speed (US)
+fullthrl,1280,Full Throttle (Japan)
+opwolf,,Operation Wolf (US)
+opwolfb,1283,Operation Bear
+othunder,,Operation Thunderbolt (World)
+othundu,1285,Operation Thunderbolt (US)
+rainbow,,Rainbow Islands (new version)
+rainbowo,1287,Rainbow Islands (old version)
+rainbowe,1287,Rainbow Islands (Extra)
+jumping,1287,Jumping
+arkanoid,,Arkanoid (World)
+arknoidu,1291,Arkanoid (US)
+arknoiuo,1291,"Arkanoid (US, older)"
+arknoidj,1291,"Arkanoid (Japan, newer w/level select)"
+arkbl2,1291,Arkanoid (Japanese bootleg Set 2)
+arkbl3,1291,Arkanoid (Japanese bootleg Set 3)
+paddle2,1291,Paddle 2
+arkatayt,1291,"Arkanoid (Tayto bootleg, Japanese)"
+arkblock,1291,"Block (bootleg, Japanese)"
+arkbloc2,1291,Block (Game Corporation bootleg)
+arkangc,1291,Arkanoid (Game Corporation bootleg)
+arkatour,1291,Tournament Arkanoid (US)
+superqix,,Super Qix (set 1)
+sqixbl,1303,Super Qix (bootleg)
+perestro,,Perestroika Girls
+pbillian,,Prebillian
+hotsmash,,Vs. Hot Smash
+exzisus,,Exzisus (Japan)
+minivadr,,Minivader
+volfied,,Volfied (World)
+volfiedu,1310,Volfied (US)
+volfiedj,1310,Volfied (Japan)
+bonzeadv,,Bonze Adventure (World)
+bonzeadu,1313,Bonze Adventure (US)
+jigkmgri,1313,Jigoku Meguri (Japan)
+asuka,,Asuka and Asuka (Japan)
+mofflott,,Maze of Flott (Japan)
+cadash,,Cadash (World)
+cadashj,1318,Cadash (Japan)
+cadashu,1318,Cadash (US)
+cadashi,1318,Cadash (Italy)
+cadashf,1318,Cadash (France)
+galmedes,,Galmedes (Japan)
+earthjkr,,U.N. Defense Force - Earth Joker (Japan)
+eto,,Kokontouzai Eto Monogatari (Japan)
+wgp,,World Grand Prix (US)
+wgpj,1326,World Grand Prix (Japan)
+wgpjoy,1326,World Grand Prix (joystick version set 1) (Japan)
+wgpjoya,1326,World Grand Prix (joystick version set 2) (Japan)
+wgp2,1326,World Grand Prix 2 (Japan)
+slapshot,,Slap Shot (Japan)
+opwolf3,,Operation Wolf 3 (World)
+opwolf3u,1332,Operation Wolf 3 (US)
+scessjoe,,Success Joe (World)
+ashnojoe,1334,Ashita no Joe (Japan)
+ninjaw,,The Ninja Warriors (World)
+ninjawj,1336,The Ninja Warriors (Japan)
+darius2,,Darius II (Japan)
+darius2d,1338,Darius II (dual screen) (Japan)
+drius2do,1338,Darius II (dual screen) (Japan old version)
+warriorb,,Warrior Blade - Rastan Saga Episode III (Japan)
+superman,,Superman
+twinhawk,,Twin Hawk (World)
+twinhwku,1343,Twin Hawk (US)
+daisenpu,1343,Daisenpu (Japan)
+gigandes,,Gigandes
+kyustrkr,,Last Striker - Kyuukyoku no Striker
+ballbros,,Balloon Brothers
+plumppop,,Plump Pop (Japan)
+extrmatn,,Extermination (US)
+arknoid2,,Arkanoid - Revenge of DOH (World)
+arknid2u,1351,Arkanoid - Revenge of DOH (US)
+arknid2j,1351,Arkanoid - Revenge of DOH (Japan)
+drtoppel,,Dr. Toppel's Adventure (World)
+drtopplu,1354,Dr. Toppel's Adventure (US)
+drtopplj,1354,Dr. Toppel's Tankentai (Japan)
+kageki,,Kageki (US)
+kagekij,1357,Kageki (Japan)
+chukatai,,Chuka Taisen (World)
+chukatau,1359,Chuka Taisen (US)
+chukataj,1359,Chuka Taisen (Japan)
+kabukiz,,Kabuki-Z (World)
+kabukizj,1362,Kabuki-Z (Japan)
+tnzs,,"The NewZealand Story (Japan, new version) (P0-043A PCB)"
+tnzsb,1364,"The NewZealand Story (World, new version) (P0-043A PCB)"
+tnzs2,1364,"The NewZealand Story (World, old version) (P0-041A PCB)"
+insectx,,Insector X (World)
+raimais,,Raimais (Japan)
+kurikint,,Kuri Kinton (World)
+kurikinu,1369,Kuri Kinton (US)
+kurikinj,1369,Kuri Kinton (Japan)
+kurikina,1369,"Kuri Kinton (World, prototype[Q])"
+evilston,,Evil Stone
+fhawk,,Fighting Hawk (World)
+fhawkj,1374,Fighting Hawk (Japan)
+plotting,,Plotting (World)
+champwr,,Champion Wrestler (World)
+champwru,1377,Champion Wrestler (US)
+champwrj,1377,Champion Wrestler (Japan)
+puzznic,,Puzznic (Japan)
+horshoes,,American Horseshoes (US)
+palamed,,Palamedes (Japan)
+cachat,,Cachat (Japan)
+tubeit,1383,Tube-It
+cubybop,,Cuby Bop (Location Test)
+plgirls,,Play Girls
+plgirls2,,Play Girls 2
+syvalion,,Syvalion (Japan)
+recordbr,,Recordbreaker (World)
+dleague,,Dynamite League (Japan)
+masterw,,Master of Weapon (World)
+nastar,,Nastar (World)
+nastarw,1392,Nastar Warrior (US)
+rastsag2,1392,Rastan Saga 2 (Japan)
+rambo3,,Rambo III (Europe set 1)
+rambo3ae,1395,Rambo III (Europe set 2)
+rambo3a,1395,Rambo III (US)
+crimec,,Crime City (World)
+crimecu,1398,Crime City (US)
+crimecj,1398,Crime City (Japan)
+tetrist,2556,"Tetris (Japan, B-System)"
+viofight,,Violence Fight (World)
+ashura,,Ashura Blaster (Japan)
+ashurau,1403,Ashura Blaster (US)
+hitice,,Hit the Ice (US)
+sbm,,Sonic Blast Man (Japan)
+selfeena,,Sel Feena
+silentd,,Silent Dragon (World)
+silentdj,1408,Silent Dragon (Japan)
+ryujin,,Ryu Jin (Japan)
+qzshowby,,Quiz Sekai wa SHOW by shobai (Japan)
+pbobble,,"Puzzle Bobble (Japan, B-System)"
+bublbust,1412,Bubble Buster (US)
+spacedx,,Space Invaders DX (US) v2.1
+spacedxj,1414,Space Invaders DX (Japan) v2.1
+spacedxo,1414,Space Invaders DX (Japan) v2.0
+contcirc,,Continental Circus (World)
+contcrcu,1417,Continental Circus (US)
+chasehq,,Chase H.Q. (World)
+chasehqj,1419,Chase H.Q. (Japan)
+enforce,,Enforce (Japan)
+nightstr,,Night Striker (US)
+sci,,Special Criminal Investigation (World set 1)
+scia,1423,Special Criminal Investigation (World set 2)
+sciu,1423,Special Criminal Investigation (US)
+bshark,,Battle Shark (US)
+bsharkj,1426,Battle Shark (Japan)
+bsharkjjs,1426,"Battle Shark (Japan, Joystick)"
+aquajack,,Aqua Jack (World)
+aquajckj,1429,Aqua Jack (Japan)
+spacegun,,Space Gun (World)
+dblaxle,,Double Axle (US)
+pwheelsj,1432,Power Wheels (Japan)
+racingb,,Racing Beat (World)
+topland,,Top Landing (World)
+ainferno,,Air Inferno (US)
+gunbustr,,Gunbuster (Japan)
+superchs,,Super Chase - Criminal Termination (US)
+groundfx,,Ground Effects - Super Ground Effects (Japan)
+undrfire,,Under Fire (World)
+undrfiru,1440,Under Fire (US)
+undrfirj,1440,Under Fire (Japan)
+cbombers,,Chase Bombers (World)
+cbombersj,,Chase Bombers (Japan)
+cbombersp,,Chase Bombers (Japan Prototype)
+finalb,,Final Blow (World)
+finalbj,1446,Final Blow (Japan)
+dondokod,,Don Doko Don (World)
+dondokdu,1448,Don Doko Don (US)
+dondokdj,1448,Don Doko Don (Japan)
+megab,,Mega Blast (World)
+megabj,1451,Mega Blast (Japan)
+thundfox,,Thunder Fox (World)
+thndfoxu,1453,Thunder Fox (US)
+thndfoxj,1453,Thunder Fox (Japan)
+cameltry,,Cameltry (US)
+camltrua,1456,"Cameltry (US, alt sound)"
+cameltrj,1456,Cameltry (Japan)
+qtorimon,,Quiz Torimonochou (Japan)
+liquidk,,Liquid Kids (World)
+liquidku,1460,Liquid Kids (US)
+mizubaku,1460,Mizubaku Daibouken (Japan)
+quizhq,,Quiz H.Q. (Japan)
+ssi,,Super Space Invaders '91 (World)
+majest12,1464,Majestic Twelve - The Space Invaders Part IV (Japan)
+gunfront,,Gun and Frontier (World)
+gunfronj,1466,Gun Frontier (Japan)
+growl,,Growl (World)
+growlu,1468,Growl (US)
+runark,1468,Runark (Japan)
+mjnquest,,Mahjong Quest (Japan)
+mjnquesb,1471,Mahjong Quest (No Nudity)
+footchmp,,Football Champ (World)
+hthero,1473,Hat Trick Hero (Japan)
+euroch92,1473,Euro Champ '92 (World)
+koshien,,Ah Eikou no Koshien (Japan)
+yuyugogo,,Yuuyu no Quiz de GO!GO! (Japan)
+ninjak,,The Ninja Kids (World)
+ninjakj,1478,The Ninja Kids (Japan)
+solfigtr,,Solitary Fighter (World)
+qzquest,,Quiz Quest - Hime to Yuusha no Monogatari (Japan)
+pulirula,,PuLiRuLa (World)
+pulirulj,1482,PuLiRuLa (Japan)
+metalb,,Metal Black (World)
+metalbj,1484,Metal Black (Japan)
+qzchikyu,,Quiz Chikyu Bouei Gun (Japan)
+yesnoj,,Yes-No Sinri Tokimeki Chart
+deadconx,,Dead Connection (World)
+deadconj,1488,Dead Connection (Japan)
+dinorex,,Dino Rex (World)
+dinorexj,1490,Dino Rex (Japan)
+dinorexu,1490,Dino Rex (US)
+qjinsei,,Quiz Jinsei Gekijoh (Japan)
+qcrayon,,Quiz Crayon Shinchan (Japan)
+qcrayon2,,Crayon Shinchan Orato Asobo (Japan)
+driftout,,Drift Out (Japan)
+driveout,1496,Drive Out
+ringrage,,Ring Rage (World)
+ringragj,1498,Ring Rage (Japan)
+ringragu,1498,Ring Rage (US)
+arabianm,,Arabian Magic (World)
+arabiamj,1501,Arabian Magic (Japan)
+arabiamu,1501,Arabian Magic (US)
+ridingf,,Riding Fight (World)
+ridefgtj,1504,Riding Fight (Japan)
+ridefgtu,1504,Riding Fight (US)
+gseeker,,Grid Seeker - Project Stormhammer (World)
+gseekerj,1507,Grid Seeker - Project Stormhammer (Japan)
+gseekeru,1507,Grid Seeker - Project Stormhammer (US)
+hthero93,1521,Hat Trick Hero '93 (Japan)
+cupfinal,1521,Taito Cup Finals (World)
+trstar,,Top Ranking Stars (World new version)
+trstarj,1512,Top Ranking Stars (Japan new version)
+prmtmfgt,1512,Prime Time Fighter (US new version)
+trstaro,1512,Top Ranking Stars (World old version)
+trstaroj,1512,Top Ranking Stars (Japan old version)
+prmtmfgo,1512,Prime Time Fighter (US old version)
+gunlock,,Gunlock (World)
+rayforcj,1518,Rayforce (Japan)
+rayforce,1518,Rayforce (US)
+scfinals,,Super Cup Finals (World)
+intcup94,1521,International Cup '94
+dungeonm,,Dungeon Magic (World)
+lightbr,1523,Light Bringer (Japan)
+dungenmu,1523,Dungeon Magic (US)
+kaiserkn,,Kaiser Knuckle (World)
+kaiserkj,1526,Kaiser Knuckle (Japan)
+gblchmp,1526,Global Champion (US)
+dankuga,1526,Dan-Ku-Ga (Prototype)
+dariusg,,Darius Gaiden - Silver Hawk (World)
+dariusgj,1530,Darius Gaiden - Silver Hawk (Japan)
+dariusgu,1530,Darius Gaiden - Silver Hawk (US)
+dariusgx,1530,Darius Gaiden - Silver Hawk (Extra Version) [Official Hack]
+bublbob2,,Bubble Bobble 2 (World)
+bubsympe,1534,Bubble Symphony (Europe)
+bubsympu,1534,Bubble Symphony (US)
+bubsymph,1534,Bubble Symphony (Japan)
+spcinvdj,1414,Space Invaders DX (Japan F3 version)
+pwrgoal,,Taito Power Goal (World)
+hthero95,1539,Hat Trick Hero '95 (Japan)
+hthro95u,1539,Hat Trick Hero '95 (US)
+qtheater,,Quiz Theater - 3tsu no Monogatari (Japan)
+elvactr,,Elevator Action Returns (World)
+elvactrj,1543,Elevator Action Returns (Japan)
+elvact2u,1543,Elevator Action 2 (US)
+spcinv95,,Space Invaders '95 - Attack Of The Lunar Loonies (World)
+spcnv95u,1546,Space Invaders '95 - Attack Of The Lunar Loonies (US)
+akkanvdr,1546,Akkanvader (Japan)
+twinqix,,Twin Qix (US Prototype)
+quizhuhu,,Moriguchi Hiroko no Quiz de Hyuu!Hyuu! (Japan)
+pbobble2,,Puzzle Bobble 2 (World)
+pbobbl2j,1551,Puzzle Bobble 2 (Japan)
+pbobbl2u,1551,Bust-A-Move Again (US)
+pbobbl2x,1551,Puzzle Bobble 2X (Japan)
+gekirido,,Gekirindan (Japan)
+tcobra2,,Twin Cobra 2 (World)
+tcobra2u,1556,Twin Cobra 2 (US)
+ktiger2,1556,Kyukyoku Tiger 2 (Japan)
+bubblem,,Bubble Memories - The Story Of Bubble Bobble 3 (World)
+bubblemj,1559,Bubble Memories - The Story Of Bubble Bobble 3 (Japan)
+cleopatr,,Cleopatra Fortune (Japan)
+pbobble3,,Puzzle Bobble 3 (World)
+pbobbl3u,1562,Puzzle Bobble 3 (US)
+pbobbl3j,1562,Puzzle Bobble 3 (Japan)
+arkretrn,,Arkanoid Returns (Japan)
+kirameki,,Kirameki Star Road (Japan)
+puchicar,,Puchi Carat (Japan)
+pbobble4,,Puzzle Bobble 4 (World)
+pbobbl4j,1568,Puzzle Bobble 4 (Japan)
+pbobbl4u,1568,Puzzle Bobble 4 (US)
+popnpop,,Pop 'N Pop (World)
+popnpopj,1571,Pop 'N Pop (Japan)
+popnpopu,1571,Pop 'N Pop (US)
+landmakr,,Land Maker (Japan)
+landmkrp,1574,Land Maker (World Prototype)
+recalh,,Recalhorn (Prototype)
+commandw,,Command War - Super Special Battle &amp; War Game (Prototype)
+bublbob2p,1534,Bubble Bobble 2 (prototype)
+perfrman,,Performan (Japan)
+perfrmau,1579,Performan (US)
+tigerh,,Tiger Heli (US)
+tigerh2,1581,Tiger Heli (Japan set 1)
+tigerhj,1581,Tiger Heli (Japan set 2)
+tigerhb1,1581,Tiger Heli (bootleg set 1)
+tigerhb2,1581,Tiger Heli (bootleg set 2)
+slapfigh,,Slap Fight
+slapbtjp,1586,Slap Fight (Japan bootleg)
+slapbtuk,1586,Slap Fight (English bootleg)
+alcon,1586,Alcon
+getstar,,Guardian (US)
+getstarj,1590,Get Star (Japan)
+getstarb,1590,Get Star (bootleg)
+mjsister,,Mahjong Sisters (Japan)
+fshark,,Flying Shark (World)
+skyshark,1594,Sky Shark (US)
+hishouza,1594,Hishou Zame (Japan)
+fsharkbt,1594,Flying Shark (bootleg)
+wardner,,Wardner (World)
+pyros,1598,Pyros (US)
+wardnerj,1598,Wardner no Mori (Japan)
+twincobr,,Twin Cobra (World)
+twincobu,1601,Twin Cobra (US)
+ktiger,1601,Kyukyoku Tiger (Japan)
+ktiger2p,1601,"Kyukyoku Tiger (Japan, 2 Players)"
+gulfwar2,,Gulf War II
+rallybik,,Rally Bike - Dash Yarou
+truxton,,Truxton - Tatsujin
+hellfire,,Hellfire
+hellfir1,1608,Hellfire (1P Ver.)
+zerowing,,Zero Wing
+demonwld,,Demon's World - Horror Story
+demonwl1,1611,Demon's World - Horror Story (Taito license)
+fireshrk,,Fire Shark
+samesame,1613,Same! Same! Same!
+samesam2,1613,Same! Same! Same! (2P Ver.)
+outzone,,Out Zone (set 1)
+outzonea,1616,"Out Zone (set 2, Prototype)"
+vimana,,Vimana
+vimana1,1618,Vimana (old set)
+vimanan,1618,Vimana (Nova Apparate GMBH and Co)
+snowbros,,Snow Bros. - Nick &amp; Tom (set 1)
+snowbroa,1621,Snow Bros. - Nick &amp; Tom (set 2)
+snowbrob,1621,Snow Bros. - Nick &amp; Tom (set 3)
+snowbroj,1621,Snow Bros. - Nick &amp; Tom (Japan)
+wintbob,1621,The Winter Bobble
+htchctch,,Hatch Catch
+hyperpac,,Hyper Pacman
+hyperpcb,1627,Hyper Pacman (bootleg)
+chokchok,,Choky! Choky!
+cookbib,,Cookie &amp; Bibi
+cookbib2,,Cookie &amp; Bibi 2
+sdfight,,SD Fighter (Korea)
+toppyrap,,Toppy &amp; Rappy
+bcstry,,B.C. Story (set 1)
+bcstrya,1634,B.C. Story (set 2)
+cookbib3,,Cookie &amp; Bibi 3
+pzlbreak,,Puzzle Break
+twinkle,,Twinkle
+3in1semi,,New HyperMan (3-in-1 with Cookie &amp; Bibi &amp; HyperMan)
+moremore,,More More
+moremorp,,More More Plus
+finalttr,,Final Tetris
+toto,,Come Back Toto
+4in1boot,,Puzzle King (PacMan 2 with Tetris &amp; HyperMan 2 &amp; Snow Bros)
+snowbro3,,Snow Brothers 3 - Magical Adventure
+tekipaki,,Teki Paki
+ghox,,Ghox (spinner)
+ghoxj,1647,Ghox (joystick)
+dogyuun,,Dogyuun
+dogyuunto,1649,Dogyuun (8/25/1992 location test)
+kbash,,Knuckle Bash
+kbash2,,Knuckle Bash 2
+truxton2,,Truxton II - Tatsujin II - Tatsujin Oh (Japan)
+pipibibs,,Pipi and Bibis - Whoopee!!
+whoopee,1654,Whoopee!! - Pipi and Bibis
+pipibibi,1654,Pipi and Bibis - Whoopee!! (bootleg [Q])
+fixeight,,FixEight
+fixeighb,1657,FixEight (Bootleg)
+vfive,,V-Five (Japan)
+grindstm,1659,Grind Stormer
+grindsta,1659,Grind Stormer (older set)
+batsugun,,Batsugun
+batugnsp,1662,Batsugun (Special Ver.)
+snowbro2,,Snow Bros. 2 - With New Elves - Otenki Paradise
+sstriker,1666,Sorcer Striker (World)
+mahoudai,,Mahou Daisakusen (Japan)
+shippumd,,Shippu Mahou Daisakusen (Japan)
+kingdmgp,1667,Kingdom Grandprix (World)
+battleg,,Battle Garegga - Type 2 (Denmark - China) (Tue Apr 2 1996)
+battlega,1669,Battle Garegga (Europe - USA - Japan - Asia) (Sat Feb 3 1996)
+battlegb,1669,Battle Garegga (Austria - Hong Kong) (Sat Mar 2 1996)
+batrider,,"Armed Police Batrider (Japan, version B)"
+batridra,1672,"Armed Police Batrider (Japan, version A)"
+batridrk,1672,"Armed Police Batrider (Korea, version B)"
+bbakraid,,Battle Bakraid (Japan) (Wed Apr 7 1999)
+bbakradu,1675,Battle Bakraid - Unlimited version (Japan) (Tue Jun 8 1999)
+pwrinst2,,Power Instinct 2 (USA)
+plegends,,Power Instinct Legends (USA)
+mazinger,,Mazinger Z
+donpachi,,DonPachi (US)
+donpachj,1680,DonPachi (Japan)
+donpachk,1680,DonPachi (Korea)
+metmqstr,,Metamoqester
+nmaster,1683,Oni - The Ninja Master (Japan)
+sailormn,,Pretty Soldier Sailor Moon (95-03-22B)
+sailormo,1685,Pretty Soldier Sailor Moon (95-03-22)
+agallet,,Air Gallet
+hotdogst,,Hotdog Storm
+ddonpach,,DoDonPachi (International)
+ddonpchj,1689,DoDonPachi (Japan)
+ddonpacha,1689,"DoDonPachi (Arrange Ver. 1.1) (trap15, hack)"
+dfeveron,,Dangun Feveron (Japan)
+feversos,1692,Fever SOS (International)
+esprade,,ESP Ra.De. (International Ver 1998 4-22)
+espradej,1694,ESP Ra.De. (Japan Ver 1998 4-21)
+espradeo,1694,ESP Ra.De. (Japan Ver 1998 4-14)
+uopoko,,Uo Poko (Japan)
+guwange,,Guwange (Japan)
+guwanges,1698,Guwange (Japan Special Ver 2000 7-7)
+gaia,,Gaia Crusaders
+theroes,,Thunder Heroes
+gyrodine,,Gyrodine
+sonofphx,,Son of Phoenix
+repulse,1703,Repulse
+99lstwar,1703,'99: The Last War
+99lstwra,1703,'99: The Last War (alternate)
+flashgal,,Flashgal
+srdmissn,,S.R.D. Mission
+legend,,Legend
+airwolf,,Airwolf
+skywolf,1710,Sky Wolf (set 1)
+skywolf2,1710,Sky Wolf (set 2)
+defender,,Defender (Red label)
+defendg,1713,Defender (Green label)
+defendw,1713,Defender (White label)
+defndjeu,1713,Defender [Q] (bootleg)
+defcmnd,1713,Defense Command (set 1)
+defence,1713,Defence Command
+mayday,,Mayday (set 1)
+maydaya,1719,Mayday (set 2)
+maydayb,1719,Mayday (set 3)
+colony7,,Colony 7 (set 1)
+colony7a,1722,Colony 7 (set 2)
+stargate,,Stargate
+robotron,,Robotron (Solid Blue label)
+robotryo,1725,Robotron (Yellow-Orange label)
+joust,,Joust (White-Green label)
+joustr,1727,Joust (Solid Red label)
+joustwr,1727,Joust (White-Red label)
+bubbles,,Bubbles
+bubblesr,1730,Bubbles (Solid Red label)
+bubblesp,1730,Bubbles (prototype version)
+splat,,Splat!
+sinistar,,Sinistar (revision 3)
+sinista1,1734,Sinistar (prototype version)
+sinista2,1734,Sinistar (revision 2)
+playball,,PlayBall! (prototype)
+blaster,,Blaster
+blastkit,1738,Blaster (kit)
+spdball,,Speed Ball (prototype)
+alienar,,Alien Arena
+alienaru,,Alien Arena (Stargate upgrade)
+mysticm,,Mystic Marathon
+tshoot,,Turkey Shoot
+inferno,,Inferno (Williams)
+joust2,,Joust 2 - Survival of the Fittest (set 1)
+lottofun,,Lotto Fun
+vulgus,,Vulgus (set 1)
+vulgus2,1748,Vulgus (set 2)
+vulgusj,1748,Vulgus (Japan[Q])
+sonson,,Son Son
+sonsonj,1751,Son Son (Japan)
+higemaru,,Pirate Ship Higemaru
+1942,,1942 (set 1)
+1942a,1754,1942 (set 2)
+1942b,1754,1942 (set 3)
+exedexes,,Exed Exes
+savgbees,1757,Savage Bees
+commando,,Commando (World)
+commandu,1759,Commando (US)
+commandj,1759,Senjou no Ookami
+sinvasn,1759,Space Invasion (Europe)
+sinvasnb,1759,Space Invasion (bootleg)
+gng,,Ghosts'n Goblins (World[Q] set 1)
+gnga,1764,Ghosts'n Goblins (World[Q] set 2)
+gngt,1764,Ghosts'n Goblins (US)
+makaimur,1764,Makai-Mura (Japan)
+makaimuc,1764,Makai-Mura (Japan Revision C)
+makaimug,1764,Makai-Mura (Japan Revision G)
+diamond,,Diamond Run
+gunsmoke,,Gun.Smoke (World)
+gunsmoku,1771,Gun.Smoke (US set 1)
+gunsmoka,1771,Gun.Smoke (US set 2)
+gunsmokj,1771,Gun.Smoke (Japan)
+sectionz,,Section Z (set 1)
+sctionza,1775,Section Z (set 2)
+trojan,,Trojan (US)
+trojanr,1777,Trojan (Romstar)
+trojanj,1777,Tatakai no Banka (Japan)
+srumbler,,The Speed Rumbler (set 1)
+srumblr2,1780,The Speed Rumbler (set 2)
+rushcrsh,1780,Rush and Crash (Japan)
+lwings,,Legendary Wings (US set 1)
+lwings2,1783,Legendary Wings (US set 2)
+lwingsjp,1783,Ares no Tsubasa (Japan)
+sidearms,,Side Arms - Hyper Dyne (World)
+sidearmr,1786,Side Arms - Hyper Dyne (US)
+sidearjp,1786,Side Arms - Hyper Dyne (Japan)
+turtship,,Turtle Ship
+dyger,,Dyger (Korea set 1)
+dygera,1790,Dyger (Korea set 2)
+whizz,,Whizz
+avengers,,Avengers (US set 1)
+avenger2,1793,Avengers (US set 2)
+buraiken,1793,Hissatsu Buraiken (Japan)
+bionicc,,Bionic Commando (US set 1)
+bionicc2,1796,Bionic Commando (US set 2)
+topsecrt,1796,Top Secret (Japan)
+1943,,1943 - The Battle of Midway (US)
+1943j,1799,1943 - The Battle of Midway (Japan)
+1943mii,,1943 - The Battle of Midway Mark II (US)
+blktiger,,Black Tiger
+bktigerb,1802,Black Tiger (bootleg)
+blkdrgon,1802,Black Dragon
+blkdrgonb,1802,Black Dragon (bootleg)
+sf1,,Street Fighter (World)
+sf1us,1806,Street Fighter (US)
+sf1jp,1806,Street Fighter (Japan)
+sf1p,1806,Street Fighter (prototype)
+tigeroad,,Tiger Road (US)
+toramich,1810,Tora-he no Michi (Japan)
+f1dream,,F-1 Dream
+f1dreamb,1812,F-1 Dream (bootleg)
+1943kai,,1943 Kai - Midway Kaisen
+lastduel,,Last Duel (US set 1)
+lstduela,1815,Last Duel (US set 2)
+lstduelb,1815,Last Duel (bootleg)
+madgear,,Mad Gear (US)
+madgearj,1818,Mad Gear (Japan)
+ledstorm,1818,Led Storm (US)
+leds2011,,Led Storm Rally 2011 (World)
+forgottn,,Forgotten Worlds (US)
+lostwrld,1822,Lost Worlds (Japan)
+ghouls,,Ghouls'n Ghosts (World)
+ghoulsu,1824,Ghouls'n Ghosts (US)
+daimakai,1824,Dai Makai-Mura (Japan)
+strider,,Strider (US set 1)
+stridrua,1827,Strider (US set 2)
+striderj,1827,Strider Hiryu (Japan set 1)
+stridrja,1827,Strider Hiryu (Japan set 2)
+dw,,Dynasty Wars (World)
+dwj,1831,Tenchi wo Kurau (Japan)
+willow,,Willow (US)
+willowj,1833,"Willow (Japan, Japanese)"
+willowje,1833,"Willow (Japan, English)"
+unsquad,,U.N. Squadron (US)
+area88,1836,Area 88 (Japan)
+ffight,,Final Fight (World)
+ffightu,1838,Final Fight (US 900112)
+ffightj,1838,Final Fight (Japan set 1)
+ffightj1,1838,Final Fight (Japan set 2)
+ffightae,1838,Final Fight 30th Anniversary Edition
+1941,,1941 - Counter Attack (World)
+1941j,1843,1941 - Counter Attack (Japan)
+mercs,,Mercs (World 900302)
+mercsu,1845,Mercs (US 900302)
+mercsua,1845,Mercs (US 900608)
+mercsj,1845,Senjou no Ookami II (Japan 900302)
+mtwins,,Mega Twins (World 900619)
+chikij,1849,Chiki Chiki Boys (Japan 900619)
+msword,,Magic Sword - Heroic Fantasy (World 900725)
+mswordr1,1851,Magic Sword - Heroic Fantasy (World 900623)
+mswordu,1851,Magic Sword - Heroic Fantasy (US 900725)
+mswordj,1851,Magic Sword (Japan 900623)
+cawing,,Carrier Air Wing (World 901012)
+cawingu,1855,Carrier Air Wing (US 901012)
+cawingj,1855,U.S. Navy (Japan 901012)
+nemo,,Nemo (World 901130)
+nemoj,1858,Nemo (Japan 901120)
+sf2,,Street Fighter II - The World Warrior (World 910522)
+sf2eb,1860,Street Fighter II - The World Warrior (World 910214)
+sf2ua,1860,Street Fighter II - The World Warrior (US 910206)
+sf2ub,1860,Street Fighter II - The World Warrior (US 910214)
+sf2ud,1860,Street Fighter II - The World Warrior (US 910318)
+sf2ue,1860,Street Fighter II - The World Warrior (US 910228)
+sf2uf,1860,Street Fighter II - The World Warrior (US 910411)
+sf2ui,1860,Street Fighter II - The World Warrior (US 910522)
+sf2uk,1860,Street Fighter II - The World Warrior (US 911101)
+sf2j,1860,Street Fighter II - The World Warrior (Japan 911210)
+sf2ja,1860,Street Fighter II - The World Warrior (Japan 910214)
+sf2jc,1860,Street Fighter II - The World Warrior (Japan 910306)
+3wonders,,Three Wonders (World 910520)
+3wonderu,1872,Three Wonders (US 910520)
+wonder3,1872,Wonder 3 (Japan 910520)
+kod,,The King of Dragons (World 910711)
+kodu,1875,The King of Dragons (US 910910)
+kodj,1875,The King of Dragons (Japan 910805)
+kodb,1875,The King of Dragons (bootleg)
+captcomm,,Captain Commando (World 911014)
+captcomu,1879,Captain Commando (US 910928)
+captcomj,1879,Captain Commando (Japan 911202)
+knights,,Knights of the Round (World 911127)
+knightsu,1882,Knights of the Round (US 911127)
+knightsj,1882,Knights of the Round (Japan 911127)
+sf2ce,,Street Fighter II' - Champion Edition (World 920313)
+sf2mix,1885,Street Fighter II: Champion Edition (Mix 1.3)
+sf2ceua,1885,Street Fighter II' - Champion Edition (US 920313)
+sf2ceub,1885,Street Fighter II' - Champion Edition (US 920513)
+sf2ceuc,1885,Street Fighter II' - Champion Edition (US 920803)
+sf2cej,1885,Street Fighter II' - Champion Edition (Japan 920513)
+sf2rb,1885,Street Fighter II' - Champion Edition (Rainbow set 1)
+sf2rb2,1885,Street Fighter II' - Champion Edition (Rainbow set 2)
+sf2red,1885,Street Fighter II' - Champion Edition (Red Wave)
+sf2v004,1885,Street Fighter II! - Champion Edition (V004)
+sf2accp2,1885,Street Fighter II' - Champion Edition (Accelerator Pt.II)
+sf2m1,1885,Street Fighter II' - Champion Edition (M1)
+sf2m2,1885,Street Fighter II' - Champion Edition (M2)
+sf2m3,1885,Street Fighter II' - Champion Edition (M3)
+sf2m4,1885,Street Fighter II' - Champion Edition (M4)
+sf2m5,1885,Street Fighter II' - Champion Edition (M5)
+sf2m6,1885,Street Fighter II' - Champion Edition (M6)
+sf2m7,1885,Street Fighter II' - Champion Edition (M7)
+sf2yyc,1885,Street Fighter II' - Champion Edition (YYC)
+sf2koryu,1885,Street Fighter II' - Champion Edition (Kouryu)
+varth,,Varth - Operation Thunderstorm (World 920612)
+varthu,1905,Varth - Operation Thunderstorm (US 920612)
+varthj,1905,Varth - Operation Thunderstorm (Japan 920714)
+cworld2j,,Capcom World 2 (Japan 920611)
+wof,,Warriors of Fate (World 921002)
+wofa,1909,Sangokushi II (Asia 921005)
+wofu,1909,Warriors of Fate (US 921031)
+wofj,1909,Tenchi wo Kurau II - Sekiheki no Tatakai (Japan 921031)
+sf2t,1885,Street Fighter II' - Hyper Fighting (US 921209)
+sf2tj,1885,Street Fighter II' Turbo - Hyper Fighting (Japan 921209)
+dino,,Cadillacs and Dinosaurs (World 930201)
+dinou,1915,Cadillacs and Dinosaurs (US 930201)
+dinoj,1915,Cadillacs Kyouryuu-Shinseiki (Japan 930201)
+punisher,,The Punisher (World 930422)
+punishru,1918,The Punisher (US 930422)
+punishrj,1918,The Punisher (Japan 930422)
+slammast,,Saturday Night Slam Masters (World 930713)
+slammasu,1921,Saturday Night Slam Masters (US 930713)
+mbomberj,1921,Muscle Bomber - The Body Explosion (Japan 930713)
+mbombrd,1921,Muscle Bomber Duo - Ultimate Team Battle (World 931206)
+mbombrdj,1921,Muscle Bomber Duo - Heat Up Warriors (Japan 931206)
+pnickj,,Pnickies (Japan 940608)
+qad,,Quiz and Dragons (US 920701)
+qadj,1927,Quiz and Dragons (Japan 940921)
+qtono2,,Quiz Tonosama no Yabou 2 Zenkoku-ban (Japan 950123)
+pang3,,Pang! 3 (Euro 950511)
+pang3j,1930,Pang! 3 (Japan 950511)
+megaman,,Mega Man - The Power Battle (CPS1 Asia 951006)
+rockmanj,1932,Rockman - The Power Battle (CPS1 Japan 950922)
+gulunpa,,Gulun.Pa! (Japan 931220 L Prototype)
+wofch,,"Tenchi wo Kurau II: Sekiheki no Tatakai (CPS Changer, Japan 921031)"
+ssf2,,Super Street Fighter II: The New Challengers (World 931005)
+ssf2r1,1936,Super Street Fighter II: The New Challengers (World 930911)
+ssf2u,1936,Super Street Fighter II: The New Challengers (USA 930911)
+ssf2us2,1936,Super Street Fighter II: The New Challengers Super 2 (USA 930911)
+ssf2a,1936,Super Street Fighter II: The New Challengers (Asia 931005)
+ssf2ar1,1936,Super Street Fighter II: The New Challengers (Asia 930914)
+ssf2j,1936,Super Street Fighter II: The New Challengers (Japan 931005)
+ssf2jr1,1936,Super Street Fighter II: The New Challengers (Japan 930911)
+ssf2jr2,1936,Super Street Fighter II: The New Challengers (Japan 930910)
+ssf2h,1936,Super Street Fighter II: The New Challengers (Hispanic 930911)
+ssf2tb,1936,Super Street Fighter II: The Tournament Battle (World 931119)
+ssf2tbr1,1936,Super Street Fighter II: The Tournament Battle (World 930911)
+ssf2tbu,1936,Super Street Fighter II: The Tournament Battle (USA 930911)
+ssf2tbj,1936,Super Street Fighter II: The Tournament Battle (Japan 931005)
+ssf2tbj1,1936,Super Street Fighter II: The Tournament Battle (Japan 930911)
+ssf2tba,1936,Super Street Fighter II: The Tournament Battle (Asia 931005)
+ssf2tbh,1936,Super Street Fighter II: The Tournament Battle (Hispanic 931005)
+ecofghtr,,Eco Fighters (World 931203)
+ecofghtru,1953,Eco Fighters (USA 940215)
+ecofghtru1,1953,Eco Fighters (USA 931203)
+uecology,1953,Ultimate Ecology (Japan 931203)
+ecofghtra,1953,Eco Fighters (Asia 931203)
+ecofghtrh,1953,Eco Fighters (Hispanic 931203)
+ddtod,,Dungeons &amp; Dragons: Tower of Doom (Euro 940412)
+ddtodr1,1959,Dungeons &amp; Dragons: Tower of Doom (Euro 940113)
+ddtodu,1959,Dungeons &amp; Dragons: Tower of Doom (USA 940125)
+ddtodur1,1959,Dungeons &amp; Dragons: Tower of Doom (USA 940113)
+ddtodj,1959,Dungeons &amp; Dragons: Tower of Doom (Japan 940412)
+ddtodjr1,1959,Dungeons &amp; Dragons: Tower of Doom (Japan 940125)
+ddtodjr2,1959,Dungeons &amp; Dragons: Tower of Doom (Japan 940113)
+ddtoda,1959,Dungeons &amp; Dragons: Tower of Doom (Asia 940412)
+ddtodar1,1959,Dungeons &amp; Dragons: Tower of Doom (Asia 940113)
+ddtodh,1959,Dungeons &amp; Dragons: Tower of Doom (Hispanic 940412)
+ddtodhr1,1959,Dungeons &amp; Dragons: Tower of Doom (Hispanic 940125)
+ddtodhr2,1959,Dungeons &amp; Dragons: Tower of Doom (Hispanic 940113)
+ssf2t,,Super Street Fighter II Turbo (World 940223)
+ssf2ta,1971,Super Street Fighter II Turbo (Asia 940223)
+ssf2th,1971,Super Street Fighter II Turbo (Hispanic 940223)
+ssf2tu,1971,Super Street Fighter II Turbo (USA 940323)
+ssf2tur1,1971,Super Street Fighter II Turbo (USA 940223)
+ssf2xj,1971,Super Street Fighter II X: Grand Master Challenge (Japan 940311)
+ssf2xjr1,1971,Super Street Fighter II X: Grand Master Challenge (Japan 940223)
+ssf2xjr1r,1971,Super Street Fighter II X: Grand Master Challenge (Japan 940223 rent version)
+avsp,,Alien vs. Predator (Euro 940520)
+avspu,1979,Alien vs. Predator (USA 940520)
+avspj,1979,Alien vs. Predator (Japan 940520)
+avspa,1979,Alien vs. Predator (Asia 940520)
+avsph,1979,Alien vs. Predator (Hispanic 940520)
+dstlk,,Darkstalkers: The Night Warriors (Euro 940705)
+dstlku,1984,Darkstalkers: The Night Warriors (USA 940818)
+dstlkur1,1984,Darkstalkers: The Night Warriors (USA 940705)
+dstlka,1984,Darkstalkers: The Night Warriors (Asia 940705)
+dstlkh,1984,Darkstalkers: The Night Warriors (Hispanic 940818)
+vampj,1984,Vampire: The Night Warriors (Japan 940705)
+vampja,1984,Vampire: The Night Warriors (Japan 940705 alt)
+vampjr1,1984,Vampire: The Night Warriors (Japan 940630)
+ringdest,,Ring of Destruction: Slammasters II (Euro 940902)
+ringdesta,1992,Ring of Destruction: Slammasters II (Asia 940831)
+ringdesth,1992,Ring of Destruction: Slammasters II (Hispanic 940902)
+ringdestb,1992,Ring of Destruction: Slammasters II (Brazil 940902)
+smbomb,1992,Super Muscle Bomber: The International Blowout (Japan 940831)
+smbombr1,1992,Super Muscle Bomber: The International Blowout (Japan 940808)
+armwar,,Armored Warriors (Euro 941024)
+armwarr1,1998,Armored Warriors (Euro 941011)
+armwaru,1998,Armored Warriors (USA 941024)
+armwaru1,1998,Armored Warriors (USA 940920)
+armwarb,1998,Armored Warriors (Brazil 941024)
+pgear,1998,Powered Gear: Strategic Variant Armor Equipment (Japan 941024)
+pgearr1,1998,Powered Gear: Strategic Variant Armor Equipment (Japan 940916)
+armwara,1998,Armored Warriors (Asia 941024)
+armwarar1,1998,Armored Warriors (Asia 940920)
+xmcota,,X-Men: Children of the Atom (Euro 950331)
+xmcotar1,2007,X-Men: Children of the Atom (Euro 950105)
+xmcotau,2007,X-Men: Children of the Atom (USA 950105)
+xmcotab,2007,X-Men: Children of the Atom (Brazil 950331)
+xmcotah,2007,X-Men: Children of the Atom (Hispanic 950331)
+xmcotahr1,2007,X-Men: Children of the Atom (Hispanic 950105)
+xmcotaj,2007,X-Men: Children of the Atom (Japan 950105)
+xmcotaj1,2007,X-Men: Children of the Atom (Japan 941222)
+xmcotaj2,2007,X-Men: Children of the Atom (Japan 941219)
+xmcotaj3,2007,X-Men: Children of the Atom (Japan 941217)
+xmcotajr,2007,X-Men: Children of the Atom (Japan 941208 rent version)
+xmcotaa,2007,X-Men: Children of the Atom (Asia 950105)
+xmcotaar1,2007,X-Men: Children of the Atom (Asia 941219)
+xmcotaar2,2007,X-Men: Children of the Atom (Asia 941217)
+nwarr,,Night Warriors: Darkstalkers' Revenge (Euro 950316)
+nwarru,2021,Night Warriors: Darkstalkers' Revenge (USA 950406)
+nwarrh,2021,Night Warriors: Darkstalkers' Revenge (Hispanic 950403)
+nwarrb,2021,Night Warriors: Darkstalkers' Revenge (Brazil 950403)
+nwarra,2021,Night Warriors: Darkstalkers' Revenge (Asia 950302)
+vhuntj,2021,Vampire Hunter: Darkstalkers' Revenge (Japan 950316)
+vhuntjr1s,2021,Vampire Hunter: Darkstalkers' Revenge (Japan 950307 stop version)
+vhuntjr1,2021,Vampire Hunter: Darkstalkers' Revenge (Japan 950307)
+vhuntjr2,2021,Vampire Hunter: Darkstalkers' Revenge (Japan 950302)
+cybots,,Cyberbots: Fullmetal Madness (Euro 950424)
+cybotsu,2030,Cyberbots: Fullmetal Madness (USA 950424)
+cybotsj,2030,Cyberbots: Fullmetal Madness (Japan 950420)
+sfa,,Street Fighter Alpha: Warriors' Dreams (Euro 950727)
+sfar1,2033,Street Fighter Alpha: Warriors' Dreams (Euro 950718)
+sfar2,2033,Street Fighter Alpha: Warriors' Dreams (Euro 950627)
+sfar3,2033,Street Fighter Alpha: Warriors' Dreams (Euro 950605)
+sfau,2033,Street Fighter Alpha: Warriors' Dreams (USA 950627)
+sfza,2033,Street Fighter Zero (Asia 950627)
+sfzar1,2033,Street Fighter Zero (Asia 950605)
+sfzj,2033,Street Fighter Zero (Japan 950727)
+sfzjr1,2033,Street Fighter Zero (Japan 950627)
+sfzjr2,2033,Street Fighter Zero (Japan 950605)
+sfzh,2033,Street Fighter Zero (Hispanic 950718)
+sfzhr1,2033,Street Fighter Zero (Hispanic 950627)
+sfzb,2033,Street Fighter Zero (Brazil 951109)
+sfzbr1,2033,Street Fighter Zero (Brazil 950727)
+mmancp2u,1932,"Mega Man: The Power Battle (CPS2, USA 951006, SAMPLE Version)"
+mmancp2ur1,1932,"Mega Man: The Power Battle (CPS2, USA 950926, SAMPLE Version)"
+mmancp2ur2,1932,"Mega Man: The Power Battle (CPS2, USA 950925, SAMPLE Version)"
+rmancp2j,1932,"Rockman: The Power Battle (CPS2, Japan 950922)"
+msh,,Marvel Super Heroes (Euro 951024)
+mshu,2051,Marvel Super Heroes (USA 951024)
+mshj,2051,Marvel Super Heroes (Japan 951117)
+mshjr1,2051,Marvel Super Heroes (Japan 951024)
+msha,2051,Marvel Super Heroes (Asia 951024)
+mshh,2051,Marvel Super Heroes (Hispanic 951117)
+mshb,2051,Marvel Super Heroes (Brazil 951117)
+mshbr1,2051,Marvel Super Heroes (Brazil 951024)
+19xx,,19XX: The War Against Destiny (Euro 960104)
+19xxu,2059,19XX: The War Against Destiny (USA 951207)
+19xxa,2059,19XX: The War Against Destiny (Asia 960104)
+19xxar1,2059,19XX: The War Against Destiny (Asia 951207)
+19xxj,2059,"19XX: The War Against Destiny (Japan 960104, yellow case)"
+19xxjr1,2059,19XX: The War Against Destiny (Japan 951225)
+19xxjr2,2059,19XX: The War Against Destiny (Japan 951207)
+19xxh,2059,19XX: The War Against Destiny (Hispanic 951218)
+19xxb,2059,19XX: The War Against Destiny (Brazil 951218)
+ddsom,,Dungeons &amp; Dragons: Shadow over Mystara (Euro 960619)
+ddsomr1,2068,Dungeons &amp; Dragons: Shadow over Mystara (Euro 960223)
+ddsomr2,2068,Dungeons &amp; Dragons: Shadow over Mystara (Euro 960209)
+ddsomr3,2068,Dungeons &amp; Dragons: Shadow over Mystara (Euro 960208)
+ddsomu,2068,Dungeons &amp; Dragons: Shadow over Mystara (USA 960619)
+ddsomur1,2068,Dungeons &amp; Dragons: Shadow over Mystara (USA 960209)
+ddsomj,2068,Dungeons &amp; Dragons: Shadow over Mystara (Japan 960619)
+ddsomjr1,2068,Dungeons &amp; Dragons: Shadow over Mystara (Japan 960206)
+ddsomjr2,2068,Dungeons &amp; Dragons: Shadow over Mystara (Japan 960223)
+ddsoma,2068,Dungeons &amp; Dragons: Shadow over Mystara (Asia 960619)
+ddsomar1,2068,Dungeons &amp; Dragons: Shadow over Mystara (Asia 960208)
+ddsomh,2068,Dungeons &amp; Dragons: Shadow over Mystara (Hispanic 960223)
+ddsomb,2068,Dungeons &amp; Dragons: Shadow over Mystara (Brazil 960223)
+sfa2,,Street Fighter Alpha 2 (Euro 960229)
+sfa2u,2081,Street Fighter Alpha 2 (USA 960430)
+sfa2ur1,2081,Street Fighter Alpha 2 (USA 960306)
+sfz2j,2081,Street Fighter Zero 2 (Japan 960430)
+sfz2jr1,2081,Street Fighter Zero 2 (Japan 960227)
+sfz2a,2081,Street Fighter Zero 2 (Asia 960227)
+sfz2b,2081,Street Fighter Zero 2 (Brazil 960531)
+sfz2br1,2081,Street Fighter Zero 2 (Brazil 960304)
+sfz2h,2081,Street Fighter Zero 2 (Hispanic 960304)
+sfz2n,2081,Street Fighter Zero 2 (Oceania 960229)
+sfz2al,,Street Fighter Zero 2 Alpha (Asia 960826)
+sfz2alr1,2091,Street Fighter Zero 2 Alpha (Asia 960805)
+sfz2alj,2091,Street Fighter Zero 2 Alpha (Japan 960805)
+sfz2alh,2091,Street Fighter Zero 2 Alpha (Hispanic 960813)
+sfz2alb,2091,Street Fighter Zero 2 Alpha (Brazil 960813)
+spf2t,,Super Puzzle Fighter II Turbo (Euro 960529)
+spf2tu,2096,Super Puzzle Fighter II Turbo (USA 960620)
+spf2xj,2096,Super Puzzle Fighter II X (Japan 960531)
+spf2ta,2096,Super Puzzle Fighter II Turbo (Asia 960529)
+spf2th,2096,Super Puzzle Fighter II Turbo (Hispanic 960531)
+megaman2,,Mega Man 2: The Power Fighters (USA 960708)
+megaman2a,2101,Mega Man 2: The Power Fighters (Asia 960708)
+rockman2j,2101,Rockman 2: The Power Fighters (Japan 960708)
+megaman2h,2101,Mega Man 2: The Power Fighters (Hispanic 960712)
+qndream,,Quiz Nanairo Dreams: Nijiirochou no Kiseki (Japan 96086)
+xmvsf,,X-Men Vs. Street Fighter (Euro 961004)
+xmvsfr1,2106,X-Men Vs. Street Fighter (Euro 960910)
+xmvsfu,2106,X-Men Vs. Street Fighter (USA 961023)
+xmvsfur1,2106,X-Men Vs. Street Fighter (USA 961004)
+xmvsfur2,2106,X-Men Vs. Street Fighter (USA 960910)
+xmvsfj,2106,X-Men Vs. Street Fighter (Japan 961023)
+xmvsfjr1,2106,X-Men Vs. Street Fighter (Japan 961004)
+xmvsfjr2,2106,X-Men Vs. Street Fighter (Japan 960910)
+xmvsfjr3,2106,X-Men Vs. Street Fighter (Japan 960909)
+xmvsfa,2106,X-Men Vs. Street Fighter (Asia 961023)
+xmvsfar1,2106,X-Men Vs. Street Fighter (Asia 961004)
+xmvsfar2,2106,X-Men Vs. Street Fighter (Asia 960919)
+xmvsfar3,2106,X-Men Vs. Street Fighter (Asia 960910)
+xmvsfh,2106,X-Men Vs. Street Fighter (Hispanic 961004)
+xmvsfb,2106,X-Men Vs. Street Fighter (Brazil 961023)
+batcir,,Battle Circuit (Euro 970319)
+batcira,2121,Battle Circuit (Asia 970319)
+batcirj,2121,Battle Circuit (Japan 970319)
+vsav,,Vampire Savior: The Lord of Vampire (Euro 970519)
+vsavu,2124,Vampire Savior: The Lord of Vampire (USA 970519)
+vsavj,2124,Vampire Savior: The Lord of Vampire (Japan 970519)
+vsava,2124,Vampire Savior: The Lord of Vampire (Asia 970519)
+vsavh,2124,Vampire Savior: The Lord of Vampire (Hispanic 970519)
+vsavb,2124,Vampire Savior: The Lord of Vampire (Brazil 970519)
+mshvsf,,Marvel Super Heroes Vs. Street Fighter (Euro 970625)
+mshvsfu,2130,Marvel Super Heroes Vs. Street Fighter (USA 970827)
+mshvsfu1,2130,Marvel Super Heroes Vs. Street Fighter (USA 970625)
+mshvsfj,2130,Marvel Super Heroes Vs. Street Fighter (Japan 970707)
+mshvsfj1,2130,Marvel Super Heroes Vs. Street Fighter (Japan 970702)
+mshvsfj2,2130,Marvel Super Heroes Vs. Street Fighter (Japan 970625)
+mshvsfh,2130,Marvel Super Heroes Vs. Street Fighter (Hispanic 970625)
+mshvsfa,2130,Marvel Super Heroes Vs. Street Fighter (Asia 970625)
+mshvsfa1,2130,Marvel Super Heroes Vs. Street Fighter (Asia 970620)
+mshvsfb,2130,Marvel Super Heroes Vs. Street Fighter (Brazil 970827)
+mshvsfb1,2130,Marvel Super Heroes Vs. Street Fighter (Brazil 970625)
+csclub,,Capcom Sports Club (Euro 971017)
+csclub1,2141,Capcom Sports Club (Euro 970722)
+cscluba,2141,Capcom Sports Club (Asia 970722)
+csclubj,2141,Capcom Sports Club (Japan 970722)
+csclubjy,2141,"Capcom Sports Club (Japan 970722, yellow case)"
+csclubh,2141,Capcom Sports Club (Hispanic 970722)
+sgemf,,Super Gem Fighter Mini Mix (USA 970904)
+pfghtj,2147,Pocket Fighter (Japan 970904)
+sgemfa,2147,Super Gem Fighter: Mini Mix (Asia 970904)
+sgemfh,2147,Super Gem Fighter: Mini Mix (Hispanic 970904)
+vhunt2,,Vampire Hunter 2: Darkstalkers Revenge (Japan 970929)
+vhunt2r1,2151,Vampire Hunter 2: Darkstalkers Revenge (Japan 970913)
+vsav2,,Vampire Savior 2: The Lord of Vampire (Japan 970913)
+mvsc,,Marvel Vs. Capcom: Clash of Super Heroes (Euro 980123)
+mvscr1,2154,Marvel Vs. Capcom: Clash of Super Heroes (Euro 980112)
+mvscu,2154,Marvel Vs. Capcom: Clash of Super Heroes (USA 980123)
+mvscur1,2154,Marvel Vs. Capcom: Clash of Super Heroes (USA 971222)
+mvscj,2154,Marvel Vs. Capcom: Clash of Super Heroes (Japan 980123)
+mvscjr1,2154,Marvel Vs. Capcom: Clash of Super Heroes (Japan 980112)
+mvscjsing,2154,Marvel Vs. Capcom: Clash of Super Heroes (Japan 980123) (Single PCB)
+mvsca,2154,Marvel Vs. Capcom: Clash of Super Heroes (Asia 980123)
+mvscar1,2154,Marvel Vs. Capcom: Clash of Super Heroes (Asia 980112)
+mvsch,2154,Marvel Vs. Capcom: Clash of Super Heroes (Hispanic 980123)
+mvscb,2154,Marvel Vs. Capcom: Clash of Super Heroes (Brazil 980123)
+sfa3,,Street Fighter Alpha 3 (Euro 980904)
+sfa3u,2165,Street Fighter Alpha 3 (USA 980904)
+sfa3ur1,2165,Street Fighter Alpha 3 (USA 980629)
+sfa3us,2165,"Street Fighter Alpha 3 (USA 980616, SAMPLE Version)"
+sfa3h,2165,Street Fighter Alpha 3 (Hispanic 980904)
+sfa3hr1,2165,Street Fighter Alpha 3 (Hispanic 980629)
+sfa3b,2165,Street Fighter Alpha 3 (Brazil 980629)
+sfz3j,2165,Street Fighter Zero 3 (Japan 980904)
+sfz3jr1,2165,Street Fighter Zero 3 (Japan 980727)
+sfz3jr2,2165,Street Fighter Zero 3 (Japan 980629)
+sfz3a,2165,Street Fighter Zero 3 (Asia 980904)
+sfz3ar1,2165,Street Fighter Zero 3 (Asia 980701)
+jyangoku,,Jyangokushi: Haoh no Saihai (Japan 990527)
+hsf2,,Hyper Street Fighter II: The Anniversary Edition (USA 040202)
+hsf2a,2178,Hyper Street Fighter II: The Anniversary Edition (Asia 040202)
+hsf2j,2178,Hyper Street Fighter II: The Anniversary Edition (Japan 040202)
+hsf2j1,2178,Hyper Street Fighter II: The Anniversary Edition (Japan 031222)
+gigawing,,Giga Wing (USA 990222)
+gigawingj,2182,Giga Wing (Japan 990223)
+gigawinga,2182,Giga Wing (Asia 990222)
+gigawingh,2182,Giga Wing (Hispanic 990222)
+gigawingb,2182,Giga Wing (Brazil 990222)
+mmatrix,,Mars Matrix: Hyper Solid Shooting (USA 000412)
+mmatrixa,2187,Mars Matrix: Hyper Solid Shooting (Asia 000412)
+mmatrixj,2187,Mars Matrix: Hyper Solid Shooting (Japan 000412)
+mpang,,Mighty! Pang (Euro 001010)
+mpangr1,2190,Mighty! Pang (Euro 000925)
+mpangu,2190,Mighty! Pang (USA 001010)
+mpangj,2190,Mighty! Pang (Japan 001011)
+mpanga,2190,Mighty! Pang (Asia 001010)
+pzloop2,,Puzz Loop 2 (Euro 010302)
+pzloop2j,2195,Puzz Loop 2 (Japan 010226)
+pzloop2jr1,2195,Puzz Loop 2 (Japan 010205)
+choko,,Janpai Puzzle Choukou (Japan 010820)
+dimahoo,,Dimahoo (Euro 000121)
+dimahoou,2199,Dimahoo (USA 000121)
+gmahou,2199,Great Mahou Daisakusen (Japan 000121)
+1944,,1944: The Loop Master (Euro 000620)
+1944j,2202,1944: The Loop Master (Japan 000620)
+1944u,2202,1944: The Loop Master (USA 000620)
+progear,,Progear (USA 010117)
+progearj,2205,Progear no Arashi (Japan 010117)
+progeara,2205,Progear (Asia 010117)
+ts2,,Battle Arena Toshinden 2 (USA 951124)
+ts2j,2208,Battle Arena Toshinden 2 (JAPAN 951124)
+starglad,,Star Gladiator (USA 960627)
+sfex,,Street Fighter EX (ASIA 961219)
+sfexj,2211,Street Fighter EX (JAPAN 961130)
+glpracr,,Gallop Racer (JAPAN Ver 9.01.12)
+sfexp,,Street Fighter EX Plus (USA 970311)
+sfexpj,2214,Street Fighter EX Plus (JAPAN 970311)
+rvschool,,Rival Schools (ASIA 971117)
+jgakuen,2216,Justice Gakuen (JAPAN 971117)
+tgmj,,Tetris The Grand Master (JAPAN 980710)
+sfex2,,Street Fighter EX 2 (JAPAN 980312)
+sg2j,,Star Gladiator 2 (JAPAN 980316)
+techromn,,Tech Romancer (USA 980914)
+kikaioh,2221,Kikaioh (JAPAN 980914)
+sfex2p,2219,Street Fighter EX 2 Plus (JAPAN 990611)
+strider2,,Strider 2 (USA 991213)
+stridr2a,2224,Strider 2 (ASIA 991213)
+shiryu2,2224,Strider Hiryu 2 (JAPAN 991213)
+glpracr2,,Gallop Racer 2 (USA)
+glprac2j,2227,Gallop Racer 2 (JAPAN)
+glprac2l,2227,Gallop Racer 2 Link HW (JAPAN)
+doapp,,Dead Or Alive ++ (JAPAN)
+tondemo,,Tondemo Crisis (JAPAN)
+brvblade,,Brave Blade (JAPAN)
+beastrzr,,Beastorizer
+primrag2,,Primal Rage 2
+nbajamex,,NBA Jam Extreme
+jdredd,,Judge Dredd (Rev C)
+jdreddb,2236,Judge Dredd (Rev B)
+sncwgltd,,Sonic Wings Limited (JAPAN)
+psyforce,,Psychic Force (JAPAN)
+sfchamp,,Super Football Champ (JAPAN)
+mgcldate,,Magical Date (JAPAN) set 1
+mgcldtea,2241,Magical Date (JAPAN) set 2
+raystorm,,Ray Storm (JAPAN)
+ftimpcta,,Fighter's Impact Ace (JAPAN)
+gdarius,,G-Darius (JAPAN)
+gdarius2,2245,G-Darius Ver.2 (JAPAN)
+beastrzb,,Beastorizer (bootleg)
+tekken,,Tekken (TE4-VER.C)
+tekkena,2248,Tekken (TE2-VER.B)
+tekkenb,2248,Tekken (TE1-VER.B)
+tekken2,,Tekken 2 Ver.B (TES3-VER.B)
+tekken2a,2251,Tekken 2 Ver.B (TES2-VER.B)
+tekken2b,2251,Tekken 2 (TES2-VER.A)
+souledge,,Soul Edge Ver. II (SO4-VER.C)
+souledga,2254,Soul Edge (SO3-VER.A)
+souledgb,2254,Soul Edge (SO1-VER.A)
+dunkmnia,,Dunk Mania (DM1-VER.C)
+xevi3dg,,Xevious 3D-G (XV31-VER.A)
+primglex,,Prime Goal EX (PG1-VER.A)
+danceyes,,Dancing Eyes (DC1-VER.A)
+starswep,,Star Sweep (STP1-VER.A)
+myangel3,,Kosodate Quiz My Angel 3 (KQT1-VER.A)
+tekken3,,Tekken 3 (TET1-VER.E)
+soulclbr,,Soul Calibur (SOC1-VER.A)
+ehrgeiz,,Ehrgeiz (EG3-VER.A)
+mdhorse,,Derby Quiz My Dream Horse (MDH1-VER.A)
+fgtlayer,,Fighting Layer (FTL1-VER.A)
+pacapp,,Paca Paca Passion (PPP1-VERA)
+sws99,,Super World Stadium '99 (SS91-VER.A)
+tekkentt,,Tekken Tag Tournament (TEG3-VER.B)
+mrdrillr,,Mr Driller (DRI1-VER.A)
+aquarush,,Aqua Rush (AQ1-VER.A)
+golgo13,,Golgo 13 (GLG1-VER.A)
+mrdrilr2,,Mr Driller 2
+cryptklr,,Crypt Killer (ver. UAA)
+mgakuen,,Mahjong Gakuen
+7toitsu,2276,Chi-Toitsu
+mgakuen2,,Mahjong Gakuen 2 Gakuen-chou no Fukushuu
+pkladies,,Poker Ladies
+pkladiel,2279,Poker Ladies (Leprechaun)
+dokaben,,Dokaben (Japan)
+pang,,Pang (World)
+pangb,2282,Pang (bootleg)
+bbros,2282,Buster Bros. (US)
+pompingw,2282,Pomping World (Japan)
+cbasebal,,Capcom Baseball (Japan)
+cworld,,Capcom World (Japan)
+hatena,,Adventure Quiz 2 Hatena Hatena no Dai-Bouken (Japan)
+spang,,Super Pang (World)
+sbbros,2289,Super Buster Bros. (US)
+mstworld,,Monsters World (bootleg of Super Pang)
+marukin,,Super Marukin-Ban
+qtono1,,Quiz Tonosama no Yabou (Japan)
+qsangoku,,Quiz Sangokushi (Japan)
+block,,Block Block (World 911106 Joystick)
+blocka,2295,Block Block (World 910910)
+blockj,2295,Block Block (Japan 910910)
+blockbl,2295,Block Block (bootleg)
+capbowl,,Capcom Bowling (set 1)
+capbowl2,2299,Capcom Bowling (set 2)
+clbowl,2299,Coors Light Bowling
+bowlrama,,Bowl-O-Rama
+wfortune,,Wheel Of Fortune
+wfortuna,2303,Wheel Of Fortune (alternate)
+stratab,,Strata Bowling (V3)
+stratab1,2305,Strata Bowling (V1)
+sstrike,,Super Strike Bowling
+gtg,,"Golden Tee Golf (Joystick, v3.1)"
+hstennis,,Hot Shots Tennis (V1.1)
+hstenn10,2309,Hot Shots Tennis (V1.0)
+slikshot,,Slick Shot (V2.2)
+sliksh17,2311,Slick Shot (V1.7)
+dynobop,,Dyno Bop
+arlingtn,,Arlington Horse Racing (v1.21-D)
+peggle,,"Peggle (Joystick, v1.0)"
+pegglet,2315,"Peggle (Trackball, v1.0)"
+rimrockn,,Rim Rockin' Basketball (V2.2)
+rimrck20,2317,Rim Rockin' Basketball (V2.0)
+rimrck16,2317,Rim Rockin' Basketball (V1.6)
+rimrck12,2317,Rim Rockin' Basketball (V1.2)
+ninclown,,Ninja Clowns (08-27-91)
+gpgolf,,"Golden Par Golf (Joystick, V1.1)"
+gtg2,,"Golden Tee Golf II (Trackball, V2.2)"
+gtg2t,2323,"Golden Tee Golf II (Trackball, V1.1)"
+gtg2j,2323,"Golden Tee Golf II (Joystick, V1.0)"
+neckneck,,Neck-n-Neck (v1.2)
+timekill,,Time Killers (v1.32)
+timek131,2327,Time Killers (v1.31)
+hardyard,,Hard Yardage (v1.20)
+hardyd10,2329,Hard Yardage (v1.00)
+bloodstm,,Blood Storm (v2.22)
+bloods22,2331,Blood Storm (v2.20)
+bloods21,2331,Blood Storm (v2.10)
+bloods11,2331,Blood Storm (v1.10)
+pairs,,"Pairs (V1.2, 09-30-94)"
+pairsa,2335,Pairs (09-07-94)
+drivedge,,Driver's Edge
+wcbowl,,World Class Bowling (v1.66)
+wcbwl165,2338,World Class Bowling (v1.65)
+wcbwl161,2338,World Class Bowling (v1.61)
+wcbwl12,2338,World Class Bowling (v1.2)
+sftm,,Street Fighter - The Movie (v1.12)
+sftm110,2342,Street Fighter - The Movie (v1.10)
+sftm111,2342,Street Fighter - The Movie (v1.11)
+sftmj,2342,"Street Fighter - The Movie (v1.12N, Japan)"
+pubball,,"Power Up Baseball (V1.5, Prototype)"
+shufshot,,Shuffleshot (v1.39)
+sshot137,2347,Shuffleshot (v1.37)
+gt3d,,Golden Tee 3D Golf (v1.93N)
+gt97,,Golden Tee '97 (v1.30)
+gt98,,Golden Tee '98 (v1.10)
+gt99,,Golden Tee '99 (v1.00)
+gt2k,,Golden Tee 2K (v1.00)
+gtclassc,,Golden Tee Classic (v1.00)
+cerberus,,Cerberus
+mayhem,,Mayhem 2002
+powrplay,,Power Play
+wseries,,World Series - The Season
+alleymas,,Alley Master
+dangerz,,Danger Zone
+basebal2,,Baseball The Season II
+dblplay,,Super Baseball Double Play Home Run Derby
+strkzone,,Strike Zone Baseball
+redlin2p,,Redline Racer (2 players)
+quarterb,,Quarterback
+quartrba,2365,Quarterback (set 2)
+viper,,Viper
+teamqb,,John Elway's Team Quarterback
+teamqb2,2368,John Elway's Team Quarterback (set 2)
+aafb,,All American Football (rev E)
+aafbd2p,2370,"All American Football (rev D, 2 Players)"
+aafbc,2370,All American Football (rev C)
+aafbb,2370,All American Football (rev B)
+offroad,,Ironman Stewart's Super Off-Road
+offroadt,,Ironman Stewart's Super Off-Road Track Pack
+pigout,,Pigout
+pigouta,2376,Pigout (alternate)
+ataxx,,Ataxx (set 1)
+ataxxa,2378,Ataxx (set 2)
+ataxxj,2378,Ataxx (Japan)
+wsf,,World Soccer Finals
+indyheat,,Danny Sullivan's Indy Heat
+brutforc,,Brute Force
+asylum,,Asylum (prototype)
+blockade,,Blockade
+comotion,,Comotion
+hustle,,Hustle
+blasto,,Blasto
+mineswpr,,Minesweeper
+depthch,,Depthcharge
+depthv1,2390,Depthcharge (older)
+subhunt,2390,Sub Hunter
+safari,,Safari
+frogs,,Frogs
+sspaceat,,Space Attack (upright)
+sspacat2,2395,"Space Attack (upright, older)"
+sspacatc,2395,Space Attack (cocktail)
+sspacaho,,Space Attack - Head On
+headon,,Head On (2 players)
+headonb,2399,Head On (1 player)
+headon2,,Head On 2
+invho2,,Invinco - Head On 2
+samurai,,Samurai
+invinco,,Invinco
+invds,,Invinco - Deep Scan
+tranqgun,,Tranquilizer Gun
+spacetrk,,Space Trek (upright)
+sptrekct,2407,Space Trek (cocktail)
+carnival,,Carnival (upright)
+carnvckt,2409,Carnival (cocktail)
+brdrlinb,,Borderline (bootleg)
+digger,,Digger
+pulsar,,Pulsar
+heiankyo,,Heiankyo Alien
+alphaho,,Alpha Fighter - Head On
+spacfury,,Space Fury (revision C)
+spacfura,2416,Space Fury (revision A)
+zektor,,Zektor (revision B)
+tacscan,,Tac-Scan
+elim2,,"Eliminator (2 Players, set 1)"
+elim2a,2420,"Eliminator (2 Players, set 2)"
+elim4,2420,Eliminator (4 Players)
+startrek,,Star Trek
+astrob,,Astro Blaster (version 3)
+astrob2,2424,Astro Blaster (version 2)
+astrob1,2424,Astro Blaster (version 1)
+005,,005
+monsterb,,Monster Bash
+spaceod,,Space Odyssey
+pignewt,,Pig Newton (version C)
+pignewta,2430,Pig Newton (version A)
+sindbadm,,Sindbad Mystery
+zaxxon,,Zaxxon (set 1)
+zaxxon2,2433,Zaxxon (set 2)
+zaxxonb,2433,Jackson
+szaxxon,,Super Zaxxon
+futspy,,Future Spy
+razmataz,,Razzmatazz
+ixion,,Ixion (prototype)
+congo,,"Congo Bongo (Rev C, 2 board stack)"
+tiptop,2440,Tip Top (3 board stack)
+chboxing,,Champion Boxing
+chwrestl,,Champion Pro Wrestling
+dokidoki,,Doki Doki Penguin Land
+starjack,,Star Jacker (Sega)
+starjacs,2445,Star Jacker (Stern)
+regulus,,Regulus (New Ver.)
+reguluso,2447,Regulus (Old Ver.)
+regulusu,2447,Regulus (not encrypted)
+upndown,,Up'n Down
+upndownu,2450,Up'n Down (not encrypted)
+mrviking,,Mister Viking
+mrvikngj,2452,Mister Viking (Japan)
+swat,,SWAT
+flicky,,Flicky (128k Ver.)
+flickyo,2455,Flicky (64k Ver.)
+wmatch,,Water Match
+bullfgt,,Bullfight
+thetogyu,2458,The Togyu (Japan)
+spatter,,Spatter
+ssanchan,2460,Sanrin San Chan (Japan)
+pitfall2,,Pitfall II
+pitfallu,2462,Pitfall II (not encrypted)
+seganinj,,Sega Ninja
+seganinu,2464,Sega Ninja (not encrypted)
+nprinces,2464,Ninja Princess (64k Ver. bootleg[Q])
+nprincso,2464,Ninja Princess (128k Ver.)
+nprincsu,2464,Ninja Princess (64k Ver. not encrypted)
+nprincsb,2464,Ninja Princess (128k Ver. bootleg[Q])
+imsorry,,I'm Sorry (US)
+imsorryj,2470,Gonbee no I'm Sorry (Japan)
+teddybb,,TeddyBoy Blues (New Ver.)
+teddybbo,2472,TeddyBoy Blues (Old Ver.)
+hvymetal,,Heavy Metal
+myhero,,My Hero (US)
+sscandal,2475,Seishun Scandal (Japan)
+myherok,2475,My Hero (Korea)
+shtngmst,,Shooting Master
+chplft,,Choplifter
+chplftb,2479,Choplifter (alternate)
+chplftbl,2479,Choplifter (bootleg)
+4dwarrio,,4-D Warriors
+brain,,Brain
+raflesia,,Rafflesia
+wboy,,"Wonder Boy (set 1, new encryption)"
+wboyo,2485,"Wonder Boy (set 1, old encryption)"
+wboy2,2485,Wonder Boy (set 2)
+wboy2u,2485,Wonder Boy (set 2 not encrypted)
+wboy3,2485,Wonder Boy (set 3)
+wboyu,2485,Wonder Boy (not encrypted)
+wbdeluxe,2485,Wonder Boy Deluxe
+gardia,,Gardia
+gardiab,2492,Gardia (bootleg)
+noboranb,,Noboranka (Japan)
+blockgal,,Block Gal
+blckgalb,2495,Block Gal (bootleg)
+tokisens,,Toki no Senshi - Chrono Soldier
+wbml,,Wonder Boy in Monster Land (Japan New Ver.)
+wbmljo,2498,Wonder Boy in Monster Land (Japan Old Ver.)
+wbmljb,2498,Wonder Boy in Monster Land (Japan not encrypted)
+wbmlvc,2498,"Wonder Boy in Monster Land (English, Virtual Console)"
+wbmlb,2498,Wonder Boy in Monster Land
+dakkochn,,DakkoChan Jansoh
+ufosensi,,Ufo Senshi Yohko Chan
+ufosensb,2504,Ufo Senshi Yohko Chan (not encrypted)
+hangonjr,,Hang-On Jr.
+transfrm,,Transformer
+astrofl,2507,Astro Flash (Japan)
+ridleofp,,Riddle of Pythagoras (Japan)
+megrescu,,Megumi Rescue
+opaopa,,"Opa Opa (MC-8123, 317-0042)"
+opaopan,2511,"Opa Opa (Rev A, unprotected)"
+tetrisse,,"Tetris (Japan, System E)"
+slapshtr,,Slap Shooter
+fantzn2,,Fantasy Zone 2
+turbo,,Turbo
+turboa,2516,Turbo (encrypted set 1)
+turbob,2516,Turbo (encrypted set 2)
+subroc3d,,Subroc-3D
+buckrog,,Buck Rogers - Planet of Zoom
+buckrogn,2520,Buck Rogers - Planet of Zoom (not encrypted)
+kopunch,,KO Punch
+suprloco,,Super Locomotive
+dotrikun,,Dottori Kun (new version)
+dotriku2,2524,Dottori Kun (old version)
+dotriman,2524,Dottori-Man Jr.
+spcpostn,,Space Position (Japan)
+angelkds,,Angel Kids (Japan)
+calorie,,Calorie Kun vs Moguranian
+calorieb,2529,Calorie Kun vs Moguranian (bootleg)
+alexkidd,,"Alex Kidd: The Lost Stars (set 2, unprotected)"
+aliensya,2587,Alien Syndrome (set 2)
+aliensyb,2587,Alien Syndrome (set 3)
+aliensyj,2587,Alien Syndrome (Japan)
+astorm,,Alien Storm
+astorm2p,2535,Alien Storm (2 Player)
+aurail1,2594,"Aurail (set 2, World) (FD1089B 317-0168)"
+aurailj,2594,"Aurail (set 1, Japan) (FD1089A 317-0167)"
+bayrouta,2597,Bay Route (set 2)
+bayrtbl1,2597,Bay Route (bootleg set 1)
+bayrtbl2,2597,Bay Route (bootleg set 2)
+enduror,,Enduro Racer
+eswat,,E-Swat - Cyber Police
+fpoint,,Flash Point
+goldnaxb,2612,Golden Axe (Version 2 317-0110)
+goldnaxc,2612,Golden Axe (Version 2 317-0122)
+goldnaxj,2612,"Golden Axe (Version 1, Japan)"
+jyuohki,2589,Jyuohki (Japan)
+moonwalk,,Michael Jackson's Moonwalker (Set 1)
+moonwlka,2549,Michael Jackson's Moonwalker (Set 2)
+passsht,,Passing Shot (2 Players)
+sdioj,2628,SDI - Strategic Defense Initiative (Japan)
+shangon,,Super Hang-On
+shinobia,2635,Shinobi (set 2)
+shinobib,2635,Shinobi (set 3)
+tetris,,Tetris (Sega Set 1)
+tetrisa,2556,Tetris (Sega Set 2)
+wb3a,2647,Wonder Boy III - Monster Lair (set 2)
+aquario,,Clockwork Aquario (prototype)
+hamaway,,"Hammer Away (Japan, prototype)"
+aceattac,,Ace Attacker
+afighter,,Action Fighter (FD1089A 317-0018)
+bloxeed,,Bloxeed
+cltchitr,,Clutch Hitter
+cotton,,Cotton (Japan)
+cottona,2565,Cotton
+ddcrew,,"D. D. Crew (US, 4 Player, 317-0186)"
+dunkshot,,"Dunk Shot (Rev C, FD1089A 317-0022)"
+dunkshota,2568,"Dunk Shot (Rev A, FD1089A 317-0022)"
+dunkshoto,2568,Dunk Shot (FD1089A 317-0022)
+defense,2628,"Defense (System 16B, FD1089A 317-0028)"
+sdib,2628,"SDI - Strategic Defense Initiative (System 16B, FD1089A 317-0028)"
+sjryuko,2628,"Sukeban Jansi Ryuko (set 2, System 16B, FD1089B 317-5021)"
+exctleag,,Excite League
+lghost,,Laser Ghost
+loffire,,Line of Fire / Bakudan Yarou (World) (bootleg of FD1094 317-0136 set)
+mvp,,MVP
+ryukyu,,Ryukyu
+suprleag,,Super League
+thndrbld,,Thunder Blade (upright) (bootleg of FD1094 317-0056 set)
+thndrbld1,2580,Thunder Blade (deluxe/standing) (unprotected)
+abcop,,A.B. Cop (World) (bootleg of FD1094 317-0169b set)
+aburner,2584,After Burner (Japan)
+aburner2,,After Burner II
+afightera,2562,Action Fighter (unprotected)
+alexkidd1,2531,"Alex Kidd: The Lost Stars (set 1, FD1089A 317-0021)"
+aliensyn,,Alien Syndrome (set 1)
+altbeas2,2589,Altered Beast (Version 2)
+altbeast,,Altered Beast (Version 1)
+astormbl,2535,Alien Storm (bootleg)
+atomicp,,Atomic Point (Korea)
+snapper,,Snapper (Korea)
+dfjail,,The Destroyer From Jail (Korea)
+aurail,,"Aurail (set 3, US) (unprotected)"
+aurail1d,2594,"Aurail (set 2, World) (unprotected of FD1089B 317-0168 set)"
+aurailjd,2594,"Aurail (set 1, Japan) (unprotected of FD1089A 317-0167 set)"
+bayroute,,Bay Route (set 1)
+cottond,2565,"Cotton (set 4, World) (unprotected of FD1094 317-0181a set)"
+bulletd,,Bullet (unprotected of FD1094 317-0041 set)
+bodyslam,,Body Slam
+dduxbl,,Dynamite Dux (bootleg)
+dumpmtmt,2600,Dump Matsumoto (Japan)
+endurob2,2542,Enduro Racer (bootleg set 2)
+endurobl,2542,Enduro Racer (bootleg set 1)
+eswatbl,2543,E-Swat - Cyber Police (bootleg)
+fantzone,,Fantasy Zone (Japan New Ver.)
+fantzono,2606,Fantasy Zone (Old Ver.)
+fpointbl,2544,"Flash Point (World, bootleg)"
+fpointbj,2544,"Flash Point (Japan, bootleg)"
+goldnabl,2612,Golden Axe (bootleg)
+goldnaxa,2612,"Golden Axe (set 6, US) (8751 317-123A)"
+goldnaxe,,Golden Axe (Version 1)
+hangon,,Hang-On
+hwchamp,,Heavyweight Champ
+mjleague,,Major League
+moonwlkb,2549,Michael Jackson's Moonwalker (bootleg)
+outrun,,Out Run (set 1)
+outruna,2617,Out Run (set 2)
+outrunb,2617,Out Run (set 3)
+passht4b,2551,Passing Shot (4 Players) (bootleg)
+passshtb,2551,Passing Shot (2 Players) (bootleg)
+quartet,,"Quartet (Rev A, 8751 315-5194)"
+quartet2,2622,Quartet 2 (8751 317-0010)
+quartt2j,2622,Quartet 2 (unprotected)
+quartetj,2622,Quartet (8751 315-5194)
+rachero,,Racing Hero (bootleg of FD1094 317-0144 set)
+riotcity,,Riot City
+sdi,,SDI - Strategic Defense Initiative
+shangonb,2553,Super Hang-On (bootleg)
+sharrier,,Space Harrier
+shdancbl,2632,Shadow Dancer (bootleg)
+shdancer,,Shadow Dancer (US)
+shdancrj,2632,Shadow Dancer (Japan)
+shdancrb,2632,Shadow Dancer (Rev.B)
+shinobi,,Shinobi (set 1)
+shinobl,2635,Shinobi (bootleg)
+smgp,,"Super Monaco GP (World, Rev B) (bootleg of FD1094 317-0126a set)"
+sonicbom,,Sonic Boom
+tetrisbl,2556,Tetris (Sega bootleg)
+timscanr,,Time Scanner
+toryumon,,Toryumon
+toutrun,,Turbo Out Run (Out Run upgrade) (bootleg of FD1094 317-0118 set)
+toutrun3,2642,Turbo Out Run (cockpit) (bootleg of FD1094 317-0107 set)
+tturf,,Tough Turf (Japan)
+tturfbl,2644,Tough Turf (bootleg)
+tturfu,2644,Tough Turf (US)
+wb3,,Wonder Boy III - Monster Lair (set 1)
+wb3bl,2647,Wonder Boy III - Monster Lair (bootleg)
+wrestwar,,Wrestle War
+fantzn2x,,Fantasy Zone II - The Tears of Opa-Opa (System 16C version)
+cencourt,2551,Center Court (prototype)
+passshtjd,2551,"Passing Shot (Japan, 4 Players) (bootleg of FD1094 317-0070 set)"
+hotrod,,Hot Rod (turbo 3 player)
+bnzabros,,Bonanza Bros
+dcclub,,Dynamic Country Club
+mahmajn,,Tokoro San no MahMahjan
+qgh,,Quiz Ghost Hunter
+quizmeku,,Quiz Mekurumeku Story
+qrouka,,Quiz Rouka Ni Tattenasai
+mahmajn2,,Tokoro San no MahMahjan 2
+sspirits,,Scramble Spirits
+sgmast,,Super Masters Golf
+qsww,,Quiz Syukudai wo Wasuremashita
+gground,,Gain Ground
+crkdown,,Crackdown
+holo,,Holosseum
+svf,,Super Visual Football - European Sega Cup
+svs,2667,Super Visual Soccer - Sega Cup (US)
+jleague,2667,The J.League 1994 (Japan)
+brival,,Burning Rival (Japan)
+radm,,Rad Mobile
+radr,,Rad Rally
+f1en,,F1 Exhaust Note
+alien3,,Alien3: The Gun
+sonic,,Segasonic the Hedgehog (Japan rev. C)
+sonicp,2675,Segasonic the Hedgehog (Japan prototype)
+jpark,,Jurassic Park
+ga2,,Golden Axe - The Revenge of Death Adder (US)
+ga2j,2678,Golden Axe - The Revenge of Death Adder (Japan)
+spidey,,Spider-Man: The Videogame (US)
+spideyj,2680,Spider-Man: The Videogame (World)
+arabfgt,,Arabian Fight
+arescue,,Air Rescue
+f1lap,,F1 Super Lap (World)
+f1lapj,2684,F1 Super Lap (Japan)
+dbzvrvs,,Dragon Ball Z V.R.V.S.
+darkedge,,Dark Edge
+slipstrm,,Slipstream (Brazil)
+slipstrh,2688,Slipstream (Hispanic)
+orunners,,Outrunners (US)
+harddunk,,Hard Dunk (World)
+harddunj,2691,Hard Dunk (Japan)
+titlef,,Title Fight (World)
+scross,,Stadium Cross (World)
+astrass,,Astra SuperStars
+bakubaku,,Baku Baku Animal
+colmns97,,Columns 97
+cotton2,,Cotton 2
+cottonbm,,Cotton Boomerang
+decathlt,,Decathlete
+diehard,,Die Hard Arcade (US)
+dnmtdeka,2701,Dynamite Deka (Japan)
+ejihon,,Ejihon Tantei Jimusyo
+elandore,,Fighting Dragon Legend Elan Doree
+ffreveng,,Final Fight Revenge
+fhboxers,,Funky Head Boxers
+findlove,,Find Love
+finlarch,2728,Final Arch (Japan)
+gaxeduel,,Golden Axe - The Duel
+grdforce,,Guardian Force
+groovef,,Power Instinct 3 - Groove On Fight
+hanagumi,,Hanagumi Taisen Columns - Sakura Wars
+introdon,,Karaoke Quiz Intro Don Don!
+kiwames,,Pro Mahjong Kiwame S
+maruchan,,Maru-Chan de Goo!
+myfairld,,Virtual Mahjong 2 - My Fair Lady
+othellos,,Othello Shiyouyo
+pblbeach,,Pebble Beach - The Great Shot
+prikura,,Princess Clara Daisakusen
+puyosun,,Puyo Puyo Sun
+rsgun,,Radiant Silvergun
+sandor,,Sando-R
+thunt,2722,Treasure Hunt
+sassisu,,Taisen Tanto-R Sashissu!!
+seabass,,Sea Bass Fishing
+shanhigw,,Shanghai - The Great Wall - Shanghai Triple Threat
+shienryu,,Shienryu
+sleague,,Super Major League (US)
+sokyugrt,,Soukyugurentai - Terra Diver
+sss,,Steep Slope Sliders
+suikoenb,,Suikoenbu
+twcup98,,Tecmo World Cup '98
+vfkids,,Virtua Fighter Kids
+vfremix,,Virtua Fighter Remix
+vmahjong,,Virtual Mahjong
+winterht,,Winter Heat
+znpwfv,,Zen Nippon Pro-Wrestling Featuring Virtua
+danchih,,Danchi de Hanafuda
+mausuke,,Mausuke no Ojama the World
+batmanfr,,Batman Forever
+sfish2,,Sport Fishing 2
+sfish2j,2741,Sport Fishing 2 (Japan)
+logicpro,,Logic Pro (Japan)
+croquis,2743,Croquis (Germany)
+karianx,,Karian Cross (Rev. 1.0)
+logicpr2,,Logic Pro 2 (Japan)
+bloxeedc,2563,Bloxeed (C System)
+columns,,Columns (US)
+columnsj,2748,Columns (Japan)
+columns2,,Columns II - The Voyage Through Time (Japan)
+ssonicbr,,"SegaSonic Bros (Japan, prototype)"
+borench,,Borench
+tfrceac,,ThunderForce AC
+tfrceacj,2753,ThunderForce AC (Japan)
+tfrceacb,2753,ThunderForce AC (bootleg)
+tfrceacjpb,2753,"ThunderForce AC (Japan, prototype, bootleg)"
+ribbit,,Ribbit!
+tantr,,Puzzle &amp; Action: Tant-R (Japan)
+tantrkor,2758,Puzzle &amp; Action: Tant-R (Korea)
+tantrbl,2758,Puzzle &amp; Action: Tant-R (Japan) (bootleg set 1)
+tantrbl2,2758,Puzzle &amp; Action: Tant-R (Japan) (bootleg set 2)
+puyopuyo,,Puyo Puyo (Japan)
+puyopuya,2762,Puyo Puyo (Japan) (Rev A)
+puyopuyb,2762,Puyo Puyo (English) (bootleg)
+ichir,,Puzzle &amp; Action: Ichidant-R (World)
+ichirk,2765,Puzzle &amp; Action: Ichidant-R (Korea)
+ichirj,2765,Puzzle &amp; Action: Ichidant-R (Japan)
+ichirjbl,2765,Puzzle &amp; Action: Ichidant-R (Japan) (bootleg)
+stkclmns,,Stack Columns (Japan)
+puyopuy2,,Puyo Puyo 2 (Japan)
+potopoto,,Poto Poto (Japan)
+zunkyou,,Zunzunkyou No Yabou (Japan)
+headonch,,"Head On Channel (Japan, prototype)"
+ooparts,,"OOPArts (Japan, Prototype)"
+pclubj,,Print Club (Japan Vol.1)
+pclubjv2,2775,Print Club (Japan Vol.2)
+pclubjv4,2775,Print Club (Japan Vol.4)
+pclubjv5,2775,Print Club (Japan Vol.5)
+puckpkmn,,Puckman Pockimon
+jzth,,Juezhan Tianhuang
+songjang,,Songjiangyanyi Final
+shuifeng,,Shuihu Feng Yun Zhuan
+sbubsm,,"Super Bubble Bobble (Sun Mixing, Megadrive clone hardware)"
+barek3mb,,Bare Knuckle III (bootleg of Megadrive version)
+aladmdb,,Aladdin (bootleg of Japanese Megadrive version)
+barek2ch,,Bare Knuckle II (Chinese bootleg of Megadrive version)
+sonic2mb,,Sonic The Hedgehog 2 (bootleg of Megadrive version)
+sonic3mb,,Sonic The Hedgehog 3 (bootleg of Megadrive version)
+jparkmb,,Jurassic Park (bootleg of Megadrive version)
+twinktmb,,Twinkle Tale (bootleg of Megadrive version)
+mt_beast,,MegaTech - Altered Beast
+mt_shar2,,MegaTech - Space Harrier 2.
+mt_stbld,,MegaTech - Super Thunder Blade
+mt_ggolf,,MegaTech - Great Golf
+mt_gsocr,,MegaTech - Great Soccer
+mt_shnbi,,MegaTech - Shinobi
+mt_aftrb,,MegaTech - Afterburner
+mt_tfor2,,MegaTech - Thunder Force 2
+mt_astro,,MegaTech - Astro Warrior
+mt_lastb,,MegaTech - Last Battle.
+mt_wcsoc,,MegaTech - World Cup Soccer
+mt_tetri,,MegaTech - Tetris
+mt_gng,,MegaTech - Ghouls and Ghosts
+mt_gaxe,,MegaTech - Golden Axe
+mt_mystd,,MegaTech - Mystic Defender
+mt_revsh,,MegaTech - The Revenge Of Shinobi
+mt_parlg,,MegaTech - Parlour Games
+mt_tgolf,,MegaTech - Arnold Palmer Tournament Golf
+mt_tlbba,,MegaTech - Tommy Lasorda Baseball
+mt_eswat,,MegaTech - E-Swat
+mt_smgp,,MegaTech - Super Monaco Grand Prix
+mt_mwalk,,MegaTech - Moonwalker
+mt_bbros,,MegaTech - Bonanza Bros.
+mt_sonic,,MegaTech - Sonic the Hedgehog
+mt_fshrk,,MegaTech - Fire Shark
+mt_gaxe2,,MegaTech - Golden Axe 2
+mt_kcham,,MegaTech - Kid Chameleon
+mp_sonic,,Sonic The Hedgehog
+mp_gaxe2,,Golden Axe II
+mp_sor2,,Streets Of Rage II
+mp_twc,,Tecmo World Cup
+mp_soni2,,Sonic The Hedgehog 2
+mp_bio,,Bio-Hazard Battle
+mp_shnb3,,Shinobi III
+mp_col3,,Columns III
+lnc,,Lock'n'Chase
+zoar,,Zoar
+btime,,Burger Time (Data East set 1)
+btime2,2828,Burger Time (Data East set 2)
+btimem,2828,Burger Time (Midway)
+cookrace,2828,Cook Race
+wtennis,,World Tennis
+brubber,,Burnin' Rubber
+bnj,2833,Bump 'n' Jump
+caractn,2833,Car Action
+disco,,Disco No.1
+discof,2836,Disco No.1 (Rev.F)
+sdtennis,,Super Doubles Tennis
+mmonkey,,Minky Monkey
+ctsttape,,Cassette: Test Tape
+chwy,,Cassette: Highway Chase
+cmanhat,,Cassette: Manhattan
+cterrani,,Cassette: Terranean
+castfant,,Cassette: Astro Fantasia
+csuperas,,Cassette: Super Astro Fighter
+clocknch,,Cassette: Lock'n'Chase
+cprogolf,,Cassette: Pro Golf
+cluckypo,,Cassette: Lucky Poker
+ctisland,,Cassette: Treasure Island (set 1)
+ctislnd2,2849,Cassette: Treasure Island (set 2)
+ctislnd3,2849,Cassette: Treasure Island (set 3)
+cdiscon1,,Cassette: Disco No.1
+csweetht,2852,Cassette: Sweet Heart
+ctornado,,Cassette: Tornado
+cmissnx,,Cassette: Mission-X
+cptennis,,Cassette: Pro Tennis
+cexplore,,Cassette: Explorer
+cadanglr,,Cassette: Angler Dangler
+cfishing,2858,Cassette: Fishing
+cbtime,,Cassette: Burger Time
+cburnrub,,Cassette: Burnin' Rubber (set 1)
+cburnrb2,2861,Cassette: Burnin' Rubber (set 2)
+cbnj,2861,Cassette: Bump N Jump
+cgraplop,,Cassette: Graplop (aka Cluster Buster) (set 1)
+cgraplp2,2864,Cassette: Graplop (aka Cluster Buster) (set 2)
+clapapa,,Cassette: Rootin' Tootin' (aka La.Pa.Pa)
+clapapa2,2866,Cassette: Rootin' Tootin'
+cskater,,Cassette: Skater (Japan)
+cnightst,,Cassette: Night Star (set 1)
+cnights2,2869,Cassette: Night Star (set 2)
+cprosocc,,Cassette: Pro Soccer
+csdtenis,,Cassette: Super Doubles Tennis (Japan)
+cprobowl,,Cassette: Pro Bowling
+cscrtry,,Cassette: Scrum Try (set 1)
+cscrtry2,2874,Cassette: Scrum Try (set 2)
+cppicf,,Cassette: Peter Pepper's Ice Cream Factory (set 1)
+cppicf2,2876,Cassette: Peter Pepper's Ice Cream Factory (set 2)
+cfghtice,,Cassette: Fighting Ice Hockey
+coozumou,,Cassette: Oozumou - The Grand Sumo (Japan)
+cbdash,,Cassette: Boulder Dash
+cflyball,,Cassette: Flying Ball[Q]
+czeroize,,Cassette: Zeroize
+madalien,,Mad Alien
+astrof,,Astro Fighter (set 1)
+astrof2,2884,Astro Fighter (set 2)
+astrof3,2884,Astro Fighter (set 3)
+tomahawk,,Tomahawk 777 (Revision 1)
+tomahaw5,2887,Tomahawk 777 (Revision 5)
+prosoccr,,Pro Soccer
+prosport,,Prosport
+boomrang,,Boomer Rang'r - Genesis
+kamikcab,,Kamikaze Cabbie
+liberate,,Liberation
+liberatb,2893,Liberation (bootleg)
+bwing,,B-Wings (Japan)
+bwings,2895,Battle Wings
+batwings,2895,Battle Wings (alt)
+zaviga,,Zaviga
+zavigaj,2898,Zaviga (Japan)
+kchamp,,Karate Champ (US)
+karatedo,2900,Karate Dou (Japan)
+kchampvs,2900,Karate Champ (US VS version)
+karatevs,2900,Taisen Karate Dou (Japan VS version)
+compgolf,,Competition Golf Final Round (revision 3)
+compglfo,2904,Competition Golf Final Round (old version)
+tryout,,Pro Baseball Skill Tryout (Japan)
+firetrap,,Fire Trap (US)
+firetpbl,2907,Fire Trap (Japan bootleg)
+metlclsh,,Metal Clash (Japan)
+brkthru,,Break Thru (US)
+brkthruj,2910,Kyohkoh-Toppa (Japan)
+darwin,,Darwin 4078 (Japan)
+shootout,,Shoot Out (US)
+shootouj,2913,Shoot Out (Japan)
+shootoub,2913,Shoot Out (Korean Bootleg)
+sidepckt,,Side Pocket (World)
+sidepctj,2916,Side Pocket (Japan)
+sidepctb,2916,Side Pocket (bootleg)
+exprraid,,Express Raider (US)
+wexpress,2919,Western Express (World[Q])
+wexpresb,2919,Western Express (bootleg set 1)
+wexpresc,2919,Western Express (bootleg set 2)
+pcktgal,,Pocket Gal (Japan)
+pcktgalb,2923,Pocket Gal (bootleg)
+pcktgal2,2923,Pocket Gal 2 (World[Q])
+spool3,2923,Super Pool III (World[Q])
+spool3i,2923,Super Pool III (I-Vics)
+battlera,,Battle Rangers (World)
+bldwolf,2928,Bloody Wolf (US)
+actfancr,,Act-Fancer Cybernetick Hyper Weapon (World revision 2)
+actfanc1,2930,Act-Fancer Cybernetick Hyper Weapon (World revision 1)
+actfancj,2930,Act-Fancer Cybernetick Hyper Weapon (Japan revision 1)
+triothep,,Trio The Punch - Never Forget Me... (Japan)
+lastmisn,,Last Mission (US revision 6)
+lastmsno,2934,Last Mission (US revision 5)
+lastmsnj,2934,Last Mission (Japan)
+shackled,,Shackled (US)
+breywood,2937,Breywood (Japan revision 2)
+csilver,,Captain Silver (Japan)
+ghostb,,The Real Ghostbusters (US 2 Players)
+ghostb3,2940,The Real Ghostbusters (US 3 Players)
+meikyuh,2940,Meikyuu Hunter G (Japan)
+srdarwin,,Super Real Darwin (World)
+srdarwnj,2943,Super Real Darwin (Japan)
+gondo,,Gondomania (US)
+makyosen,2945,Makyou Senshi (Japan)
+garyoret,,Garyo Retsuden (Japan)
+cobracom,,Cobra-Command (World revision 5)
+cobracmj,2948,Cobra-Command (Japan)
+oscar,,Psycho-Nics Oscar (US)
+oscarj,2950,Psycho-Nics Oscar (Japan revision 2)
+oscarj1,2950,Psycho-Nics Oscar (Japan revision 1)
+oscarj0,2950,Psycho-Nics Oscar (Japan revision 0)
+karnov,,Karnov (US)
+karnovj,2954,Karnov (Japan)
+wndrplnt,,Wonder Planet (Japan)
+chelnov,,Chelnov - Atomic Runner (World)
+chelnovu,2957,Chelnov - Atomic Runner (US)
+chelnovj,2957,Chelnov - Atomic Runner (Japan)
+hbarrel,,Heavy Barrel (US)
+hbarrelw,2960,Heavy Barrel (World)
+baddudes,,Bad Dudes vs. Dragonninja (US)
+drgninja,2962,Dragonninja (Japan)
+birdtry,,Birdie Try (Japan)
+robocop,,Robocop (World revision 4)
+robocopw,2965,Robocop (World revision 3)
+robocopj,2965,Robocop (Japan)
+robocopu,2965,Robocop (US revision 1)
+robocpu0,2965,Robocop (US revision 0)
+robocopb,2965,Robocop (World bootleg)
+hippodrm,,Hippodrome (US)
+ffantasy,2971,Fighting Fantasy (Japan revision 2)
+ffantasa,2971,Fighting Fantasy (Japan)
+slyspy,,Sly Spy (US revision 3)
+slyspy2,2974,Sly Spy (US revision 2)
+secretag,2974,Secret Agent (World)
+secretab,2974,Secret Agent (bootleg)
+midres,,Midnight Resistance (World)
+midresu,2978,Midnight Resistance (US)
+midresj,2978,Midnight Resistance (Japan)
+midresbj,2978,Midnight Resistance (joystick hack bootleg)
+bouldash,,Boulder Dash - Boulder Dash Part 2 (World)
+bouldshj,2982,Boulder Dash - Boulder Dash Part 2 (Japan)
+stadhero,,Stadium Hero (Japan)
+madmotor,,Mad Motor
+vaportra,,Vapor Trail - Hyper Offence Formation (World revision 1)
+vaportru,2986,Vapor Trail - Hyper Offence Formation (US)
+kuhga,2986,Kuhga - Operation Code 'Vapor Trail' (Japan revision 3)
+cbuster,,Crude Buster (World FX version)
+cbusterw,2989,Crude Buster (World FU version)
+cbusterj,2989,Crude Buster (Japan)
+twocrude,2989,Two Crude (US)
+darkseal,,Dark Seal (World revision 3)
+darksea1,2993,Dark Seal (World revision 1)
+darkseaj,2993,Dark Seal (Japan)
+gatedoom,2993,Gate of Doom (US revision 4)
+gatedom1,2993,Gate of Doom (US revision 1)
+edrandy,,The Cliffhanger - Edward Randy (World revision 2)
+edrandy1,2998,The Cliffhanger - Edward Randy (World revision 1)
+edrandyj,2998,The Cliffhanger - Edward Randy (Japan)
+supbtime,,Super Burger Time (World)
+supbtimj,3001,Super Burger Time (Japan)
+mutantf,,"Mutant Fighter (World Rev 4, EM-5)"
+mutantfa,3003,"Mutant Fighter (World Rev 3, EM-4)"
+deathbrd,3003,"Death Brade (Japan Rev 2, JM-3)"
+cninja,,Caveman Ninja (World revision 3)
+cninja0,3006,Caveman Ninja (World revision 0)
+cninjau,3006,Caveman Ninja (US)
+joemac,3006,Tatakae Genshizin Joe and Mac (Japan)
+stoneage,3006,Stoneage
+robocop2,,Robocop 2 (World)
+robocp2u,3011,Robocop 2 (US)
+robocp2j,3011,Robocop 2 (Japan)
+thndzone,,Thunder Zone (World)
+dassault,3014,Desert Assault (US)
+dassaul4,3014,Desert Assault (US 4 Players)
+chinatwn,,China Town (Japan)
+rohga,,Rohga Armour Force (Asia-Europe v3.0)
+rohgah,3018,Rohga Armour Force (Hong Kong v3.0)
+rohgau,3018,Rohga Armour Force (US v1.0)
+wolffang,3018,Wolf Fang -Kuhga 2001- (Japan)
+captaven,,Captain America and The Avengers (Asia Rev 1.9)
+captavna,3022,Captain America and The Avengers (Asia Rev 1.0)
+captavne,3022,Captain America and The Avengers (UK Rev 1.4)
+captavnu,3022,Captain America and The Avengers (US Rev 1.9)
+captavuu,3022,Captain America and The Avengers (US Rev 1.6)
+captavnj,3022,Captain America and The Avengers (Japan Rev 0.2)
+tumblep,,Tumble Pop (World)
+tumblepj,3028,Tumble Pop (Japan)
+tumblepb,3028,Tumble Pop (bootleg set 1)
+tumblep2,3028,Tumble Pop (bootleg set 2)
+jumpkids,,Jump Kids
+fncywld,,Fancy World - Earth of Crisis
+magipur,,Magic Purple
+suprtrio,,Super Trio
+lemmings,,Lemmings (US Prototype)
+dragngun,,Dragon Gun (US)
+wizdfire,,Wizard Fire (US v1.1)
+darksel2,3038,Dark Seal 2 (Japan v2.1)
+funkyjet,,Funky Jet
+nitrobal,,Nitro Ball (US)
+dietgo,,Diet Go Go (Euro v1.1)
+dietgoe,3042,"Diet Go Go (Euro v1.1,1992.08.04)"
+dietgou,3042,Diet Go Go (USA v1.1)
+dietgoj,3042,Diet Go Go (Japan v1.1)
+pktgaldx,,Pocket Gal Deluxe (Euro v3.00)
+pktgaldj,3046,Pocket Gal Deluxe (Japan v3.00)
+boogwing,,Boogie Wings (Euro v1.5)
+boogwinga,3048,Boogie Wings (Asia v1.5)
+ragtime,3048,The Great Ragtime Show (Japan v1.5)
+ragtimea,3048,The Great Ragtime Show (Japan v1.3)
+dblewing,,Double Wings
+fghthist,,Fighters History (World ver 43-07)
+fghthistu,3053,Fighters History (US ver 42-03)
+fghthista,3053,"Fighters History (US ver 42-05, alternate hardware)"
+fghthistj,3053,Fighters History (Japan ver 42-03)
+hvysmsh,,Heavy Smash (Europe version -2)
+hvysmsha,3057,Heavy Smash (Asia version -4)
+hvysmshj,3057,Heavy Smash (Japan version -2)
+nslasher,,Night Slashers (Korea Rev 1.3)
+nslasherj,3060,Night Slashers (Japan Rev 1.2)
+nslashers,3060,Night Slashers (Over Sea Rev 1.2)
+nslasheru,3060,Night Slashers (US Rev 1.2)
+lockload,,Locked 'n Loaded (US)
+joemacr,,"Joe and Mac Returns (World, Version 1.1)"
+joemacra,3065,"Joe and Mac Returns (World, Version 1.0)"
+tattass,,Tattoo Assassins (US Prototype)
+tattassa,3067,Tattoo Assassins (Asia Prototype)
+charlien,,Charlie Ninja
+backfire,,Backfire!
+chainrec,,"Chain Reaction (World, Version 2.2)"
+sotsugyo,,Sotsugyo Shousho
+sshangha,,Super Shanghai Dragon's Eye (Japan)
+sshanghb,3073,"Super Shanghai Dragon's Eye (World, bootleg)"
+wcvol95,,World Cup Volley 95 (Japan v1.0)
+wcvol95x,3075,World Cup Volley 95 Extra Version (Asia v2.0B)
+candance,3080,Cannon Dancer (Japan)
+magdrop,3071,"Magical Drop (Japan, Version 1.1)"
+magdropp,3071,"Magical Drop Plus 1 (Japan, Version 2.1)"
+osman,,Osman (World)
+gangonta,3082,Ganbare! Gonta!! 2 / Party Time: Gonta the Diver II (Japan Release)
+prtytime,,Party Time: Gonta the Diver II / Ganbare! Gonta!! 2 (World Release)
+hangzo,,"Hangzo (Japan, Prototype)"
+avengrgs,,Avengers In Galactic Storm (US/Europe 1.0)
+avengrgsj,3084,Avengers In Galactic Storm (Japan 1.2)
+skullfng,,Skull Fang (Europe 1.13)
+skullfngj,3086,Skull Fang (Japan 1.09)
+hoops96,,Hoops '96 (Europe/Asia 2.0)
+ddream95,3088,Dunk Dream '95 (Japan 1.4 EAM)
+senjyo,,Senjyo
+starforc,,Star Force
+starfore,3091,Star Force (encrypted)
+megaforc,3091,Mega Force
+baluba,,Baluba-louk no Densetsu
+bombjack,,Bomb Jack (set 1)
+bombjac2,3095,Bomb Jack (set 2)
+pbaction,,Pinball Action (set 1)
+pbactio2,3097,Pinball Action (set 2)
+tehkanwc,,Tehkan World Cup
+gridiron,,Gridiron Fight
+teedoff,,Tee'd Off (Japan)
+solomon,,Solomon's Key (Japan)
+rygar,,Rygar (US set 1)
+rygar2,3103,Rygar (US set 2)
+rygarj,3103,Argus no Senshi (Japan)
+gemini,,Gemini Wing
+backfirt,,Back Fire (Tecmo)
+silkworm,,Silk Worm (set 1)
+silkwrm2,3108,Silk Worm (set 2)
+tbowl,,Tecmo Bowl (World[Q])
+tbowlj,3110,Tecmo Bowl (Japan)
+shadoww,,Shadow Warriors (World set 1)
+shadowwa,3112,Shadow Warriors (World set 2)
+gaiden,3112,Ninja Gaiden (US)
+ryukendn,3112,Ninja Ryukenden (Japan)
+wildfang,,Wild Fang - Tecmo Knight
+tknight,3116,Tecmo Knight
+stratof,,Raiga - Strato Fighter (US)
+raiga,3118,Raiga - Strato Fighter (Japan)
+wc90,,Tecmo World Cup '90 (set 1)
+wc90a,3120,Tecmo World Cup '90 (set 2)
+wc90t,3120,Tecmo World Cup '90 (trackball)
+wc90b,3120,Euro League
+spbactn,,Super Pinball Action (US)
+spbactnj,3124,Super Pinball Action (Japan)
+fstarfrc,,Final Star Force (US)
+ginkun,,Ganbare Ginkun
+riot,,Riot
+deroon,,Deroon DeroDero
+deroon2,3129,Deroon DeroDero / Tecmo Stackers
+tkdensho,,Toukidenshou - Angel Eyes (VER. 960614)
+tkdensha,3131,Toukidenshou - Angel Eyes (VER. 960427)
+drgnbowl,,Dragon Bowl
+tutankhm,,Tutankham
+tutankst,3134,Tutankham (Stern)
+junofrst,,Juno First
+junofstg,3136,Juno First (Gottlieb)
+pooyan,,Pooyan
+pooyans,3138,Pooyan (Stern)
+pootan,3138,Pootan
+timeplt,,Time Pilot
+timepltc,3141,Time Pilot (Centuri)
+spaceplt,3141,Space Pilot
+psurge,,Power Surge
+megazone,,Mega Zone
+megaznik,3145,Mega Zone (Kosuka)
+pandoras,,Pandora's Palace
+gyruss,,Gyruss (Konami)
+gyrussce,3148,Gyruss (Centuri)
+venus,3148,Venus
+trackfld,,Track and Field
+trackflc,3151,Track and Field (Centuri)
+hyprolym,3151,Hyper Olympic
+hyprolyb,3151,Hyper Olympic (bootleg)
+whizquiz,,Whiz Quiz
+mastkin,,The Masters of Kin
+rocnrope,,Roc'n Rope
+rocnropk,3157,Roc'n Rope (Kosuka)
+circusc,,Circus Charlie
+circusc2,3159,Circus Charlie (no level select)
+circuscc,3159,Circus Charlie (Centuri)
+circusce,3159,"Circus Charlie (Centuri, earlier)"
+tp84,,Time Pilot '84 (set 1)
+tp84a,3163,Time Pilot '84 (set 2)
+hyperspt,,Hyper Sports
+hpolym84,3165,Hyper Olympic '84
+sbasketb,,Super Basketball (version G)
+sbasketo,3167,Super Basketball (version E)
+sbasketu,3167,Super Basketball (not encrypted)
+mikie,,Mikie
+mikiej,3170,Shinnyuushain Tooru-kun
+mikiehs,3170,Mikie (High School Graffiti)
+roadf,,Road Fighter (set 1)
+roadf2,3173,Road Fighter (set 2)
+yiear,,Yie Ar Kung-Fu (set 1)
+yiear2,3175,Yie Ar Kung-Fu (set 2)
+kicker,,Kicker
+shaolins,3177,Shao-Lin's Road
+pingpong,,Ping Pong
+gberet,,Green Beret
+rushatck,3180,Rush'n Attack
+gberetb,3180,Green Beret (bootleg)
+mrgoemon,,Mr. Goemon (Japan)
+jailbrek,,Jail Break
+manhatan,3184,Manhattan 24 Bunsyo (Japan)
+finalizr,,Finalizer - Super Transformation
+finalizb,3186,Finalizer - Super Transformation (bootleg)
+ironhors,,Iron Horse
+dairesya,3188,Dai Ressya Goutou (Japan)
+farwest,3188,Far West
+jackal,,Jackal (World)
+topgunr,3191,Top Gunner (US)
+jackalj,3191,Tokushu Butai Jackal (Japan)
+topgunbl,3191,Top Gunner (bootleg)
+ddribble,,Double Dribble
+contra,,Contra (US)
+contrab,3196,Contra (US bootleg)
+contraj,3196,Contra (Japan)
+contrajb,3196,Contra (Japan bootleg)
+gryzor,3196,Gryzor
+combasc,,Combat School (joystick)
+combasct,3201,Combat School (trackball)
+combascj,3201,Combat School (Japan trackball)
+bootcamp,3201,Boot Camp
+combascb,3201,Combat School (bootleg)
+rockrage,,Rock 'n Rage (World[Q])
+rockragj,3206,Koi no Hotrock (Japan)
+mx5000,,MX5000
+flkatck,3208,Flak Attack (Japan)
+fastlane,,Fast Lane
+tricktrp,,Trick Trap (World[Q])
+labyrunr,3211,Labyrinth Runner (Japan)
+labyrunk,3211,Labyrinth Runner (World Ver. K)
+thehustl,,The Hustler (Japan version M)
+thehustj,3214,The Hustler (Japan version J)
+rackemup,3214,Rack 'em Up
+battlnts,,Battlantis
+battlntj,3217,Battlantis (Japan)
+bladestl,,Blades of Steel (version T)
+bladstle,3219,Blades of Steel (version E)
+hcastle,,Haunted Castle (version M)
+hcastleo,3221,Haunted Castle (version K)
+hcastlej,3221,Akuma-Jou Dracula (Japan version P)
+hcastljo,3221,Akuma-Jou Dracula (Japan version N)
+ajax,,Ajax
+typhoon,3225,Typhoon
+ajaxj,3225,Ajax (Japan)
+scontra,,Super Contra
+scontraj,3228,Super Contra (Japan)
+thunderx,,Thunder Cross
+thnderxj,3230,Thunder Cross (Japan)
+mainevt,,The Main Event (4 Players ver. Y)
+mainevto,3232,The Main Event (4 Players ver. F)
+mainev2p,3232,The Main Event (2 Players ver. X)
+ringohja,3232,Ring no Ohja (Japan 2 Players ver. N)
+devstors,,Devastators (ver. Z)
+devstor2,3236,Devastators (ver. X)
+devstor3,3236,Devastators (ver. V)
+garuka,3236,Garuka (Japan ver. W)
+88games,,'88 Games
+konami88,3240,Konami '88
+hypsptsp,3240,Hyper Sports Special (Japan)
+gbusters,,Gang Busters
+crazycop,3243,Crazy Cop (Japan)
+crimfght,,Crime Fighters (US 4 players)
+crimfgt2,3245,Crime Fighters (World 2 Players)
+crimfgtj,3245,Crime Fighters (Japan 2 Players)
+spy,,S.P.Y. - Special Project Y (World ver. N)
+spyu,3248,S.P.Y. - Special Project Y (US ver. M)
+bottom9,,Bottom of the Ninth (version T)
+bottom9n,3250,Bottom of the Ninth (version N)
+mstadium,3250,Main Stadium (Japan)
+blockhl,,Block Hole
+quarth,3253,Quarth (Japan)
+aliens,,Aliens (World set 1)
+aliens2,3255,Aliens (World set 2)
+aliensu,3255,Aliens (US)
+aliensj,3255,Aliens (Japan)
+surpratk,,Surprise Attack (Japan ver. M)
+parodius,,Parodius DA! (World)
+parodisj,3260,Parodius DA! (Japan)
+rollerg,,Rollergames (US)
+rollergj,3262,Rollergames (Japan)
+simpsons,,The Simpsons (4 Players)
+simpsn2p,3264,The Simpsons (2 Players)
+simps2pa,3264,The Simpsons (2 Players alt)
+simps2pj,3264,The Simpsons (2 Players Japan)
+esckids,,Escape Kids (Asia 4 Players)
+esckidsj,3268,Escape Kids (Japan 2 Players)
+vendetta,,Vendetta (World 4 Players ver. T)
+vendetao,3270,Vendetta (World 4 Players ver. R)
+vendet2p,3270,Vendetta (World 2 Players ver. W)
+vendetas,3270,Vendetta (Asia 2 Players ver. U)
+vendtaso,3270,Vendetta (Asia 2 Players ver. D)
+vendettj,3270,Crime Fighters 2 (Japan 2 Players ver. P)
+mogura,,Mogura Desse
+wecleman,,WEC Le Mans 24
+hotchase,,Hot Chase
+chqflag,,Chequered Flag
+chqflagj,3279,Chequered Flag (Japan)
+ultraman,,Ultraman (Japan)
+hexion,,Hexion (Japan)
+lethalen,,Lethal Enforcers (ver UAE)
+nemesis,,Nemesis
+nemesuk,3284,Nemesis (World[Q])
+konamigt,,Konami GT
+salamand,,Salamander (version D)
+salamanj,3287,Salamander (version J)
+lifefrce,3287,Lifeforce (US)
+lifefrcj,3287,Lifeforce (Japan)
+blkpnthr,,Black Panther
+citybomb,,City Bomber (World)
+citybmrj,3292,City Bomber (Japan)
+kittenk,,Kitten Kaboodle
+nyanpani,3294,Nyan Nyan Panic (Japan)
+hcrash,,Hyper Crash (version D)
+hcrashc,3296,Hyper Crash (version C)
+rf2,3286,Konami RF2 - Red Fighter
+twinbee,,TwinBee
+gradius,3284,Gradius
+gwarrior,,Galactic Warriors
+devilw,,Devil World
+darkadv,3302,Dark Adventure
+majuu,3302,Majuu no Ohkoku
+vulcan,,Vulcan Venture
+gradius2,3305,Gradius II - GOFER no Yabou (Japan New Ver.)
+grdius2a,3305,Gradius II - GOFER no Yabou (Japan Old Ver.)
+grdius2b,3305,Gradius II - GOFER no Yabou (Japan Older Ver.)
+cuebrick,,Cue Brick (Japan)
+fround,,The Final Round (version M)
+froundl,3310,The Final Round (version L)
+hpuncher,3310,Hard Puncher (Japan)
+miaj,3315,M.I.A. - Missing in Action (Japan)
+cuebrckj,3309,Cue Brick (World version D)
+mia,,M.I.A. - Missing in Action (version T)
+mia2,3315,M.I.A. - Missing in Action (version S)
+tmnt,,Teenage Mutant Ninja Turtles (World 4 Players)
+tmntu,3317,Teenage Mutant Ninja Turtles (US 4 Players)
+tmht,3317,Teenage Mutant Hero Turtles (UK 4 Players)
+tmntj,3317,Teenage Mutant Ninja Turtles (Japan 4 Players)
+tmht2p,3317,Teenage Mutant Hero Turtles (UK 2 Players)
+tmnt2pj,3317,Teenage Mutant Ninja Turtles (Japan 2 Players)
+tmnt2po,3317,Teenage Mutant Ninja Turtles (Oceania 2 Players)
+punkshot,,Punk Shot (US 4 Players)
+punksht2,3324,Punk Shot (US 2 Players)
+punkshtj,3324,Punk Shot (Japan 2 Players)
+lgtnfght,,Lightning Fighters (US)
+trigon,3327,Trigon (Japan)
+blswhstl,,Bells and Whistles (Version L)
+detatwin,3329,Detana!! Twin Bee (Japan ver. J)
+glfgreat,,Golfing Greats
+glfgretj,3331,Golfing Greats (Japan)
+tmnt2,,Teenage Mutant Ninja Turtles - Turtles in Time (US 4 Players ver. UAA)
+tmnt22p,3333,Teenage Mutant Ninja Turtles - Turtles in Time (US 2 Players ver. UDA)
+tmnt2a,3333,Teenage Mutant Ninja Turtles - Turtles in Time (Asia 4 Players ver. ADA)
+ssriders,,Sunset Riders (World 4 Players ver. EAC)
+ssrdrebd,3336,Sunset Riders (World 2 Players ver. EBD)
+ssrdrebc,3336,Sunset Riders (World 2 Players ver. EBC)
+ssrdruda,3336,Sunset Riders (US 4 Players ver. UDA)
+ssrdruac,3336,Sunset Riders (US 4 Players ver. UAC)
+ssrdrubc,3336,Sunset Riders (US 2 Players ver. UBC)
+ssrdrabd,3336,Sunset Riders (Asia 2 Players ver. ABD)
+ssrdrjbd,3336,Sunset Riders (Japan 2 Players ver. JBD)
+sunsetbl,3336,Sunset Riders (bootleg 4 Players ver. ADD)
+xmen,,X-Men (US 4 Players)
+xmen2p,3345,X-Men (World 2 Players)
+xmen2pj,3345,X-Men (Japan 2 Players)
+xmen6p,3345,X-Men (Euro 6 Players)
+xmen6pu,3345,X-Men (US 6 Players)
+xexex,,Xexex (World)
+xexexj,3350,Xexex (Japan)
+asterix,,Asterix (World ver. EAD)
+astrxeac,3352,Asterix (World ver. EAC)
+astrxeaa,3352,Asterix (World ver. EAA)
+gijoe,,GI Joe (World)
+gijoeu,3355,GI Joe (US)
+gijoej,3355,GI Joe (Japan)
+thndrx2,,Thunder Cross II (Japan)
+thndrx2a,3358,Thunder Cross II (Asia)
+prmrsocr,,Premier Soccer (Europe ver. EAB)
+prmrsocj,3360,Premier Soccer (Japan ver. JAB)
+qgakumon,,Quiz Gakumon no Susume (Japan ver. JA2 Type L)
+moo,,Wild West C.O.W.-Boys of Moo Mesa (World version EA)
+mooua,3363,Wild West C.O.W.-Boys of Moo Mesa (US version UA)
+moobl,3363,Wild West C.O.W.-Boys of Moo Mesa (bootleg version AA)
+bucky,,Bucky O'Hare (World version EA)
+buckyua,3366,Bucky O'Hare (US version UA)
+gaiapols,,Gaiapolis (Japan ver JAF)
+mystwarr,,Mystic Warriors (Europe ver EAA)
+mystwaru,3369,Mystic Warriors (US ver UAA)
+viostorm,,Violent Storm (Europe ver EAB)
+viostrmu,3371,Violent Storm (US ver UAB)
+viostrmj,3371,Violent Storm (Japan ver JAC)
+viostrma,3371,Violent Storm (Asia ver AAC)
+dadandrn,3376,Kyukyoku Sentai Dadandarn (Japan ver JAA)
+mmaulers,,Monster Maulers (ver EAA)
+metamrph,,Metamorphic Force (US ver UAA)
+metamrpj,3377,Metamorphic Force (Japan ver JAA)
+mtlchamp,,Martial Champion (Europe ver EAA)
+mtlchmpj,3379,Martial Champion (Japan ver JAA)
+rungun,,Run and Gun (World ver. EAA)
+rungunu,3381,Run and Gun (US ver. UAB)
+slmdunkj,3381,Slam Dunk (Japan ver. JAA))
+dbz,,Dragonball Z
+dbz2,,Dragonball Z 2 Super Battle
+bishi,,"Bishi Bashi Championship Mini Game Senshuken (ver JAA, 3 Players)"
+sbishi,,"Super Bishi Bashi Championship (ver JAA, 2 Players)"
+sbishik,3387,"Super Bishi Bashi Championship (ver KAA, 3 Players)"
+overdriv,,Over Drive
+gradius3,,Gradius III (Japan)
+grdius3a,3390,Gradius III (Asia)
+grdius3e,3390,Gradius III (World [Q])
+plygonet,,Polygonet Commanders (ver UAA)
+racinfrc,,Racin' Force (ver UAB)
+opengolf,,Konami's Open Golf Championship (ver EAD)
+ggreats2,3395,Golfing Greats 2 (ver JAC)
+le2,,Lethal Enforcers II - Gun Fighters (ver EAA)
+le2u,3397,Lethal Enforcers II - Gun Fighters (ver UAA)
+puzldama,,Taisen Puzzle-dama (ver JAA)
+gokuparo,,Gokujyou Parodius (ver JAD)
+fantjour,3400,Fantastic Journey
+dragoona,,Dragoon Might (ver AAB)
+dragoonj,3402,Dragoon Might (ver JAA)
+tbyahhoo,,Twin Bee Yahhoo! (ver JAA)
+tkmmpzdm,,Tokimeki Memorial Taisen Puzzle-dama (ver JAB)
+salmndr2,,Salamander 2 (ver JAA)
+sexyparo,,Sexy Parodius (ver JAA)
+sexyparoa,3407,Sexy Parodius (ver AAA)
+daiskiss,,Daisu-Kiss (ver JAA)
+tokkae,,Taisen Tokkae-dama (ver JAA)
+winspike,,Winning Spike (ver JAA)
+soccerss,,Soccer Superstars (ver JAA)
+vsnetscr,,Versus Net Soccer (ver UAB)
+rungun2,,Run and Gun 2 (ver UAA)
+slamdnk2,3414,Slam Dunk 2 (ver JAA)
+rushhero,,Rushing Heroes (ver UAB)
+bm1stmix,,beatmania (ver JA-B)
+bm2ndmix,,beatmania 2nd MIX (ver JA-B)
+bm2ndmxa,3418,beatmania 2nd MIX (ver JA-A)
+bmcompmx,,beatmania complete MIX (ver JA-B)
+hmcompmx,3420,hiphopmania complete MIX (ver UA-B)
+bm4thmix,,beatmania 4th MIX (ver JA-A)
+hmcompm2,,hiphopmania complete MIX 2 (ver UA-A)
+bmdct,,beatmania f. Dreams Come True (ver JA-A)
+bmcorerm,,beatmania CORE REMIX (ver JA-A)
+carpolo,,Car Polo
+sidetrac,,Side Track
+targ,,Targ
+targc,3428,Targ (cocktail[Q])
+spectar,,Spectar (revision 3)
+spectar1,3430,Spectar (revision 1[Q])
+rallys,3430,Rallys (bootleg[Q])
+phantoma,3430,Phantomas
+venture,,Venture (version 5 set 1)
+venture2,3434,Venture (version 5 set 2)
+venture4,3434,Venture (version 4)
+mtrap,,Mouse Trap (version 5)
+mtrap3,3437,Mouse Trap (version 3)
+mtrap4,3437,Mouse Trap (version 4)
+pepper2,,Pepper II
+hardhat,,Hard Hat
+fax,,Fax
+circus,,Circus
+robotbwl,,Robot Bowl
+crash,,Crash
+ripcord,,Rip Cord
+starfire,,Star Fire (set 1)
+starfira,3447,Star Fire (set 2)
+fireone,,Fire One
+starfir2,,Star Fire 2
+victory,,Victory
+victorba,3451,Victor Banana
+teetert,,Teeter Torture (prototype)
+crossbow,,Crossbow (version 2.0)
+cheyenne,,Cheyenne (version 1.0)
+combat,,Combat (version 3.0)
+catch22,3456,Catch-22 (version 8.0)
+cracksht,,Crackshot (version 2.0)
+claypign,,Clay Pigeon (version 2.0)
+chiller,,Chiller (version 3.0)
+topsecex,,Top Secret (Exidy) (version 1.0)
+hitnmiss,,Hit 'n Miss (version 3.0)
+hitnmis2,3462,Hit 'n Miss (version 2.0)
+whodunit,,Who Dunit (version 8.0)
+showdown,,Showdown (version 5.0)
+copsnrob,,Cops'n Robbers
+flyball,,Flyball
+sprint2,3485,Sprint 2 (set 1)
+sprint2a,3485,Sprint 2 (set 2)
+sprint4,,Sprint 4 (set 1)
+sprint4a,3470,Sprint 4 (set 2)
+nitedrvr,,Night Driver
+dominos,,Dominos
+triplhnt,,Triple Hunt
+sprint8,,Sprint 8
+sprint8a,3475,Sprint 8 (play tag and chase)
+dragrace,,Drag Race
+poolshrk,,Poolshark
+starshp1,,Starship 1
+starshpp,3479,Starship 1 (prototype[Q])
+superbug,,Super Bug
+canyon,,Canyon Bomber
+canyonp,3482,Canyon Bomber (prototype)
+destroyr,,Destroyer
+sprint1,,Sprint 1
+ultratnk,,Ultra Tank
+skyraid,,Sky Raider
+tourtabl,,Tournament Table (set 1)
+tourtab2,3488,Tournament Table (set 2)
+avalnche,,Avalanche
+firetrk,,Fire Truck
+skydiver,,Sky Diver
+sbrkout,,Super Breakout
+atarifb,,Atari Football (revision 2)
+atarifb1,3494,Atari Football (revision 1)
+orbit,,Orbit
+boxer,,Boxer (prototype)
+wolfpack,,Wolf Pack (prototype)
+videopin,,Video Pinball
+atarifb4,3494,Atari Football (4 players)
+subs,,Subs
+bsktball,,Basketball
+abaseb,,Atari Baseball (set 1)
+abaseb2,3503,Atari Baseball (set 2)
+montecar,,Monte Carlo
+soccer,,Atari Soccer
+missile,,Missile Command (set 1)
+missile2,3507,Missile Command (set 2)
+suprmatk,3507,Super Missile Attack
+llander,,Lunar Lander (rev 2)
+llander1,3510,Lunar Lander (rev 1)
+asteroid,,Asteroids (rev 2)
+asteroi1,3512,Asteroids (rev 1)
+asteroib,3512,Asteroids (bootleg on Lunar Lander hardware)
+asterock,3512,Asterock
+astdelux,,Asteroids Deluxe (rev 2)
+astdelu1,3516,Asteroids Deluxe (rev 1)
+bzone,,Battle Zone (set 1)
+bzone2,3518,Battle Zone (set 2)
+bzonec,3518,Battle Zone (cocktail)
+bradley,,Bradley Trainer
+redbaron,,Red Baron
+tempest,,Tempest (rev 3)
+tempest1,3523,Tempest (rev 1)
+tempest2,3523,Tempest (rev 2)
+tempest3,3523,Tempest (rev [Q])
+temptube,3523,Tempest Tubes
+spacduel,,Space Duel
+gravitar,,Gravitar (version 3)
+gravitr2,3529,Gravitar (version 2)
+gravp,3529,Gravitar (prototype)
+lunarbat,3529,"Lunar Battle (prototype, later)"
+lunarba1,3529,"Lunar Battle (prototype, earlier)"
+quantum,,Quantum (rev 2)
+quantum1,3534,Quantum (rev 1)
+quantump,3534,Quantum (prototype)
+bwidow,,Black Widow
+starwars,,Star Wars (rev 2)
+starwar1,3538,Star Wars (rev 1)
+mhavoc,,Major Havoc (rev 3)
+mhavoc2,3540,Major Havoc (rev 2)
+mhavocp,3540,Major Havoc (prototype)
+mhavocrv,3540,Major Havoc (Return to Vax)
+alphaone,3540,"Alpha One (prototype, 3 lives)"
+alphaona,3540,"Alpha One (prototype, 5 lives)"
+esb,,The Empire Strikes Back
+warlords,,Warlords
+centiped,,Centipede (revision 3)
+centipd2,3548,Centipede (revision 2)
+centtime,3548,Centipede (revision 4)
+centipdb,3548,Caterpillar (bootleg of Centipede)
+centipb2,3548,"Centipede (bootleg, set 1)"
+millpac,3548,Millpac (bootleg of Centipede)
+magworm,3548,Magic Worm (bootleg of Centipede)
+mazeinv,,Maze Invaders (prototype)
+milliped,,Millipede
+qwak,,Qwak (prototype)
+runaway,,Runaway (prototype)
+tunhunt,,Tunnel Hunt
+tunhuntc,3559,Tunnel Hunt (Centuri)
+liberatr,,Liberator (set 1)
+liberat2,3561,Liberator (set 2)
+foodf,,Food Fight (rev 3)
+foodf2,3563,Food Fight (rev 2)
+foodfc,3563,Food Fight (cocktail)
+ccastles,,Crystal Castles (version 4)
+ccastle3,3566,Crystal Castles (version 3)
+ccastle2,3566,Crystal Castles (version 2)
+ccastlej,3566,Crystal Castles (joystick version)
+cloak,,Cloak and Dagger (rev 5)
+cloaksp,3570,Cloak and Dagger (Spanish)
+cloakfr,3570,Cloak and Dagger (French)
+cloakgr,3570,Cloak and Dagger (German)
+cloud9,,Cloud 9 (prototype)
+jedi,,Return of the Jedi
+peterpak,,Peter Pack-Rat
+marble,,Marble Madness (set 1)
+marble2,3577,Marble Madness (set 2)
+marble3,3577,Marble Madness (set 3)
+marble4,3577,Marble Madness (set 4)
+indytemp,,Indiana Jones and the Temple of Doom (set 1)
+indytem2,3581,Indiana Jones and the Temple of Doom (set 2)
+indytem3,3581,Indiana Jones and the Temple of Doom (set 3)
+indytem4,3581,Indiana Jones and the Temple of Doom (set 4)
+indytemd,3581,Indiana Jones and the Temple of Doom (German)
+roadrunn,,Road Runner (rev 2)
+roadrun2,3586,Road Runner (rev 1+)
+roadrun1,3586,Road Runner (rev 1)
+roadblst,,"Road Blasters (upright, rev 4)"
+roadblsg,3589,"Road Blasters (upright, German, rev 3)"
+roadbls3,3589,"Road Blasters (upright, rev 3)"
+roadblg2,3589,"Road Blasters (upright, German, rev 2)"
+roadbls2,3589,"Road Blasters (upright, rev 2)"
+roadblg1,3589,"Road Blasters (upright, German, rev 1)"
+roadbls1,3589,"Road Blasters (upright, rev 1)"
+roadblsc,3589,"Road Blasters (cockpit, rev 2)"
+roadblcg,3589,"Road Blasters (cockpit, German, rev 1)"
+roadblc1,3589,"Road Blasters (cockpit, rev 1)"
+paperboy,,Paperboy (rev 3)
+paperbr2,3599,Paperboy (rev 2)
+paperbr1,3599,Paperboy (rev 1)
+ssprint,,Super Sprint (rev 4)
+ssprint3,3602,Super Sprint (rev 3)
+ssprint1,3602,Super Sprint (rev 1)
+ssprintg,3602,"Super Sprint (German, rev 2)"
+sspring1,3602,"Super Sprint (German, rev 1)"
+ssprintf,3602,Super Sprint (French)
+ssprints,3602,Super Sprint (Spanish)
+csprint,,Championship Sprint (rev 3)
+csprint2,3609,Championship Sprint (rev 2)
+csprint1,3609,Championship Sprint (rev 1)
+csprintg,3609,"Championship Sprint (German, rev 2)"
+cspring1,3609,"Championship Sprint (German, rev 1)"
+csprintf,3609,Championship Sprint (French)
+csprints,3609,"Championship Sprint (Spanish, rev 2)"
+csprins1,3609,"Championship Sprint (Spanish, rev 1)"
+720,,720 Degrees (rev 4)
+720r3,3617,720 Degrees (rev 3)
+720r2,3617,720 Degrees (rev 2)
+720r1,3617,720 Degrees (rev 1)
+720g,3617,"720 Degrees (German, rev 2)"
+720gr1,3617,"720 Degrees (German, rev 1)"
+apb,,APB - All Points Bulletin (rev 7)
+apb6,3623,APB - All Points Bulletin (rev 6)
+apb5,3623,APB - All Points Bulletin (rev 5)
+apb4,3623,APB - All Points Bulletin (rev 4)
+apb3,3623,APB - All Points Bulletin (rev 3)
+apb2,3623,APB - All Points Bulletin (rev 2)
+apb1,3623,APB - All Points Bulletin (rev 1)
+apbg,3623,APB - All Points Bulletin (German)
+apbf,3623,APB - All Points Bulletin (French)
+irobot,,"I, Robot"
+harddriv,,"Hard Drivin' (cockpit, rev 7)"
+harddrvb,3633,"Hard Drivin' (cockpit, British, rev 7)"
+harddrvg,3633,"Hard Drivin' (cockpit, German, rev 7)"
+harddrvj,3633,"Hard Drivin' (cockpit, Japan, rev 7)"
+harddrb6,3633,"Hard Drivin' (cockpit, British, rev 6)"
+harddrj6,3633,"Hard Drivin' (cockpit, Japan, rev 6)"
+harddrb5,3633,"Hard Drivin' (cockpit, British, rev 5)"
+harddrg4,3633,"Hard Drivin' (cockpit, German, rev 4)"
+harddrv3,3633,"Hard Drivin' (cockpit, rev 3)"
+harddrv2,3633,"Hard Drivin' (cockpit, rev 2)"
+harddrv1,3633,"Hard Drivin' (cockpit, rev 1)"
+harddrvc,3633,"Hard Drivin' (compact, rev 2)"
+harddrcg,3633,"Hard Drivin' (compact, German, rev 2)"
+harddrcb,3633,"Hard Drivin' (compact, British, rev 2)"
+harddrc1,3633,"Hard Drivin' (compact, rev 1)"
+stunrun,,S.T.U.N. Runner (rev 6)
+stunrunj,3648,"S.T.U.N. Runner (rev 7, Japan)"
+stunrun5,3648,S.T.U.N. Runner (rev 5)
+stunrune,3648,"S.T.U.N. Runner (rev 5, Europe)"
+stunrun4,3648,S.T.U.N. Runner (rev 4)
+stunrun3,3648,S.T.U.N. Runner (rev 3)
+stunrn3e,3648,"S.T.U.N. Runner (rev 3, Europe)"
+stunrun2,3648,S.T.U.N. Runner (rev 2)
+stunrn2e,3648,"S.T.U.N. Runner (rev 2, Europe)"
+stunrun0,3648,S.T.U.N. Runner (rev 0)
+stunrunp,3648,S.T.U.N. Runner (upright prototype)
+racedriv,,"Race Drivin' (cockpit, rev 5)"
+racedrvb,3659,"Race Drivin' (cockpit, British, rev 5)"
+racedrvg,3659,"Race Drivin' (cockpit, German, rev 5)"
+racedrv4,3659,"Race Drivin' (cockpit, rev 4)"
+racedrb4,3659,"Race Drivin' (cockpit, British, rev 4)"
+racedrg4,3659,"Race Drivin' (cockpit, German, rev 4)"
+racedrv3,3659,"Race Drivin' (cockpit, rev 3)"
+racedrv2,3659,"Race Drivin' (cockpit, rev 2)"
+racedrv1,3659,"Race Drivin' (cockpit, rev 1)"
+racedrb1,3659,"Race Drivin' (cockpit, British, rev 1)"
+racedrg1,3659,"Race Drivin' (cockpit, German, rev 2)"
+racedrvc,3659,"Race Drivin' (compact, rev 5)"
+racedrcb,3659,"Race Drivin' (compact, British, rev 5)"
+racedrcg,3659,"Race Drivin' (compact, German, rev 5)"
+racedrc4,3659,"Race Drivin' (compact, rev 4)"
+racedcb4,3659,"Race Drivin' (compact, British, rev 4)"
+racedcg4,3659,"Race Drivin' (compact, German, rev 4)"
+racedrc2,3659,"Race Drivin' (compact, rev 2)"
+racedrc1,3659,"Race Drivin' (compact, rev 1)"
+steeltal,,Steel Talons (rev 2)
+steeltag,3678,"Steel Talons (German, rev 2)"
+steelta1,3678,Steel Talons (rev 1)
+steeltap,3678,Steel Talons (prototype)
+hdrivair,,Hard Drivin's Airborne (prototype)
+hdrivaip,3682,"Hard Drivin's Airborne (prototype, early rev)"
+gauntlet,,Gauntlet (rev 14)
+gaunts,3684,"Gauntlet (Spanish, rev 15)"
+gauntj,3684,"Gauntlet (Japanese, rev 13)"
+gauntg,3684,"Gauntlet (German, rev 10)"
+gauntj12,3684,"Gauntlet (Japanese, rev 12)"
+gauntr9,3684,Gauntlet (rev 9)
+gauntgr8,3684,"Gauntlet (German, rev 8)"
+gauntr7,3684,Gauntlet (rev 7)
+gauntgr6,3684,"Gauntlet (German, rev 6)"
+gauntr5,3684,Gauntlet (rev 5)
+gauntr4,3684,Gauntlet (rev 4)
+gauntgr3,3684,"Gauntlet (German, rev 3)"
+gauntr2,3684,Gauntlet (rev 2)
+gauntr1,3684,Gauntlet (rev 1)
+gaunt2p,3684,"Gauntlet (2 Players, rev 6)"
+gaunt2pj,3684,"Gauntlet (2 Players, Japanese, rev 5)"
+gaunt2pg,3684,"Gauntlet (2 Players, German, rev 4)"
+gaun2pr3,3684,"Gauntlet (2 Players, rev 3)"
+gaun2pj2,3684,"Gauntlet (2 Players, Japanese, rev 2)"
+gaun2pg1,3684,"Gauntlet (2 Players, German, rev 1)"
+gaunt2,,Gauntlet II
+gaunt2g,3704,Gauntlet II (German)
+gaunt22p,3704,"Gauntlet II (2 Players, rev 2)"
+gaun22p1,3704,"Gauntlet II (2 Players, rev 1)"
+gaun22pg,3704,"Gauntlet II (2 Players, German)"
+vindctr2,,Vindicators Part II (rev 3)
+vindc2r2,3709,Vindicators Part II (rev 2)
+vindc2r1,3709,Vindicators Part II (rev 1)
+xybots,,Xybots (rev 2)
+xybotsg,3712,"Xybots (German, rev 3)"
+xybotsf,3712,"Xybots (French, rev 3)"
+xybots1,3712,Xybots (rev 1)
+xybots0,3712,Xybots (rev 0)
+blstroid,,Blasteroids (rev 4)
+blstroi3,3717,Blasteroids (rev 3)
+blstroi2,3717,Blasteroids (rev 2)
+blstroig,3717,"Blasteroids (German, rev 2)"
+blsthead,3717,Blasteroids (with heads)
+vindictr,,Vindicators (rev 5)
+vindicte,3722,"Vindicators (Europe, rev 5)"
+vindictg,3722,"Vindicators (German, rev 1)"
+vindice4,3722,"Vindicators (Europe, rev 4)"
+vindict4,3722,Vindicators (rev 4)
+vindice3,3722,"Vindicators (Europe, rev 3)"
+vindict2,3722,Vindicators (rev 2)
+vindict1,3722,Vindicators (rev 1)
+toobin,,Toobin' (rev 3)
+toobine,3730,"Toobin' (Europe, rev 3)"
+toobing,3730,"Toobin' (German, rev 3)"
+toobin2,3730,Toobin' (rev 2)
+toobin2e,3730,"Toobin' (Europe, rev 2)"
+toobin1,3730,Toobin' (rev 1)
+cyberbal,,Cyberball (rev 4)
+cyberba2,3736,Cyberball (rev 2)
+cyberbap,3736,Cyberball (prototype)
+atetcktl,3741,Tetris (Cocktail set 1)
+atetckt2,3741,Tetris (Cocktail set 2)
+atetris,,Tetris (set 1)
+atetrisa,3741,Tetris (set 2)
+atetrisb,3741,Tetris (bootleg)
+eprom,,Escape from the Planet of the Robot Monsters (set 1)
+eprom2,3744,Escape from the Planet of the Robot Monsters (set 2)
+guts,,Guts n' Glory (prototype)
+skullxbo,,Skull and Crossbones (rev 5)
+skullxb4,3747,Skull and Crossbones (rev 4)
+skullxb3,3747,Skull and Crossbones (rev 3)
+skullxb2,3747,Skull and Crossbones (rev 2)
+skullxb1,3747,Skull and Crossbones (rev 1)
+cyberbt,3736,Tournament Cyberball 2072 (rev 2)
+cyberbt1,3736,Tournament Cyberball 2072 (rev 1)
+badlands,,Bad Lands
+klax,,Klax (set 1)
+klax2,3755,Klax (set 2)
+klax3,3755,Klax (set 3)
+klaxj,3755,Klax (Japan)
+klaxd,3755,Klax (Germany)
+klaxp1,3755,Klax (prototype set 1)
+klaxp2,3755,Klax (prototype set 2)
+thunderj,,ThunderJaws
+cyberb2p,3736,"Cyberball 2072 (2 player, rev 4)"
+cyberb23,3736,"Cyberball 2072 (2 player, rev 3)"
+cyberb22,3736,"Cyberball 2072 (2 player, rev 2)"
+cyberb21,3736,"Cyberball 2072 (2 player, rev 1)"
+hydra,,Hydra
+hydrap,3767,Hydra (prototype 5-14-90)
+hydrap2,3767,Hydra (prototype 5-25-90)
+pitfight,,Pit Fighter (rev 4)
+pitfigh3,3770,Pit Fighter (rev 3)
+pitfighj,3770,"Pit Fighter (Japan, 2 players)"
+pitfighb,3770,Pit Fighter (bootleg)
+rampart,,Rampart (Trackball)
+ramprt2p,3774,Rampart (Joystick)
+rampartj,3774,"Rampart (Japan, Joystick)"
+shuuz,,Shuuz (version 8.0)
+shuuz2,3777,Shuuz (version 7.1)
+batman,,Batman
+marblmd2,,Marble Madness II (prototype)
+roadriot,,Road Riot 4WD
+offtwall,,Off the Wall (2-3-player upright)
+offtwalc,3782,Off the Wall (2-player cocktail)
+guardian,,Guardians of the Hood
+dangerex,,Danger Express (prototype)
+relief,,Relief Pitcher (set 1)
+relief2,3786,Relief Pitcher (set 2)
+arcadecl,,Arcade Classics (prototype)
+sparkz,,Sparkz (prototype)
+motofren,,Moto Frenzy
+spclords,,Space Lords
+spclorda,3791,Space Lords (alternate)
+rrreveng,,Road Riot's Revenge (prototype)
+rrrevenp,3793,Road Riot's Revenge (prototype alt)
+beathead,,BeatHead (prototype)
+tmek,,T-MEK
+tmekprot,3796,T-MEK (prototype)
+primrage,,Primal Rage (version 2.3)
+primraga,3798,Primal Rage (version 2.0)
+area51,,Area 51
+area51mx,,Area 51 - Maximum Force Duo v2.0
+a51mxr3k,3801,Area 51 - Maximum Force Duo (R3000)
+maxforce,,Maximum Force v1.05
+maxf_102,3803,Maximum Force v1.02
+vcircle,,Vicious Circle (prototype)
+sasuke,,Sasuke vs. Commander
+satansat,,Satan of Saturn
+zarzon,3807,Zarzon
+vanguard,,Vanguard (SNK)
+vangrdce,3809,Vanguard (Centuri)
+fantasy,,Fantasy (US)
+fantasyj,3811,Fantasy (Japan)
+pballoon,,Pioneer Balloon
+nibbler,,Nibbler (set 1)
+nibblera,3814,Nibbler (set 2)
+lasso,,Lasso
+chameleo,,Chameleon
+wwjgtin,,Wai Wai Jockey Gate-In!
+pinbo,,Pinbo
+pinbos,3819,Pinbo (Strike)
+joyfulr,,Joyful Road (Japan)
+mnchmobl,3821,Munch Mobile (US)
+marvins,,Marvin's Maze
+madcrash,,Mad Crasher
+vangrd2,,Vanguard II
+jcross,,Jumping Cross
+mainsnk,,Main Event (1984)
+sgladiat,,Gladiator 1984
+hal21,,HAL21
+hal21j,3829,HAL21 (Japan)
+aso,,ASO - Armored Scrum Object
+tnk3,,T.N.K. III (US)
+tnk3j,3832,T.A.N.K. (Japan)
+tnk3b,3832,T.A.N.K. (joystick hack bootleg)
+athena,,Athena
+fitegolf,,Fighting Golf (World[Q])
+fitegol2,3836,Fighting Golf (US)
+countryc,3836,Country Club
+ikari,,Ikari Warriors (US)
+ikarijp,3839,Ikari (Japan)
+ikarijpb,3839,Ikari (joystick hack bootleg)
+victroad,,Victory Road
+dogosoke,3842,Dogou Souken
+dogosokj,3842,Dogou Souken (joystick hack bootleg)
+gwar,,Guerrilla War (US)
+gwarj,3845,Guevara (Japan)
+gwara,3845,Guerrilla War (Version 1)
+gwarb,3845,Guerrilla War (joystick hack bootleg)
+bermudat,,Bermuda Triangle (Japan)
+bermudao,3849,Bermuda Triangle (Japan old version)
+bermudaa,3849,Bermuda Triangle (US older version)
+worldwar,3849,World Wars (World)
+psychos,,Psycho Soldier (US)
+psychosj,3853,Psycho Soldier (Japan)
+chopper,,Chopper I (US set 1)
+choppera,3855,Chopper I (US set 2)
+chopperb,3855,Chopper I (US set 3)
+legofair,3855,Koukuu Kihei Monogatari - The Legend of Air Cavalry (Japan)
+ftsoccer,,Fighting Soccer
+tdfever,,TouchDown Fever
+tdfeverj,3860,TouchDown Fever (Japan)
+tdfever2,3860,TouchDown Fever 2
+ikari3,,"Ikari III - The Rescue (US, Rotary Joystick)"
+ikari3nr,3863,"Ikari III - The Rescue (World, 8-Way Joystick)"
+pow,,P.O.W. - Prisoners of War (US)
+powj,3865,Datsugoku - Prisoners of War (Japan)
+searchar,,SAR - Search And Rescue (World)
+sercharu,3867,SAR - Search And Rescue (US)
+streetsm,,Street Smart (US version 2)
+streets1,3869,Street Smart (US version 1)
+streetsw,3869,Street Smart (World version 1)
+streetsj,3869,Street Smart (Japan version 1)
+prehisle,,Prehistoric Isle in 1930 (World)
+prehislu,3873,Prehistoric Isle in 1930 (US)
+gensitou,3873,Genshi-Tou 1930's
+mechatt,,Mechanized Attack (World)
+bbusters,,Beast Busters (World [Q])
+shougi,,Shougi
+shougi2,3878,Shougi 2
+champbas,,Champion Baseball
+champbbj,3880,Champion Baseball (Japan set 1)
+champbja,3880,Champion Baseball (Japan set 2)
+champbb2,,Champion Baseball II
+exctsccr,,Exciting Soccer
+exctscca,3884,Exciting Soccer (alternate music)
+exctsccb,3884,Exciting Soccer (bootleg)
+exctscc2,3884,Exciting Soccer II
+equites,,Equites
+equitess,3888,Equites (Sega)
+bullfgtr,,Bull Fighter
+kouyakyu,,The Koukouyakyuh
+splndrbt,,Splendor Blast
+hvoltage,,High Voltage
+sstingry,,Super Stingray
+kyros,,Kyros
+kyrosj,3895,Kyros No Yakata (Japan)
+paddlema,,Paddle Mania
+timesold,,Time Soldiers (US Rev 3)
+timesol1,3898,Time Soldiers (US Rev 1)
+btlfield,3898,Battle Field (Japan)
+skysoldr,,Sky Soldiers (US)
+goldmedl,,Gold Medalist
+goldmedb,3902,Gold Medalist (bootleg)
+skyadvnt,,Sky Adventure (World)
+skyadvnu,3904,Sky Adventure (US)
+skyadvnj,3904,Sky Adventure (Japan)
+gangwars,,Gang Wars (US)
+gangwarb,3907,Gang Wars (bootleg)
+sbasebal,,Super Champion Baseball (US)
+tnexspce,,The Next Space
+scregg,,Scrambled Egg
+eggs,3911,Eggs
+dommy,,Dommy
+bigprowr,,The Big Pro Wrestling!
+tagteam,3914,Tag Team Wrestling
+ssozumo,,Syusse Oozumou (Japan)
+mystston,,Mysterious Stones - Dr. John's Adventure
+myststno,3917,Mysterious Stones - Dr. Kick in Adventure
+dogfgt,,Acrobatic Dog-Fight
+dogfgtj,3919,Dog-Fight (Japan) 
+bogeyman,,Bogey Manor
+matmania,,Mat Mania
+excthour,3922,Exciting Hour
+maniach,,Mania Challenge (set 1)
+maniach2,3924,Mania Challenge (set 2)
+renegade,,Renegade (US)
+renegadeb,3926,Renegade (US bootleg)
+kuniokun,3926,Nekketsu Kouha Kunio-kun (Japan)
+kuniokub,3926,Nekketsu Kouha Kunio-kun (Japan bootleg)
+xsleena,,Xain'd Sleena
+xsleenab,3930,Xain'd Sleena (bootleg)
+solarwar,3930,Solar-Warrior
+battlane,,Battle Lane! Vol. 5 (set 1)
+battlan2,3933,Battle Lane! Vol. 5 (set 2)
+battlan3,3933,Battle Lane! Vol. 5 (set 3)
+ddragon,,Double Dragon (Japan)
+ddragonu,3936,Double Dragon (US)
+ddragonw,3936,Double Dragon (World)
+ddragonb,3936,Double Dragon (bootleg)
+spdodgeb,,Super Dodge Ball (US)
+nkdodgeb,3940,Nekketsu Koukou Dodgeball Bu (Japan bootleg)
+chinagat,,China Gate (US)
+saiyugou,3942,Sai Yu Gou Ma Roku (Japan)
+saiyugb1,3942,Sai Yu Gou Ma Roku (Japan bootleg 1)
+saiyugb2,3942,Sai Yu Gou Ma Roku (Japan bootleg 2)
+wwfsstar,,WWF Superstars (US)
+vball,,U.S. Championship V'ball (set 1)
+vball2pj,3947,U.S. Championship V'ball (Japan)
+ddragon2,,Double Dragon II - The Revenge (World)
+ddragn2u,3949,Double Dragon II - The Revenge (US)
+toffy,,Toffy
+stoffy,,Super Toffy
+ddungeon,,Dangerous Dungeons
+darktowr,,Dark Tower
+tstrike,,Thunder Strike
+ctribe,,The Combatribes (US)
+ctribeb,3956,The Combatribes (bootleg)
+blockout,,Block Out (set 1)
+blckout2,3958,Block Out (set 2)
+blckoutj,3958,Block Out (Japan)
+ddragon3,,Double Dragon 3 - The Rosetta Stone (US)
+ddragon3j,3961,Double Dragon 3 - The Rosetta Stone (Japan)
+ddrago3b,3961,Double Dragon 3 - The Rosetta Stone (bootleg)
+wwfwfest,,WWF WrestleFest (US)
+wwfwfsta,3964,WWF WrestleFest (US Tecmo)
+wwfwfstj,3964,WWF WrestleFest (Japan)
+shadfrce,,Shadow Force (US Version 2)
+berzerk,,Berzerk (set 1)
+berzerk1,3968,Berzerk (set 2)
+frenzy,,Frenzy
+mazerbla,,Mazer Blazer
+greatgun,,Great Guns
+supdrapo,,Super Draw Poker
+toratora,,Tora Tora
+megatack,,MegaTack
+killcom,,Killer Comet
+challeng,,Challenger
+kaos,,Kaos
+sia2650,,Super Invader Attack
+tinv2650,3979,The Invaders
+dodgem,,Dodgem
+monymony,,Money Money
+jackrabt,,Jack Rabbit (set 1)
+jackrab2,3983,Jack Rabbit (set 2)
+jackrabs,3983,Jack Rabbit (special)
+mouser,,Mouser
+mouserc,3986,Mouser (Cosmos)
+nova2001,,Nova 2001 (Japan)
+nov2001u,3988,Nova 2001 (US)
+ninjakun,,Ninjakun Majou no Bouken
+raiders5,,Raiders5
+raidrs5t,3991,Raiders5 (Japan)
+pkunwar,,Penguin-Kun Wars (US)
+pkunwarj,3993,Penguin-Kun Wars (Japan)
+xxmissio,,XX Mission
+ninjakd2,,Ninja-Kid II (set 1)
+ninjak2a,3996,Ninja-Kid II (set 2)
+ninjak2b,3996,Ninja-Kid II (set 3)
+rdaction,3996,Rad Action
+mnight,,Mutant Night
+arkarea,,Ark Area
+robokid,,Atomic Robo-kid
+robokidj,4002,Atomic Robo-kid (Japan)
+omegaf,,Omega Fighter
+omegafs,4004,Omega Fighter Special
+tharrier,,Task Force Harrier
+tharierj,4006,Task Force Harrier (Japan)
+mustang,,US AAF Mustang (Japan)
+mustangs,4008,US AAF Mustang (Seoul Trading)
+mustangb,4008,US AAF Mustang (Bootleg)
+bioship,,Bio-ship Paladin
+vandyke,,Vandyke (Japan)
+vandyjal,4012,"Vandyke (Jaleco, Set 1)"
+blkheart,,Black Heart
+blkhearj,4014,Black Heart (Japan)
+acrobatm,,Acrobat Mission
+strahl,,Koutetsu Yousai Strahl (Japan set 1)
+strahla,4017,Koutetsu Yousai Strahl (Japan set 2)
+bjtwin,,Bomb Jack Twin
+tdragon2,,Thunder Dragon 2 (9th Nov. 1993)
+bigbang,4020,Big Bang (9th Nov. 1993)
+tdragon,,Thunder Dragon
+tdragonb,4022,Thunder Dragon (Bootleg)
+hachamf,,Hacha Mecha Fighter
+hachamfb,4024,Hacha Mecha Fighter (unprotected)
+macross,,Super Spacefortress Macross - Chou-Jikuu Yousai Macross
+gunnail,,GunNail
+gunnailp,4027,GunNail (location test)
+macross2,,Super Spacefortress Macross II - Chou-Jikuu Yousai Macross II
+sabotenb,,Saboten Bombers (set 1)
+sabotnba,4030,Saboten Bombers (set 2)
+nouryoku,,Nouryoku Koujou Iinkai
+manybloc,,Many Block
+ssmissin,,S.S. Mission
+airattck,,Air Attack (set 1)
+airattcka,4035,Air Attack (set 2)
+raphero,,Rapid Hero
+daireika,,Mahjong Daireikai
+mjzoomin,,Mahjong Channel Zoom In
+kakumei,,Mahjong Kakumei
+kakumei2,,Mahjong Kakumei 2 - Princess League
+quizpani,,Quiz Panicuru Fantasy
+macrossp,,Macross Plus
+quizmoon,,Quiz Bisyoujo Senshi Sailor Moon - Chiryoku Tairyoku Toki no Un
+gakupara,,Quiz Gakuen Paradise (Japan)
+quizdna,,Quiz DNA no Hanran (Japan)
+gekiretu,,Quiz Gekiretsu Scramble (Japan)
+narc,,Narc (rev 7.00)
+narc3,4048,Narc (rev 3.20)
+trog,,Trog (rev LA4 03-11-91)
+trog3,4050,Trog (rev LA3 02-14-91)
+trogpa6,4050,Trog (rev PA6-PAC 09-09-90)
+trogp,4050,"Trog (prototype, rev 4.00 07-27-90)"
+smashtv,,Smash T.V. (rev 8.00)
+smashtv6,4054,Smash T.V. (rev 6.00)
+smashtv5,4054,Smash T.V. (rev 5.00)
+smashtv4,4054,Smash T.V. (rev 4.00)
+hiimpact,,High Impact Football (rev LA3 12-27-90)
+shimpact,,Super High Impact (rev LA1 09-30-91)
+shimpacp,4059,"Super High Impact (prototype, rev 5.0 09-15-91)"
+strkforc,,Strike Force (rev 1 02-25-91)
+saurnfrnt,4061,Saurian Front (proto v5.0 8/07/90)
+mk,,Mortal Kombat (rev 5.0 T-Unit 03-19-93)
+mkr4,4063,Mortal Kombat (rev 4.0 T-Unit 02-11-93)
+mkprot9,4063,"Mortal Kombat (prototype, rev 9.0 07-28-92)"
+mkla1,4063,Mortal Kombat (rev 1.0 08-08-92)
+mkla2,4063,Mortal Kombat (rev 2.0 08-18-92)
+mkla3,4063,Mortal Kombat (rev 3.0 08-31-92)
+mkla4,4063,Mortal Kombat (rev 4.0 09-28-92)
+term2,,Terminator 2 - Judgment Day (rev LA3 03-27-92)
+term2la2,4070,Terminator 2 - Judgment Day (rev LA2 12-09-91)
+term2la1,4070,Terminator 2 - Judgment Day (rev LA1 11-01-91)
+totcarn,,Total Carnage (rev LA1 03-10-92)
+totcarnp,4073,"Total Carnage (prototype, rev 1.0 01-25-92)"
+mk2,,Mortal Kombat II (rev L3.1)
+mk2r32,4075,Mortal Kombat II (rev L3.2 (European))
+mk2r21,4075,Mortal Kombat II (rev L2.1)
+mk2r14,4075,Mortal Kombat II (rev L1.4)
+mk2r42,4075,"Mortal Kombat II (rev L4.2, hack)"
+mk2r91,4075,"Mortal Kombat II (rev L9.1, hack)"
+mk2chal,4075,Mortal Kombat II Challenger (hack)
+mk2p,4075,Mortal Kombat II Plus (Beta 2)
+jdreddp,,"Judge Dredd (rev LA1, prototype)"
+nbajam,,NBA Jam (rev 3.01 04-07-93)
+nbajamr2,4084,NBA Jam (rev 2.00 02-10-93)
+nbajamte,,NBA Jam TE (rev 4.0 03-23-94)
+nbajamt1,4086,NBA Jam TE (rev 1.0 01-17-94)
+nbajamt2,4086,NBA Jam TE (rev 2.0 01-28-94)
+nbajamt3,4086,NBA Jam TE (rev 3.0 03-04-94)
+nbajamtr,4086,NBA Jam TE Rewind ver 1.1
+revx,,Revolution X (Rev. 1.0 6-16-94)
+mk3,,Mortal Kombat 3 (rev 2.1)
+mk3r20,4092,Mortal Kombat 3 (rev 2.0)
+mk3r10,4092,Mortal Kombat 3 (rev 1.0)
+umk3,4092,Ultimate Mortal Kombat 3 (rev 1.2)
+umk3r11,4092,Ultimate Mortal Kombat 3 (rev 1.1)
+umk3p,4092,Ultimate Mortal Kombat 3 Plus (Beta 2)
+wwfmania,,WWF - Wrestlemania (rev 1.30 08-10-95)
+openice,,2 On 2 Open Ice Challenge (rev 1.21)
+nbahangt,,NBA Hangtime (rev L1.1 04-16-96)
+nbamht,4100,NBA Maximum Hangtime (rev 1.03 06/09/97)
+nbamht1,4100,NBA Maximum Hangtime (rev 1.0 11/08/96)
+rmpgwt,,Rampage - World Tour (rev 1.3)
+rmpgwt11,4103,Rampage - World Tour (rev 1.1)
+crusnusa,,Cruis'n USA (rev L4.1)
+crusnu40,4105,Cruis'n USA (rev L4.0)
+crusnu21,4105,Cruis'n USA (rev L2.1)
+crusnwld,,Cruis'n World (rev L2.3)
+crusnw20,4108,Cruis'n World (rev L2.0)
+crusnw13,4108,Cruis'n World (rev L1.3)
+offroadc,,Off Road Challenge
+wargods,,War Gods
+wg3dh,,Wayne Gretzky's 3D Hockey
+mace,,Mace - The Dark Age
+sfrush,,San Francisco Rush
+calspeed,,California Speed
+carnevil,,CarnEvil
+biofreak,,BioFreaks (prototype)
+blitz,,NFL Blitz
+blitz99,,NFL Blitz '99
+blitz2k,,NFL Blitz 2000
+embargo,,Embargo
+tripool,,Tri-Pool (Casino Tech)
+tripoola,4123,Tri-Pool (Costal Games)
+jack,,Jack the Giantkiller (set 1)
+jack2,4125,Jack the Giantkiller (set 2)
+jack3,4125,Jack the Giantkiller (set 3)
+treahunt,4125,Treasure Hunt (Japan[Q])
+zzyzzyxx,,Zzyzzyxx (set 1)
+zzyzzyx2,4129,Zzyzzyxx (set 2)
+brix,4129,Brix
+freeze,,Freeze
+sucasino,,Super Casino
+spacewar,,Space Wars
+barrier,,Barrier
+starcas,,Star Castle (version 3)
+starcas1,4136,Star Castle (older)
+starcasp,4136,Star Castle (prototype)
+starcase,4136,Star Castle (Mottoeis)
+stellcas,4136,Stellar Castle (Elettronolo)
+tailg,,Tailgunner
+ripoff,,Rip Off
+armora,,Armor Attack
+armorap,4143,Armor Attack (prototype)
+armorar,4143,Armor Attack (Rock-ola)
+wotw,,War of the Worlds
+warrior,,Warrior
+starhawk,,Star Hawk
+solarq,,Solar Quest
+boxingb,,Boxing Bugs
+speedfrk,,Speed Freak
+sundance,,Sundance
+demon,,Demon
+cchasm,,Cosmic Chasm (set 1)
+cchasm1,4154,Cosmic Chasm (set 2)
+roundup,,Round-Up
+fitter,4156,Fitter
+thepit,,The Pit
+dockman,,Dock Man
+portman,4159,Port Man
+funnymou,,Funny Mouse
+suprmous,4161,Super Mouse
+machomou,,Macho Mouse
+intrepid,,Intrepid (set 1)
+intrepi2,4164,Intrepid (set 2)
+zaryavos,,Zarya Vostoka
+timelimt,,Time Limit
+progress,,Progress
+bagman,,Bagman
+bagnard,4169,Le Bagnard
+bagmans,4169,Bagman (Stern set 1)
+bagmans2,4169,Bagman (Stern set 2)
+sbagman,,Super Bagman
+sbagmans,4173,Super Bagman (Stern)
+pickin,,Pickin'
+botanic,,"Botanic (English / Spanish, set 1)"
+botanicf,4176,Botanic (French)
+tankbust,,Tank Busters
+stinger,,Stinger
+stinger2,4179,Stinger (prototype[Q])
+scion,,Scion
+scionc,4181,Scion (Cinematronics)
+kungfut,,Kung-Fu Taikun
+wiz,,Wiz
+wizt,4184,Wiz (Taito)
+kncljoe,,Knuckle Joe (set 1)
+kncljoea,4186,Knuckle Joe (set 2)
+bcrusher,4186,Bone Crusher
+empcity,,Empire City - 1931 (bootleg[Q])
+empcityj,4189,Empire City - 1931 (Japan)
+stfight,4189,Street Fight (Germany)
+mustache,,Mustache Boy
+cshooter,,Cross Shooter (not encrypted)
+cshootre,4193,Cross Shooter (encrypted)
+airraid,4193,Air Raid (encrypted)
+deadang,,Dead Angle
+ghunter,4196,Gang Hunter (Spain)
+dynduke,,Dynamite Duke
+dbldyn,4198,The Double Dynamites
+raiden,,Raiden
+raidena,4200,Raiden (Alternate Hardware)
+raidenk,4200,Raiden (Korea)
+raident,4200,Raiden (Taiwan)
+sdgndmps,,SD Gundam Psycho Salamander no Kyoui
+dcon,,D-Con
+sengokmj,,Sengoku Mahjong (Japan)
+raiden2,,Raiden 2
+cabal,,"Cabal (World, Joystick version)"
+cabala,4208,Cabal (Alpha Trading)
+cabalus,4208,"Cabal (US set 1, Trackball version)"
+cabalus2,4208,"Cabal (US set 2, Trackball version)"
+cabalbl,4208,Cabal (bootleg of Joystick version)
+toki,,Toki (World set 1)
+tokia,4213,Toki (World set 2)
+tokij,4213,JuJu Densetsu (Japan)
+tokiu,4213,Toki (US)
+tokib,4213,Toki (bootleg)
+bloodbro,,Blood Bros.
+weststry,4218,West Story
+skysmash,,Sky Smasher
+legionna,,Legionnaire (World)
+legionnu,4221,Legionnaire (US)
+heatbrl,,Heated Barrel (World)
+heatbrlo,4223,Heated Barrel (World old version)
+heatbrlu,4223,Heated Barrel (US)
+godzilla,,Godzilla
+sdgndmrb,,SD Gundam Sangokushi Rainbow Tairiku Senki
+cupsoc,,Seibu Cup Soccer
+cupsoc2,4228,Seibu Cup Soccer (set 2)
+olysoc92,4228,Olympic Soccer '92
+cupsocbl,4228,Seibu Cup Soccer (bootleg)
+goal92,4228,Goal '92
+exerion,,Exerion
+exeriont,4233,Exerion (Taito)
+exerionb,4233,Exerion (bootleg)
+pturn,,Parallel Turn
+fcombat,,Field Combat
+formatz,,Formation Z
+aeroboto,4238,Aeroboto
+citycon,,City Connection (set 1)
+citycona,4240,City Connection (set 2)
+cruisin,4240,Cruisin
+momoko,,Momoko 120%
+argus,,Argus
+valtric,,Valtric
+butasan,,Butasan (Japan)
+psychic5,,Psychic 5
+ginganin,,Ginga NinkyouDen
+skyfox,,Sky Fox
+exerizrb,4249,Exerizer (Japan) (bootleg)
+homerun,,Moero Pro Yakyuu Homerun
+bigrun,,Big Run (11th Rallye version)
+cischeat,,Cisco Heat
+f1gpstar,,Grand Prix Star
+f1gpstr2,,F-1 Grand Prix Star II
+scudhamm,,Scud Hammer
+tetrisp2,,Tetris Plus 2 (World[Q])
+teplus2j,4257,Tetris Plus 2 (Japan)
+rockn,,Rock'n Tread (Japan)
+rockna,4259,"Rock'n Tread (Japan, alternate)"
+rockn2,,Rock'n Tread 2 (Japan)
+rockn3,,Rock'n 3 (Japan)
+rockn4,,Rock'n 4 (Japan)
+lomakai,,Legend of Makai (World)
+makaiden,4264,Makai Densetsu (Japan)
+p47,,P-47 - The Phantom Fighter (World)
+p47j,4266,P-47 - The Freedom Fighter (Japan)
+kickoff,,Kick Off (Japan)
+tshingen,,"Takeda Shingen (Japan, Japanese)"
+tshingna,4269,"Shingen Samurai-Fighter (Japan, English)"
+kazan,,Ninja Kazan (World)
+iganinju,4271,Iga Ninjyutsuden (Japan)
+astyanax,,The Astyanax
+lordofk,4273,The Lord of King (Japan)
+hachoo,,Hachoo!
+jitsupro,,Jitsuryoku!! Pro Yakyuu (Japan)
+plusalph,,Plus Alpha
+stdragon,,Saint Dragon
+rodland,,Rod-Land (World)
+rodlandj,4279,Rod-Land (Japan)
+rodlndjb,4279,Rod-Land (Japan bootleg)
+avspirit,,Avenging Spirit
+inyourfa,,"In Your Face (US, prototype)"
+phantasm,4282,Phantasm (Japan)
+edf,,E.D.F. - Earth Defense Force
+edfu,4285,E.D.F. - Earth Defense Force (North America)
+64street,,64th. Street - A Detective Story (World)
+64streej,4287,64th. Street - A Detective Story (Japan)
+soldamj,,Soldam (Japan)
+bigstrik,,Big Striker
+bigstrkb,4290,Big Striker (bootleg)
+chimerab,,Chimera Beast (prototype)
+cybattlr,,Cybattler
+peekaboo,,Peek-a-Boo!
+hayaosi1,,Hayaoshi Quiz Ouza Ketteisen
+bbbxing,,Best Bout Boxing
+47pie2,,Idol Janshi Su-Chi-Pie 2 (v1.1)
+47pie2o,4297,Idol Janshi Su-Chi-Pie 2 (v1.0)
+desertwr,,Desert War - Wangan Sensou
+gametngk,,The Game Paradise - Master of Shooting! - Game Tengoku - The Game Paradise
+tetrisp,,Tetris Plus
+p47aces,,P-47 Aces
+akiss,,Mahjong Angel Kiss
+gratia,,Gratia - Second Earth (92047-01 version)
+gratiaa,4304,Gratia - Second Earth (91022-10 version)
+kirarast,,Ryuusei Janshi Kirara Star
+tp2m32,4257,Tetris Plus 2 (MegaSystem 32 Version)
+f1superb,,F1 Super Battle
+rabiolep,,Rabio Lepus (Japan)
+rpunch,4309,Rabbit Punch (US)
+svolley,,Super Volleyball (Japan)
+svolleyk,4311,Super Volleyball (Korea)
+svolleyu,4311,Super Volleyball (US)
+tail2nos,,Tail to Nose - Great Championship
+sformula,4314,Super Formula (Japan)
+ojankoc,,Ojanko Club (Japan)
+ojankoy,,Ojanko Yakata (Japan)
+ojanko2,,Ojanko Yakata 2bankan (Japan)
+ccasino,,Chinese Casino [BET] (Japan)
+ojankohs,,Ojanko High School (Japan)
+nekkyoku,,Rettou Juudan Nekkyoku Janshi - Higashi Nippon Hen (Japan)
+idolmj,,Idol-Mahjong Housoukyoku (Japan)
+mjnatsu,,Mahjong Natsu Monogatari (Japan)
+natsuiro,4323,Natsuiro Mahjong (Japan)
+mfunclub,,Mahjong Fun Club - Idol Saizensen (Japan)
+daiyogen,,Mahjong Daiyogen (Japan)
+nmsengen,,Nekketsu Mahjong Sengen! AFTER 5 (Japan)
+fromance,,Idol-Mahjong Final Romance (Japan)
+pipedrm,,Pipe Dream (US)
+pipedrmj,4329,Pipe Dream (Japan)
+hatris,,Hatris (Japan)
+spinlbrk,,Spinal Breakers (World)
+spinlbru,4332,Spinal Breakers (US)
+spinlbrj,4332,Spinal Breakers (Japan)
+pspikes,,Power Spikes (World)
+pspikesk,4335,Power Spikes (Korea)
+svolly91,4335,Super Volley '91 (Japan)
+karatblz,,Karate Blazers (World[Q])
+karatblu,4338,Karate Blazers (US)
+turbofrc,,Turbo Force
+aerofgt,,Aero Fighters
+aerofgtb,4341,Aero Fighters (Turbo Force hardware set 1)
+aerofgtc,4341,Aero Fighters (Turbo Force hardware set 2)
+sonicwi,4341,Sonic Wings (Japan)
+welltris,,"Welltris (Japan, 2 players)"
+quiz18k,,Miyasu Nonki no Quiz 18-Kin
+f1gp,,F-1 Grand Prix
+f1gp2,,F-1 Grand Prix Part II
+crshrace,,Lethal Crash Race (set 1)
+crshrac2,4349,Lethal Crash Race (set 2)
+taotaido,,Tao Taido (set 1)
+taotaida,4351,Tao Taido (set 2)
+gstriker,,Grand Striker
+vgoalsoc,,V Goal Soccer
+vgoalsca,4354,V Goal Soccer (alt)
+worldc94,,World Cup '94
+suprslam,,Super Slams
+fromanc2,,Taisen Idol-Mahjong Final Romance 2 (Japan)
+fromancr,,Taisen Mahjong FinalRomance R (Japan)
+fromanc4,,Taisen Mahjong FinalRomance 4 (Japan)
+inufuku,,Quiz and Variety Sukusuku Inufuku (Japan)
+samuraia,,Samurai Aces (World)
+sngkace,4362,Sengoku Ace (Japan)
+gunbird,,Gunbird (World)
+gunbirdk,4364,Gunbird (Korea)
+gunbirdj,4364,Gunbird (Japan)
+btlkroad,,Battle K-Road
+s1945,,Strikers 1945
+s1945j,4368,Strikers 1945 (Japan)
+s1945jn,4368,"Strikers 1945 (Japan, unprotected)"
+tengai,,Tengai - Sengoku Blade - Sengoku Ace Episode II
+s1945ii,,Strikers 1945 II
+soldivid,,Sol Divide - The Sword Of Darkness
+sbomberb,,Space Bomber (ver. B)
+daraku,,Daraku Tenshi - The Fallen Angels
+gunbird2,,Gunbird 2
+s1945iii,,Strikers 1945 III (World) - Strikers 1999 (Japan)
+dragnblz,,Dragon Blaze
+hotgmck,,Taisen Hot Gimmick (Japan)
+hgkairak,,Taisen Hot Gimmick Kairakuten (Japan)
+hotgmck3,,Taisen Hot Gimmick 3 Digital Surfing (Japan)
+loderndf,,Lode Runner - The Dig Fight (ver. B)
+loderdfa,4382,Lode Runner - The Dig Fight (ver. A)
+hotdebut,,Quiz de Idol! Hot Debut (Japan)
+gnbarich,,Gunbarich
+tgm2,,Tetris the Absolute The Grand Master 2
+tgm2p,4386,Tetris the Absolute The Grand Master 2 Plus
+marineb,,Marine Boy
+changes,,Changes
+looper,4389,Looper
+springer,,Springer
+hoccer,,Hoccer (set 1)
+hoccer2,4392,Hoccer (set 2)
+bcruzm12,,Battle Cruiser M-12
+hopprobo,,Hopper Robo
+wanted,,Wanted
+funkybee,,Funky Bee
+skylancr,,Sky Lancer
+zodiack,,Zodiack
+dogfight,,Dog Fight (Thunderbolt)
+moguchan,,Moguchan
+percuss,,The Percussor
+bounty,,The Bounty
+espial,,Espial (US[Q])
+espiale,4404,Espial (Europe)
+netwars,,Net Wars
+vastar,,Vastar (set 1)
+vastar2,4407,Vastar (set 2)
+pprobe,,Planet Probe (prototype?)
+xorworld,,Xor World (prototype)
+bigkarnk,,Big Karnak
+splash,,Splash! (Ver. 1.2 World)
+thoop,,Thunder Hoop
+squash,,Squash
+wrally,,World Rally (set 1)
+wrallya,4415,World Rally (set 2)
+glass,,"Glass (Ver 1.1, Break Edition, Checksum 49D5E66B, Version 1994)"
+glasskr,4417,"Glass (Ver 1.1, Break Edition, Checksum D419AB69, Version 1994) (censored, unprotected)"
+targeth,,Target Hits
+quickshts,4419,Quick Shots (ver 1.0)
+thoop2,,TH Strikes Back
+aligator,,Alligator Hunt
+aligatun,4422,Alligator Hunt (unprotected)
+biomtoy,,Biomechanical Toy (unprotected)
+touchgo,,Touch and Go
+touchgok,4425,"Touch and Go (Korea, unprotected)"
+wrally2,,World Rally 2 - Twin Racing
+maniacsp,4429,Maniac Square (prototype)
+maniacsq,,Maniac Square (unprotected)
+snowboar,,Snow Board Championship (set 1)
+snowbalt,4430,Snow Board Championship (set 2)
+bang,,Bang!
+bangj,4432,Gun Gabacho (Japan)
+jumpkun,,Jump Kun (prototype)
+djboy,,DJ Boy
+djboyj,4435,DJ Boy (Japan)
+airbustr,,Air Buster
+airbustj,4437,Air Buster (Japan)
+galpanic,,Gals Panic (set 1)
+galpanib,4439,Gals Panic (set 2)
+galpani2,,Gals Panic II (Japan[Q])
+jchan,,Jackie Chan - Kung Fu Master
+berlwall,,The Berlin Wall (set 1)
+berlwalt,4443,The Berlin Wall (set 2)
+mgcrystl,,Magical Crystals (World)
+mgcrystj,4445,Magical Crystals (Japan)
+blazeon,,Blaze On (Japan)
+sandscrp,,Sand Scorpion
+bakubrkr,,Bakuretsu Breaker
+shogwarr,,Shogun Warriors
+fjbuster,4450,Fujiyama Buster (Japan)
+brapboys,,B.Rap Boys (World)
+brapboysj,4452,B.Rap Boys Special (Japan)
+bloodwar,,Blood Warrior
+bonkadv,,Bonk's Adventure
+gtmr,,Great 1000 Miles Rally
+gtmre,4456,Great 1000 Miles Rally (Evolution Model)
+gtmrusa,4456,Great 1000 Miles Rally (USA)
+gtmr2,,Mille Miglia 2 - Great 1000 Miles Rally
+wingforc,,"Wing Force (Japan, prototype)"
+packbang,,Pack'n Bang Bang
+galpani4,,Gals Panic 4 (Japan)
+galpandx,,Gals Panic DX (Asia)
+galpanis,,Gals Panic S - Extra Edition (Japan)
+sengekis,,Sengeki Striker (Asia)
+sengekij,4465,Sengeki Striker (Japan)
+vblokbrk,,VS Block Breaker (Asia)
+sarukani,4467,Saru-Kani-Hamu-Zou (Japan)
+cyvern,,Cyvern (Japan)
+galpans2,,Gals Panic S2 (Japan)
+panicstr,,Panic Street (Japan)
+senknow,,Sen-Know (Japan)
+gutsn,,Guts'n (Japan)
+puzzloop,,Puzz Loop (Europe)
+puzloopj,4474,Puzz Loop (Japan)
+puzloopu,4474,Puzz Loop (USA)
+jjparads,,Jan Jan Paradise
+jjparad2,,Jan Jan Paradise 2
+ryouran,,VS Mahjong Otome Ryouran
+teljan,,Tel Jan
+hanaawas,,Hana Awase (Flower Matching)
+speedatk,,Speed Attack!
+srmp2,,Super Real Mahjong Part 2 (Japan)
+srmp3,,Super Real Mahjong Part 3 (Japan)
+mjyuugi,,Mahjong Yuugi (Japan set 1)
+mjyuugia,4485,Mahjong Yuugi (Japan set 2)
+ponchin,,Mahjong Pon Chin Kan (Japan set 1)
+ponchina,4487,Mahjong Pon Chin Kan (Japan set 2)
+tndrcade,,Thundercade - Twin Formation
+tndrcadj,4489,Tokusyu Butai U.A.G. (Japan)
+twineagl,,Twin Eagle - Revenge Joe's Brother
+downtown,,DownTown
+downtowj,4492,DownTown (joystick hack)
+usclssic,,U.S. Classic
+calibr50,,Caliber 50
+arbalest,,Arbalester
+metafox,,Meta Fox
+drgnunit,,Dragon Unit - Castle of Dragon
+wits,,Wit's (Japan)
+thunderl,,Thunder and Lightning
+rezon,,Rezon
+stg,,Strike Gunner S.T.G
+blandia,,Blandia
+blandiap,4503,Blandia (prototype)
+blockcar,,Block Carnival - Thunder and Lightning 2
+qzkklogy,,Quiz Kokology
+neobattl,,SD Gundam Neo Battling (Japan)
+umanclub,,Ultraman Club - Tatakae! Ultraman Kyoudai!!
+zingzip,,Zing Zing Zip
+atehate,,Athena no Hatena [Q]
+jjsquawk,,J. J. Squawkers
+kamenrid,,Masked Riders Club Battle Race
+madshark,,Mad Shark
+msgundam,,Mobile Suit Gundam
+msgunda1,4514,Mobile Suit Gundam (Japan)
+daioh,,Daioh
+oisipuzl,,Oishii Puzzle Ha Irimasenka
+triplfun,4517,Triple Fun
+utoukond,,Ultra Toukon Densetsu (Japan)
+qzkklgy2,,Quiz Kokology 2
+wrofaero,,War of Aero - Project MEIOU
+eightfrc,,Eight Forces
+kiwame,,Pro Mahjong Kiwame
+krzybowl,,Krazy Bowl
+extdwnhl,,Extreme Downhill (v1.5)
+gundhara,,Gundhara
+sokonuke,,Sokonuke Taisen Game (Japan)
+zombraid,,Zombie Raid (US)
+gundamex,,Mobile Suit Gundam EX Revue
+grdians,,Guardians - Denjin Makai II
+mj4simai,,Wakakusamonogatari Mahjong Yonshimai (Japan)
+myangel,,Kosodate Quiz My Angel (Japan)
+myangel2,,Kosodate Quiz My Angel 2 (Japan)
+pzlbowl,,Puzzle De Bowling (Japan)
+penbros,,Penguin Brothers (Japan)
+deerhunt,,Deer Hunting USA V4.3
+deerhunta,4536,Deer Hunting USA V4.2
+deerhuntb,4536,Deer Hunting USA V4.0
+turkhunt,,Turkey Hunting USA V1.0
+wschamp,,Wing Shooting Championship V2.0
+wschampa,4540,Wing Shooting Championship V1.01
+trophyh,,Trophy Hunting - Bear &amp; Moose V1.0
+srmp4,,Super Real Mahjong PIV (Japan)
+srmp4o,4543,"Super Real Mahjong PIV (Japan, older set)"
+twineag2,,Twin Eagle II - The Rescue Mission
+srmp7,,Super Real Mahjong P7 (Japan)
+survarts,,Survival Arts (USA)
+dynagear,,Dyna Gears
+eaglshot,,Eagle Shot Golf
+eaglshta,4549,Eagle Shot Golf (alt)
+hypreact,,Mahjong Hyper Reaction (Japan)
+koikois2,,Koi Koi Shimasyo 2 - Super Real Hanafuda (Japan)
+meosism,,Meosis Magic (Japan)
+hypreac2,,Mahjong Hyper Reaction 2 (Japan)
+sxyreact,,Pachinko Sexy Reaction (Japan)
+cairblad,,Change Air Blade (Japan)
+keithlcy,,Dramatic Adventure Quiz Keith and Lucy (Japan)
+drifto94,,Drift Out '94 - The Hard Order (Japan)
+janjans1,,Lovely Pop Mahjong Jan Jan Shimasyo (Japan)
+stmblade,,Storm Blade (US)
+mslider,,Monster Slider (Japan)
+ryorioh,,Gourmet Battle Quiz Ryohrioh CooKing (Japan)
+vasara,,Vasara
+vasara2,,Vasara 2 (set 1)
+vasara2a,4564,Vasara 2 (set 2)
+gdfs,,Mobile Suit Gundam Final Shooting (Japan)
+ultrax,,Ultra X Weapons - Ultra Keibitai
+jsk,,Joryuu Syougi Kyoushitsu (Japan)
+powerins,,Power Instinct (USA bootleg) (set 1)
+powerina,4569,Power Instinct (USA bootleg) (set 2)
+ohmygod,,Oh My God! (Japan)
+naname,,Naname de Magic! (Japan)
+blmbycar,,Blomby Car
+blmbycau,4573,Blomby Car (not encrypted)
+speakres,,Speak and Rescue
+stratvox,4575,Stratovox
+spacecho,4575,Space Echo
+route16,,Route 16
+route16a,4578,Route 16 (set 2)
+route16b,4578,Route 16 (bootleg)
+routex,4578,Route X (bootleg)
+ttmahjng,,Mahjong
+fnkyfish,,Funky Fish
+kangaroo,,Kangaroo
+kangaroa,4584,Kangaroo (Atari)
+kangarob,4584,Kangaroo (bootleg)
+arabian,,Arabian
+arabiana,4587,Arabian (Atari)
+markham,,Markham
+strnskil,,Strength and Skill
+guiness,4590,The Guiness (Japan)
+pettanp,,Pettan Pyuu (Japan)
+ikki,,Ikki (Japan)
+shanghai,,Shanghai (Japan)
+shangha2,,Shanghai II (Japan)
+shangha3,,Shanghai III (Japan)
+heberpop,,Hebereke no Popoon (Japan)
+blocken,,Blocken (Japan)
+goindol,,Goindol (World)
+goindolu,4599,Goindol (US)
+goindolj,4599,Goindol (Korea)
+rranger,,Rough Ranger (v2.0)
+sranger,4602,Super Ranger (v2.0)
+srangerb,4602,Super Ranger (bootleg)
+srangerw,4602,Super Ranger (WDK)
+sparkman,,Spark Man (v 2.0)
+hardhead,,Hard Head
+hardhedb,4607,Hard Head (bootleg)
+starfigh,,Star Fighter (v1)
+hardhea2,,Hard Head 2 (v2.0)
+brickzn,,Brick Zone (v5.0)
+brickzn3,4611,Brick Zone (v3.0)
+bssoccer,,Back Street Soccer
+uballoon,,Ultra Balloon
+gundealr,,Gun Dealer (set 1)
+gundeala,4615,Gun Dealer (set 2)
+gundealt,4615,Gun Dealer (Tecmo)
+yamyam,,Yam! Yam![Q]
+wiseguy,4618,Wise Guy
+lastday,,The Last Day (set 1)
+lastdaya,4620,The Last Day (set 2)
+gulfstrm,,Gulf Storm
+gulfstr2,4622,Gulf Storm (Media Shoji)
+pollux,,Pollux (set 1)
+polluxa,4624,Pollux (set 2)
+flytiger,,Flying Tiger
+bluehawk,,Blue Hawk
+bluehawn,4627,Blue Hawk (NTC)
+sadari,,Sadari
+gundl94,,Gun Dealer '94
+primella,4630,Primella
+superx,,Super-X (NTC)
+superxm,4632,Super-X (Mitchell)
+rshark,,R-Shark
+leprechn,,Leprechaun
+potogold,4635,Pot of Gold
+piratetr,,Pirate Treasure
+beezer,,Beezer (set 1)
+beezer1,4638,Beezer (set 2)
+pushman,,Pushman
+bballs,,Bouncing Balls
+zerozone,,Zero Zone
+lvgirl94,,Las Vegas Girl (Girl '94)
+hotpinbl,,Hot Pinball
+galspnbl,,Gals Pinball
+fantasia,,Fantasia
+newfant,,New Fantasia
+fantsy95,,Fantasy '95
+missw96,,Miss World '96 Nude
+fantsia2,,Fantasia II
+galhustl,,Gals Hustler
+sslam,,Super Slam (set 1)
+sslama,4652,Super Slam (set 2)
+powerbal,,Power Balls
+hrdtimes,,Hard Times
+bigtwin,,Big Twin
+wbeachvl,,World Beach Volley
+sharkatt,,Shark Attack
+thief,,Thief
+natodef,,NATO Defense
+natodefa,4660,NATO Defense (alternate mazes)
+mrflea,,The Amazing Adventures of Mr. F. Lea
+holeland,,Hole Land
+crzrally,,Crazy Rally
+speedbal,,Speed Ball
+sauro,,Sauro
+trckydoc,,Tricky Doc
+karatour,,The Karate Tournament
+ladykill,,Lady Killer
+moegonta,4669,Moeyo Gonta!! (Japan)
+pangpoms,,Pang Poms
+pangpomm,4671,Pang Poms (Mitchell)
+skyalert,,Sky Alert
+poitto,,Poitto!
+dharma,,Dharma Doujou
+lastfort,,Last Fortress - Toride
+lastfero,4676,Last Fortress - Toride (Erotic)
+toride2g,,Toride II Adauchi Gaiden
+daitorid,,Daitoride
+dokyusei,,Mahjong Doukyuusei
+dokyusp,,Mahjong Doukyuusei Special
+puzzli,,Puzzli
+3kokushi,,Sankokushi (Japan)
+pururun,,Pururun
+balcube,,Bal Cube
+mouja,,Mouja (Japan)
+bangball,,Bang Bang Ball (v1.05)
+gakusai,,Mahjong Gakuensai (Japan)
+gakusai2,,Mahjong Gakuensai 2 (Japan)
+gunmast,,Gun Master
+msgogo,,Mouse Shooter GoGo
+blzntrnd,,Blazing Tornado
+gstrik2,,Grand Striker 2 (Japan)
+hyprduel,,Hyper Duel (World)
+hyprdelj,4694,Hyper Duel (Japan)
+spcforce,,Space Force
+spcforc2,4696,Space Force (set 2)
+meteor,4696,Meteoroids
+looping,,Looping (set 1)
+loopinga,4699,Looping (set 2)
+skybump,,Sky Bumper
+suprridr,,Super Rider
+paradise,,Paradise
+tgtball,,Target Ball (Nude)
+tgtballa,4704,Target Ball
+penky,,Penky
+torus,,Torus
+madball,,Mad Ball V2.0
+madballn,4708,Mad Ball V2.0 (With Nudity)
+cannball,,Cannon Ball
+magix,,Magix - Rock
+magicbub,,Magic Bubble
+shocking,,Shocking
+bombkick,,Bomb Kick
+blueprnt,,Blue Print (Midway)
+blueprnj,4715,Blue Print (Jaleco)
+saturn,,Saturn
+gogomile,,Go Go! Mile Smile
+gogomilj,4718,Susume! Mile Smile (Japan)
+pbancho,,Gyakuten!! Puzzle Bancho (Japan)
+asurabld,,Asura Blade - Sword of Dynasty
+asurabus,,Asura Buster - Eternal Warriors
+drgnmst,,Dragon Master
+mastfury,,Master's Fury
+burglarx,,Burglar X
+zeropnt,,Zero Point (set 1)
+zeropnta,4726,Zero Point (set 2)
+zeropnt2,,Zero Point 2
+silkroad,,The Legend of Silkroad
+dolmen,,Dolmen
+twinactn,,Twin Action
+stagger1,,Stagger I (Japan)
+redhawk,4732,Red Hawk (US)
+grdnstrm,,Sen Jin - Guardian Storm (Korea)
+bubl2000,,Bubble 2000
+spec2k,,Spectrum 2000 (Euro)
+multchmp,,"Multi Champ (World, ver. 2.5)"
+multchmpk,4737,Multi Champ (Korea)
+hedpanic,,"Head Panic (ver. 0117, 17-01-2000)"
+hedpanicf,4739,"Head Panic (ver. 0315, 15-03-2000)"
+hedpanico,4739,"Head Panic (ver. 0615, 15-06-1999)"
+mchampdx,,"Multi Champ Deluxe (ver. 0106, 06-01-2000)"
+mchampdxa,4742,"Multi Champ Deluxe (ver. 1126, 26-11-1999)"
+deluxe5,,"Deluxe 5 (ver. 0107, 07-01-2000)"
+tangtang,,"Tang Tang (ver. 0526, 26-05-2000)"
+firehawk,,Fire Hawk
+swatpolc,,SWAT Police
+royalmah,,Royal Mahjong (Japan)
+suzume,,Watashiha Suzumechan (Japan)
+hnayayoi,,Hana Yayoi (Japan)
+dondenmj,,Don Den Mahjong [BET] (Japan)
+hnfubuki,4750,Hana Fubuki [BET] (Japan)
+mjdiplob,,Mahjong Diplomat [BET] (Japan)
+untoucha,,Untouchable (Japan)
+tontonb,,Tonton [BET] (Japan)
+hanamai,,Hana no Mai (Japan)
+majs101b,,Mahjong Studio 101 [BET] (Japan)
+hnkochou,4756,Hana Kochou [BET] (Japan)
+mjderngr,,Mahjong Derringer (Japan)
+hnoridur,,Hana Oriduru (Japan)
+drgpunch,,Dragon Punch (Japan)
+mjfriday,,Mahjong Friday (Japan)
+mjifb,,Mahjong If [BET] (Japan)
+sprtmtch,4761,Sports Match
+maya,,Maya
+inca,4765,Inca
+roldfrog,,The Return of Lady Frog
+roldfrga,4767,The Return of Lady Frog (set 2)
+mcnpshnt,,Mahjong Campus Hunting (Japan)
+7jigen,,7jigen no Youseitachi - Mahjong 7 Dimensions (Japan)
+mjdialq2,,Mahjong Dial Q2 (Japan)
+yarunara,,Mahjong Yarunara (Japan)
+mjangels,,Mahjong Angels - Comic Theater Vol.2 (Japan)
+quiztvqq,,Quiz TV Gassyuukoku QandQ (Japan)
+mmpanic,,Monkey Mole Panic (USA)
+quizchq,,Quiz Channel Question (Ver 1.00) (Japan)
+quizchql,4776,Quiz Channel Question (Ver 1.23) (Taiwan[Q])
+quiz365,,Quiz 365 (Hong Kong and Taiwan)
+rongrong,,Rong Rong (Germany)
+nettoqc,,Nettoh Quiz Champion (Japan)
+ddenlovr,,Don Den Lover Vol. 1 (Hong Kong)
+hanakanz,,Hanakanzashi (Japan)
+realbrk,,Billiard Academy Real Break (Japan)
+nyny,,New York New York
+nynyg,4784,New York New York (Gottlieb)
+arcadia,4784,Waga Seishun no Arcadia
+r2dtank,,R2D Tank
+spiders,,Spiders (set 1)
+spiders2,4788,Spiders (set 2)
+iqblock,,IQ-Block
+grndtour,,Grand Tour
+cabaret,,Cabaret
+drgnwrld,,"Dragon World (World, V040O)"
+vbowl,,"Virtua Bowling (World, V101XCM )"
+vbowlj,4794,"Virtua Bowling (Japan, V100JCM)"
+grtwall,,The Great Wall
+orlegend,,Oriental Legend - Xi Yo Gi Shi Re Zuang (ver. 126)
+orlegnde,4797,Oriental Legend - Xi Yo Gi Shi Re Zuang (ver. 112)
+orlegndc,4797,"Oriental Legend - Xi Yo Gi Shi Re Zuang (ver. 112, Chinese Board)"
+olds,,"Oriental Legend Special - Xi You Shi E Zhuan Super (ver. 101, Korean Board)"
+olds103t,4800,"Oriental Legend Special - Xi You Shi E Zhuan Super (ver. 103, China, Tencent) (unprotected)"
+dragwld2,,"Zhong Guo Long II (ver. 100C, China)"
+killbld,,"The Killing Blade (ver. 109, Chinese Board)"
+kov,,Knights of Valour - Sangoku Senki (ver. 117)
+kovplus,4804,Knights of Valour Plus - Sangoku Senki Plus (ver. 119)
+kov115,4804,Knights of Valour - Sangoku Senki (ver. 115)
+kovsh,4804,Knights of Valour Superheroes - Sangoku Senki Superheroes (ver. 322)
+photoy2k,,Photo Y2K
+puzlstar,,Puzzle Star
+puzzli2,,Puzzli 2 (ver. 100)
+puzzli2s,4810,Puzzli 2 Super (ver. 200)
+py2k2,,Photo Y2K 2
+ddp2,,DoDonPachi II - Bee Storm
+hitme,,Hit Me
+mblkjack,4814,Black Jack (Mirco)
+barricad,,Barricade
+brickyrd,4816,Brickyard
+starcrus,,Star Cruiser
+battlex,,Battle Cross
+dodgeman,,Dodge Man
+carjmbre,,Car Jamboree
+popper,,Popper
+speedspn,,Speed Spin
+kickgoal,,Kick Goal
+actionhw,,Action Hollywood
+topdrive,,Top Driving (version 1.1)
+usg32,,Super Duper Casino (California V3.2)
+usg82,4829,Super Ten V8.2
+usg83,,Super Ten V8.3
+usg83x,4829,Super Ten V8.3X
+usg185,,Games V18.7C
+usg252,,Games V25.4X
+mermaid,,Mermaid
+rougien,,Rougien
+drmicro,,Dr. Micro
+appoooh,,Appoooh
+bankp,,Bank Panic
+combh,,Combat Hawk
+mjkjidai,,Mahjong Kyou Jidai (Japan)
+mayumi,,Kikiippatsu Mayumi-chan (Japan)
+btoads,,Battle Toads
+kinst,,Killer Instinct (v1.0)
+kinst2,,Killer Instinct 2 (v2.1)
+gigasb,,Gigas (bootleg)
+gigasm2b,,Gigas Mark II (bootleg)
+oigas,4844,Oigas (bootleg)
+pbillrd,,Perfect Billiard
+pbillrds,4847,Perfect Billiard (Sega)
+freekick,,Free Kick
+freekckb,4849,Free Kick (bootleg)
+countrun,,Counter Run
+countrnb,4851,Counter Run (bootleg set 1)
+countrb2,4851,Counter Run (bootleg set 2)
+countrunb3,4851,Counter Run (bootleg set 3)
+rmhaihai,,Real Mahjong Haihai (Japan)
+rmhaihib,4855,Real Mahjong Haihai [BET] (Japan)
+rmhaijin,,Real Mahjong Haihai Jinji Idou Hen (Japan)
+rmhaisei,,Real Mahjong Haihai Seichouhen (Japan)
+themj,,The Mah-jong (Japan)
+hanaroku,,Hanaroku
+yumefuda,,Yumefuda [BET]
+hourouki,,Mahjong Hourouki Part 1 - Seisyun Hen (Japan)
+mhgaiden,,Mahjong Hourouki Gaiden (Japan)
+mjhokite,,Mahjong Hourouki Okite (Japan)
+mjclinic,,Mahjong Clinic (Japan)
+mrokumei,,Mahjong Rokumeikan (Japan)
+reikaids,,Reikai Doushi (Japan)
+mjkojink,,Mahjong Kojinkyouju (Private Teacher) (Japan)
+vitaminc,,Mahjong Vitamin C (Japan)
+mjyougo,,Mahjong-yougo no Kisotairyoku (Japan)
+lemnangl,,Mahjong Lemon Angel (Japan)
+mjkinjas,,Mahjong Kinjirareta Asobi (Japan)
+battlcry,,Battlecry
+jogakuen,,Mahjong Jogakuen (Japan)
+mjikaga,,Mahjong Ikaga Desu ka (Japan)
+ultennis,,Ultimate Tennis
+cheesech,,Cheese Chase
+stonebal,,Stone Ball (4 Players)
+stoneba2,4878,Stone Ball (2 Players)
+dynamski,,Dynamic Ski
+chinhero,,Chinese Hero
+chinher2,4881,Chinese Hero (older)
+shangkid,,Shanghai Kid
+hiryuken,4883,Hokuha Syourin Hiryu no Ken
+astinvad,,Astro Invader
+kamikaze,4885,Kamikaze
+spcking2,,Space King 2
+spaceint,,Space Intruder
+spacefb,,Space Firebird (Nintendo)
+spacefbg,4889,Space Firebird (Gremlin)
+spacefbb,4889,Space Firebird (bootleg)
+spacebrd,4889,Space Bird (bootleg)
+spacedem,4889,Space Demon
+omegrace,,Omega Race
+deltrace,4894,Delta Race
+dday,,D-Day
+ddayc,4896,D-Day (Centuri)
+hexa,,Hexa
+stactics,,Space Tactics
+exterm,,Exterminator
+kingofb,,King of Boxer (English)
+ringking,4901,Ring King (US set 1)
+ringkin2,4901,Ring King (US set 2)
+ringkin3,4901,Ring King (US set 3)
+ambush,,Ambush
+ambusht,4905,Ambush (Tecfri)
+homo,4599,Homo
+dlair,,Dragon's Lair
+aztarac,,Aztarac
+mole,,Mole Attack
+thehand,,The Hand
+gotya,4911,"Got-Ya (12-24-1981, prototype[Q])"
+mrjong,,Mr. Jong (Japan)
+crazyblk,4913,Crazy Blocks
+blkbustr,4913,BlockBuster
+polyplay,,Poly-Play
+amspdwy,,American Speedway (set 1)
+amspdwya,4917,American Speedway (set 2)
+othldrby,,Othello Derby (Japan)
+mosaic,,Mosaic
+mosaica,4920,Mosaic (Fuuki)
+gfire2,,Golden Fire II
+spdbuggy,,Speed Buggy
+sprcros2,,Super Cross 2 (Japan)
+mugsmash,,Mug Smashers
+stlforce,,Steel Force
+mortalr,,Mortal Race
+fantland,,Fantasy Land
+galaxygn,,Galaxy Gunners
+borntofi,,Born To Fight
+wheelrun,,Wheels Runner
+gcpinbal,,Grand Cross
+aquarium,,Aquarium (Japan)
+policetr,,Police Trainer (Rev 1.3)
+policeto,4934,Police Trainer (Rev 1.1)
+plctr13b,4934,Police Trainer (Rev 1.3B)
+sshooter,,Sharpshooter (Rev 1.7)
+pass,,Pass
+news,,News
+taxidrvr,,Taxi Driver
+xyonix,,Xyonix
+findout,,Find Out
+dribling,,Dribbling
+driblino,4943,Dribbling (Olympia)
+ace,,Ace
+clayshoo,,Clay Shoot
+pirates,,Pirates
+genix,,Genix Family
+fitfight,,Fit of Fighting
+histryma,,The History of Martial Arts
+bbprot,,Untitled Fighter 'BB' (prototype)
+flower,,Flower
+flowerbl,4952,Flower (bootleg)
+diverboy,,Diver Boy
+beaminv,,Beam Invader
+mcatadv,,Magical Cat Adventure
+mcatadvj,4956,Magical Cat Adventure (Japan)
+nost,,Nostradamus
+nostj,4958,Nostradamus (Japan)
+nostk,4958,Nostradamus (Korea)
+4enraya,,4 En Raya
+oneshot,,One Shot One Kill
+maddonna,,Mad Donna (set 1)
+maddonnb,4963,Mad Donna (set 2)
+tugboat,,Tugboat
+gotcha,,Got-cha
+amerdart,,AmeriDarts
+coolpool,,Cool Pool
+9ballsht,4968,9-Ball Shootout (set 1)
+9ballsh2,4968,9-Ball Shootout (set 2)
+9ballsh3,4968,9-Ball Shootout (set 3)
+gumbo,,Gumbo
+trivquiz,,Triv Quiz
+statriv2,,Triv Two
+supertr2,,Super Triv II
+tickee,,Tickee Tickats
+crgolf,,Crowns Golf (set 1)
+crgolfa,4977,Crowns Golf (set 2)
+crgolfb,4977,Champion Golf (bootleg Set 1)
+crgolfc,4977,Champion Golf
+truco,,Truco-Tron
+thedeep,,The Deep (Japan)
+rundeep,4982,Run Deep
+wallc,,Wall Crash
+skyarmy,,Sky Army
+lethalj,,Lethal Justice
+eggventr,,Egg Venture
+eggvntdx,4987,Egg Venture Deluxe
+rotaryf,,Rotary Fighter
+sbugger,,Space Bugger
+portrait,,Portraits
+enigma2,,Enigma 2
+enigma2a,4992,Enigma 2 (Space Invaders Hardware)
+ltcasino,,Little Casino
+ltcasin2,,Little Casino 2
+vamphalf,,Vamp 1-2
+hidnctch,,Hidden Catch
+landbrk,,Land Breaker
+racoon,,Racoon World
+xfiles,,X-Files
+strvmstr,,Super Trivia Master
+dorachan,,Dorachan
+ladyfrog,,Lady Frog
+rabbit,,Rabbit
+tmmjprd,,Tokimeki Mahjong Paradise - Dear My Love
+malzak,,Malzak
+supertnk,,Super Tank
+crospang,,Cross Pang
+funybubl,,Funny Bubble
+nam1975,,NAM-1975
+bstars,,Baseball Stars Professional
+tpgolf,,Top Player's Golf
+mahretsu,,Mahjong Kyoretsuden
+maglord,,Magician Lord (set 1)
+maglordh,5014,Magician Lord (set 2)
+ridhero,,Riding Hero (set 1)
+ridheroh,5016,Riding Hero (set 2)
+alpham2,,Alpha Mission II / ASO II - Last Guardian
+ncombat,,Ninja Combat
+cyberlip,,Cyber-Lip
+superspy,,The Super Spy
+mutnat,,Mutation Nation
+kotm,,King of the Monsters (set 1)
+kotmh,5023,King of the Monsters (set 2)
+sengoku,,Sengoku / Sengoku Denshou (set 1)
+sengokh,5025,Sengoku / Sengoku Denshou (set 2)
+burningf,,Burning Fight (set 1)
+burningh,5027,Burning Fight (set 2)
+lbowling,,League Bowling
+gpilots,,Ghost Pilots
+joyjoy,,Puzzled / Joy Joy Kid
+bjourney,,Blue's Journey / Raguy
+quizdais,,Quiz Daisousa Sen - The Last Count Down
+lresort,,Last Resort
+eightman,,Eight Man
+minasan,,Minnasanno Okagesamadesu
+legendos,,Legend of Success Joe / Ashitano Joe Densetsu
+2020bb,,2020 Super Baseball (set 1)
+2020bbh,5038,2020 Super Baseball (set 2)
+socbrawl,,Soccer Brawl
+roboarmy,,Robo Army
+fatfury1,,Fatal Fury - King of Fighters / Garou Densetsu - Shukumei no Tatakai
+fbfrenzy,,Football Frenzy
+bakatono,,Bakatonosama Mahjong Manyuki
+crsword,,Crossed Swords
+trally,,Thrash Rally
+kotm2,,King of the Monsters 2 - The Next Thing
+sengoku2,,Sengoku 2 / Sengoku Denshou 2
+bstars2,,Baseball Stars 2
+quizdai2,,Quiz Meitantei Neo and Geo - Quiz Daisousa Sen part 2
+3countb,,3 Count Bout / Fire Suplex (NGM-043 ~ NGH-043)
+aof,,Art of Fighting / Ryuuko no Ken
+samsho,,Samurai Shodown / Samurai Spirits
+tophuntr,,Top Hunter - Roddy and Cathy
+fatfury2,,Fatal Fury 2 / Garou Densetsu 2 - Arata-naru Tatakai
+janshin,,Jyanshin Densetsu - Quest of Jongmaster
+androdun,,Andro Dunos
+ncommand,,Ninja Commando
+viewpoin,,Viewpoint
+ssideki,,Super Sidekicks / Tokuten Ou
+wh1,,World Heroes (set 1)
+wh1h,5061,World Heroes (set 2)
+crswd2bl,,Crossed Swords 2
+kof94,,The King of Fighters '94
+aof2,,Art of Fighting 2 / Ryuuko no Ken 2
+wh2,,World Heroes 2
+fatfursp,,Fatal Fury Special / Garou Densetsu Special (set 1)
+fatfursa,5067,Fatal Fury Special / Garou Densetsu Special (set 2)
+savagere,,Savage Reign / Fu'un Mokushiroku - kakutou sousei
+fightfev,,Fight Fever (set 1)
+fightfva,5070,Fight Fever (set 2)
+ssideki2,,Super Sidekicks 2 - The World Championship / Tokuten Ou 2 - Real Fight Football
+spinmast,,Spin Master / Miracle Adventure
+samsho2,,Samurai Shodown II / Shin Samurai Spirits - Haohmaru jigokuhen
+wh2j,,World Heroes 2 Jet
+wjammers,,Windjammers / Flying Power Disc
+karnovr,,Karnov's Revenge / Fighter's History Dynamite
+gururin,,Gururin
+pspikes2,,Power Spikes II
+fatfury3,,Fatal Fury 3 - Road to the Final Victory / Garou Densetsu 3 - Haruka-naru Tatakai
+zupapa,,Zupapa!
+b2b,,Bang Bang Busters
+panicbom,,Panic Bomber
+aodk,,Aggressors of Dark Kombat / Tsuukai GANGAN Koushinkyoku
+sonicwi2,,Aero Fighters 2 / Sonic Wings 2
+zedblade,,Zed Blade / Operation Ragnarok
+galaxyfg,,Galaxy Fight - Universal Warriors
+strhoop,,Street Hoop / Street Slam / Dunk Dream
+quizkof,,Quiz King of Fighters
+ssideki3,,Super Sidekicks 3 - The Next Glory / Tokuten Ou 3 - eikoue no michi
+doubledr,,Double Dragon (Neo-Geo)
+pbobblen,,Puzzle Bobble / Bust-A-Move (Neo-Geo) (set 1)
+pbobblna,5092,Puzzle Bobble / Bust-A-Move (Neo-Geo) (set 2)
+kof95,,The King of Fighters '95 (set 1)
+kof95a,5094,The King of Fighters '95 (set 2)
+tws96,,Tecmo World Soccer '96
+samsho3,,Samurai Shodown III / Samurai Spirits - Zankurou Musouken
+stakwin,,Stakes Winner / Stakes Winner - GI kinzen seihae no michi
+pulstar,,Pulstar
+whp,,World Heroes Perfect
+kabukikl,,Far East of Eden - Kabuki Klash / Tengai Makyou - Shin Den
+neobombe,,Neo Bomberman
+gowcaizr,,Voltage Fighter - Gowcaizer / Choujin Gakuen Gowcaizer
+rbff1,,Real Bout Fatal Fury / Real Bout Garou Densetsu
+aof3,,Art of Fighting 3 - The Path of the Warrior / Art of Fighting - Ryuuko no Ken Gaiden
+sonicwi3,,Aero Fighters 3 / Sonic Wings 3
+turfmast,,Neo Turf Masters / Big Tournament Golf
+mslug,,Metal Slug - Super Vehicle-001
+puzzledp,,Puzzle De Pon!
+mosyougi,,Syougi No Tatsujin - Master of Syougi
+marukodq,,Chibi Marukochan Deluxe Quiz
+neomrdo,,Neo Mr. Do!
+sdodgeb,,Super Dodge Ball / Kunio no Nekketsu Toukyuu Densetsu
+goalx3,,Goal! Goal! Goal!
+zintrckb,,Zintrick - Oshidashi Zentrix (Hack-bootleg)
+overtop,,Over Top
+neodrift,,Neo Drift Out - New Technology
+kof96,,The King of Fighters '96 (set 1)
+kof96h,5118,The King of Fighters '96 (set 2)
+ssideki4,,"Ultimate 11 - The SNK Football Championship / Tokuten Ou - Honoo no Libero, The"
+kizuna,,Kizuna Encounter - Super Tag Battle / Fu'un Super Tag Battle
+ninjamas,,Ninja Master's - Haoh-ninpo-cho
+ragnagrd,,Ragnagard / Shin-Oh-Ken
+pgoal,,Pleasure Goal / Futsal - 5 on 5 Mini Soccer
+ironclad,,Choutetsu Brikin'ger - Ironclad (Prototype)
+magdrop2,,Magical Drop II
+samsho4,,Samurai Shodown IV - Amakusa's Revenge / Samurai Spirits - Amakusa Kourin
+rbffspec,,Real Bout Fatal Fury Special / Real Bout Garou Densetsu Special
+twinspri,,Twinkle Star Sprites
+wakuwak7,,Waku Waku 7
+stakwin2,,Stakes Winner 2
+ghostlop,,Ghostlop (Prototype)
+breakers,,Breakers
+miexchng,,Money Puzzle Exchanger / Money Idol Exchanger
+kof97,,The King of Fighters '97 (set 1)
+kof97a,5135,The King of Fighters '97 (set 2)
+kof97pls,5135,The King of Fighters '97 Plus (bootleg)
+kog,5135,King of Gladiator (The King of Fighters '97 bootleg)
+magdrop3,,Magical Drop III
+lastblad,,"Last Blade / Bakumatsu Roman - Gekka no Kenshi, The (set 1)"
+lastblda,5140,"Last Blade / Bakumatsu Roman - Gekka no Kenshi, The (set 2)"
+puzzldpr,5109,Puzzle De Pon! R!
+irrmaze,,The Irritating Maze / Ultra Denryu Iraira Bou
+popbounc,,Pop 'n Bounce / Gapporin
+shocktro,,Shock Troopers (set 1)
+shocktra,5145,Shock Troopers (set 2)
+blazstar,,Blazing Star
+rbff2,,Real Bout Fatal Fury 2 - The Newcomers / Real Bout Garou Densetsu 2 - The Newcomers (set 1)
+rbff2a,5148,Real Bout Fatal Fury 2 - The Newcomers / Real Bout Garou Densetsu 2 - The Newcomers (set 2)
+mslug2,,Metal Slug 2 - Super Vehicle-001-II
+mslug2t,5150,"Metal Slug 2 - Turbo (Trap15, Hack)"
+kof98,,The King of Fighters '98 - The Slugfest - King of Fighters '98 / Dream Match Never Ends
+kof98n,5152,The King of Fighters '98 - The Slugfest - King of Fighters '98 / Dream Match Never Ends (Decrypted)
+kof98k,5152,The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends (Korean board)
+lastbld2,,"Last Blade 2 / Bakumatsu Roman - Dai Ni Maku Gekka no Kenshi, The"
+neocup98,,Neo-Geo Cup '98 - The Road to the Victory
+breakrev,5133,Breakers Revenge
+shocktr2,,Shock Troopers - 2nd Squad
+flipshot,,Battle Flip Shot
+pbobbl2n,,Puzzle Bobble 2 / Bust-A-Move Again (Neo-Geo)
+ctomaday,,Captain Tomaday
+mslugx,,Metal Slug X - Super Vehicle-001
+kof99,,The King of Fighters '99 - Millennium Battle (set 1)
+kof99a,5163,The King of Fighters '99 - Millennium Battle (set 2)
+kof99e,5163,The King of Fighters '99 - Millennium Battle (earlier)
+kof99n,5163,The King of Fighters '99 - Millennium Battle (not encrypted)
+kof99p,5163,The King of Fighters '99 - Millennium Battle (prototype)
+ganryu,,Musashi Ganryuuki
+garou,,Garou - Mark of the Wolves (set 1)
+garouo,5169,Garou - Mark of the Wolves (set 2)
+garoup,5169,Garou - Mark of the Wolves (prototype)
+s1945p,,Strikers 1945 Plus
+preisle2,,Prehistoric Isle 2
+mslug3,,Metal Slug 3
+mslug3n,5174,Metal Slug 3 (not encrypted)
+kof2000,,The King of Fighters 2000
+kof2000n,5176,The King of Fighters 2000 (not encrypted)
+bangbead,,Bang Bead
+nitd,,Nightmare in the Dark
+sengoku3,,Sengoku 3
+kof2001,,The King of Fighters 2001
+kof2001h,5181,The King of Fighters 2001 (set 2)
+cthd2003,5181,Crouching Tiger Hidden Dragon 2003 (The King of Fighters 2001 bootleg)
+ct2k3sp,5181,Crouching Tiger Hidden Dragon 2003 Super Plus (The King of Fighters 2001 bootleg)
+mslug4,,Metal Slug 4
+rotd,,Rage of the Dragons
+kof2002,,The King of Fighters 2002
+kf2k2pls,5187,"The King of Fighters 2002 Plus (set 1, bootleg)"
+kf2k2pla,5187,"The King of Fighters 2002 Plus (set 2, bootleg)"
+kf2k2mp,5187,The King of Fighters 2002 Magic Plus (bootleg)
+kf2k2mp2,5187,The King of Fighters 2002 Magic Plus II (bootleg)
+kof2k4se,5187,The King of Fighters Special Edition 2004 (The King of Fighters 2002 bootleg)
+matrim,,Power Instinct Matrimelee
+pnyaa,,Pochi and Nyaa
+mslug5,,Metal Slug 5
+svcpcb,,SvC Chaos - SNK vs Capcom (JAMMA PCB)
+svc,,SvC Chaos - SNK vs Capcom (MVS)
+svcboot,5197,SvC Chaos - SNK vs Capcom (Bootleg)
+svcplus,5197,"SvC Chaos - SNK vs Capcom Plus (set 1, bootleg)"
+svcplusa,5197,"SvC Chaos - SNK vs Capcom Plus (set 2, bootleg)"
+svcsplus,5197,SvC Chaos - SNK vs Capcom Super Plus (bootleg)
+samsho5,,Samurai Shodown V
+samsh5sp,,Samurai Shodown V Special
+kf2k3pcb,,"The King of Fighters 2003 (Japan, JAMMA PCB)"
+kof2003,,"The King of Fighters 2003 (World / US, MVS)"
+kof2003d,5205,The King of Fighters 2003 (Decrypted)
+kf2k3bl,5205,The King of Fighters 2003 (bootleg set 1)
+kf2k3bla,5205,The King of Fighters 2003 (bootleg set 2)
+kf2k3pl,5205,The King of Fighters 2004 Plus / Hero (The King of Fighters 2003 bootleg)
+kf2k3upl,5205,The King of Fighters 2004 Ultra Plus (The King of Fighters 2003 bootleg)
+kof10th,5187,The King of Fighters 10th Anniversary
+kf10thep,5187,The King of Fighters 10th Anniversary Extra Plus (The King of Fighters 2002 bootleg)
+kf2k5uni,5187,The King of Fighters 10th Anniversary 2005 Unique (The King of Fighters 2002 bootleg)
+lasthope,,Last Hope
+knightsch,,Knight's Chance
+xeno,,Xeno Crisis (Neo Geo MVS)
+hypernoid,,Hypernoid (2021-11-28)
+teot,,"The Eye of Typhoon (Tsunami Edition, beta 7)"
+cyborgforce,,Cyborg Force
+captainbarrel,,Captain Barrel
+gladmort,,Gladmort
+doubled1,,Double Dragon One demo (2025-01-03)
+doubled1a,5222,Double Dragon One demo (2025-01-23)
+doubled1b,5222,Double Dragon One demo (2025-02-17)
+doubled1c,5222,Double Dragon One demo (2025-06-29)
+doubled1d,5222,Double Dragon One beta 2 (2025-09-03)
+doubled1e,5222,Double Dragon One beta 3 (2025-09-14)
+baryon,,Baryon - Future Assault
+cutefght,,Cute Fighter
+dreamwld,,Dream World
+gaialast,,Gaia - The Last Choice of Earth
+rolcrush,,Rolling Crush (version 1.07.E - 1999/02/11)
+denjinmk,,Denjin Makai
+mwarr,,Mighty Warriors
+darkmist,,The Lost Castle in Darkmist
+vmetal,,Varia Metal
+ket,,Ketsui Kizuna Jigoku Tachi
+keta,5237,Ketsui Kizuna Jigoku Tachi (older)
+ketb,5237,Ketsui Kizuna Jigoku Tachi (first revision)
+ddp3,,DoDonPachi Dai-Ou-Jou
+ddp3a,5240,"DoDonPachi Dai-Ou-Jou (V100, second revision)"
+ddp3b,5240,"DoDonPachi Dai-Ou-Jou (V100, first revision)"
+ddp3blk,5240,DoDonPachi Dai-Ou-Jou (Black Label)
+espgal,,EspGaluda
+vr,,Virtua Racing
+vf,,Virtua Fighter
+1945kiii,,1945k III
+flagrall,,'96 Flag Rally
+mirax,,Mirax
+miraxa,5249,Mirax (set 2)
+roundup5,,Round Up 5 - Super Delta Force
+bigfight,,Big Fight - Big Trouble In The Atlantic Ocean
+cyclwarr,,Cycle Warriors

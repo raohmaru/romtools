@@ -1,0 +1,57 @@
+@layer modules {
+    .headline {
+        margin-block: 0 var(--fsize-md);
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    .level-1 {
+        font-size: 1.75rem;
+    }
+
+    .level-2 {
+        font-size: var(--fsize-xlg);
+    }
+
+    .level-3 {
+        font-size: var(--fsize-lg);
+    }
+
+    .level-4 {
+        font-size: var(--fsize-md);
+    }
+
+    .level-5 {
+        font-size: var(--fsize-md);
+    }
+
+    .level-6 {
+        font-size: var(--fsize-sm);
+    }
+
+    @media (min-width: 640px) {
+        .level-1 {
+            font-size: 2.25rem;
+        }
+
+        .level-2 {
+            font-size: 2rem;
+        }
+
+        .level-3 {
+            font-size: 1.75rem;
+        }
+
+        .level-4 {
+            font-size: var(--fsize-xlg);
+        }
+
+        .level-5 {
+            font-size: var(--fsize-lg);
+        }
+
+        .level-6 {
+            font-size: var(--fsize-md);
+        }
+    }
+}

@@ -1,0 +1,10 @@
+.view-toolbar {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+
+    @media (min-width: 640px) {
+        justify-content: inherit;
+    }
+}

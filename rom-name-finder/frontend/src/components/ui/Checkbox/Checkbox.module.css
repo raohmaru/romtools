@@ -1,0 +1,49 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    .checkbox {
+        appearance: none;
+        /* For iOS < 15 to remove gradient background */
+        background-color: #fff;
+        /* Not removed via appearance */
+        margin: 0;
+        
+        width: 1.25rem;
+        height: 1.25rem;
+        border: 1px solid var(--color-checkbox-border);
+        border-radius: 0.25rem;
+        background-color: var(--color-checkbox-bg);
+        cursor: pointer;
+        transition: all 0.2s;
+        position: relative;
+
+        &:checked {
+            background-color: var(--color-checkbox-checked);
+            border-color: var(--color-checkbox-checked);
+            background-image: url("@/img/check-mark.svg");
+            background-size: 0.8rem 0.8rem;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px var(--color-focus-ring);
+        }
+
+        &:disabled {
+            background-color: var(--color-checkbox-disabled-bg);
+            border-color: var(--color-checkbox-disabled-border);
+            cursor: not-allowed;
+        }
+    }
+
+    .label {
+        font-size: var(--fsize-sm);
+        font-weight: 500;
+        color: var(--color-text-quaternary);
+        cursor: pointer;
+    }
+}

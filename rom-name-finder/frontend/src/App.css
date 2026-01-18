@@ -1,0 +1,99 @@
+@layer layout {
+    #root {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 1rem;
+
+        @media (min-width: 640px) {
+            padding: 2rem;
+        }
+    }
+
+    .app-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        @media (min-width: 640px) {
+            gap: 2rem;
+        }
+    }
+
+    .app-header {
+        text-align: center;
+        padding: 1rem 0;
+        text-shadow:
+            1px 1px 2px var(--color-bg-primary),
+            1px 1px 2px var(--color-bg-primary);
+
+        @media (min-width: 640px) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            &::before,
+            &::after {
+                content: '';
+                position: relative;
+                top: -5px;
+                display: block;
+                width: 70px;
+                height: 120px;
+                /* background-color: var(--color-text-primary);
+                mask: url('/img/arcade-outline.svg') no-repeat;
+                opacity: 0.5; */
+                background: url('/img/arcade.svg') no-repeat;
+                flex-shrink: 0;
+            }
+
+            &::before {
+                right: clamp(-20px, -5vw, -10px);
+                transform: scaleX(-100%);
+            }
+
+            &::after {
+                left: clamp(-20px, -5vw, -10px);
+            }
+        }
+    }
+
+    .app-description {
+        margin: 0;
+        font-weight: 500;
+    }
+
+    .results-section {
+        margin-top: 1rem;
+    }
+
+    .error-fallback {
+        padding: 2rem;
+        text-align: center;
+
+        h2 {
+            margin-bottom: 0.5rem;
+            color: var(--color-error);
+        }
+
+        p {
+            margin: 0;
+            color: var(--color-text-secondary);
+        }
+    }
+}
+
+@layer theme {
+    .app-header h1 {
+        padding: 0.5rem 3rem;
+        font-size: clamp(1rem, 5vw, 2.25rem);
+        white-space: nowrap;
+        color: var(--color-accent);
+        background: var(--color-bg-primary);
+        border-radius: 0.5rem;
+        border: 1px solid var(--color-accent);
+
+        @media (min-width: 640px) {
+            max-width: fit-content;
+        }
+    }
+}
