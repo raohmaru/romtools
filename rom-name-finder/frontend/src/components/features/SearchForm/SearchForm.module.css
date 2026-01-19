@@ -19,8 +19,20 @@
 }
 
 .textarea {
-    min-height: 100px;
     resize: vertical;
+
+    @media (min-width: 640px) {
+        textarea {
+            min-height: 100px;
+        }
+    }
+
+    /* Styles when touch is supported */
+    @media (pointer: fine) {
+        textarea {
+            min-height: 100px;
+        }
+    }
 }
 
 .button {

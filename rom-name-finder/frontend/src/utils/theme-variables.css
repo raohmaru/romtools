@@ -65,8 +65,8 @@
         --color-skip-link-text: var(--color-white);
 
         /* Accent Colors */
-        --color-accent: #3b91ee;
-        --color-accent-hover: #1364b4;
+        --color-accent: #2b6ce4;
+        --color-accent-hover: #1652c2;
 
         /* Skeleton Colors */
         --color-skeleton-start: var(--color-gray-400);
@@ -131,7 +131,7 @@
         /* Table Colors */
         --color-table-header-bg: var(--color-gray-200);
         --color-table-header-text: var(--color-gray-900);
-        --color-table-row-hover: var(--color-gray-200);
+        --color-table-row-hover: var(--color-gray-300);
         --color-table-border: var(--color-border);
         --color-table-text: var(--color-gray-800);
 

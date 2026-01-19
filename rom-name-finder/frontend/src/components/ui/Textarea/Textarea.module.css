@@ -24,7 +24,6 @@
     background-color: var(--color-textarea-bg);
     color: var(--color-textarea-text);
     transition: border-color 0.2s, box-shadow 0.2s;
-    height: 100px;
     min-height: 50px;
     resize: vertical;
 

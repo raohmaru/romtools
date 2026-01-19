@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { SearchForm } from '@/components/features/SearchForm/SearchForm';
 import { type SearchFormData } from '@/types/schemas';
 import { SearchResults } from '@/components/features/SearchResults/SearchResults';
@@ -11,6 +11,7 @@ import { LoadingSpinner } from './components/ui/LoadingSpinner/LoadingSpinner';
 import { Overlay } from './components/ui/Overlay/Overlay';
 import { Headline } from './components/ui/Headline/Headline';
 import './App.css';
+import { useDeviceDetails } from './hooks/useDeviceDetails';
 
 function SearchApp() {
     const { search, setError, clearResults } = useSearchStore();
@@ -23,6 +24,8 @@ function SearchApp() {
     const executionTime = useSearchStore(selectExecutionTime);
     const [loadingDatabase, setLoadingDatabase] = useState(false);
     const [showResults, setShowResults] = useState(false);
+    const resultsNode = useRef<HTMLElement>(null);
+    const { touchSupport } = useDeviceDetails();
 
     // Get select database options from .env
     const databaseOptions = JSON.parse(import.meta.env.VITE_DBS).map((db: string) => {
@@ -58,6 +61,16 @@ function SearchApp() {
         setShowResults(true);
     }, [clearResults, search]);
 
+    useEffect(() => {
+        if (touchSupport) {
+            if (results?.length) {
+                setTimeout(() => {
+                    resultsNode.current?.scrollIntoView({ behavior: "smooth" });
+                }, 10);
+            }
+        }
+    }, [touchSupport, results]);
+
     // Transform results to SearchResults format
     const searchResults = results?.map((game) => ({
         title: game.name,
@@ -75,7 +88,7 @@ function SearchApp() {
                         {import.meta.env.VITE_APP_NAME}
                     </Headline>
                     <p className="app-description">
-                        Find the MAME ROM name of <em>any</em> arcade game
+                        Find the MAME ROM name of arcade games
                     </p>
                 </div>
             </header>
@@ -92,7 +105,7 @@ function SearchApp() {
             </section>
 
             {showResults && (
-                <section aria-label="Results" className="results-section">
+                <section aria-label="Results" className="results-section" ref={resultsNode}>
                     <SearchResults
                         results={searchResults}
                         isLoading={isLoading}

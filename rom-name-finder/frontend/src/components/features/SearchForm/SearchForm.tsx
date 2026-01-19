@@ -6,6 +6,7 @@ import { Select, type SelectOption } from '@/components/ui/Select/Select';
 import { searchFormSchema, type SearchFormData } from '@/types/schemas';
 import styles from './SearchForm.module.css';
 import { Checkbox } from '../../ui/Checkbox/Checkbox';
+import { useDeviceDetails } from '../../../hooks/useDeviceDetails';
 
 export interface SearchFormProps {
     /**
@@ -59,6 +60,12 @@ export const SearchForm = ({
         onSearch(formData);
     }
 
+    let placeholder = 'Enter arcade game names (one per line).';
+    const { touchSupport } = useDeviceDetails();
+    if (!touchSupport) {
+        placeholder = placeholder.substring(0, placeholder.length - 1) + ' or drop here a file with arcade game names separated by new lines.';
+    }
+
     return (
         <form
             className={styles.form}
@@ -70,7 +77,7 @@ export const SearchForm = ({
                 label="Arcade Game Names"
                 hideLabel={true}
                 name="searchTerm"
-                placeholder="Enter arcade game names (one per line) or drop here a file with arcade game names separated by new lines."
+                placeholder={placeholder}
                 required
                 autoFocus={true}
                 error={errors.searchTerm?.message}
@@ -84,7 +91,7 @@ export const SearchForm = ({
                 id="search-terms-help"
             >
                 You can enter multiple terms separated by new lines, or you can drop a file.<br />
-                Pres <code>CTRL</code> + <code>ENTER</code> or click the "Search" button to search.
+                <span className="hide-touch">Pres <code>CTRL</code> + <code>ENTER</code> or click the "Search" button to search.</span>
             </p>
 
             <Select

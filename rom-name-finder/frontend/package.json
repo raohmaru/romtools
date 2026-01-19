@@ -9,6 +9,7 @@
     "build": "tsc -b && vite build && npm run build:worker",
     "build:worker": "tsc -b && vite build -c wasm.vite.config.ts",
     "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
     "preview": "vite preview",
     "test": "vitest",
     "test:run": "vitest run",

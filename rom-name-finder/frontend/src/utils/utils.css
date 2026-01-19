@@ -17,3 +17,10 @@
     white-space: nowrap;
     border: 0;
 }
+
+/* Styles when touch is supported */
+@media (pointer: coarse) {
+    .hide-touch {
+        display: none;
+    }
+}

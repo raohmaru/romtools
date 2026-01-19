@@ -8,6 +8,10 @@ export interface SearchResultViewPros {
     includeClones?: boolean;
 }
 
+const mapMeta: { [key: string]: string } = {
+    cloneOf: 'Clone of',
+};
+
 // Detailed view component
 export const DetailedResults = ({ results }: SearchResultViewPros) => {
     return (
@@ -25,6 +29,7 @@ export const DetailedResults = ({ results }: SearchResultViewPros) => {
                             currentTarget.onerror = null; // prevents looping
                             currentTarget.src = 'img/not-found-rom.png';
                         }}
+                        className={styles['result-icon']}
                     />
 
                     <div className={styles['result-body']}>
@@ -49,7 +54,7 @@ export const DetailedResults = ({ results }: SearchResultViewPros) => {
                                     return (
                                         <span key={key} className={styles['meta-item']}>
                                             <span className={styles['meta-label']}>
-                                                {key}:
+                                                {mapMeta[key] || key}:
                                             </span>
                                             {key === 'ROM' && (
                                                 <ExternalLink
