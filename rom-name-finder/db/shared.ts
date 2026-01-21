@@ -2,21 +2,17 @@ import dotenv from 'dotenv';
 import fs from 'node:fs';
 import path from 'node:path';
 
-const mode = process.env.NODE_ENV || 'development';
+export const MODE = process.env.NODE_ENV || 'development';
 
 const dotenvConfig = dotenv.config({
     path: [
-        `.env.${mode}`,
+        `.env.${MODE}`,
         '.env'
     ]
 });
 
 // Force dotenv to overwrite env variables
 process.env = { ...process.env, ...dotenvConfig.parsed };
-
-console.log('BUILDING DB');
-console.log('Mode:', mode);
-
 const DB_PATH = process.env.DATABASE_PATH;
 if (!DB_PATH) {
     throw new Error('DATABASE_PATH environment variable is not set');

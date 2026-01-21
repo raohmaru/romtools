@@ -3,9 +3,13 @@ import initSqlJs, { Database } from 'sql.js';
 import fs from 'node:fs';
 import path from 'node:path';
 import readline from 'node:readline';
-import { DB_PATH, ROMSETS_PATH, getFiles } from './shared';
+import { DB_PATH, ROMSETS_PATH, getFiles, MODE } from './shared';
 
 async function initDatabases(): Promise<void> {
+    console.log('INIT DB');
+    console.log('Mode:', MODE);
+
+
     // Get all files in the ROMsets directory
     const romsets = getFiles(ROMSETS_PATH);
     const romsetNames: string[] = [];

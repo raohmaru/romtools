@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "dev:worker": "tsc -b && npm run build:worker -- --mode development",
-    "build": "npm run build:app",
+    "build": "npm run build:app && npm run build:worker",
     "build:app": "tsc -b && vite build",
     "build:worker": "tsc -b && vite build -c wasm.vite.config.ts",
     "lint": "eslint .",

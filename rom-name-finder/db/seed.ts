@@ -13,6 +13,8 @@ interface GameData {
 }
 
 async function seedDatabases(): Promise<void> {
+    console.log('SEED DB');
+
     // Get all files in the ROMsets directory
     const romsets = getFiles(ROMSETS_PATH);
     // Get all files in the ROMsets directory
