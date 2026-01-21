@@ -1,4 +1,5 @@
 .wrapper {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -81,4 +82,27 @@
     padding: 0.5rem 1rem;
     border-radius: 9999px;
     box-shadow: 0 4px 6px -1px var(--color-box-shadow);
+}
+
+.game-count {
+    position: absolute;
+    top: 14px;
+    right: 20px;
+    padding: 0.1rem 0.2rem;
+    font-size: var(--fsize-xsm);
+    line-height: 1;
+    color: var(--color-white);
+    background-color: var(--color-gray-550);
+    border-radius: 4px;
+    cursor: default;
+
+    /* Styles when touch is supported */
+    @media (pointer: coarse) {
+        top: 6px;
+        right: 6px;
+    }
+
+    @media (min-width: 640px) {
+        padding: 0.2rem 0.4rem;
+    }
 }

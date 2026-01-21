@@ -28,10 +28,10 @@ export function Toolbar({
         setViewMode(mode);
     };
 
-    function handleOnClick(): void {
+    function handleOnCopyClick(): void {
         onCopy();
         setCopied(true);
-        setTimeout(() => setCopied(false), 1000);
+        setTimeout(() => setCopied(false), 2000);
     }
 
     return (
@@ -62,7 +62,7 @@ export function Toolbar({
 
             <Button
                 variant='secondary'
-                onClick={handleOnClick}
+                onClick={handleOnCopyClick}
                 aria-label="Copy ROM names to clipboard"
                 title="Copy ROM names to clipboard"
                 size='small'

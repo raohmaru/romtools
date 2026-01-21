@@ -60,8 +60,8 @@ export const SearchForm = ({
         onSearch(formData);
     }
 
-    let placeholder = 'Enter arcade game names (one per line).';
     const { touchSupport } = useDeviceDetails();
+    let placeholder = 'Enter arcade game names (one per line).';
     if (!touchSupport) {
         placeholder = placeholder.substring(0, placeholder.length - 1) + ' or drop here a file with arcade game names separated by new lines.';
     }
@@ -90,8 +90,8 @@ export const SearchForm = ({
                 className="size-sm"
                 id="search-terms-help"
             >
-                You can enter multiple terms separated by new lines, or you can drop a file.<br />
-                <span className="hide-touch">Pres <code>CTRL</code> + <code>ENTER</code> or click the "Search" button to search.</span>
+                You can enter multiple terms separated by new lines<span className="hide-touch">, or you can drop a file</span>.<br />
+                <span className="hide-touch">Press <code>CTRL</code> + <code>ENTER</code> or click the "Search" button to search.</span>
             </p>
 
             <Select

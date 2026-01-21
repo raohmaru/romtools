@@ -148,7 +148,7 @@ describe('Toolbar', () => {
 
             await act(async () => {
                 fireEvent.click(copyButton);
-                await new Promise(resolve => setTimeout(resolve, 1100));
+                await new Promise(resolve => setTimeout(resolve, 2100));
             });
 
             const clipboardIcon = screen.getByText('📋');
