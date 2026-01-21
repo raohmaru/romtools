@@ -87,7 +87,12 @@ export const Textarea = ({
     }, []);
 
     const handleDragOver = useCallback((e: React.DragEvent<HTMLDivElement>) => {
-        e.dataTransfer.dropEffect = 'copy';
+        const files = [...e.dataTransfer.items].filter(
+            (item) => item.kind === 'file' && (item.type === 'text/plain' || item.type === '')
+        );
+        if (files.length) {
+            e.dataTransfer.dropEffect = 'copy';
+        }
     }, []);
 
     const handleDrop = useCallback(async (e: React.DragEvent<HTMLDivElement>) => {
@@ -99,7 +104,7 @@ export const Textarea = ({
         if (files?.length > 0) {
             const file = files[0];
             // Check file size
-            const maxSize = 100; // KB
+            const maxSize = 5; // KB
             if (file.size > maxSize * 1024) {
                 setCustomError(`File size exceeds ${maxSize} KB limit`);
                 return;
@@ -168,6 +173,9 @@ export const Textarea = ({
                         <span className={styles['drop-text']}>Drop file here</span>
                     </div>
                 )}
+                 {hideLabel && gameCount > 0 && (
+                    <span className={styles['game-count']} title={`${gameCount} games`}>{gameCount}</span>
+                 )}
             </div>
             {error && (
                 <span

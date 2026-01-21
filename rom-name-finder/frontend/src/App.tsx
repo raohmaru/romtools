@@ -65,11 +65,20 @@ function SearchApp() {
         if (touchSupport) {
             if (results?.length) {
                 setTimeout(() => {
-                    resultsNode.current?.scrollIntoView({ behavior: "smooth" });
+                    resultsNode.current?.scrollIntoView({ behavior: 'smooth' });
                 }, 10);
             }
         }
     }, [touchSupport, results]);
+
+    useEffect(() => {
+        // 1. Enables drag and drop in FF
+        // 2. Prevent default drag-and-drop behavior on the entire window
+        document.addEventListener('dragover', (e: DragEvent) => {
+            e.preventDefault();
+            e.dataTransfer!.dropEffect = 'none';
+        }, true);
+    }, []);
 
     // Transform results to SearchResults format
     const searchResults = results?.map((game) => ({
