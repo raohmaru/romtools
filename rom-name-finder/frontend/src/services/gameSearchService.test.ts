@@ -187,7 +187,7 @@ describe('GameSearchService', () => {
         it('should search for a single game by name with clones', async () => {
             const result = await service.findOne('test game', true);
             expect(result).toEqual([{ rom: 'rom1', name: 'Game One Primary', cloneOf: null }, { rom: 'rom2', name: 'Game Two Clone', cloneOf: 'Game One Primary' }]);
-            const expectedSql = 
+            const expectedSql =
                 'SELECT g1.rom AS rom, g1.name AS name, g2.name AS cloneOf ' +
                 'FROM games g1 ' +
                 'LEFT JOIN games g2 ON g1.cloneOf = g2.docid ' +
@@ -223,7 +223,7 @@ describe('GameSearchService', () => {
         it('findMany should search for multiple games by name with clones', async () => {
             const result = await service.findMany(['test1', 'test2'], true);
             expect(result).toEqual([{ rom: 'rom1', name: 'Game One Primary', cloneOf: null }, { rom: 'rom2', name: 'Game Two Clone', cloneOf: 'Game One Primary' }]);
-            const expectedSql = 
+            const expectedSql =
                 'SELECT g1.rom AS rom, g1.name AS name, g2.name AS cloneOf ' +
                 'FROM games g1 ' +
                 'LEFT JOIN games g2 ON g1.cloneOf = g2.docid ' +
@@ -273,7 +273,7 @@ describe('GameSearchService', () => {
             // Reset fetch mock calls for each test
             mockFetch.mockReset();
         });
-        
+
         it('should terminate the worker and reset state', async () => {
             await service.initialize();
             // Capture the internal worker instance created by the service for interaction in tests
@@ -344,6 +344,67 @@ describe('GameSearchService', () => {
             resetGameSearchService(); // This will terminate the newly created singleton, but not our dummy
 
             expect(instance.terminate).not.toHaveBeenCalled();
+        });
+    });
+
+    describe('Caching functionality', () => {
+        const mockGamesResult: QueryResult[] = [{
+            columns: ['rom', 'name', 'cloneOf'],
+            values: [['rom1', 'Game One', null]],
+        }];
+
+        beforeEach(async () => {
+            await service.initialize();
+            service['dbLoaded'] = true; // Manually set dbLoaded for cache tests
+            // Directly mock the private sendMessage method for the current service instance
+            service['sendMessage'] = vi.fn().mockResolvedValue(mockGamesResult);
+        });
+
+        it('should cache results for findOne', async () => {
+            const result1 = await service.findOne('test', false);
+            const result2 = await service.findOne('test', false);
+
+            // Should only call sendMessage once (first request)
+            expect(service['sendMessage']).toHaveBeenCalledTimes(1);
+            expect(result1).toEqual(result2);
+        });
+
+        it('should cache results for findMany', async () => {
+            const result1 = await service.findMany(['test1', 'test2'], false);
+            const result2 = await service.findMany(['test1', 'test2'], false);
+
+            // Should only call sendMessage once (first request)
+            expect(service['sendMessage']).toHaveBeenCalledTimes(1);
+            expect(result1).toEqual(result2);
+        });
+
+        it('should not use cache for different includeClones parameter', async () => {
+            await service.findOne('test', true);
+            await service.findOne('test', false);
+
+            // Should call sendMessage twice (different cache keys)
+            expect(service['sendMessage']).toHaveBeenCalledTimes(2);
+        });
+
+        it('should not use cache for different search terms', async () => {
+            await service.findOne('test1', false);
+            await service.findOne('test2', false);
+
+            // Should call sendMessage twice (different cache keys)
+            expect(service['sendMessage']).toHaveBeenCalledTimes(2);
+        });
+
+        it('should clear cache on terminate', async () => {
+            await service.findOne('test', false);
+            service.terminate();
+            await service.initialize();
+            service['dbLoaded'] = true;
+            service['sendMessage'] = vi.fn().mockResolvedValue(mockGamesResult);
+
+            await service.findOne('test', false);
+
+            // Should call sendMessage again after termination (cache was cleared)
+            expect(service['sendMessage']).toHaveBeenCalledTimes(1);
         });
     });
 });

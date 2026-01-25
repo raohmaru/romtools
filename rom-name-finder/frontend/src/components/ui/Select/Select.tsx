@@ -1,4 +1,5 @@
 import type { ComponentPropsWithoutRef } from 'react';
+import { memo } from 'react';
 import styles from './Select.module.css';
 
 export interface SelectOption {
@@ -47,7 +48,7 @@ export interface SelectProps extends ComponentPropsWithoutRef<'select'> {
     ref?: React.Ref<HTMLSelectElement>;
 }
 
-export const Select = ({
+export const Select = memo(({
     label,
     labelTitle,
     name,
@@ -107,4 +108,4 @@ export const Select = ({
             )}
         </div>
     );
-};
+});

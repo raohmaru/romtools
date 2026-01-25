@@ -1,4 +1,5 @@
 import type { ComponentPropsWithoutRef } from 'react';
+import { memo } from 'react';
 import styles from './Checkbox.module.css';
 
 export interface CheckboxProps extends ComponentPropsWithoutRef<'input'> {
@@ -32,7 +33,7 @@ export interface CheckboxProps extends ComponentPropsWithoutRef<'input'> {
     ref?: React.Ref<HTMLInputElement>;
 }
 
-export const Checkbox = ({
+export const Checkbox = memo(({
     label,
     labelTitle,
     name,
@@ -68,4 +69,4 @@ export const Checkbox = ({
             />
         </div>
     );
-};
+});

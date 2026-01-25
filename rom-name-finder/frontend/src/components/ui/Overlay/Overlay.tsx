@@ -1,4 +1,5 @@
 import type { ComponentPropsWithoutRef } from 'react';
+import { memo } from 'react';
 import styles from './Overlay.module.css';
 
 export interface OverlayProps extends ComponentPropsWithoutRef<'div'> {
@@ -21,8 +22,7 @@ export interface OverlayProps extends ComponentPropsWithoutRef<'div'> {
     children: React.ReactNode;
 }
 
-export const Overlay = (
-    ({
+export const Overlay = memo(({
         visible = true,
         className = '',
         children,

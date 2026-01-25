@@ -9,6 +9,7 @@
     "build": "npm run build:app && npm run build:worker",
     "build:app": "tsc -b && vite build",
     "build:worker": "tsc -b && vite build -c wasm.vite.config.ts",
+    "analyze": "vite-bundle-visualizer",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "preview": "vite preview",
@@ -48,9 +49,11 @@
     "globals": "^16.5.0",
     "jsdom": "^27.3.0",
     "prettier": "^3.7.4",
+    "terser": "^5.46.0",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",
-    "vite": "^7.2.4",
+    "vite": "^7.3.1",
+    "vite-bundle-visualizer": "^1.2.1",
     "vitest": "^4.0.16"
   }
 }

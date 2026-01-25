@@ -1,4 +1,5 @@
 import type { ComponentPropsWithoutRef } from 'react';
+import { memo } from 'react';
 import styles from './ErrorMessage.module.css';
 
 export interface ErrorMessageProps extends ComponentPropsWithoutRef<'div'> {
@@ -17,12 +18,12 @@ export interface ErrorMessageProps extends ComponentPropsWithoutRef<'div'> {
     className?: string;
 }
 
-export function ErrorMessage({
+export const ErrorMessage = memo(({
     message,
     role = 'alert',
     className = '',
     ...props
-}: ErrorMessageProps) {
+}: ErrorMessageProps) => {
     if (!message) {
         return null;
     }
@@ -36,7 +37,7 @@ export function ErrorMessage({
             {...props}
         >
             {message}
-            
+
         </div>
     );
-}
+});

@@ -1,11 +1,13 @@
-import { useCallback } from 'react';
+import { useCallback, lazy, Suspense } from 'react';
 import { selectViewMode, useSearchStore } from '@/stores/searchStore';
 import { ErrorMessage } from '@/components/ui/ErrorMessage/ErrorMessage';
 import { SkeletonCard } from '@/components/ui/Skeleton/Skeleton';
 import { Toolbar } from '@/components/features/Toolbar/Toolbar';
 import { SimpleResults } from './SimpleResults';
-import { DetailedResults } from './DetailedResults';
 import styles from './SearchResults.module.css';
+
+// Dynamically import DetailedResults to reduce initial bundle size
+const DetailedResults = lazy(() => import('./DetailedResults').then(module => ({ default: module.DetailedResults })));
 
 export interface SearchResult {
     /**
@@ -43,6 +45,10 @@ export interface SearchResultsProps {
      * Show clones
      */
     includeClones?: boolean;
+    /**
+     * Default view mode
+     */
+    viewMode?: string;
 }
 
 export const SearchResults = ({
@@ -52,8 +58,10 @@ export const SearchResults = ({
     totalCount,
     executionTime,
     includeClones,
+    viewMode,
 }: SearchResultsProps) => {
-    const viewMode = useSearchStore(selectViewMode);
+    const getViewMode = useSearchStore(selectViewMode);
+    const defaultViewMode = viewMode || getViewMode;
 
     // Copy results to the clipboard
     const onCopy = useCallback(() => {
@@ -136,10 +144,12 @@ export const SearchResults = ({
                 />
             </div>
 
-            {viewMode === 'detailed' ? (
-                <DetailedResults
-                    results={results}
-                />
+            {defaultViewMode === 'detailed' ? (
+                <Suspense fallback={<div>Loading detailed view...</div>}>
+                    <DetailedResults
+                        results={results}
+                    />
+                </Suspense>
             ) : (
                 <SimpleResults
                     results={results}

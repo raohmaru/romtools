@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import styles from './Skeleton.module.css';
 
 export interface SkeletonProps {
@@ -26,14 +27,14 @@ export interface SkeletonProps {
 /**
  * Skeleton component for displaying loading placeholders
  */
-export function Skeleton({
+export const Skeleton = memo(({
     width = '100%',
     height = '1rem',
     borderRadius = '0.25rem',
     className = '',
     hidden = true,
     ...props
-}: SkeletonProps) {
+}: SkeletonProps) => {
     return (
         <div
             className={`${styles.skeleton} ${className}`}
@@ -47,7 +48,7 @@ export function Skeleton({
             {...props}
         />
     );
-}
+});
 
 /**
  * Skeleton text block with multiple lines

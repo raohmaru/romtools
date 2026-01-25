@@ -1,4 +1,5 @@
 import type { ComponentPropsWithoutRef, ElementType } from 'react';
+import { memo } from 'react';
 import styles from './Headline.module.css';
 
 export interface HeadlineProps extends ComponentPropsWithoutRef<'h1'> {
@@ -25,12 +26,12 @@ const levelToElement: Record<number, ElementType> = {
     6: 'h6',
 };
 
-export function Headline({
+export const Headline = memo(({
     level = 1,
     className = '',
     children,
     ...props
-}: HeadlineProps) {
+}: HeadlineProps) => {
     const Element = levelToElement[level] || 'h1';
     const combinedClassName = `${styles.headline} ${styles[`level-${level}`]} ${className}`.trim();
 
@@ -39,4 +40,4 @@ export function Headline({
             {children}
         </Element>
     );
-}
+});

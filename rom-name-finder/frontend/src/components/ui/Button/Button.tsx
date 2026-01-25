@@ -1,4 +1,5 @@
 import type { ComponentPropsWithoutRef } from 'react';
+import { memo } from 'react';
 import styles from './Button.module.css';
 
 export interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
@@ -43,7 +44,7 @@ export interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
     ref?: React.Ref<HTMLButtonElement>;
 }
 
-export const Button = ({
+export const Button = memo(({
     variant = 'primary',
     size = 'medium',
     type = 'button',
@@ -78,4 +79,4 @@ export const Button = ({
             {children}
         </button>
     );
-}
+});

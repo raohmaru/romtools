@@ -17,6 +17,33 @@ export default ({ mode }: { mode?: string }) => {
             react(),
         ],
         base: './',
+        build: {
+            rollupOptions: {
+                treeshake: {
+                    moduleSideEffects: false,
+                    propertyReadSideEffects: false,
+                    tryCatchDeoptimization: false
+                },
+                output: {
+                    manualChunks: {
+                        // Separate vendor chunks for better caching
+                        'react-vendor': ['react', 'react-dom'],
+                        'form-vendor': ['react-hook-form', '@hookform/resolvers', 'zod'],
+                        'ui-vendor': ['react-window']
+                    }
+                }
+            },
+            // Enable more aggressive minification
+            // minify: 'terser',
+            minify: 'terser',
+            terserOptions: {
+                compress: {
+                    drop_console: true,
+                    drop_debugger: true,
+                    pure_funcs: ['console.info', 'console.debug']
+                }
+            }
+        },
         resolve: {
             alias: {
                 '@': path.resolve(__dirname, './src'),

@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from '@/components/ui/Button/Button';
@@ -35,7 +36,7 @@ export interface SearchFormProps {
     defaultIncludeClones?: boolean;
 }
 
-export const SearchForm = ({
+export const SearchForm = memo(({
     onSearch,
     databaseOptions,
     isLoading = false,
@@ -124,4 +125,4 @@ export const SearchForm = ({
             </Button>
         </form>
     );
-}
+});

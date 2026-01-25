@@ -23,6 +23,16 @@ export interface QueryResult {
     values: unknown[][];
 }
 
+// Cache entry structure
+interface CacheEntry {
+    data: Game[];
+    timestamp: number;
+}
+
+// Cache configuration
+const CACHE_TTL = 5 * 60 * 1000; // 5 minutes in milliseconds
+const MAX_CACHE_SIZE = 100;
+
 /**
  * GameSearchService - Handles database operations for game searches
  * Uses SQL.js web worker for non-blocking database operations
@@ -31,6 +41,7 @@ export class GameSearchService {
     private worker: Worker | null = null;
     private pendingRequests: Map<number, { resolve: (value: unknown) => void; reject: (reason: Error) => void }> = new Map();
     private dbLoaded = false;
+    private cache: Map<string, CacheEntry> = new Map();
 
     /**
      * Initialize the SQL.js web worker
@@ -131,7 +142,7 @@ export class GameSearchService {
         let skipClones = '';
         if (includeClones) {
             // Left join to get the names of the clones
-            select = 
+            select =
                 'SELECT g1.rom AS rom, g1.name AS name, g2.name AS cloneOf ' +
                 'FROM games g1 ' +
                 'LEFT JOIN games g2 ON g1.cloneOf = g2.docid'
@@ -170,25 +181,100 @@ export class GameSearchService {
      * Search for a single game by name
      */
     async findOne(term: string, includeClones: boolean): Promise<Game[]> {
+        // Check cache first
+        const cachedResults = this.getCachedResults(term, includeClones);
+        if (cachedResults) {
+            return cachedResults;
+        }
+
         const sanitized = this.sanitizeInput(term) as string;
         if (!sanitized) {
             return [];
         }
         const conditions = `${sanitized.split(' ').map((t) => `g1.term LIKE "%${t}%"`).join(' AND ')}`;
-        return this.find(term, conditions, includeClones);
+        const results = await this.find(term, conditions, includeClones);
+
+        // Cache the results
+        this.cacheResults(term, includeClones, results);
+
+        return results;
     }
 
     /**
      * Search for games by name
      */
     async findMany(terms: string[], includeClones: boolean): Promise<Game[]> {
+        // Check cache first
+        const cachedResults = this.getCachedResults(terms, includeClones);
+        if (cachedResults) {
+            return cachedResults;
+        }
+
         const sanitized = this.sanitizeInput(terms) as string[];
         if (!sanitized.length) {
             return [];
         }
         // Full-text search
         const conditions = `g1.term MATCH "${sanitized.join(' OR ')}"`;
-        return this.find(terms, conditions, includeClones);
+        const results = await this.find(terms, conditions, includeClones);
+
+        // Cache the results
+        this.cacheResults(terms, includeClones, results);
+
+        return results;
+    }
+
+    /**
+     * Generate a cache key based on search parameters
+     */
+    private generateCacheKey(terms: string | string[], includeClones: boolean): string {
+        const termString = Array.isArray(terms) ? terms.join('|') : terms;
+        return `${termString}|${includeClones}`;
+    }
+
+    /**
+     * Check if a cache entry is still valid (not expired)
+     */
+    private isCacheEntryValid(entry: CacheEntry): boolean {
+        return Date.now() - entry.timestamp < CACHE_TTL;
+    }
+
+    /**
+     * Get cached results if available and valid
+     */
+    private getCachedResults(terms: string | string[], includeClones: boolean): Game[] | null {
+        const cacheKey = this.generateCacheKey(terms, includeClones);
+        const entry = this.cache.get(cacheKey);
+
+        if (entry && this.isCacheEntryValid(entry)) {
+            return entry.data;
+        }
+
+        // Remove expired entry
+        if (entry) {
+            this.cache.delete(cacheKey);
+        }
+
+        return null;
+    }
+
+    /**
+     * Cache search results
+     */
+    private cacheResults(terms: string | string[], includeClones: boolean, data: Game[]): void {
+        // If cache is at maximum size, remove the oldest entry
+        if (this.cache.size >= MAX_CACHE_SIZE) {
+            const firstKey = this.cache.keys().next().value;
+            if (firstKey !== undefined) {
+                this.cache.delete(firstKey);
+            }
+        }
+
+        const cacheKey = this.generateCacheKey(terms, includeClones);
+        this.cache.set(cacheKey, {
+            data,
+            timestamp: Date.now()
+        });
     }
 
     /**
@@ -207,6 +293,7 @@ export class GameSearchService {
             this.worker = null;
             this.dbLoaded = false;
             this.pendingRequests.clear();
+            this.cache.clear(); // Clear cache on termination
         }
     }
 }

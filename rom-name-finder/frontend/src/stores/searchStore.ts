@@ -4,6 +4,10 @@ import type { Game, SearchState } from '@/types/schemas';
 import { getGameSearchService } from '@/services/gameSearchService';
 import { ERR_SEARCH_TERM_EMPTY, ERR_UNKNOWN } from '@/utils/strings.constant';
 
+// Memoization cache for search term sanitization
+const searchTermCache = new Map<string, string[]>();
+const MAX_CACHE_SIZE = 100;
+
 interface SearchStore extends SearchState {
     setSearchTerms: (terms: string[]) => void;
     setSelectedDb: (db: string) => void;
@@ -14,6 +18,44 @@ interface SearchStore extends SearchState {
     setViewMode: (mode: string) => void;
     setIncludeClones: (includeClones: boolean) => void;
 }
+
+// Function to sanitize search terms with memoization
+const sanitizeSearchTerms = (term: string): string[] => {
+    // Create a cache key from the input term
+    const cacheKey = term;
+
+    // Check if we have a cached result
+    if (searchTermCache.has(cacheKey)) {
+        return searchTermCache.get(cacheKey)!;
+    }
+
+    // Sanitize and discard duplicated items
+    const terms = Array.from(new Set(
+        term.split('\n')
+            .map((term) => {
+                return term
+                    .toLowerCase()
+                    .replace(/[^\w]/g, ' ')
+                    .replace(/\s+/g, ' ')
+                    .trim();
+            })
+            .filter(Boolean)
+    ));
+
+    // Add to cache
+    searchTermCache.set(cacheKey, terms);
+
+    // Limit cache size to prevent memory issues
+    if (searchTermCache.size > MAX_CACHE_SIZE) {
+        // Remove the oldest entry (first entry in the map)
+        const firstKey = searchTermCache.keys().next().value;
+        if (firstKey !== undefined) {
+            searchTermCache.delete(firstKey);
+        }
+    }
+
+    return terms;
+};
 
 const isDevelopment = import.meta.env.DEV;
 
@@ -26,7 +68,7 @@ export const useSearchStore = create<SearchStore>()(
                 selectedDB: '',
                 isLoading: false,
                 error: null,
-                viewMode: 'detailed',
+                viewMode: 'simple',
                 includeClones: true,
                 executionTime: 0,
 
@@ -45,18 +87,7 @@ export const useSearchStore = create<SearchStore>()(
                     }
 
                     // Sanitize and discard duplicated items
-                    const terms = Array.from(new Set(
-                        term.split('\n')
-                            .map((term) => {
-                                return term
-                                    .toLowerCase()
-                                    .replace(/[^\w]/g, ' ')
-                                    .replace(/\s+/g, ' ')
-                                    .trim()
-
-                            })
-                            .filter(Boolean)
-                    ));
+                    const terms = sanitizeSearchTerms(term);
 
                     set({
                         isLoading: true,

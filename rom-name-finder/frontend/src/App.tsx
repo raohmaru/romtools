@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { SearchForm } from '@/components/features/SearchForm/SearchForm';
 import { type SearchFormData } from '@/types/schemas';
 import { SearchResults } from '@/components/features/SearchResults/SearchResults';
@@ -13,6 +13,7 @@ import { Headline } from './components/ui/Headline/Headline';
 import './App.css';
 import { useDeviceDetails } from './hooks/useDeviceDetails';
 import { ScrollToTop } from './components/features/ScrollToTop/ScrollToTop';
+import { useThrottle } from './utils/throttle';
 
 function SearchApp() {
     const { search, setError, clearResults } = useSearchStore();
@@ -29,12 +30,14 @@ function SearchApp() {
     const { touchSupport } = useDeviceDetails();
 
     // Get select database options from .env
-    const databaseOptions = JSON.parse(import.meta.env.VITE_DBS).map((db: string) => {
-        return {
-            value: db,
-            label: db.replaceAll('_', ' ')
-        };
-    });
+    const databaseOptions = useMemo(() =>
+        JSON.parse(import.meta.env.VITE_DBS).map((db: string) => {
+            return {
+                value: db,
+                label: db.replaceAll('_', ' ')
+            };
+        }),
+    []);
 
     // Initialize database on mount
     useEffect(() => {
@@ -55,12 +58,17 @@ function SearchApp() {
         initDatabase();
     }, [setError, selectedDB]);
 
+    // Create debounced search function
+    const throttle = useThrottle(300);
     const handleSearch = useCallback((formData: SearchFormData) => {
-        clearResults();
-        const { searchTerm, database, includeClones } = formData;
-        search(searchTerm, database, includeClones);
-        setShowResults(true);
-    }, [clearResults, search]);
+        throttle((data) => {
+            const typedData = data as SearchFormData;
+            clearResults();
+            const { searchTerm, database, includeClones } = typedData;
+            search(searchTerm, database, includeClones);
+            setShowResults(true);
+        }, [formData]);
+    }, [throttle, clearResults, search]);
 
     useEffect(() => {
         if (touchSupport) {
@@ -82,13 +90,15 @@ function SearchApp() {
     }, []);
 
     // Transform results to SearchResults format
-    const searchResults = results?.map((game) => ({
-        title: game.name,
-        metadata: {
-            ROM: game.rom,
-            cloneOf: game.cloneOf,
-        },
-    })) ?? [];
+    const searchResults = useMemo(() =>
+        results?.map((game) => ({
+            title: game.name,
+            metadata: {
+                ROM: game.rom,
+                cloneOf: game.cloneOf,
+            },
+        })) ?? [],
+    [results]);
 
     return (
         <main id="main-content" className="app-container">

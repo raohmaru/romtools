@@ -1,4 +1,5 @@
 import type { ComponentPropsWithoutRef } from 'react';
+import { memo } from 'react';
 import styles from './LoadingSpinner.module.css';
 
 export interface LoadingSpinnerProps extends ComponentPropsWithoutRef<'div'> {
@@ -18,12 +19,12 @@ export interface LoadingSpinnerProps extends ComponentPropsWithoutRef<'div'> {
 
 }
 
-export function LoadingSpinner({
+export const LoadingSpinner = memo(({
     size = 'medium',
     label = 'Loading',
     className = '',
     ...props
-}: LoadingSpinnerProps) {
+}: LoadingSpinnerProps) => {
     const combinedClassName = `${styles.spinner} ${styles[size]} ${className}`.trim();
 
     return (
@@ -37,4 +38,4 @@ export function LoadingSpinner({
             <span className="sr-only">{label}</span>
         </div>
     );
-}
+});

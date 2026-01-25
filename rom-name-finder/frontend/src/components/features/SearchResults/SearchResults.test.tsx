@@ -36,7 +36,9 @@ describe('SearchResults', () => {
     });
 
     describe('Rendering with Results', () => {
-        it('should render results when provided', async () => {
+        beforeAll(() => import('./DetailedResults'));
+        
+        it('should render results when provided', () => {
             render(
                 <SearchResults
                     results={mockResults}
@@ -51,17 +53,18 @@ describe('SearchResults', () => {
             expect(screen.getByText('Space Invaders')).toBeInTheDocument();
         });
 
-        it('should render detailed view when viewMode is detailed', () => {
+        it('should render detailed view when viewMode is detailed', async () => {
             render(
                 <SearchResults
                     results={mockResults}
                     isLoading={false}
                     totalCount={2}
                     executionTime={100}
+                    viewMode='detailed'
                 />
             );
 
-            expect(screen.getByText('Pac-Man')).toBeInTheDocument();
+            await waitFor(() => expect(screen.getByText('Pac-Man')).toBeInTheDocument());
             expect(screen.getByText('pacman')).toBeInTheDocument();
         });
 
@@ -369,6 +372,8 @@ describe('SearchResults', () => {
     });
 
     describe('Edge Cases', () => {
+        beforeAll(() => import('./DetailedResults'));
+
         it('should handle results with missing metadata', () => {
             const resultsWithoutMetadata: SearchResult[] = [
                 { title: 'Game 1' },

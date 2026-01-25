@@ -13,7 +13,7 @@ export interface SearchState {
     selectedDB: string;
     isLoading: boolean;
     error: string | null;
-    viewMode: string | 'detailed';
+    viewMode: string | 'simple';
     includeClones: boolean;
     executionTime: number;
 }

@@ -1,5 +1,5 @@
 import type { ComponentPropsWithoutRef } from 'react';
-import { useState, useCallback, useRef } from 'react';
+import { useState, useCallback, useRef, memo } from 'react';
 import styles from './Textarea.module.css';
 
 export interface TextareaProps extends ComponentPropsWithoutRef<'textarea'> {
@@ -38,7 +38,7 @@ export interface TextareaProps extends ComponentPropsWithoutRef<'textarea'> {
     ref?: React.Ref<HTMLTextAreaElement>;
 }
 
-export const Textarea = ({
+export const Textarea = memo(({
     label,
     hideLabel = false,
     name,
@@ -196,4 +196,4 @@ export const Textarea = ({
             )}
         </div>
     );
-}
+});

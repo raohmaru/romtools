@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { Button } from '../../ui/Button/Button';
 import type { ViewMode } from '../../../types/schemas';
 import { selectViewMode, useSearchStore } from '../../../stores/searchStore';
@@ -15,10 +16,10 @@ export interface ToolbarProps {
     onExport: () => void;
 }
 
-export function Toolbar({
+export const Toolbar = memo(({
     onCopy,
     onExport
-}: ToolbarProps) {
+}: ToolbarProps) => {
     const { setViewMode } = useSearchStore();
     const viewMode = useSearchStore(selectViewMode);
     const [copied, setCopied] = useState(false);
@@ -83,4 +84,4 @@ export function Toolbar({
             </Button>
         </aside>
     );
-}
+});
