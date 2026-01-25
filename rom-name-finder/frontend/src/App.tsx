@@ -12,6 +12,7 @@ import { Overlay } from './components/ui/Overlay/Overlay';
 import { Headline } from './components/ui/Headline/Headline';
 import './App.css';
 import { useDeviceDetails } from './hooks/useDeviceDetails';
+import { ScrollToTop } from './components/features/ScrollToTop/ScrollToTop';
 
 function SearchApp() {
     const { search, setError, clearResults } = useSearchStore();
@@ -125,6 +126,8 @@ function SearchApp() {
                     />
                 </section>
             )}
+
+            <ScrollToTop />
 
             <Overlay
                 visible={loadingDatabase}>
