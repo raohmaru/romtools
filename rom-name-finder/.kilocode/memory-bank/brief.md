@@ -26,6 +26,6 @@ React application that helps users find MAME ROM names for arcade video games by
    docs/
    ├── adr/                 # Architecture Decision Records
    ├── GLOSSARY.md          # Project terminology
+   ├── PLAN.md              # Implementation plan
    └── README.md            # Documentation overview
    ../CHANGELOG.md          # Project changelog
-   ../PLAN.md               # Implementation plan

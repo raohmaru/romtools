@@ -36,9 +36,11 @@ This document tracks the current status of the project, including active work, c
 
 ## Technical Debt
 
-- [ ] Developer documentation updates
+- [x] Developer documentation updates
 - [ ] End-to-end testing implementation
 - [ ] Security audit completion
+- [ ] Avoid re-render if search service returns cached results
+- [ ] SearchResults: if `defaultViewMode` is set and persisted state exists, the latest has more priority when component mounts
 
 ## Notes
 

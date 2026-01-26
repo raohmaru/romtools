@@ -73,7 +73,7 @@ This approach was chosen because:
 ## References
 
 - React Hooks Documentation: https://reactjs.org/docs/hooks-intro.html
-- Project PLAN.md
+- Project /docs/PLAN.md
 - ADR-001: TypeScript as Primary Language
 
 ## Notes

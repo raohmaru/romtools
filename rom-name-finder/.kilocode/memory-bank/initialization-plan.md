@@ -22,12 +22,12 @@ project-root/
 ├── docs/               # Project documentation
 │   ├── adr/            # Architecture Decision Records
 │   ├── GLOSSARY.md     # Project terminology
+│   ├── PLAN.md         # Implementation plan
 │   └── README.md       # Documentation overview
 ├── .kilocode/          # Kilo Code configuration
 │   ├── memory-bank/    # Memory bank files
 │   └── rules/          # Project rules and guidelines
-├── CHANGELOG.md        # Project changelog
-└── PLAN.md             # Implementation plan
+└── CHANGELOG.md        # Project changelog
 ```
 
 #### 1.2. Initial Files

@@ -68,7 +68,7 @@ TypeScript was chosen because:
 ## References
 
 - TypeScript Documentation: https://www.typescriptlang.org/
-- Project PLAN.md
+- Project /docs/PLAN.md
 
 ## Notes
 

@@ -26,7 +26,8 @@ See [template.md](./template.md) for the ADR template to use when creating new r
 <!-- Add links to ADRs as they are created -->
 - [ADR-001: TypeScript as Primary Language](./adr-001-typescript.md)
 - [ADR-002: React Functional Components with Hooks](./adr-002-react-hooks.md)
-- [ADR-003: React CSS Modules](./adr-004-react-css-modules.md)
+- [ADR-003: React CSS Modules](./adr-003-react-css-modules.md)
+- [ADR-004: SQLite as a Service Using sql.js](./adr-004-sqlite-sqljs.md)
 
 ## For AI Agents
 

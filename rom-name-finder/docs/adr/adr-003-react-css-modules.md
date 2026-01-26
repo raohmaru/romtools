@@ -106,7 +106,7 @@ const ComponentName = () => (
 ## References
 
 - CSS Modules Documentation: https://github.com/css-modules/css-modules
-- Project PLAN.md
+- Project /docs/PLAN.md
 - ADR-001: TypeScript as Primary Language
 - ADR-002: React Functional Components with Hooks
 - User Experience Guidelines (.kilocode/rules/user-experience.md)

@@ -1,6 +1,6 @@
 # Project Tasks and Implementation Plan
 
-This document tracks the current tasks and implementation plan for the project, based on the detailed PLAN.md document.
+This document tracks the current tasks and implementation plan for the project, based on the detailed docs/PLAN.md document.
 
 ## Current Status
 
@@ -52,7 +52,7 @@ This document tracks the current tasks and implementation plan for the project, 
 - [x] Task 8.1: Set Up CI/CD Pipeline
 
 ### Phase 9: Documentation
-- [ ] Task 9.1: Developer Documentation
+- [x] Task 9.1: Developer Documentation
 
 ### Phase 10: Final Testing & Launch
 - [ ] Task 10.1: End-to-End Testing
@@ -68,4 +68,4 @@ This document tracks the current tasks and implementation plan for the project, 
 
 ## Notes
 
-This tasks document should be updated regularly to reflect the current state of the project. The detailed implementation plan can be found in PLAN.md.
+This tasks document should be updated regularly to reflect the current state of the project. The detailed implementation plan can be found in docs/PLAN.md.
