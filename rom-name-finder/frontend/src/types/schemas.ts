@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { ERR_SEARCH_TERM_EMPTY, ERR_SEARCH_TERM_SHORT, ERR_DB_SELECT } from '../utils/strings.constant';
+import { ERR_SEARCH_TERM_EMPTY, ERR_SEARCH_TERM_SHORT, ERR_DB_SELECT, MAX_FILE_SIZE } from '../utils/constants';
 
 export interface Game {
     rom: string;
@@ -21,6 +21,7 @@ export interface SearchState {
 export const searchFormSchema = z.object({
     searchTerm: z.string()
         .nonempty(ERR_SEARCH_TERM_EMPTY)
+        .max(MAX_FILE_SIZE, `Search term is too long (maximum ${MAX_FILE_SIZE} characters)`)
         // Custom validation
         .refine((value) => {
             const valid = value

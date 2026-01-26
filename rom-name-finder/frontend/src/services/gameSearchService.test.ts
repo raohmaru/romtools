@@ -151,7 +151,7 @@ describe('GameSearchService', () => {
                 statusText: 'Not Found',
             });
 
-            await expect(service.loadDatabase('nonexistent')).rejects.toThrow('Failed to fetch database: Not Found');
+            await expect(service.loadDatabase('nonexistent')).rejects.toThrow('Invalid database path');
             expect(service.isLoaded()).toBe(false);
         });
     });

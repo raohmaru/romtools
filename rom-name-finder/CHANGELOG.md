@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v1.0.1
+
+### Security
+- Fixed SQL injection vulnerabilities in gameSearchService.ts by implementing proper SQL escaping for LIKE and MATCH queries
+- Removed dangerouslySetInnerHTML from SimpleResults.tsx and DetailedResults.tsx to prevent stored XSS attacks
+- Fixed open redirect vulnerabilities in ExternalLink.tsx by implementing proper URL encoding
+- Fixed CSV injection in SearchResults.tsx by implementing proper CSV field escaping
+- Added database path validation to prevent path traversal attacks
+- Improved file drop validation in Textarea.tsx with content validation
+- Added Content Security Policy meta tag to index.html
+- Fixed potential SSRF via external icon loading by implementing ROM value sanitization
+- Sanitized error messages to prevent information disclosure
+- Added input length limits to search term validation schema
+- Created new security utility functions in frontend/src/utils/security.ts
+
+### Changed
+- Updated security validation across multiple components
+
 ## v1.0.0
 
 ### Added

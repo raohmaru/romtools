@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 import type { Game, SearchState } from '@/types/schemas';
 import { getGameSearchService } from '@/services/gameSearchService';
-import { ERR_SEARCH_TERM_EMPTY, ERR_UNKNOWN } from '@/utils/strings.constant';
+import { ERR_SEARCH_TERM_EMPTY, ERR_UNKNOWN } from '@/utils/constants';
 
 // Memoization cache for search term sanitization
 const searchTermCache = new Map<string, string[]>();

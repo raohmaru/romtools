@@ -3,6 +3,8 @@ import { ExternalLink } from './ExternalLink';
 import type { SearchResult } from './SearchResults';
 import { Headline } from '../../ui/Headline/Headline';
 import { List, useDynamicRowHeight , type RowComponentProps } from 'react-window';
+import { sanitizeROM } from '@/utils/security';
+import { decode } from 'html-entities';
 
 export interface SearchResultViewPros {
     results: SearchResult[];
@@ -24,7 +26,7 @@ const Row = ({
         <div style={style} className={styles['virtualized-row']}>
             <div key={index} className={styles['detailed-result']}>
                 <img
-                    src={`${import.meta.env.VITE_ICONS_HOST}/img/icons/${result.metadata?.ROM}.png`}
+                    src={`${import.meta.env.VITE_ICONS_HOST}/img/icons/${sanitizeROM(String(result.metadata?.ROM))}.png`}
                     width={32}
                     height={32}
                     alt={result.title}
@@ -47,7 +49,7 @@ const Row = ({
                             result={result}
                             className={styles['external-link']}
                         >
-                            <span dangerouslySetInnerHTML={{ __html: result.title }}></span>
+                            {decode(result.title)}
                         </ExternalLink>
                     </Headline>
                     {result.metadata && Object.keys(result.metadata).length > 0 && (

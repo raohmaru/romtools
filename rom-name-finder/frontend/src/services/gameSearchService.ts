@@ -1,4 +1,5 @@
 import type { Game } from '@/types/schemas';
+import { escapeSQLLike, escapeSQLMatch, isAllowedDatabase, sanitizeErrorMessage } from '@/utils/security';
 
 // Worker message format
 export interface WorkerMessage {
@@ -62,7 +63,7 @@ export class GameSearchService {
                     if (success) {
                         pending.resolve(data);
                     } else {
-                        pending.reject(new Error(error || 'Unknown worker error'));
+                        pending.reject(new Error(sanitizeErrorMessage(error) || 'Unknown worker error'));
                     }
                     this.pendingRequests.delete(id);
                 }
@@ -96,6 +97,11 @@ export class GameSearchService {
     async loadDatabase(dbPath: string): Promise<void> {
         if (!this.worker) {
             await this.initialize();
+        }
+
+        // Validate database path to prevent path traversal
+        if (!isAllowedDatabase(dbPath)) {
+            throw new Error('Invalid database path');
         }
 
         // Fetch the database file
@@ -191,7 +197,7 @@ export class GameSearchService {
         if (!sanitized) {
             return [];
         }
-        const conditions = `${sanitized.split(' ').map((t) => `g1.term LIKE "%${t}%"`).join(' AND ')}`;
+        const conditions = `${sanitized.split(' ').map((t) => `g1.term LIKE "%${escapeSQLLike(t)}%"`).join(' AND ')}`;
         const results = await this.find(term, conditions, includeClones);
 
         // Cache the results
@@ -215,7 +221,7 @@ export class GameSearchService {
             return [];
         }
         // Full-text search
-        const conditions = `g1.term MATCH "${sanitized.join(' OR ')}"`;
+        const conditions = `g1.term MATCH "${sanitized.map((t) => escapeSQLMatch(t)).join(' OR ')}"`;
         const results = await this.find(terms, conditions, includeClones);
 
         // Cache the results

@@ -1,6 +1,7 @@
 import styles from './SearchResults.module.css';
 import { ExternalLink } from './ExternalLink';
 import type { SearchResult } from './SearchResults';
+import { decode } from 'html-entities';
 
 export interface SearchResultViewPros {
     results: SearchResult[];
@@ -40,7 +41,7 @@ export const SimpleResults = ({ results, includeClones }: SearchResultViewPros) 
                                 result={result}
                                 className={styles['external-link']}
                             >
-                                <span dangerouslySetInnerHTML={{ __html: result.title }}></span>
+                                {decode(result.title)}
                             </ExternalLink>
                         </td>
                         {includeClones && (

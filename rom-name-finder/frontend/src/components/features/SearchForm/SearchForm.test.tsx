@@ -3,7 +3,7 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { SearchForm } from './SearchForm';
 import type { SelectOption } from '@/components/ui/Select/Select';
-import { ERR_SEARCH_TERM_EMPTY, ERR_SEARCH_TERM_SHORT, ERR_DB_SELECT } from '../../../utils/strings.constant';
+import { ERR_SEARCH_TERM_EMPTY, ERR_SEARCH_TERM_SHORT, ERR_DB_SELECT } from '../../../utils/constants';
 import type { SearchFormData } from '../../../types/schemas';
 
 describe('SearchForm', () => {

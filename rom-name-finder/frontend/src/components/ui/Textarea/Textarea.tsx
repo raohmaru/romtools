@@ -1,6 +1,8 @@
 import type { ComponentPropsWithoutRef } from 'react';
 import { useState, useCallback, useRef, memo } from 'react';
 import styles from './Textarea.module.css';
+import { isValidFileContent } from '@/utils/security';
+import { MAX_FILE_SIZE } from '@/utils/constants';
 
 export interface TextareaProps extends ComponentPropsWithoutRef<'textarea'> {
     /**
@@ -104,13 +106,17 @@ export const Textarea = memo(({
         if (files?.length > 0) {
             const file = files[0];
             // Check file size
-            const maxSize = 5; // KB
-            if (file.size > maxSize * 1024) {
-                setCustomError(`File size exceeds ${maxSize} KB limit`);
+            if (file.size > MAX_FILE_SIZE) {
+                setCustomError(`File size exceeds ${MAX_FILE_SIZE} KB limit`);
                 return;
             }
             try {
                 const text = await file.text();
+                // Validate file content contains only printable ASCII characters
+                if (!isValidFileContent(text)) {
+                    setCustomError('File contains invalid characters. Only printable ASCII characters are allowed.');
+                    return;
+                }
                 // Update the textarea value using the ref
                 if (textareaRef.current) {
                     textareaRef.current.value = text;

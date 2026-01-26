@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { Select, type SelectOption } from './Select';
-import { ERR_DB_SELECT } from '../../../utils/strings.constant';
+import { ERR_DB_SELECT } from '../../../utils/constants';
 
 describe('Select', () => {
     const mockOptions: SelectOption[] = [

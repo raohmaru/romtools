@@ -5,6 +5,7 @@ import { SkeletonCard } from '@/components/ui/Skeleton/Skeleton';
 import { Toolbar } from '@/components/features/Toolbar/Toolbar';
 import { SimpleResults } from './SimpleResults';
 import styles from './SearchResults.module.css';
+import { escapeCSVField } from '@/utils/security';
 
 // Dynamically import DetailedResults to reduce initial bundle size
 const DetailedResults = lazy(() => import('./DetailedResults').then(module => ({ default: module.DetailedResults })));
@@ -77,7 +78,7 @@ export const SearchResults = ({
         // Create CSV content with header
         let str = 'ROM,Title\n';
         results.map((result: SearchResult) => {
-            str += `${result.metadata?.ROM},"${result.title}"\n`;
+            str += `${escapeCSVField(String(result.metadata?.ROM))},${escapeCSVField(result.title)}\n`;
         });
         // Create a Blob with the CSV content
         const blob = new Blob([str], { type: 'text/csv;charset=utf-8;' });

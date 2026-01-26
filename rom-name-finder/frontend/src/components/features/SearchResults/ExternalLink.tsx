@@ -1,4 +1,5 @@
 import type { SearchResult } from "./SearchResults";
+import { sanitizeGameName } from '@/utils/security';
 
 interface ExternalLinkProps {
     type: 'adb' | 'moby' | 'igdb';
@@ -15,20 +16,20 @@ export const ExternalLink = ({
 }: ExternalLinkProps) => {
     let href = '';
     let title = '';
-    const gameName = result.title.replace(/\(.+/, '');
+    const gameName = sanitizeGameName(result.title);
     switch (type) {
         case 'adb':
-            href = `http://adb.arcadeitalia.net/dettaglio_mame.php?game_name=${result.metadata?.ROM}`;
+            href = `http://adb.arcadeitalia.net/dettaglio_mame.php?game_name=${encodeURIComponent(String(result.metadata?.ROM))}`;
             title = 'Check the game in Arcade Database';
             break;
 
         case 'moby':
-            href = `https://www.mobygames.com/game/include_dlc:false/platform:arcade/release_status:all/sort:moby_score/title:${gameName}/`;
+            href = `https://www.mobygames.com/game/include_dlc:false/platform:arcade/release_status:all/sort:moby_score/title:${encodeURIComponent(gameName)}/`;
             title = 'Search the game in MobyGames';
             break;
 
         case 'igdb':
-            href = `https://www.igdb.com/search??utf8=✓&type=1&q=${gameName}`;
+            href = `https://www.igdb.com/search??utf8=✓&type=1&q=${encodeURIComponent(gameName)}`;
             title = 'Search the game in IGDB';
             break;
     }

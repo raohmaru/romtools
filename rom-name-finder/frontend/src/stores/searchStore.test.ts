@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { useSearchStore } from './searchStore';
-import { ERR_SEARCH_TERM_EMPTY, ERR_UNKNOWN } from '@/utils/strings.constant';
+import { ERR_SEARCH_TERM_EMPTY, ERR_UNKNOWN } from '@/utils/constants';
 import type { Game } from '@/types/schemas';
 
 // Mock getGameSearchService
