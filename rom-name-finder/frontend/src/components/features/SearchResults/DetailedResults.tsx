@@ -135,7 +135,7 @@ export const DetailedResults = ({ results }: SearchResultViewPros) => {
                 rowCount={results.length}
                 rowHeight={rowHeight}
                 rowProps={{ results }}
-                style={{ height: '90dvh' }}
+                style={{ maxHeight: '90dvh' }}
             />
         </div>
     );
