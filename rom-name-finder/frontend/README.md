@@ -82,15 +82,8 @@ frontend/src/
 
 ## Technologies
 
-- React 18
-- TypeScript
-- Vite
-- SQL.js (SQLite)
-- Zustand (State Management)
-- React Hook Form
-- Zod (Validation)
-- CSS Modules
+React 18, TypeScript, Vite, SQL.js, Zustand, React Hook Form, CSS Modules, Vitest, React Testing Library.
 
 ## License
 
-MIT
+MIT License.

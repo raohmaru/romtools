@@ -10,6 +10,10 @@ A web application for searching MAME ROM names in local SQLite databases using S
 
 ## Project Structure
 
+<details>
+
+<summary>Click here to expand the project structure.</summary>
+
 ```
 rom-name-finder/
 ├── frontend/              # React frontend application
@@ -40,6 +44,8 @@ rom-name-finder/
 │   └── GLOSSARY.md        # Project terminology
 └── CHANGELOG.md           # Project changelog
 ```
+
+</details>
 
 ## Getting Started
 
@@ -129,11 +135,8 @@ npm run preview
 ### Running Tests
 
 ```bash
-# Run all tests
+# Run all tests and watch
 npm run test
-
-# Run tests in watch mode
-npm run test:watch
 
 # Run tests with coverage report
 npm run test:coverage
@@ -147,28 +150,14 @@ npm run test:coverage
 
 All tests are located alongside the source files in `*.test.tsx` or `*.test.ts` files.
 
-## Features
+## Technology Stack
 
-- **Search ROM Names**: Search for ROM files by name
-- **Multiple ROM Sets**: Support for various MAME ROM sets (2003+, 2010, 2015, 2016, 0.268, 0.277)
-- **Real-time Search**: Search results are displayed as you type
-- **SQLite Web Worker**: Database operations run in a web worker for non-blocking UI
-- **Dark Mode**: Support for dark and light themes
-- **Responsive Design**: Works on desktop and mobile devices
-- **Accessibility**: WCAG 2.1 AA compliant
-
-## Technologies
-
-- **React 18 + TypeScript**: UI framework and type system
-- **Vite**: Build tool and dev server
-- **SQL.js**: SQLite database in the browser using WebAssembly
-- **Zustand**: State management
-- **React Hook Form**: Form handling
-- **CSS Modules**: Scoped CSS styling
-- **Vitest**: Testing framework
-- **React Testing Library**: Component testing
+React 18, TypeScript, Vite, SQL.js, Zustand, React Hook Form, CSS Modules, Vitest, React Testing Library.
 
 ## Contributing
+
+Contributions are welcome!  
+If you want to contribute please try to follow this guidelines:
 
 1. Fork the repository
 2. Create a feature branch: `git checkout -b feature/your-feature`
