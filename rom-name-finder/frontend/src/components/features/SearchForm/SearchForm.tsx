@@ -5,9 +5,10 @@ import { Button } from '@/components/ui/Button/Button';
 import { Textarea } from '@/components/ui/Textarea/Textarea';
 import { Select, type SelectOption } from '@/components/ui/Select/Select';
 import { searchFormSchema, type SearchFormData } from '@/types/schemas';
-import styles from './SearchForm.module.css';
 import { Checkbox } from '../../ui/Checkbox/Checkbox';
 import { useDeviceDetails } from '../../../hooks/useDeviceDetails';
+import { useSearchStore } from '@/stores/searchStore';
+import styles from './SearchForm.module.css';
 
 export interface SearchFormProps {
     /**
@@ -53,11 +54,12 @@ export const SearchForm = memo(({
         defaultValues: {
             searchTerm: defaultSearchTerm,
             database: defaultDatabase,
-            includeClones: defaultIncludeClones
+            includeClones: defaultIncludeClones,
         },
     });
+    const { searchBy } = useSearchStore();
 
-    const onSubmit = async (formData: SearchFormData) => {
+    const onSubmit = (formData: SearchFormData) => {
         onSearch(formData);
     }
 
@@ -73,27 +75,29 @@ export const SearchForm = memo(({
             onSubmit={handleSubmit(onSubmit)}
             aria-label="Search form"
         >
-            <Textarea
-                {...register('searchTerm')}
-                label="Arcade Game Names"
-                hideLabel={true}
-                name="searchTerm"
-                placeholder={placeholder}
-                required
-                autoFocus={true}
-                error={errors.searchTerm?.message}
-                className={styles.textarea}
-                aria-describedby="search-terms-help"
-                disabled={isLoading}
-                onSubmit={handleSubmit(onSearch)}
-            />
-            <p
-                className="size-sm"
-                id="search-terms-help"
-            >
-                You can enter multiple terms separated by new lines<span className="hide-touch">, or you can drop a file</span>.<br />
-                <span className="hide-touch">Press <code>CTRL</code> + <code>ENTER</code> or click the "Search" button to search.</span>
-            </p>
+            <div>
+                <Textarea
+                    {...register('searchTerm')}
+                    label="Arcade Game Names"
+                    hideLabel={true}
+                    name="searchTerm"
+                    placeholder={placeholder}
+                    required
+                    autoFocus={true}
+                    error={errors.searchTerm?.message}
+                    className={styles.textarea}
+                    aria-describedby="search-terms-help"
+                    disabled={isLoading}
+                    onSubmit={handleSubmit(onSubmit)}
+                />
+                <p
+                    className="size-sm"
+                    id="search-terms-help"
+                >
+                    You can enter multiple terms separated by new lines<span className="hide-touch">, or you can drop a file</span>.<br />
+                    <span className="hide-touch">Press <code>CTRL</code> + <code>ENTER</code> or click the "Search" button to search.</span>
+                </p>
+            </div>
 
             <Select
                 {...register('database')}
@@ -108,12 +112,23 @@ export const SearchForm = memo(({
                 disabled={isLoading}
             />
 
-            <Checkbox
-                {...register('includeClones')}
-                name="includeClones"
-                label="Include clones"
-                labelTitle="Clones are different versions (regional, hacked, bootleg, revised) of the same base game (or 'parent' ROM)"
-            />
+            <fieldset className={styles.fieldset}>
+                <Checkbox
+                    {...register('includeClones')}
+                    name="includeClones"
+                    label="Include clones"
+                    labelTitle="Clones are different versions (regional, hacked, bootleg, revised) of the same base game (or 'parent' ROM)"
+                />
+
+                <Checkbox
+                    {...register('searchBy')}
+                    name="searchBy"
+                    value="rom"
+                    label="Search by ROM"
+                    labelTitle="Search by ROM name instead of by game name"
+                    defaultChecked={searchBy === 'rom'}
+                />
+            </fieldset>
 
             <Button
                 type="submit"
@@ -126,3 +141,4 @@ export const SearchForm = memo(({
         </form>
     );
 });
+

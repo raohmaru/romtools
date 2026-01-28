@@ -145,3 +145,30 @@ export function sanitizeGameName(gameName: string): string {
 
     return sanitized;
 }
+
+/**
+ * Sanitizes strings for SQL query
+ * @param terms - strings to sanitize
+ * @returns The sanitized strings
+ */
+export function sanitizeInput(terms: string|string[]): string|string[] {
+    if (typeof terms === 'string') {
+        return terms.trim();
+    }
+
+    return (terms as string[])
+        .map((term) => term.trim())
+        .filter(Boolean);
+}
+
+/**
+ * Validates that the column is in the allowed list of database columns
+ * @param column - The column path to validate
+ * @returns True if the column is allowed, false otherwise
+ */
+export function isAllowedDBColumn(column?: string): boolean {
+    if (!column) {
+        return false;
+    }
+    return ['term', 'rom'].includes(column);
+}

@@ -112,7 +112,7 @@ describe('useSearchStore', () => {
     describe('search', () => {
         it('should not search if term is empty', async () => {
             const { search } = useSearchStore.getState();
-            await search('', 'db', true);
+            await search({searchTerm: '', database: 'db', includeClones: true});
             expect(useSearchStore.getState().error).toBe(ERR_SEARCH_TERM_EMPTY);
             expect(useSearchStore.getState().results).toBeNull();
             expect(useSearchStore.getState().isLoading).toBe(false);
@@ -125,12 +125,16 @@ describe('useSearchStore', () => {
             const { search } = useSearchStore.getState();
             mockPerformanceNow.mockReturnValueOnce(0).mockReturnValueOnce(100);
 
-            await search(`  Term1
+            await search({
+                searchTerm: `  Term1
  term1
- Term2!`, 'db', true);
+ Term2!`,
+                database: 'db',
+                includeClones: true
+            });
 
             expect(useSearchStore.getState().searchTerms).toEqual(['term1', 'term2']);
-            expect(mockFindMany).toHaveBeenCalledWith(['term1', 'term2'], true);
+            expect(mockFindMany).toHaveBeenCalledWith(['term1', 'term2'], true, undefined);
             expect(useSearchStore.getState().isLoading).toBe(false);
             expect(useSearchStore.getState().error).toBeNull();
             expect(useSearchStore.getState().executionTime).toBe(100);
@@ -140,7 +144,7 @@ describe('useSearchStore', () => {
             const { search } = useSearchStore.getState();
             mockPerformanceNow.mockReturnValueOnce(0).mockReturnValueOnce(100);
 
-            await search('term', 'newDB', true);
+            await search({searchTerm: 'term', database: 'newDB', includeClones: true});
 
             expect(mockIsLoaded).toHaveBeenCalled();
             expect(mockLoadDatabase).toHaveBeenCalledWith('newDB');
@@ -155,7 +159,7 @@ describe('useSearchStore', () => {
             const { search } = useSearchStore.getState();
             mockPerformanceNow.mockReturnValueOnce(0).mockReturnValueOnce(100);
 
-            await search('term', 'newDB', true);
+            await search({searchTerm: 'term', database: 'newDB', includeClones: true});
 
             expect(mockIsLoaded).toHaveBeenCalled();
             expect(mockTerminate).toHaveBeenCalled();
@@ -171,12 +175,12 @@ describe('useSearchStore', () => {
             mockFindOne.mockResolvedValueOnce([mockGame]);
             mockPerformanceNow.mockReturnValueOnce(0).mockReturnValueOnce(50);
 
-            await search('single term', 'db', false);
+            await search({searchTerm: 'single term', database: 'db', includeClones: false});
 
             expect(useSearchStore.getState().isLoading).toBe(false);
             expect(useSearchStore.getState().searchTerms).toEqual(['single term']);
             expect(useSearchStore.getState().includeClones).toBe(false);
-            expect(mockFindOne).toHaveBeenCalledWith('single term', false);
+            expect(mockFindOne).toHaveBeenCalledWith('single term', false, undefined);
             expect(mockFindMany).not.toHaveBeenCalled();
             expect(useSearchStore.getState().results).toEqual([mockGame]);
             expect(useSearchStore.getState().executionTime).toBe(50);
@@ -188,13 +192,13 @@ describe('useSearchStore', () => {
             mockFindMany.mockResolvedValueOnce(mockGames);
             mockPerformanceNow.mockReturnValueOnce(0).mockReturnValueOnce(150);
 
-            await search(`term1\nterm2`, 'db', true);
+            await search({searchTerm: 'term1\nterm2', database: 'db', includeClones: true});
 
             expect(useSearchStore.getState().isLoading).toBe(false);
             expect(useSearchStore.getState().searchTerms).toEqual(['term1', 'term2']);
             expect(useSearchStore.getState().includeClones).toBe(true);
             expect(mockFindOne).not.toHaveBeenCalled();
-            expect(mockFindMany).toHaveBeenCalledWith(['term1', 'term2'], true);
+            expect(mockFindMany).toHaveBeenCalledWith(['term1', 'term2'], true, undefined);
             expect(useSearchStore.getState().results).toEqual(mockGames);
             expect(useSearchStore.getState().executionTime).toBe(150);
         });
@@ -204,7 +208,7 @@ describe('useSearchStore', () => {
             const errorMessage = 'Search failed';
             mockFindOne.mockRejectedValueOnce(new Error(errorMessage));
 
-            await search('term', 'db', true);
+            await search({searchTerm: 'term', database: 'db', includeClones: true});
 
             expect(useSearchStore.getState().error).toBe(errorMessage);
             expect(useSearchStore.getState().results).toBeNull();
@@ -213,7 +217,7 @@ describe('useSearchStore', () => {
             // Test with a non-Error object rejection
             useSearchStore.setState({ error: null }); // Clear error for next test
             mockFindOne.mockRejectedValueOnce('Some unknown error');
-            await search('another term', 'db', true);
+            await search({searchTerm: 'another term', database: 'db', includeClones: true});
             expect(useSearchStore.getState().error).toBe(ERR_UNKNOWN);
         });
     });

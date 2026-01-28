@@ -76,27 +76,29 @@ export const Select = memo(({
                     <span className={styles.required} aria-hidden="true">*</span>
                 )}
             </label>
-            <select
-                ref={ref}
-                id={selectId}
-                name={name}
-                className={styles.select}
-                aria-invalid={error ? 'true' : 'false'}
-                aria-describedby={errorId}
-                aria-required={required}
-                {...props}
-            >
-                {placeholder && (
-                    <option value="" disabled>
-                        {placeholder}
-                    </option>
-                )}
-                {options.map((option) => (
-                    <option key={option.value} value={option.value}>
-                        {option.label || option.value}
-                    </option>
-                ))}
-            </select>
+            <div className={styles['select-wrapper']}>
+                <select
+                    ref={ref}
+                    id={selectId}
+                    name={name}
+                    className={styles.select}
+                    aria-invalid={error ? 'true' : 'false'}
+                    aria-describedby={errorId}
+                    aria-required={required}
+                    {...props}
+                >
+                    {placeholder && (
+                        <option value="" disabled>
+                            {placeholder}
+                        </option>
+                    )}
+                    {options.map((option) => (
+                        <option key={option.value} value={option.value}>
+                            {option.label || option.value}
+                        </option>
+                    ))}
+                </select>
+            </div>
             {error && (
                 <span
                     id={errorId}

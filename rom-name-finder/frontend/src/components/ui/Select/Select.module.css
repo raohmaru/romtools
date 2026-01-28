@@ -20,6 +20,33 @@
     }
 }
 
+.select-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 1;
+
+    &::after {
+        content: '';
+        position: absolute;
+        right: 0.6rem;
+        width: 24px;
+        height: 24px;
+        mask-image: url("@/img/arrow-down.svg");
+        mask-size: contain;
+        background-color: var(--color-text-tertiary);
+        pointer-events: none;
+    }
+
+    &:has(select:open)::after {
+        transform: scaleY(-1);
+    }
+
+    &:hover::after {
+        background-color: var(--color-text-secondary);
+    }
+}
+
 .select {
     flex: 1;
     padding: 0.625rem 2.5rem 0.625rem 0.75rem;
@@ -32,12 +59,9 @@
     transition: border-color 0.2s, box-shadow 0.2s;
     cursor: pointer;
     appearance: none;
-    background-image: url("@/img/chevron-down.svg");
-    background-position: right 0.5rem center;
-    background-repeat: no-repeat;
-    background-size: 1.5em 1.5em;
 
-    &:focus {
+    &:focus,
+    &:hover {
         outline: none;
         border-color: var(--color-focus);
         box-shadow: 0 0 0 3px var(--color-focus-ring);

@@ -28,6 +28,7 @@
     min-height: 50px;
     resize: vertical;
 
+    &:hover,
     &:focus {
         outline: none;
         border-color: var(--color-focus);

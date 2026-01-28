@@ -11,7 +11,7 @@ const MAX_CACHE_SIZE = 100;
 interface SearchStore extends SearchState {
     setSearchTerms: (terms: string[]) => void;
     setSelectedDb: (db: string) => void;
-    search: (term: string, db: string, includeClones: boolean) => Promise<void>;
+    search: (args: SearchArgs) => Promise<void>;
     clearResults: () => void;
     setError: (error: string | null) => void;
     setLoading: (isLoading: boolean) => void;
@@ -59,6 +59,13 @@ const sanitizeSearchTerms = (term: string): string[] => {
 
 const isDevelopment = import.meta.env.DEV;
 
+type SearchArgs = {
+    searchTerm: string;
+    database: string;
+    includeClones: boolean;
+    searchBy?: string | false;
+}
+
 export const useSearchStore = create<SearchStore>()(
     devtools(
         persist(
@@ -70,6 +77,7 @@ export const useSearchStore = create<SearchStore>()(
                 error: null,
                 viewMode: 'simple',
                 includeClones: true,
+                searchBy: 'term',
                 executionTime: 0,
 
                 setSearchTerms: (terms: string[]) => {
@@ -80,20 +88,21 @@ export const useSearchStore = create<SearchStore>()(
                     set({ selectedDB: db });
                 },
 
-                search: async (term: string, db: string, includeClones: boolean) => {
-                    if (!term.trim()) {
+                search: async ({searchTerm, database, includeClones, searchBy}: SearchArgs) => {
+                    if (!searchTerm.trim()) {
                         set({ error: ERR_SEARCH_TERM_EMPTY, results: null });
                         return;
                     }
 
                     // Sanitize and discard duplicated items
-                    const terms = sanitizeSearchTerms(term);
+                    const terms = sanitizeSearchTerms(searchTerm);
 
                     set({
                         isLoading: true,
                         error: null,
                         searchTerms: terms,
-                        includeClones
+                        includeClones,
+                        searchBy: searchBy || undefined
                     });
 
                     if (!terms.length) {
@@ -106,22 +115,22 @@ export const useSearchStore = create<SearchStore>()(
 
                         // Load the database if not already loaded
                         if (!service.isLoaded()) {
-                            await service.loadDatabase(db);
+                            await service.loadDatabase(database);
                         }
                         // If we're switching to a different database, reload it
-                        else if (service.isLoaded() && db !== get().selectedDB) {
+                        else if (service.isLoaded() && database !== get().selectedDB) {
                             service.terminate();
-                            await service.loadDatabase(db);
+                            await service.loadDatabase(database);
                         }
-                        set({ selectedDB: db });
+                        set({ selectedDB: database });
 
                         // Calculate the time the next statement takes
                         const startTime = performance.now();
                         let data: Game[];
                         if (terms.length === 1) {
-                            data = await service.findOne(terms[0], includeClones);
+                            data = await service.findOne(terms[0], includeClones, searchBy || undefined);
                         } else {
-                            data = await service.findMany(terms, includeClones);
+                            data = await service.findMany(terms, includeClones, searchBy || undefined);
                         }
                         const endTime = performance.now();
                         set({
@@ -161,6 +170,7 @@ export const useSearchStore = create<SearchStore>()(
                     selectedDB: state.selectedDB,
                     viewMode: state.viewMode,
                     includeClones: state.includeClones,
+                    searchBy: state.searchBy,
                 }),
             }
         ),

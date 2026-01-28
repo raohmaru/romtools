@@ -64,8 +64,7 @@ function SearchApp() {
         throttle((data) => {
             const typedData = data as SearchFormData;
             clearResults();
-            const { searchTerm, database, includeClones } = typedData;
-            search(searchTerm, database, includeClones);
+            search({ ...typedData });
             setShowResults(true);
         }, [formData]);
     }, [throttle, clearResults, search]);

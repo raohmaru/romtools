@@ -194,6 +194,9 @@ describe('SearchForm', () => {
             await user.selectOptions(select, 'mame2003');
             expect(select).toHaveValue('mame2003');
 
+            const searchBy = screen.getByLabelText('Search by ROM');
+            await user.click(searchBy);
+
             const form = screen.getByRole('form');
             fireEvent.submit(form);
 
@@ -202,7 +205,8 @@ describe('SearchForm', () => {
                 expect(mockOnSearch).toBeCalledWith({
                     database: 'mame2003',
                     includeClones: true,
-                    searchTerm: 'Pacman'
+                    searchTerm: 'Pacman',
+                    searchBy: 'rom',
                 });
             });
         });
@@ -317,6 +321,22 @@ describe('SearchForm', () => {
             );
 
             const checkbox = screen.getByLabelText('Include clones');
+            expect(checkbox).not.toBeChecked();
+            await user.click(checkbox);
+            expect(checkbox).toBeChecked();
+        });
+
+        it('should allow toggling search by checkbox', async () => {
+            const user = userEvent.setup();
+            render(
+                <SearchForm
+                    onSearch={mockOnSearch}
+                    databaseOptions={mockDatabaseOptions}
+                    defaultIncludeClones={false}
+                />
+            );
+
+            const checkbox = screen.getByLabelText('Search by ROM');
             expect(checkbox).not.toBeChecked();
             await user.click(checkbox);
             expect(checkbox).toBeChecked();

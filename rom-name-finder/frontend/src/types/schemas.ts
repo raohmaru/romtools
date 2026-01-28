@@ -15,6 +15,7 @@ export interface SearchState {
     error: string | null;
     viewMode: string | 'simple';
     includeClones: boolean;
+    searchBy: string;
     executionTime: number;
 }
 
@@ -35,6 +36,8 @@ export const searchFormSchema = z.object({
         }),
     database: z.string().min(1, ERR_DB_SELECT),
     includeClones: z.boolean(),
+    searchBy: z
+        .union([z.literal(false), z.string()])
 });
 
 export type SearchFormData = z.infer<typeof searchFormSchema>;

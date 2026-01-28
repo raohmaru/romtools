@@ -180,7 +180,7 @@ describe('GameSearchService', () => {
             expect(service['sendMessage']).toHaveBeenCalledWith({
                 id: expect.any(Number),
                 action: 'exec',
-                sql: 'SELECT rom, name, cloneOf FROM games g1 WHERE g1.term LIKE "%test%" AND g1.term LIKE "%game%" AND cloneOf IS NULL'
+                sql: 'SELECT rom, name, cloneOf FROM games g1 WHERE g1.term LIKE "%test%" AND g1.term LIKE "%game%" AND cloneOf IS NULL ORDER BY cloneOf, name'
             });
         });
 
@@ -191,7 +191,7 @@ describe('GameSearchService', () => {
                 'SELECT g1.rom AS rom, g1.name AS name, g2.name AS cloneOf ' +
                 'FROM games g1 ' +
                 'LEFT JOIN games g2 ON g1.cloneOf = g2.docid ' +
-                'WHERE g1.term LIKE "%test%" AND g1.term LIKE "%game%" '
+                'WHERE g1.term LIKE "%test%" AND g1.term LIKE "%game%"  ORDER BY cloneOf, name'
             ;
             expect(service['sendMessage']).toHaveBeenCalledWith({
                 id: expect.any(Number),
@@ -216,7 +216,7 @@ describe('GameSearchService', () => {
             expect(service['sendMessage']).toHaveBeenCalledWith({
                 id: expect.any(Number),
                 action: 'exec',
-                sql: 'SELECT rom, name, cloneOf FROM games g1 WHERE g1.term MATCH "test1 OR test2" AND cloneOf IS NULL'
+                sql: 'SELECT rom, name, cloneOf FROM games g1 WHERE g1.term MATCH "test1 OR test2" AND cloneOf IS NULL ORDER BY cloneOf, name'
             });
         });
 
@@ -227,7 +227,7 @@ describe('GameSearchService', () => {
                 'SELECT g1.rom AS rom, g1.name AS name, g2.name AS cloneOf ' +
                 'FROM games g1 ' +
                 'LEFT JOIN games g2 ON g1.cloneOf = g2.docid ' +
-                'WHERE g1.term MATCH "test1 OR test2" '
+                'WHERE g1.term MATCH "test1 OR test2"  ORDER BY cloneOf, name'
             ;
             expect(service['sendMessage']).toHaveBeenCalledWith({
                 id: expect.any(Number),

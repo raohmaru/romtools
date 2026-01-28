@@ -24,6 +24,10 @@
     textarea {
         min-height: 100px;
     }
+
+    & + p {
+        margin-block: 0.5rem 0;;
+    }
 }
 
 .button {
@@ -40,4 +44,16 @@ code {
     background-color: var(--color-code-bg);
     border: 1px solid var(--color-code-border);
     border-radius: 2px;
+}
+
+.fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0;
+    border: 0;
+
+    @media (min-width: 480px) {
+        flex-direction: row;
+    }
 }
