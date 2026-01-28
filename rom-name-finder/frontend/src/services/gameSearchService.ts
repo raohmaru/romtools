@@ -154,7 +154,7 @@ export class GameSearchService {
         } else {
             skipClones = 'AND cloneOf IS NULL';
         }
-        const sqlQuery = `${select} WHERE ${conditions} ${skipClones} ORDER BY cloneOf, name`;
+        const sqlQuery = `${select} WHERE ${conditions} ${skipClones} ORDER BY name`;
         // console.log(sqlQuery);
         const result = await this.sendMessage({
             id: Date.now(),
