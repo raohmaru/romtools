@@ -134,7 +134,11 @@ describe('useSearchStore', () => {
             });
 
             expect(useSearchStore.getState().searchTerms).toEqual(['term1', 'term2']);
-            expect(mockFindMany).toHaveBeenCalledWith(['term1', 'term2'], true, undefined);
+            expect(mockFindMany).toHaveBeenCalledWith(['term1', 'term2'], {
+                "exactMatch": undefined,
+                "includeClones": true,
+                "searchBy": undefined,
+            });
             expect(useSearchStore.getState().isLoading).toBe(false);
             expect(useSearchStore.getState().error).toBeNull();
             expect(useSearchStore.getState().executionTime).toBe(100);
@@ -180,7 +184,11 @@ describe('useSearchStore', () => {
             expect(useSearchStore.getState().isLoading).toBe(false);
             expect(useSearchStore.getState().searchTerms).toEqual(['single term']);
             expect(useSearchStore.getState().includeClones).toBe(false);
-            expect(mockFindOne).toHaveBeenCalledWith('single term', false, undefined);
+            expect(mockFindOne).toHaveBeenCalledWith('single term', {
+                "exactMatch": undefined,
+                "includeClones": false,
+                "searchBy": undefined,
+            });
             expect(mockFindMany).not.toHaveBeenCalled();
             expect(useSearchStore.getState().results).toEqual([mockGame]);
             expect(useSearchStore.getState().executionTime).toBe(50);
@@ -198,7 +206,11 @@ describe('useSearchStore', () => {
             expect(useSearchStore.getState().searchTerms).toEqual(['term1', 'term2']);
             expect(useSearchStore.getState().includeClones).toBe(true);
             expect(mockFindOne).not.toHaveBeenCalled();
-            expect(mockFindMany).toHaveBeenCalledWith(['term1', 'term2'], true, undefined);
+            expect(mockFindMany).toHaveBeenCalledWith(['term1', 'term2'], {
+                "exactMatch": undefined,
+                "includeClones": true,
+                "searchBy": undefined,
+            });
             expect(useSearchStore.getState().results).toEqual(mockGames);
             expect(useSearchStore.getState().executionTime).toBe(150);
         });

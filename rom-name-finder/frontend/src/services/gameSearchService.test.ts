@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { GameSearchService, getGameSearchService, resetGameSearchService, type QueryResult } from './gameSearchService';
 import type { WorkerMessage, WorkerResponse } from './gameSearchService';
+import type { FindArgs } from '@/stores/searchStore';
 
 // Define the type for the mock worker instance, implementing Worker
 class MockWorkerInstance implements Worker {
@@ -26,6 +27,13 @@ const MockWorker = vi.fn(MockWorkerInstance);
 
 // Mock fetch
 const mockFetch = vi.fn();
+
+const includeClonesFalse: FindArgs = {
+    includeClones: false,
+};
+const includeClonesTrue: FindArgs = {
+    includeClones: true,
+};
 
 // Global setup for mocks
 beforeEach(() => {
@@ -170,28 +178,28 @@ describe('GameSearchService', () => {
         });
 
         it('findOne should return an empty array if term is empty', async () => {
-            const result = await service.findOne('', false);
+            const result = await service.findOne('', includeClonesFalse);
             expect(result).toEqual([]);
         });
 
         it('should search for a single game by name without clones', async () => {
-            const result = await service.findOne('test game', false);
+            const result = await service.findOne('test game', includeClonesFalse);
             expect(result).toEqual([{ rom: 'rom1', name: 'Game One Primary' }, { rom: 'rom2', name: 'Game Two Clone' }]);
             expect(service['sendMessage']).toHaveBeenCalledWith({
                 id: expect.any(Number),
                 action: 'exec',
-                sql: 'SELECT rom, name, cloneOf FROM games g1 WHERE g1.term LIKE "%test%" AND g1.term LIKE "%game%" AND cloneOf IS NULL ORDER BY cloneOf, name'
+                sql: 'SELECT rom, name, cloneOf FROM games g1 WHERE g1.term LIKE "%test%" AND g1.term LIKE "%game%" AND cloneOf IS NULL ORDER BY name'
             });
         });
 
         it('should search for a single game by name with clones', async () => {
-            const result = await service.findOne('test game', true);
+            const result = await service.findOne('test game', includeClonesTrue);
             expect(result).toEqual([{ rom: 'rom1', name: 'Game One Primary', cloneOf: null }, { rom: 'rom2', name: 'Game Two Clone', cloneOf: 'Game One Primary' }]);
             const expectedSql =
                 'SELECT g1.rom AS rom, g1.name AS name, g2.name AS cloneOf ' +
                 'FROM games g1 ' +
                 'LEFT JOIN games g2 ON g1.cloneOf = g2.docid ' +
-                'WHERE g1.term LIKE "%test%" AND g1.term LIKE "%game%"  ORDER BY cloneOf, name'
+                'WHERE g1.term LIKE "%test%" AND g1.term LIKE "%game%"  ORDER BY name'
             ;
             expect(service['sendMessage']).toHaveBeenCalledWith({
                 id: expect.any(Number),
@@ -201,33 +209,33 @@ describe('GameSearchService', () => {
         });
 
         it('findMany should return an empty array if terms array is empty', async () => {
-            const result = await service.findMany([], false);
+            const result = await service.findMany([], includeClonesFalse);
             expect(result).toEqual([]);
         });
 
         it('findMany should return an empty array if terms array contains only empty strings', async () => {
-            const result = await service.findMany(['', ' '], false);
+            const result = await service.findMany(['', ' '], includeClonesFalse);
             expect(result).toEqual([]);
         });
 
         it('findMany should search for multiple games by name without clones', async () => {
-            const result = await service.findMany(['test1', 'test2'], false);
+            const result = await service.findMany(['test1', 'test2'], includeClonesFalse);
             expect(result).toEqual([{ rom: 'rom1', name: 'Game One Primary' }, { rom: 'rom2', name: 'Game Two Clone' }]);
             expect(service['sendMessage']).toHaveBeenCalledWith({
                 id: expect.any(Number),
                 action: 'exec',
-                sql: 'SELECT rom, name, cloneOf FROM games g1 WHERE g1.term MATCH "test1 OR test2" AND cloneOf IS NULL ORDER BY cloneOf, name'
+                sql: 'SELECT rom, name, cloneOf FROM games g1 WHERE g1.term MATCH "test1 OR test2" AND cloneOf IS NULL ORDER BY name'
             });
         });
 
         it('findMany should search for multiple games by name with clones', async () => {
-            const result = await service.findMany(['test1', 'test2'], true);
+            const result = await service.findMany(['test1', 'test2'], includeClonesTrue);
             expect(result).toEqual([{ rom: 'rom1', name: 'Game One Primary', cloneOf: null }, { rom: 'rom2', name: 'Game Two Clone', cloneOf: 'Game One Primary' }]);
             const expectedSql =
                 'SELECT g1.rom AS rom, g1.name AS name, g2.name AS cloneOf ' +
                 'FROM games g1 ' +
                 'LEFT JOIN games g2 ON g1.cloneOf = g2.docid ' +
-                'WHERE g1.term MATCH "test1 OR test2"  ORDER BY cloneOf, name'
+                'WHERE g1.term MATCH "test1 OR test2"  ORDER BY name'
             ;
             expect(service['sendMessage']).toHaveBeenCalledWith({
                 id: expect.any(Number),
@@ -238,18 +246,18 @@ describe('GameSearchService', () => {
 
         it('should throw an error if database is not loaded before find', async () => {
             service['dbLoaded'] = false;
-            await expect(service.findOne('test', false)).rejects.toThrow('Database not loaded. Call loadDatabase first.');
+            await expect(service.findOne('test', includeClonesFalse)).rejects.toThrow('Database not loaded. Call loadDatabase first.');
         });
 
         it('should handle no results from worker', async () => {
             service['sendMessage'] = vi.fn().mockResolvedValue([]);
-            const result = await service.findOne('no-match', false);
+            const result = await service.findOne('no-match', includeClonesFalse);
             expect(result).toEqual([]);
         });
 
         it('should handle no values in query result from worker', async () => {
             service['sendMessage'] = vi.fn().mockResolvedValue([{ columns: [], values: [] }]);
-            const result = await service.findOne('no-match', false);
+            const result = await service.findOne('no-match', includeClonesFalse);
             expect(result).toEqual([]);
         });
     });
@@ -361,8 +369,8 @@ describe('GameSearchService', () => {
         });
 
         it('should cache results for findOne', async () => {
-            const result1 = await service.findOne('test', false);
-            const result2 = await service.findOne('test', false);
+            const result1 = await service.findOne('test', includeClonesFalse);
+            const result2 = await service.findOne('test', includeClonesFalse);
 
             // Should only call sendMessage once (first request)
             expect(service['sendMessage']).toHaveBeenCalledTimes(1);
@@ -370,8 +378,8 @@ describe('GameSearchService', () => {
         });
 
         it('should cache results for findMany', async () => {
-            const result1 = await service.findMany(['test1', 'test2'], false);
-            const result2 = await service.findMany(['test1', 'test2'], false);
+            const result1 = await service.findMany(['test1', 'test2'], includeClonesFalse);
+            const result2 = await service.findMany(['test1', 'test2'], includeClonesFalse);
 
             // Should only call sendMessage once (first request)
             expect(service['sendMessage']).toHaveBeenCalledTimes(1);
@@ -379,29 +387,29 @@ describe('GameSearchService', () => {
         });
 
         it('should not use cache for different includeClones parameter', async () => {
-            await service.findOne('test', true);
-            await service.findOne('test', false);
+            await service.findOne('test', includeClonesTrue);
+            await service.findOne('test', includeClonesFalse);
 
             // Should call sendMessage twice (different cache keys)
             expect(service['sendMessage']).toHaveBeenCalledTimes(2);
         });
 
         it('should not use cache for different search terms', async () => {
-            await service.findOne('test1', false);
-            await service.findOne('test2', false);
+            await service.findOne('test1', includeClonesFalse);
+            await service.findOne('test2', includeClonesFalse);
 
             // Should call sendMessage twice (different cache keys)
             expect(service['sendMessage']).toHaveBeenCalledTimes(2);
         });
 
         it('should clear cache on terminate', async () => {
-            await service.findOne('test', false);
+            await service.findOne('test', includeClonesFalse);
             service.terminate();
             await service.initialize();
             service['dbLoaded'] = true;
             service['sendMessage'] = vi.fn().mockResolvedValue(mockGamesResult);
 
-            await service.findOne('test', false);
+            await service.findOne('test', includeClonesFalse);
 
             // Should call sendMessage again after termination (cache was cleared)
             expect(service['sendMessage']).toHaveBeenCalledTimes(1);
