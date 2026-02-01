@@ -62,7 +62,7 @@ const isDevelopment = import.meta.env.DEV;
 export type FindArgs = {
     includeClones: boolean;
     searchBy?: string | false;
-    exactMatch: boolean;
+    exactMatch?: boolean;
 }
 
 type SearchArgs = FindArgs & {

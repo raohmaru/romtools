@@ -152,8 +152,8 @@ describe('SearchForm', () => {
             const textarea = screen.getByLabelText('Arcade Game Names*');
             // Type into an input element
             const user = userEvent.setup();
-            await user.type(textarea, 'ab')
-            expect(textarea).toHaveValue('ab')
+            await user.type(textarea, 'a');
+            expect(textarea).toHaveValue('a');
 
             const form = screen.getByRole('form');
             fireEvent.submit(form);
@@ -194,8 +194,8 @@ describe('SearchForm', () => {
             await user.selectOptions(select, 'mame2003');
             expect(select).toHaveValue('mame2003');
 
-            const searchBy = screen.getByLabelText('Search by ROM');
-            await user.click(searchBy);
+            const includeClones = screen.getByLabelText('Include clones');
+            await user.click(includeClones);
 
             const form = screen.getByRole('form');
             fireEvent.submit(form);
@@ -204,9 +204,9 @@ describe('SearchForm', () => {
                 expect(mockOnSearch).toHaveBeenCalled();
                 expect(mockOnSearch).toBeCalledWith({
                     database: 'mame2003',
-                    includeClones: true,
+                    includeClones: false,
                     searchTerm: 'Pacman',
-                    searchBy: 'rom',
+                    searchBy: false,
                 });
             });
         });

@@ -39,7 +39,7 @@ export const searchFormSchema = z.object({
     includeClones: z.boolean(),
     searchBy: z
         .union([z.literal(false), z.string()]),
-    exactMatch: z.boolean()
+    exactMatch: z.boolean().optional()
 });
 
 export type SearchFormData = z.infer<typeof searchFormSchema>;
