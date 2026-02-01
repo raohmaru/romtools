@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 import type { Game, SearchState } from '@/types/schemas';
 import { getGameSearchService } from '@/services/gameSearchService';
-import { ERR_SEARCH_TERM_EMPTY, ERR_UNKNOWN } from '@/utils/constants';
+import { ERR_SEARCH_TERM_EMPTY, ERR_UNKNOWN, MAX_FILE_SIZE } from '@/utils/constants';
 
 // Memoization cache for search term sanitization
 const searchTermCache = new Map<string, string[]>();
@@ -59,11 +59,15 @@ const sanitizeSearchTerms = (term: string): string[] => {
 
 const isDevelopment = import.meta.env.DEV;
 
-type SearchArgs = {
-    searchTerm: string;
-    database: string;
+export type FindArgs = {
     includeClones: boolean;
     searchBy?: string | false;
+    exactMatch: boolean;
+}
+
+type SearchArgs = FindArgs & {
+    database: string;
+    searchTerm: string;
 }
 
 export const useSearchStore = create<SearchStore>()(
@@ -78,6 +82,7 @@ export const useSearchStore = create<SearchStore>()(
                 viewMode: 'simple',
                 includeClones: true,
                 searchBy: 'term',
+                exactMatch: true,
                 executionTime: 0,
 
                 setSearchTerms: (terms: string[]) => {
@@ -88,7 +93,7 @@ export const useSearchStore = create<SearchStore>()(
                     set({ selectedDB: db });
                 },
 
-                search: async ({searchTerm, database, includeClones, searchBy}: SearchArgs) => {
+                search: async ({ database, searchTerm, includeClones, searchBy, exactMatch }: SearchArgs) => {
                     if (!searchTerm.trim()) {
                         set({ error: ERR_SEARCH_TERM_EMPTY, results: null });
                         return;
@@ -127,10 +132,33 @@ export const useSearchStore = create<SearchStore>()(
                         // Calculate the time the next statement takes
                         const startTime = performance.now();
                         let data: Game[];
+                        const params: FindArgs = {
+                            includeClones,
+                            searchBy,
+                            exactMatch
+                        };
                         if (terms.length === 1) {
-                            data = await service.findOne(terms[0], includeClones, searchBy || undefined);
+                            data = await service.findOne(terms[0], params);
                         } else {
-                            data = await service.findMany(terms, includeClones, searchBy || undefined);
+                            // Process query in batches if there are too many terms to query
+                            const termBatches: string[][] = [[]];
+                            let i = 0;
+                            let batchSize = 0;
+                            terms.map((t) => {
+                                if (batchSize < MAX_FILE_SIZE) {
+                                    batchSize += t.length;
+                                    termBatches[i].push(t);
+                                } else {
+                                    i++;
+                                    termBatches[i] = [t];
+                                    batchSize = 0;
+                                }
+                            });
+                            data = [];
+                            for (i = 0; i < termBatches.length; i++) {
+                                const batchData = await service.findMany(termBatches[i], params);
+                                data = data.concat(batchData);
+                            }
                         }
                         const endTime = performance.now();
                         set({

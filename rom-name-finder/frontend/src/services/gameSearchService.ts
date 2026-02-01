@@ -1,4 +1,6 @@
+import type { FindArgs } from '@/stores/searchStore';
 import type { Game } from '@/types/schemas';
+import { CACHE_TTL, MAX_CACHE_SIZE } from '@/utils/constants';
 import {
     escapeSQLLike, escapeSQLMatch, isAllowedDatabase, isAllowedDBColumn, sanitizeErrorMessage, sanitizeInput
 } from '@/utils/security';
@@ -31,10 +33,6 @@ interface CacheEntry {
     data: Game[];
     timestamp: number;
 }
-
-// Cache configuration
-const CACHE_TTL = 5 * 60 * 1000; // 5 minutes in milliseconds
-const MAX_CACHE_SIZE = 100;
 
 /**
  * GameSearchService - Handles database operations for game searches
@@ -127,7 +125,7 @@ export class GameSearchService {
     /**
      * Perform search against a SQLite database
      */
-    private async doFind(terms: string|string[], conditions: string, includeClones: boolean, searchBy: string): Promise<Game[]> {
+    private async doFind(terms: string|string[], conditions: string, params: FindArgs): Promise<Game[]> {
         if (!this.dbLoaded || !this.worker) {
             throw new Error('Database not loaded. Call loadDatabase first.');
         }
@@ -136,8 +134,10 @@ export class GameSearchService {
             return [];
         }
 
+        const { includeClones } = params;
+
         // Check cache first
-        const cachedResults = this.getCachedResults(terms, includeClones, searchBy);
+        const cachedResults = this.getCachedResults(terms, params);
         if (cachedResults) {
             return cachedResults;
         }
@@ -181,7 +181,7 @@ export class GameSearchService {
         });
 
         // Cache the results
-        this.cacheResults(terms, includeClones, searchBy, results);
+        this.cacheResults(terms, results, params);
 
         return results;
     }
@@ -189,44 +189,52 @@ export class GameSearchService {
     /**
      * Find games overload
      */
-    async find(terms: string[], includeClones: boolean, searchBy?: string): Promise<Game[]> {
+    async find(terms: string[], params: FindArgs): Promise<Game[]> {
+        const { searchBy, exactMatch } = params;
         const sanitized = sanitizeInput(terms) as string[];
         if (!sanitized.length) {
             return [];
         }
-        const column = isAllowedDBColumn(searchBy) ? searchBy as string : 'term';
+        const column = searchBy && isAllowedDBColumn(searchBy) ? searchBy : 'term';
         let conditions;
 
         if (terms.length === 1) {
-            conditions = `${sanitized[0].split(' ').map((t) => `g1.${column} LIKE "%${escapeSQLLike(t)}%"`).join(' AND ')}`;
+            const wc = exactMatch ? '' : '%';
+            conditions = `${sanitized[0].split(' ').map((t) => `g1.${column} LIKE "${wc}${escapeSQLLike(t)}${wc}"`).join(' AND ')}`;
         } else {
+            const wc = exactMatch ? '^' : '';
             // Full-text search
-            conditions = `g1.${column} MATCH "${sanitized.map((t) => escapeSQLMatch(t)).join(' OR ')}"`;
+            conditions = `g1.${column} MATCH "${sanitized.map((t) => wc + escapeSQLMatch(t)).join(' OR ')}"`;
         }
-        return await this.doFind(terms, conditions, includeClones, column);
+        const args: FindArgs = {
+            ...params,
+            searchBy: column
+        };
+        return await this.doFind(terms, conditions, args);
     }
 
     /**
      * Search for a single game by name
      */
-    async findOne(term: string, includeClones: boolean, searchBy?: string): Promise<Game[]> {
-        return await this.find([term], includeClones, searchBy);
+    async findOne(term: string, params: FindArgs): Promise<Game[]> {
+        return await this.find([term], params);
     }
 
     /**
      * Search for games by name
      */
-    async findMany(terms: string[], includeClones: boolean, searchBy?: string): Promise<Game[]> {
-        return await this.find(terms, includeClones, searchBy);
+    async findMany(terms: string[], params: FindArgs): Promise<Game[]> {
+        return await this.find(terms, params);
     }
 
 
     /**
      * Generate a cache key based on search parameters
      */
-    private generateCacheKey(terms: string | string[], includeClones: boolean, searchBy: string): string {
+    private generateCacheKey(terms: string | string[], params: FindArgs): string {
         const termString = Array.isArray(terms) ? terms.join('|') : terms;
-        return `${termString}|${includeClones}|${searchBy}`;
+        const paramString = Object.values(params).join('|');
+        return `${termString}|${paramString}`;
     }
 
     /**
@@ -239,8 +247,8 @@ export class GameSearchService {
     /**
      * Get cached results if available and valid
      */
-    private getCachedResults(terms: string | string[], includeClones: boolean, searchBy: string): Game[] | null {
-        const cacheKey = this.generateCacheKey(terms, includeClones, searchBy);
+    private getCachedResults(terms: string | string[], params: FindArgs): Game[] | null {
+        const cacheKey = this.generateCacheKey(terms, params);
         const entry = this.cache.get(cacheKey);
 
         if (entry && this.isCacheEntryValid(entry)) {
@@ -258,7 +266,7 @@ export class GameSearchService {
     /**
      * Cache search results
      */
-    private cacheResults(terms: string | string[], includeClones: boolean, searchBy: string, data: Game[]): void {
+    private cacheResults(terms: string | string[], data: Game[], params: FindArgs): void {
         // If cache is at maximum size, remove the oldest entry
         if (this.cache.size >= MAX_CACHE_SIZE) {
             const firstKey = this.cache.keys().next().value;
@@ -267,7 +275,7 @@ export class GameSearchService {
             }
         }
 
-        const cacheKey = this.generateCacheKey(terms, includeClones, searchBy);
+        const cacheKey = this.generateCacheKey(terms, params);
         this.cache.set(cacheKey, {
             data,
             timestamp: Date.now()

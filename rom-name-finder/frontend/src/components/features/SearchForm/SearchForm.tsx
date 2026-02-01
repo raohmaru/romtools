@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from '@/components/ui/Button/Button';
@@ -58,6 +58,7 @@ export const SearchForm = memo(({
         },
     });
     const { searchBy } = useSearchStore();
+    const [ searcByROM, setSearcByROM ] = useState(searchBy === 'rom');
 
     const onSubmit = (formData: SearchFormData) => {
         onSearch(formData);
@@ -127,7 +128,18 @@ export const SearchForm = memo(({
                     label="Search by ROM"
                     labelTitle="Search by ROM name instead of by game name"
                     defaultChecked={searchBy === 'rom'}
+                    onChange={(e) => setSearcByROM(e.target.checked)}
                 />
+
+                {searcByROM && (
+                    <Checkbox
+                        {...register('exactMatch')}
+                        name="exactMatch"
+                        label="Exact match"
+                        labelTitle="Matches exact ROM names"
+                        disabled={!searcByROM}
+                    />
+                )}
             </fieldset>
 
             <Button
