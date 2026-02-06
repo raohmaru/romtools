@@ -151,7 +151,7 @@ export function createImageManager() {
                 reader.readAsDataURL(file);
             });
 
-            // Load as ImageBitmap for WebGPU
+            // Load as ImageBitmap for WebGL
             let imageBitmap;
             try {
                 imageBitmap = await createImageBitmap(file);

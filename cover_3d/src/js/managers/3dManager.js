@@ -2,15 +2,13 @@
  * 3D Manager
  * 
  * Manages Three.js scene, camera, renderer, and rendering loop.
- * Uses WebGPU renderer for hardware-accelerated 3D rendering.
+ * Uses WebGL renderer for hardware-accelerated 3D rendering.
  */
 
-// Import Three.js with WebGPU support
+// Import Three.js with WebGL support
 import * as THREE from 'three';
-import WebGPU from 'three/addons/capabilities/WebGPU.js';
+import WebGL from 'three/addons/capabilities/WebGL.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-// import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
-// import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
 
 import { createCube, updateCubeFaceTexture } from '../objects/cube.js';
 import { defaultCameraConfig } from '../objects/camera.js';
@@ -25,7 +23,6 @@ export class ThreeManager {
     constructor(options = {}) {
         // Three.js core objects
         this.renderer = null;
-        this.composer = null;
         this.scene = null;
         this.camera = null;
         this.controls = null;
@@ -60,36 +57,34 @@ export class ThreeManager {
     }
 
     /**
-     * Initialize Three.js with WebGPU renderer
+     * Initialize Three.js with WebGL renderer
      */
     async init() {
         if (!this.canvas) {
             throw new Error('Canvas element not found');
         }
 
-        // Check WebGPU support
-        if (!WebGPU.isAvailable()) {
-            throw new Error('WebGPU is not supported by your browser');
+        // Check WebGL support
+        if (!WebGL.isWebGL2Available()) {
+            throw new Error('WebGL is not supported by your browser');
         }
+
+        // Disable color management
+        THREE.ColorManagement.enabled = false;
 
         // Create scene
         this.scene = new THREE.Scene();
         this.scene.background = new THREE.Color(0x1a1a2e);
         
-        // Create WebGPU renderer
-        this.renderer = new THREE.WebGPURenderer({ canvas: this.canvas, antialias: true });
+        // Create WebGL renderer
+        this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas, antialias: true });
         this.renderer.setPixelRatio(window.devicePixelRatio);
-        // this.renderer.outputColorSpace = THREE.SRGBColorSpace;
+        // Fix texture color
+        this.renderer.outputColorSpace = THREE.LinearSRGBColorSpace;
+        this.renderer.toneMapping = THREE.LinearToneMapping;
+        this.renderer.toneMappingExposure = 2.8;
         
-        // Initialize WebGPU backend before any rendering
-        await this.renderer.init();
-        
-        // Create EffectComposer with RenderPass
-        // this.composer = new EffectComposer(this.renderer);
-        // const renderPass = new RenderPass(this.scene, this.camera);
-        // this.composer.addPass(renderPass);
-        
-        console.log('Three.js WebGPU renderer initialized');
+        console.log('Three.js WebGL renderer initialized');
     }
 
     /**
@@ -162,7 +157,7 @@ export class ThreeManager {
             
             if (imageBitmap) {
                 const texture = new THREE.CanvasTexture(imageBitmap);
-                // texture.colorSpace = THREE.LinearSRGBColorSpace;
+                texture.colorSpace = THREE.LinearSRGBColorSpace;
                 
                 updateCubeFaceTexture(this.cube, faceIndex, texture);
                 this.textures[faceIndex] = texture;
@@ -216,7 +211,6 @@ export class ThreeManager {
         
         // Render scene
         this.renderer.render(this.scene, this.camera);
-        // this.composer.render();
         
         // Notify external render callback
         if (this.onRender) {

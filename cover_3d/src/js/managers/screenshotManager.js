@@ -1,7 +1,7 @@
 /**
  * Screenshot Manager
  * 
- * Handles screenshot capture from Three.js WebGPURenderer canvas.
+ * Handles screenshot capture from Three.js WebGLRenderer canvas.
  * Uses Three.js built-in screenshot capabilities.
  */
 
@@ -54,9 +54,9 @@ export function createScreenshotManager() {
     
     /**
      * Captures the current canvas frame and converts it to a PNG blob.
-     * Uses Three.js WebGPURenderer capabilities.
+     * Uses Three.js WebGLRenderer capabilities.
      * 
-     * @param {WebGPURenderer} threeManager - Three.js manager
+     * @param {WebGLRenderer} threeManager - Three.js manager
      * @param {number} scaleFactor - Scale factor for the screenshot  
      * @returns {Promise<Blob>} PNG blob of the current frame
      */
@@ -80,7 +80,7 @@ export function createScreenshotManager() {
                     scene.background = null;
                     // Force render before taking the screenshot
                     threeManager.renderFrame();
-                    // Get the data URL from canvas (simplest method for WebGPU)
+                    // Get the data URL from canvas (simplest method for WebGL)
                     const dataUrl = canvas.toDataURL('image/png');
                     scene.background = background;
                     renderer.setSize(width, height);
@@ -110,7 +110,7 @@ export function createScreenshotManager() {
      * Captures a screenshot and triggers download.
      * Combines capture, conversion, and download in one call.
      * 
-     * @param {WebGPURenderer} threeManager - Three.js manager
+     * @param {WebGLRenderer} threeManager - Three.js manager
      * @param {number} scaleFactor - Scale factor for the screenshot  
      * @returns {Promise<boolean>} True if screenshot was successful
      */

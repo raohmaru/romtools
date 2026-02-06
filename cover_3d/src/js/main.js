@@ -1,7 +1,7 @@
 /**
  * Cover 3D - Main Application Entry Point
  * 
- * Uses Three.js with WebGPU renderer for 3D box cover visualization.
+ * Uses Three.js for 3D box cover visualization.
  * Implements on-demand rendering for improved performance.
  */
 
@@ -54,7 +54,7 @@ export class Cover3DApplication {
             this.message.info('Initializing Cover 3D...');
             
             // Get canvas and container
-            const canvas = document.getElementById('webgpu-canvas');
+            const canvas = document.getElementById('webgl-canvas');
             const container = document.getElementById('canvas-container');
             
             if (!canvas) {
@@ -82,15 +82,16 @@ export class Cover3DApplication {
             this.threeManager.requestRender();
             
             this.isInitialized = true;
-            this.message.success('Cover 3D ready! Press ? for keyboard shortcuts.');
+            this.message.success('Cover 3D ready! Press [?] for keyboard shortcuts.');
             this.loading.hide();
             
-            console.log('Cover 3D initialized successfully with Three.js WebGPU');
+            console.log('Cover 3D initialized successfully with Three.js WebGL');
             
         } catch (error) {
             console.error('Failed to initialize Cover 3D:', error);
             this.message?.error(`Initialization failed: ${error.message}`);
             this.loading?.hide();
+            this.showWebGLError();
             throw error;
         }
     }
@@ -113,7 +114,11 @@ export class Cover3DApplication {
         });
         
         // Initialize Three.js
-        await this.threeManager.init();
+        try {
+            await this.threeManager.init();
+        } catch(err) {
+            throw new Error('WebGL is not supported by your browser');
+        }
         this.threeManager.initCamera();
         this.threeManager.initCube();
         
@@ -291,18 +296,16 @@ export class Cover3DApplication {
     }
 
     /**
-     * Show detailed WebGPU error message.
+     * Show detailed WebGL error message.
      */
-    showWebGPUError() {
-        const errorDiv = document.getElementById('webgpu-error');
+    showWebGLError() {
+        const errorDiv = document.getElementById('webgl-error');
+        const canvas = document.getElementById('webgl-canvas');
         if (errorDiv) {
-            errorDiv.innerHTML = `
-                <h2>WebGPU Not Supported</h2>
-                <p>Your browser does not support WebGPU. Please use Chrome 113+ or Edge 113+ for the best experience.</p>
-                <p>WebGPU is required for hardware-accelerated 3D rendering.</p>
-                <p style="margin-top: 15px;"><a href="https://caniuse.com/webgpu" target="_blank" style="color: #e94560;">Check WebGPU browser support</a></p>
-            `;
-            errorDiv.style.display = 'block';
+            errorDiv.classList.remove('hidden');
+        }
+        if (canvas) {
+            canvas.classList.add('hidden');
         }
     }
 }

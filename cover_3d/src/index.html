@@ -11,7 +11,7 @@
     <script type="importmap">
     {
         "imports": {
-            "three": "./libs/three.webgpu.min.js",
+            "three": "./libs/three.module.min.js",
             "three/addons/": "./libs/jsm/"
         }
     }
@@ -24,14 +24,14 @@
     </header>
 
     <main>
-        <div id="webgpu-error" class="error-message" style="display: none;">
-            <h2>WebGPU Not Supported</h2>
-            <p>Your browser does not support WebGPU. Please use Chrome 113+ or Edge 113+ for the best experience.</p>
-            <p>Firefox and Safari require enabling WebGPU in settings.</p>
-        </div>
-
         <div id="canvas-container">
-            <canvas id="webgpu-canvas"></canvas>
+            <div id="webgl-error" class="error-message hidden">
+                <h2>WebGL Not Supported</h2>
+                <p>Your browser does not support WebGL.</p>
+                <p>WebGL is required for hardware-accelerated 3D rendering.</p>
+                <p style="margin-top: 15px;"><a href="https://caniuse.com/webgl" target="_blank" style="color: #e94560;">Check WebGL browser support</a></p>
+            </div>
+            <canvas id="webgl-canvas"></canvas>
         </div>
 
         <aside id="controls-panel">
@@ -94,7 +94,7 @@
     </main>
 
     <footer>
-        <p>Game Box 3D - A Three.js WebGPU Game Box Cover Viewer</p>
+        <p>Game Box 3D - A Three.js WebGL Game Box Cover Viewer</p>
         <p class="keyboard-hint">Press <kbd>?</kbd> for keyboard shortcuts</p>
     </footer>
 

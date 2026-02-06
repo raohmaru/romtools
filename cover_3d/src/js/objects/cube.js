@@ -21,6 +21,14 @@ export function createCube(scene) {
     // Create geometry with 6 materials (one for each face)
     const geometry = new THREE.BoxGeometry(CUBE_WIDTH, CUBE_HEIGHT, CUBE_DEPTH);
     
+    // Fix UV mapping to prevent texture flipping
+    const uvAttribute = geometry.attributes.uv;
+    for (let i = 0; i < uvAttribute.count; i++) {
+        // Flip Y coordinate for all UVs
+        uvAttribute.setY(i, 1 - uvAttribute.getY(i));
+    }
+    geometry.attributes.uv.needsUpdate = true;
+    
     // Create materials for each face
     // Order: right, left, top, bottom, front, back
     const materials = [
@@ -31,6 +39,9 @@ export function createCube(scene) {
         new THREE.MeshBasicMaterial({ color: 0x555555 }), // front
         new THREE.MeshBasicMaterial({ color: 0x555555 }), // back
     ];
+
+    // Don't apply renderer tone
+    materials.forEach((material) => material.toneMapped = false);
     
     // Create mesh
     const cube = new THREE.Mesh(geometry, materials);
@@ -63,4 +74,6 @@ export function updateCubeFaceTexture(cube, faceIndex, texture) {
     const material = cube.material[faceIndex];
     material.map = texture;
     material.needsUpdate = true;
+    // Apply renderer tone
+    material.toneMapped = true;
 }
