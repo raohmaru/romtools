@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="3D Game Box Cover Viewer - View and customize game box art in 3D">
+    <title>Game Box 3D | Game Box 3D Creator and Viewer</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Import map for Three.js modules -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "./libs/three.webgpu.min.js",
+            "three/addons/": "./libs/jsm/"
+        }
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Game Box 3D</h1>
+        <p class="subtitle">Game Box Cover Creator & Viewer</p>
+    </header>
+
+    <main>
+        <div id="webgpu-error" class="error-message" style="display: none;">
+            <h2>WebGPU Not Supported</h2>
+            <p>Your browser does not support WebGPU. Please use Chrome 113+ or Edge 113+ for the best experience.</p>
+            <p>Firefox and Safari require enabling WebGPU in settings.</p>
+        </div>
+
+        <div id="canvas-container">
+            <canvas id="webgpu-canvas"></canvas>
+        </div>
+
+        <aside id="controls-panel">
+            <section id="image-uploads">
+                <h2>Game Box Images</h2>
+                <p class="instruction">Upload images for each side of the game box</p>
+                
+                <div class="upload-grid">
+                    <div class="upload-item" data-face="front">
+                        <label>Front</label>
+                        <input type="file" accept="image/*" data-face="front">
+                        <div class="preview"></div>
+                    </div>
+                    <div class="upload-item" data-face="back">
+                        <label>Back</label>
+                        <input type="file" accept="image/*" data-face="back">
+                        <div class="preview"></div>
+                    </div>
+                    <div class="upload-item" data-face="right">
+                        <label>Right</label>
+                        <input type="file" accept="image/*" data-face="right">
+                        <div class="preview"></div>
+                    </div>
+                    <div class="upload-item" data-face="left">
+                        <label>Spine</label>
+                        <input type="file" accept="image/*" data-face="left">
+                        <div class="preview"></div>
+                    </div>
+                    <div class="upload-item" data-face="top">
+                        <label>Top</label>
+                        <input type="file" accept="image/*" data-face="top">
+                        <div class="preview"></div>
+                    </div>
+                    <div class="upload-item" data-face="bottom">
+                        <label>Bottom</label>
+                        <input type="file" accept="image/*" data-face="bottom">
+                        <div class="preview"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="camera-controls">
+                <h2>Camera Controls</h2>
+                <ul class="control-list">
+                    <li><strong>Drag:</strong> Rotate camera around cube</li>
+                    <li><strong>Scroll:</strong> Zoom in/out</li>
+                </ul>
+            </section>
+
+            <section id="actions">
+                <div class="button-group">
+                    <button id="reset-camera" class="primary" type="button" title="Reset camera (R)">Reset Camera</button>
+                    <button id="save-config" class="primary" type="button" title="Save configuration (S)">Save Configuration</button>
+                    <button id="load-config" class="primary" type="button" title="Load configuration (L)">Load Configuration</button>
+                    <button id="screenshot" class="secondary" type="button" title="Take screenshot (P)">Take Screenshot</button>
+                </div>
+                <input type="file" id="config-file-input" accept=".json" style="display: none;">
+            </section>
+        </aside>
+    </main>
+
+    <footer>
+        <p>Game Box 3D - A Three.js WebGPU Game Box Cover Viewer</p>
+        <p class="keyboard-hint">Press <kbd>?</kbd> for keyboard shortcuts</p>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
