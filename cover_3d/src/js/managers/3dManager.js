@@ -77,12 +77,12 @@ export class ThreeManager {
         this.scene.background = new THREE.Color(0x1a1a2e);
         
         // Create WebGL renderer
-        this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas, antialias: true });
+        this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas, antialias: true, alpha: true });
         this.renderer.setPixelRatio(window.devicePixelRatio);
         // Fix texture color
         this.renderer.outputColorSpace = THREE.LinearSRGBColorSpace;
         this.renderer.toneMapping = THREE.LinearToneMapping;
-        this.renderer.toneMappingExposure = 2.8;
+        this.renderer.toneMappingExposure = 3.0;
         
         console.log('Three.js WebGL renderer initialized');
     }

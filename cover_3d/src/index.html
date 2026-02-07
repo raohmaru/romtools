@@ -50,14 +50,14 @@
                         <input type="file" accept="image/*" data-face="back">
                         <div class="preview"></div>
                     </div>
-                    <div class="upload-item" data-face="right">
-                        <label>Right</label>
-                        <input type="file" accept="image/*" data-face="right">
-                        <div class="preview"></div>
-                    </div>
                     <div class="upload-item" data-face="left">
                         <label>Spine</label>
                         <input type="file" accept="image/*" data-face="left">
+                        <div class="preview"></div>
+                    </div>
+                    <div class="upload-item" data-face="right">
+                        <label>Right</label>
+                        <input type="file" accept="image/*" data-face="right">
                         <div class="preview"></div>
                     </div>
                     <div class="upload-item" data-face="top">
@@ -73,16 +73,19 @@
                 </div>
             </section>
 
-            <section id="camera-controls">
-                <h2>Camera Controls</h2>
-                <ul class="control-list">
-                    <li><strong>Drag:</strong> Rotate camera around cube</li>
-                    <li><strong>Scroll:</strong> Zoom in/out</li>
-                </ul>
+            <section>
+                <div class="actions-group">
+                    <select id="box-preset">
+                        <option value="">Select a game box preset...</option>
+                    </select>
+                    <select id="view-preset">
+                        <option value="">Select a view preset...</option>
+                    </select>
+                </div>
             </section>
 
-            <section id="actions">
-                <div class="button-group">
+            <section>
+                <div class="actions-group">
                     <button id="reset-camera" class="primary" type="button" title="Reset camera (R)">Reset Camera</button>
                     <button id="save-config" class="primary" type="button" title="Save configuration (S)">Save Configuration</button>
                     <button id="load-config" class="primary" type="button" title="Load configuration (L)">Load Configuration</button>
@@ -95,7 +98,7 @@
 
     <footer>
         <p>Game Box 3D - A Three.js WebGL Game Box Cover Viewer</p>
-        <p class="keyboard-hint">Press <kbd>?</kbd> for keyboard shortcuts</p>
+        <p class="keyboard-hint">Press <kbd>?</kbd> for keyboard shortcuts and camera controls</p>
     </footer>
 
     <script type="module" src="js/main.js"></script>

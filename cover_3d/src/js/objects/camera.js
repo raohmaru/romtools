@@ -12,9 +12,9 @@
  * Default camera configuration.
  */
 export const defaultCameraConfig = {
-    radius: 8,
-    theta: Math.PI / 4,
-    phi: Math.PI / 3,
+    radius: 7.348469228349535,
+    theta: 0.7853981633974484,
+    phi: 1.2951535275786312,
     target: [0, 0, 0],
     minRadius: 3,
     maxRadius: 20,

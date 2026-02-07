@@ -5,14 +5,8 @@
  * Supports JSON serialization/deserialization with version checking.
  */
 
-// Configuration version for future compatibility
-const CONFIG_VERSION = '1.0';
-
-// Valid face names for validation
-const VALID_FACES = ['front', 'back', 'right', 'left', 'top', 'bottom'];
-
-// Maximum file size warning threshold (5MB)
-const SIZE_WARNING_THRESHOLD = 5 * 1024 * 1024;
+import { CONFIG_VERSION, CONFIGS } from '../configs/views.js';
+import { BOXES, SCALE_FACTOR } from '../configs/boxes.js';
 
 /**
  * Gets the current timestamp in a format suitable for filenames.
@@ -39,19 +33,6 @@ function sanitizeFilename(str) {
 }
 
 /**
- * Calculates the approximate size of a JSON string in bytes.
- * @param {Object} obj - Object to measure
- * @returns {number} Approximate size in bytes
- */
-function getJsonSize(obj) {
-    try {
-        return new Blob([JSON.stringify(obj)]).size;
-    } catch (e) {
-        return 0;
-    }
-}
-
-/**
  * Creates a new configuration manager instance.
  * @returns {Object} Configuration manager with methods
  */
@@ -75,10 +56,9 @@ function createConfigManager() {
         /**
          * Saves the current camera and image state to a configuration object.
          * @param {Object} camera - Camera object from createCamera()
-         * @param {Object} imageManager - Image manager instance
          * @returns {Object} Configuration object ready for serialization
          */
-        saveConfig(camera, imageManager) {
+        saveConfig(camera) {
             // Get camera state
             const cameraState = {
                 radius: camera.radius,
@@ -86,14 +66,10 @@ function createConfigManager() {
                 phi: camera.phi
             };
 
-            // Get image data URLs
-            const imageDataUrls = imageManager.getImageDataUrls();
-
             // Create configuration object
             const config = {
                 version: CONFIG_VERSION,
                 camera: cameraState,
-                images: imageDataUrls,
                 metadata: {
                     createdAt: new Date().toISOString(),
                     application: 'Cover 3D'
@@ -115,10 +91,6 @@ function createConfigManager() {
             // Check file size
             const size = new Blob([jsonString]).size;
             const sizeMB = (size / (1024 * 1024)).toFixed(2);
-            
-            if (size > SIZE_WARNING_THRESHOLD) {
-                console.warn(`Configuration file is large (${sizeMB}MB). This may cause issues with some browsers.`);
-            }
 
             // Create filename
             const timestamp = getTimestamp();
@@ -246,12 +218,11 @@ function createConfigManager() {
         /**
          * Complete save operation: saves and downloads configuration.
          * @param {Object} camera - Camera object
-         * @param {Object} imageManager - Image manager instance
          * @param {string} customName - Optional custom filename
          * @returns {Promise<Object>} Result with filename and size info
          */
-        async save(camera, imageManager, customName = null) {
-            const config = this.saveConfig(camera, imageManager);
+        async save(camera, customName = null) {
+            const config = this.saveConfig(camera);
             const downloadResult = this.downloadConfig(config, customName);
             return downloadResult;
         },
@@ -261,10 +232,9 @@ function createConfigManager() {
          * @param {File} file - Configuration file to load
          * @param {Object} camera - Camera state object to update
          * @param {THREE.Camera} threeCamera - Three.js camera to update
-         * @param {Object} imageManager - Image manager to update
          * @returns {Promise<Object>} Result with validation and application status
          */
-        async load(file, camera, threeCamera, imageManager) {
+        async load(file, camera, threeCamera) {
             // Load file
             let config;
             try {
@@ -291,7 +261,7 @@ function createConfigManager() {
             return {
                 success: true,
                 config,
-                message: `Configuration loaded successfully.`
+                message: `Configuration loaded!`
             };
         }
     };
@@ -306,6 +276,7 @@ export function createConfigManagerUI(options = {}) {
     const {
         onSave = () => {},
         onLoad = () => {},
+        onBoxChange = () => {},
         onError = console.error,
         onProgress = () => {}
     } = options;
@@ -318,12 +289,11 @@ export function createConfigManagerUI(options = {}) {
         /**
          * Saves the current configuration and triggers download.
          * @param {Object} camera - Camera object
-         * @param {Object} imageManager - Image manager instance
          */
-        async saveAndDownload(camera, imageManager) {
+        async saveAndDownload(camera) {
             try {
                 onProgress('Saving configuration...');
-                const result = await manager.save(camera, imageManager);
+                const result = await manager.save(camera);
                 onSave(result);
                 onProgress('');
                 return result;
@@ -339,12 +309,11 @@ export function createConfigManagerUI(options = {}) {
          * @param {File} file - Configuration file
          * @param {Object} camera - Camera state object
          * @param {THREE.Camera} threeCamera - Three.js camera
-         * @param {Object} imageManager - Image manager instance
          */
-        async loadFromFile(file, camera, threeCamera, imageManager) {
+        async loadFromFile(file, camera, threeCamera) {
             try {
                 onProgress('Loading configuration...');
-                const result = await manager.load(file, camera, threeCamera, imageManager);
+                const result = await manager.load(file, camera, threeCamera);
                 onLoad(result);
                 onProgress('');
                 return result;
@@ -357,13 +326,13 @@ export function createConfigManagerUI(options = {}) {
 
         /**
          * Sets up UI event listeners for save/load buttons.
-         * @param {Object} params - Parameters with camera, threeCamera, imageManager, and UI elements
+         * @param {Object} params - Parameters with camera, threeCamera and UI elements
          */
-        setupUI({ camera, threeCamera, imageManager, saveButton, loadButton, fileInput }) {
+        setupUI({ camera, threeCamera, saveButton, loadButton, fileInput, viewPreset, boxPreset }) {
             // Save button
             if (saveButton) {
                 saveButton.addEventListener('click', () => {
-                    this.saveAndDownload(camera, imageManager);
+                    this.saveAndDownload(camera);
                 });
             }
 
@@ -379,10 +348,73 @@ export function createConfigManagerUI(options = {}) {
                 fileInput.addEventListener('change', (e) => {
                     const file = e.target.files?.[0];
                     if (file) {
-                        this.loadFromFile(file, camera, threeCamera, imageManager);
+                        this.loadFromFile(file, camera, threeCamera);
                         // Reset input so same file can be selected again
                         e.target.value = '';
                     }
+                });
+            }
+
+            // Config preset
+            if (viewPreset) {
+                // Populate select with predefined configurations
+                for (const key of Object.keys(CONFIGS)) {
+                    const option = document.createElement('option');
+                    option.value = key;
+                    option.textContent = CONFIGS[key].name;
+                    viewPreset.appendChild(option);
+                }
+                
+                // Add change event listener
+                viewPreset.addEventListener('change', async (event) => {
+                    const selectedKey = event.target.value;
+                    if (!selectedKey) return;
+
+                    const { config } = CONFIGS[selectedKey];
+                    const validation = this.validateConfig(config);
+                    let result;
+                    if (!validation.isValid) {
+                        result = {
+                            success: false,
+                            error: validation.error
+                        };
+                    } else {
+                        await this.applyConfig(config, camera, threeCamera);
+                        result = {
+                            success: true,
+                            config,
+                            message: `View preset applied: ${CONFIGS[selectedKey].name}`
+                        };
+                    }
+                    onLoad(result);
+                });
+            }
+
+            // Config preset
+            if (boxPreset) {
+                // Populate select with predefined configurations
+                for (const key of Object.keys(BOXES)) {
+                    const option = document.createElement('option');
+                    option.value = key;
+                    option.textContent = BOXES[key].name;
+                    boxPreset.appendChild(option);
+                }
+                
+                // Add change event listener
+                boxPreset.addEventListener('change', async (event) => {
+                    const selectedKey = event.target.value;
+                    if (!selectedKey) return;
+                    const box = BOXES[selectedKey];
+                    const { width, height, depth } = box.config;
+                    onBoxChange({
+                        ...box,
+                        config: {
+                            // Box dimensions come in centimeters
+                            width: width * SCALE_FACTOR,
+                            height: height * SCALE_FACTOR,
+                            depth: depth * SCALE_FACTOR
+                        }
+                    });
                 });
             }
         }

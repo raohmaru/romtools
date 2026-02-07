@@ -14,6 +14,7 @@ import { Loading } from './components/loading.js';
 import { Message } from './components/message.js';
 import { KeyboardShortcuts, KEYBOARD_SHORTCUTS } from './components/keyboardShortcuts.js';
 import { debounce } from './utils/debounce.js';
+import { setCubeDimensions } from './objects/cube.js';
 
 /**
  * Main application class that coordinates all modules.
@@ -136,12 +137,17 @@ export class Cover3DApplication {
             },
             onLoad: (result) => {
                 if (result.success) {
-                    this.message?.success('Configuration loaded!');
+                    this.message?.success(result.message);
                     this.threeManager.needsTextureUpdate = true;
                     this.threeManager.requestRender();
                 } else {
                     this.message?.error('Failed to load configuration.');
                 }
+            },
+            onBoxChange: (box) => {
+                this.message?.success(`Game box preset applied: ${box.name}`);
+                setCubeDimensions(this.threeManager.cube, box.config);
+                this.threeManager.requestRender();
             },
             onError: (error) => {
                 this.message?.error(`Error: ${error.message}`);
@@ -202,10 +208,11 @@ export class Cover3DApplication {
         this.configManager.setupUI({
             camera: this.cameraObj,
             threeCamera: this.threeManager.camera,
-            imageManager: this.imageManager,
             saveButton: document.getElementById('save-config'),
             loadButton: document.getElementById('load-config'),
-            fileInput: document.getElementById('config-file-input')
+            fileInput: document.getElementById('config-file-input'),
+            viewPreset: document.getElementById('view-preset'),
+            boxPreset: document.getElementById('box-preset')
         });
         
         // Screenshot button
@@ -281,10 +288,14 @@ export class Cover3DApplication {
      */
     showKeyboardShortcutsHelp() {
         const shortcuts = Object.entries(KEYBOARD_SHORTCUTS)
-            .map(([key, info]) => `• ${key.toUpperCase()}: ${info.description}`)
+            .map(([key, info]) => `‣ ${key.toUpperCase()}: ${info.description}`)
             .join('\n');
+
+        const controls = `Camera Controls:
+            ‣ Drag: Rotate camera
+            ‣ Scroll: Zoom in/out`;
         
-        this.message?.info(`Keyboard Shortcuts:\n${shortcuts}`);
+        this.message?.info(`Keyboard Shortcuts:\n${shortcuts}\n\n${controls}`);
     }
 
     /**
