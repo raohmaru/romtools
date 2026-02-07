@@ -76,10 +76,10 @@
             <section>
                 <div class="actions-group">
                     <select id="box-preset">
-                        <option value="">Select a game box preset...</option>
+                        <option value="">Game box preset...</option>
                     </select>
                     <select id="view-preset">
-                        <option value="">Select a view preset...</option>
+                        <option value="">View preset...</option>
                     </select>
                 </div>
             </section>
@@ -89,7 +89,15 @@
                     <button id="reset-camera" class="primary" type="button" title="Reset camera (R)">Reset Camera</button>
                     <button id="save-config" class="primary" type="button" title="Save configuration (S)">Save Configuration</button>
                     <button id="load-config" class="primary" type="button" title="Load configuration (L)">Load Configuration</button>
-                    <button id="screenshot" class="secondary" type="button" title="Take screenshot (P)">Take Screenshot</button>
+                    <div class="actions-group horizontal">
+                        <button id="screenshot" class="secondary flex1" type="button" title="Take screenshot (P)">Take Screenshot</button>
+                        <select id="screenshot-scale" title="Image quality multiplier">
+                            <option value="1">x1</option>
+                            <option value="2">x2</option>
+                            <option value="3">x3</option>
+                            <option value="4">x4</option>
+                        </select>
+                    </div>
                 </div>
                 <input type="file" id="config-file-input" accept=".json" style="display: none;">
             </section>

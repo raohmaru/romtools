@@ -2,10 +2,11 @@
  * Video games boxes dimension in centimeters
  */
 
-export const SCALE_FACTOR = 0.15;
+// 
+export const BOX_SCALE_FACTOR = 0.15;
 
 export const BOXES = {
-    '3DO': {
+    '3do': {
         name: '3DO',
         config: {
             width: 14.5,
@@ -13,95 +14,95 @@ export const BOXES = {
             depth: 2.5
         }
     },
-    '3DO (EU)': {
+    '3do_eu': {
         name: '3DO (EU)',
         config: {
             width: 14.2,
             height: 12.5,
-            depth: 1.0
+            depth: 1
         }
     },
-    'Amstrad CPC': {
+    'amstradcpc': {
         name: 'Amstrad CPC',
         config: {
-            width: 7.0,
-            height: 11.0,
+            width: 7,
+            height: 11,
             depth: 1.5
         }
     },
-    'Atari 2600': {
+    'atari2600': {
         name: 'Atari 2600',
         config: {
-            width: 14.0,
+            width: 14,
             height: 19.1,
             depth: 2.5
         }
     },
-    'Atari 5200': {
+    'atari5200': {
         name: 'Atari 5200',
         config: {
             width: 17.5,
             height: 22.5,
-            depth: 3.0
+            depth: 3
         }
     },
-    'Atari 7800': {
+    'atari7800': {
         name: 'Atari 7800',
         config: {
-            width: 14.0,
+            width: 14,
             height: 19.1,
             depth: 2.5
         }
     },
-    'Atari Jaguar': {
+    'jaguar': {
         name: 'Atari Jaguar',
         config: {
-            width: 14.0,
+            width: 14,
             height: 19.1,
             depth: 2.5
         }
     },
-    'Atari Jaguar CD': {
+    'jaguarcd': {
         name: 'Atari Jaguar CD',
         config: {
             width: 14.8,
-            height: 21.0,
+            height: 21,
             depth: 2.5
         }
     },
-    'Atari Lynx': {
+    'lynx': {
         name: 'Atari Lynx',
         config: {
             width: 13.5,
-            height: 16.0,
+            height: 16,
             depth: 2.5
         }
     },
-    'Atari ST': {
+    'atarist': {
         name: 'Atari ST',
         config: {
-            width: 20.0,
-            height: 25.0,
-            depth: 4.0
+            width: 20,
+            height: 25,
+            depth: 4
         }
     },
-    'ColecoVision': {
+    'colecovision': {
         name: 'ColecoVision',
         config: {
-            width: 14.0,
+            width: 14,
             height: 19.1,
             depth: 2.7
         }
     },
-    'Fairchild Channel F': {
+    'channelf': {
         name: 'Fairchild Channel F',
         config: {
-            width: 14.0,
-            height: 19.0,
-            depth: 3.0
+            width: 14,
+            height: 19,
+            depth: 3
         }
     },
-    'Magnavox Odyssey 2': {
+    'odyssey2': {
         name: 'Magnavox Odyssey 2',
         config: {
             width: 12.4,
@@ -109,47 +110,47 @@ export const BOXES = {
             depth: 2.9
         }
     },
-    'Mattel Intellivision': {
+    'intellivision': {
         name: 'Mattel Intellivision',
         config: {
-            width: 14.0,
+            width: 14,
             height: 19.1,
             depth: 2.7
         }
     },
-    'Microsoft MSX': {
-        name: 'Microsoft MSX',
+    'msx1': {
+        name: 'Microsoft MSX (Konami)',
         config: {
-            width: 7.0,
-            height: 11.0,
+            width: 7,
+            height: 11,
             depth: 1.7
         }
     },
-    'Microsoft MSX2': {
+    'msx2': {
         name: 'Microsoft MSX2',
         config: {
-            width: 14.0,
-            height: 19.0,
-            depth: 3.0
+            width: 14,
+            height: 19,
+            depth: 3
         }
     },
-    'Microsoft Xbox': {
+    'xbox': {
         name: 'Microsoft Xbox',
         config: {
             width: 13.5,
-            height: 19.0,
+            height: 19,
             depth: 1.5
         }
     },
-    'Microsoft Xbox 360': {
+    'xbox360': {
         name: 'Microsoft Xbox 360',
         config: {
             width: 13.5,
-            height: 19.0,
+            height: 19,
             depth: 1.5
         }
     },
-    'Microsoft Xbox One': {
+    'xboxone': {
         name: 'Microsoft Xbox One',
         config: {
             width: 13.5,
@@ -157,39 +158,39 @@ export const BOXES = {
             depth: 1.2
         }
     },
-    'NEC PC Engine (JP)': {
-        name: 'NEC PC Engine (JP)',
+    'pcengine': {
+        name: 'NEC PC Engine',
         config: {
             width: 14.2,
             height: 12.5,
-            depth: 1.0
+            depth: 1
         }
     },
-    'NEC PC Engine-CD': {
+    'pcenginecd': {
         name: 'NEC PC Engine-CD',
         config: {
             width: 14.2,
             height: 12.5,
-            depth: 1.0
+            depth: 1
         }
     },
-    'NEC PC Engine SuperGrafx': {
+    'supergrafx': {
         name: 'NEC PC Engine SuperGrafx',
         config: {
             width: 14.2,
             height: 12.5,
-            depth: 1.0
+            depth: 1
         }
     },
-    'NEC TurboGrafx-16': {
+    'turbografx': {
         name: 'NEC TurboGrafx-16',
         config: {
-            width: 15.0,
+            width: 15,
             height: 21.5,
             depth: 2.5
         }
     },
-    'Nintendo 3DS': {
+    '3ds': {
         name: 'Nintendo 3DS',
         config: {
             width: 13.5,
@@ -197,15 +198,15 @@ export const BOXES = {
             depth: 1.3
         }
     },
-    'Nintendo 3DS (EU)': {
+    '3ds_eu': {
         name: 'Nintendo 3DS (EU)',
         config: {
             width: 13.5,
             height: 12.5,
-            depth: 2.0
+            depth: 2
         }
     },
-    'Nintendo 64': {
+    'n64': {
         name: 'Nintendo 64',
         config: {
             width: 17.8,
@@ -213,23 +214,23 @@ export const BOXES = {
             depth: 3.2
         }
     },
-    'Nintendo 64 (JP)': {
+    'n64_jp': {
         name: 'Nintendo 64 (JP)',
         config: {
             width: 14.5,
-            height: 19.0,
+            height: 19,
             depth: 2.5
         }
     },
-    'Nintendo DS': {
+    'nds': {
         name: 'Nintendo DS',
         config: {
             width: 13.5,
             height: 12.5,
-            depth: 2.0
+            depth: 2
         }
     },
-    'Nintendo Entertainment System': {
+    'nes': {
         name: 'Nintendo Entertainment System',
         config: {
             width: 12.8,
@@ -237,23 +238,23 @@ export const BOXES = {
             depth: 2.5
         }
     },
-    'Nintendo Famicom (JP)': {
-        name: 'Nintendo Famicom (JP)',
+    'nes_jp': {
+        name: 'Nintendo Famicom',
         config: {
             width: 13.5,
             height: 9.4,
             depth: 2.5
         }
     },
-    'Nintendo Famicom Disk System': {
+    'nfds': {
         name: 'Nintendo Famicom Disk System',
         config: {
             width: 7.6,
-            height: 10.0,
+            height: 10,
             depth: 1.3
         }
     },
-    'Nintendo Game Boy': {
+    'gb': {
         name: 'Nintendo Game Boy',
         config: {
             width: 12.5,
@@ -261,15 +262,15 @@ export const BOXES = {
             depth: 2.5
         }
     },
-    'Nintendo Game Boy (JP)': {
+    'gb_jp': {
         name: 'Nintendo Game Boy (JP)',
         config: {
             width: 8.8,
             height: 10.1,
-            depth: 2.0
+            depth: 2
         }
     },
-    'Nintendo Game Boy Advance': {
+    'gba': {
         name: 'Nintendo Game Boy Advance',
         config: {
             width: 12.5,
@@ -277,15 +278,15 @@ export const BOXES = {
             depth: 2.5
         }
     },
-    'Nintendo Game Boy Advance (JP)': {
+    'gba_jp': {
         name: 'Nintendo Game Boy Advance (JP)',
         config: {
             width: 14.4,
             height: 8.8,
-            depth: 2.0
+            depth: 2
         }
     },
-    'Nintendo Game Boy Color': {
+    'gbc': {
         name: 'Nintendo Game Boy Color',
         config: {
             width: 12.5,
@@ -293,39 +294,31 @@ export const BOXES = {
             depth: 2.5
         }
     },
-    'Nintendo GameCube': {
+    'gamecube': {
         name: 'Nintendo GameCube',
         config: {
             width: 13.5,
-            height: 19.0,
+            height: 19,
             depth: 1.5
         }
     },
-    'Nintendo GameCube (JP)': {
+    'gamecube_jp': {
         name: 'Nintendo GameCube (JP)',
         config: {
             width: 10.5,
-            height: 15.0,
+            height: 15,
             depth: 1.5
         }
     },
-    'Nintendo Super Famicom (JP)': {
-        name: 'Nintendo Super Famicom (JP)',
-        config: {
-            width: 10.7,
-            height: 19.0,
-            depth: 3.1
-        }
-    },
-    'Nintendo Switch': {
+    'switch': {
         name: 'Nintendo Switch',
         config: {
             width: 10.5,
-            height: 17.0,
-            depth: 1.0
+            height: 17,
+            depth: 1
         }
     },
-    'Nintendo Virtual Boy': {
+    'vb': {
         name: 'Nintendo Virtual Boy',
         config: {
             width: 12.8,
@@ -333,31 +326,31 @@ export const BOXES = {
             depth: 3.2
         }
     },
-    'Nintendo Wii': {
+    'wii': {
         name: 'Nintendo Wii',
         config: {
             width: 13.5,
-            height: 19.0,
+            height: 19,
             depth: 1.5
         }
     },
-    'Nintendo Wii U': {
+    'wiiu': {
         name: 'Nintendo Wii U',
         config: {
             width: 13.5,
-            height: 19.0,
+            height: 19,
             depth: 1.5
         }
     },
-    'Philips CD-i': {
+    'videopacplus': {
         name: 'Philips CD-i',
         config: {
             width: 14.2,
             height: 12.5,
-            depth: 1.0
+            depth: 1
         }
     },
-    'SNK Neo Geo (AES)': {
+    'neogeo_aes': {
         name: 'SNK Neo Geo (AES)',
         config: {
             width: 17.1,
@@ -365,79 +358,79 @@ export const BOXES = {
             depth: 3.8
         }
     },
-    'SNK Neo Geo CD': {
+    'neogeocd': {
         name: 'SNK Neo Geo CD',
         config: {
             width: 14.2,
             height: 12.5,
-            depth: 1.0
+            depth: 1
         }
     },
-    'SNK Neo Geo (MVS)': {
+    'neogeo_mvs': {
         name: 'SNK Neo Geo (MVS)',
         config: {
-            width: 24.0,
-            height: 17.0,
-            depth: 5.0
+            width: 24,
+            height: 17,
+            depth: 5
         }
     },
-    'SNK Neo Geo Pocket': {
+    'ngp': {
         name: 'SNK Neo Geo Pocket',
         config: {
-            width: 9.0,
-            height: 13.0,
+            width: 9,
+            height: 13,
             depth: 2.5
         }
     },
-    'SNK Neo Geo Pocket Color': {
+    'ngpc': {
         name: 'SNK Neo Geo Pocket Color',
         config: {
-            width: 9.0,
-            height: 13.0,
+            width: 9,
+            height: 13,
             depth: 2.5
         }
     },
-    'Sega 32X': {
+    'sega32x': {
         name: 'Sega 32X',
         config: {
-            width: 13.0,
-            height: 18.0,
+            width: 13,
+            height: 18,
             depth: 2.5
         }
     },
-    'Sega CD': {
+    'segacd': {
         name: 'Sega CD',
         config: {
             width: 14.8,
-            height: 21.0,
+            height: 21,
             depth: 2.4
         }
     },
-    'Sega CD (Mega CD)': {
-        name: 'Sega CD (Mega CD)',
+    'segacd_eu': {
+        name: 'Sega CD (Mega CD) (EU)',
         config: {
             width: 14.2,
             height: 12.5,
             depth: 2.4
         }
     },
-    'Sega CD (Mega CD) (JP)': {
+    'segacd_jp': {
         name: 'Sega CD (Mega CD) (JP)',
         config: {
             width: 14.2,
             height: 12.5,
-            depth: 1.0
+            depth: 1
         }
     },
-    'Sega Dreamcast': {
+    'dreamcast': {
         name: 'Sega Dreamcast',
         config: {
             width: 14.2,
             height: 12.5,
-            depth: 1.0
+            depth: 1
         }
     },
-    'Sega Dreamcast (EU)': {
+    'dreamcast_eu': {
         name: 'Sega Dreamcast (EU)',
         config: {
             width: 14.2,
@@ -445,7 +438,7 @@ export const BOXES = {
             depth: 2.4
         }
     },
-    'Sega Game Gear': {
+    'gg': {
         name: 'Sega Game Gear',
         config: {
             width: 12.5,
@@ -453,31 +446,31 @@ export const BOXES = {
             depth: 2.5
         }
     },
-    'Sega Genesis': {
+    'megadrive': {
         name: 'Sega Genesis',
         config: {
-            width: 13.0,
-            height: 18.0,
+            width: 13,
+            height: 18,
             depth: 2.5
         }
     },
-    'Sega Mark III (JP)': {
-        name: 'Sega Mark III (JP)',
+    'mastersystem_jp': {
+        name: 'Sega Mark III',
         config: {
             width: 13.5,
             height: 19.5,
             depth: 2.5
         }
     },
-    'Sega Master System': {
+    'mastersystem': {
         name: 'Sega Master System',
         config: {
-            width: 13.0,
-            height: 18.0,
+            width: 13,
+            height: 18,
             depth: 2.5
         }
     },
-    'Sega SG-1000': {
+    'sg1000': {
         name: 'Sega SG-1000',
         config: {
             width: 13.5,
@@ -485,31 +478,31 @@ export const BOXES = {
             depth: 2.5
         }
     },
-    'Sega Saturn': {
+    'saturn': {
         name: 'Sega Saturn',
         config: {
             width: 14.8,
-            height: 21.0,
+            height: 21,
             depth: 2.4
         }
     },
-    'Sega Saturn (EU)': {
+    'saturn_eu': {
         name: 'Sega Saturn (EU)',
         config: {
-            width: 15.0,
-            height: 21.0,
-            depth: 2.0
+            width: 15,
+            height: 21,
+            depth: 2
         }
     },
-    'Sega Saturn (JP)': {
+    'saturn_jp': {
         name: 'Sega Saturn (JP)',
         config: {
             width: 14.2,
             height: 12.5,
-            depth: 1.0
+            depth: 1
         }
     },
-    'Sony PSP': {
+    'psp': {
         name: 'Sony PSP',
         config: {
             width: 10.5,
@@ -517,15 +510,15 @@ export const BOXES = {
             depth: 1.4
         }
     },
-    'Sony Playstation': {
+    'psx': {
         name: 'Sony Playstation',
         config: {
             width: 14.2,
             height: 12.5,
-            depth: 1.0
+            depth: 1
         }
     },
-    'Sony Playstation (EU)': {
+    'psx_eu': {
         name: 'Sony Playstation (EU)',
         config: {
             width: 14.2,
@@ -533,15 +526,15 @@ export const BOXES = {
             depth: 2.4
         }
     },
-    'Sony Playstation 2': {
+    'ps2': {
         name: 'Sony Playstation 2',
         config: {
             width: 13.5,
-            height: 19.0,
+            height: 19,
             depth: 1.5
         }
     },
-    'Sony Playstation 3': {
+    'ps3': {
         name: 'Sony Playstation 3',
         config: {
             width: 13.5,
@@ -549,7 +542,7 @@ export const BOXES = {
             depth: 1.4
         }
     },
-    'Sony Playstation 4': {
+    'ps4': {
         name: 'Sony Playstation 4',
         config: {
             width: 13.5,
@@ -557,7 +550,7 @@ export const BOXES = {
             depth: 1.4
         }
     },
-    'Sony Playstation Vita': {
+    'psvita': {
         name: 'Sony Playstation Vita',
         config: {
             width: 10.5,
@@ -565,15 +558,15 @@ export const BOXES = {
             depth: 1.3
         }
     },
-    'Super Famicom': {
+    'snes_jp': {
         name: 'Super Famicom',
         config: {
             width: 10.7,
-            height: 19.0,
+            height: 19,
             depth: 3.1
         }
     },
-    'Super Nintendo': {
+    'snes': {
         name: 'Super Nintendo',
         config: {
             width: 17.8,
@@ -581,15 +574,15 @@ export const BOXES = {
             depth: 3.2
         }
     },
-    'Super Nintendo (EU)': {
+    'snes_eu': {
         name: 'Super Nintendo (EU)',
         config: {
-            width: 19.0,
+            width: 19,
             height: 10.7,
             depth: 3.1
         }
     },
-    'WonderSwan': {
+    'wswan': {
         name: 'WonderSwan',
         config: {
             width: 8.8,
@@ -597,12 +590,12 @@ export const BOXES = {
             depth: 2.5
         }
     },
-    'WonderSwan Color': {
+    'wswanc': {
         name: 'WonderSwan Color',
         config: {
             width: 8.8,
             height: 12.8,
             depth: 2.5
         }
-    },
+    }
 };

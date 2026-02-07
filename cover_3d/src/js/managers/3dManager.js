@@ -332,6 +332,62 @@ export class ThreeManager {
             this.requestRender();
         }
     }
+
+    /**
+     * Get geometry's bounding box (local space)
+     * @param {THREE.Mesh} mesh
+     * @param {THREE.PerspectiveCamera} camera 
+     * @param {HTMLCanvasElement} canvas 
+     * @returns {Object} Bounding box object with dimensions in pixels
+     */
+    getScreenSpaceBoundingBox(mesh) {
+        if (!mesh.geometry.boundingBox) {
+            mesh.geometry.computeBoundingBox();
+        }
+        const box = mesh.geometry.boundingBox.clone();
+        
+        // Transform to world space using object's world matrix
+        const worldBox = box.clone().applyMatrix4(mesh.matrixWorld);
+        
+        // Project all 8 corners through the camera
+        const { x: minX, y: minY, z: minZ} = worldBox.min;
+        const { x: maxX, y: maxY, z: maxZ} = worldBox.max;
+        const corners = [
+            new THREE.Vector3(minX, minY, minZ),
+            new THREE.Vector3(minX, minY, maxZ),
+            new THREE.Vector3(minX, maxY, minZ),
+            new THREE.Vector3(minX, maxY, maxZ),
+            new THREE.Vector3(maxX, minY, minZ),
+            new THREE.Vector3(maxX, minY, maxZ),
+            new THREE.Vector3(maxX, maxY, minZ),
+            new THREE.Vector3(maxX, maxY, maxZ)
+        ];
+        
+        const screenBox = { minX: Infinity, minY: Infinity, maxX: -Infinity, maxY: -Infinity };
+        const { clientWidth, clientHeight } = this.canvas;
+        
+        for (const corner of corners) {
+            corner.project(this.camera);
+            
+            // Convert from normalized device coordinates (-1 to +1) to screen pixels
+            const x = (corner.x * 0.5 + 0.5) * clientWidth;
+            const y = (-corner.y * 0.5 + 0.5) * clientHeight;
+            
+            screenBox.minX = Math.min(screenBox.minX, x);
+            screenBox.minY = Math.min(screenBox.minY, y);
+            screenBox.maxX = Math.max(screenBox.maxX, x);
+            screenBox.maxY = Math.max(screenBox.maxY, y);
+        }
+
+        const bbox = {
+            x: Math.floor(screenBox.minX),
+            y: Math.floor(screenBox.minY),
+            width: Math.ceil( screenBox.maxX - screenBox.minX ),
+            height: Math.ceil( screenBox.maxY - screenBox.minY )
+        };
+        
+        return bbox;
+    }
 }
 
 /**

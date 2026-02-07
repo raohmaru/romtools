@@ -6,7 +6,7 @@
  */
 
 import { CONFIG_VERSION, CONFIGS } from '../configs/views.js';
-import { BOXES, SCALE_FACTOR } from '../configs/boxes.js';
+import { BOXES, BOX_SCALE_FACTOR } from '../configs/boxes.js';
 
 /**
  * Gets the current timestamp in a format suitable for filenames.
@@ -383,7 +383,7 @@ export function createConfigManagerUI(options = {}) {
                         result = {
                             success: true,
                             config,
-                            message: `View preset applied: ${CONFIGS[selectedKey].name}`
+                            message: `View preset: ${CONFIGS[selectedKey].name}`
                         };
                     }
                     onLoad(result);
@@ -409,10 +409,10 @@ export function createConfigManagerUI(options = {}) {
                     onBoxChange({
                         ...box,
                         config: {
-                            // Box dimensions come in centimeters
-                            width: width * SCALE_FACTOR,
-                            height: height * SCALE_FACTOR,
-                            depth: depth * SCALE_FACTOR
+                            // Box dimensions come in centimeters and needs to be converted to user space
+                            width: width * BOX_SCALE_FACTOR,
+                            height: height * BOX_SCALE_FACTOR,
+                            depth: depth * BOX_SCALE_FACTOR
                         }
                     });
                 });

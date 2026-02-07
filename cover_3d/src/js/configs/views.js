@@ -11,7 +11,7 @@ export const CONFIG_VERSION = '1.0';
  * Predefined configurations dictionary
  */
 export const CONFIGS = {
-    'left': {
+    'l': {
         name: 'Left side view',
         config: {
             version: CONFIG_VERSION,
@@ -22,7 +22,7 @@ export const CONFIGS = {
             }
         }
     },
-    'right': {
+    'r': {
         name: 'Right side view',
         config: {
             version: CONFIG_VERSION,
@@ -33,7 +33,7 @@ export const CONFIGS = {
             }
         }
     },
-    'top-left': {
+    'tl': {
         name: 'Top-left view',
         config: {
             version: CONFIG_VERSION,
@@ -44,7 +44,7 @@ export const CONFIGS = {
             }
         }
     },
-    'top-right': {
+    'tr': {
         name: 'Top-right view',
         config: {
             version: CONFIG_VERSION,
@@ -55,7 +55,7 @@ export const CONFIGS = {
             }
         }
     },
-    'bottom-left': {
+    'bl': {
         name: 'Bottom-left view',
         config: {
             version: CONFIG_VERSION,
@@ -66,7 +66,7 @@ export const CONFIGS = {
             }
         }
     },
-    'bottom-right': {
+    'br': {
         name: 'Bottom-right view',
         config: {
             version: CONFIG_VERSION,

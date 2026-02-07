@@ -145,7 +145,7 @@ export class Cover3DApplication {
                 }
             },
             onBoxChange: (box) => {
-                this.message?.success(`Game box preset applied: ${box.name}`);
+                this.message?.success(`Game box preset: ${box.name}`);
                 setCubeDimensions(this.threeManager.cube, box.config);
                 this.threeManager.requestRender();
             },
@@ -221,7 +221,8 @@ export class Cover3DApplication {
             screenshotBtn.addEventListener('click', async () => {
                 try {
                     this.message?.info('Capturing screenshot...');
-                    const success = await this.screenshotManager.captureAndDownload(this.threeManager, 2);
+                    const scaleFactor = parseInt(document.getElementById('screenshot-scale')?.value, 10) || 1;
+                    const success = await this.screenshotManager.captureAndDownload(this.threeManager, scaleFactor);
                     if (success) {
                         this.message?.success('Screenshot saved!');
                     } else {

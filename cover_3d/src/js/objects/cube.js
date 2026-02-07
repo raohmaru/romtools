@@ -106,7 +106,7 @@ export function setCubeDimensions(cube, dimensions) {
         return;
     }
 
-    const { width = CUBE_WIDTH, height = CUBE_HEIGHT, depth = CUBE_DEPTH } = dimensions;
+    const { width, height, depth } = dimensions;
     // Dispose old geometry and create new one with updated dimensions
     cube.geometry.dispose();
     // Recreate the BoxGeometry with new dimensions

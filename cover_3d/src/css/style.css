@@ -373,6 +373,10 @@ select {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
+
+    &.horizontal {
+        flex-direction: row;
+    }
 }
 
 button {
@@ -533,6 +537,10 @@ button[title] {
 /* Utility Classes */
 .hidden {
     display: none !important;
+}
+
+.flex1 {
+    flex: 1;
 }
 
 /* Loading State */

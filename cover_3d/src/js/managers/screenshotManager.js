@@ -51,7 +51,7 @@ export function createScreenshotManager() {
         
         console.log(`Screenshot saved: ${filename}`);
     }
-    
+
     /**
      * Captures the current canvas frame and converts it to a PNG blob.
      * Uses Three.js WebGLRenderer capabilities.
@@ -69,26 +69,34 @@ export function createScreenshotManager() {
         isCapturing = true;
         
         try {
-            const blob = await new Promise((resolve, reject) => {
+            const blob = await new Promise(async (resolve, reject) => {
                 try {
-                    const { canvas, scene, renderer } = threeManager;
+                    const { canvas, scene, cube, renderer } = threeManager;
                     const { background } = scene;
                     const { width, height } = canvas;
+        
                     // Set canvas to desired screenshot dimension
                     renderer.setSize(width * scaleFactor, height * scaleFactor);
+                    const bbox = threeManager.getScreenSpaceBoundingBox(cube);
                     // Make background transparent
                     scene.background = null;
                     // Force render before taking the screenshot
                     threeManager.renderFrame();
-                    // Get the data URL from canvas (simplest method for WebGL)
-                    const dataUrl = canvas.toDataURL('image/png');
+                    
+                    // Create offset canvas with bbox dimensions
+                    const offsetCanvas = new OffscreenCanvas(bbox.width, bbox.height);
+                    const offsetCtx = offsetCanvas.getContext('2d');
+                    
+                    // Draw the main canvas onto offset canvas at bbox coordinates
+                    offsetCtx.drawImage(canvas, bbox.x, bbox.y, bbox.width, bbox.height, 0, 0, bbox.width, bbox.height);
+                    
+                    // Reset scene and renderer size
                     scene.background = background;
                     renderer.setSize(width, height);
                     threeManager.renderFrame();
                     
-                    // Convert data URL to blob
-                    fetch(dataUrl)
-                        .then(res => res.blob())
+                    // Create a blob object representing the image contained in the canvas
+                    offsetCanvas.convertToBlob({type: 'image/png'})
                         .then(resolve)
                         .catch(reject);
                 } catch (error) {
