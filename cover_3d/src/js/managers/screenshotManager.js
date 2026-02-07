@@ -84,11 +84,11 @@ export function createScreenshotManager() {
                     threeManager.renderFrame();
                     
                     // Create offset canvas with bbox dimensions
-                    const offsetCanvas = new OffscreenCanvas(bbox.width, bbox.height);
-                    const offsetCtx = offsetCanvas.getContext('2d');
+                    const offscreenCanvas = new OffscreenCanvas(bbox.width, bbox.height);
+                    const offscreenCtx = offscreenCanvas.getContext('2d');
                     
                     // Draw the main canvas onto offset canvas at bbox coordinates
-                    offsetCtx.drawImage(canvas, bbox.x, bbox.y, bbox.width, bbox.height, 0, 0, bbox.width, bbox.height);
+                    offscreenCtx.drawImage(canvas, bbox.x, bbox.y, bbox.width, bbox.height, 0, 0, bbox.width, bbox.height);
                     
                     // Reset scene and renderer size
                     scene.background = background;
@@ -96,9 +96,12 @@ export function createScreenshotManager() {
                     threeManager.renderFrame();
                     
                     // Create a blob object representing the image contained in the canvas
-                    offsetCanvas.convertToBlob({type: 'image/png'})
+                    offscreenCanvas.convertToBlob({type: 'image/png'})
                         .then(resolve)
                         .catch(reject);
+
+                    // Clean up offscreen canvas
+                    offscreenCtx.clearRect(0, 0, offscreenCanvas.width, offscreenCanvas.height);
                 } catch (error) {
                     reject(error);
                 }

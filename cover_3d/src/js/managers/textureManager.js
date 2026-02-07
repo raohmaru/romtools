@@ -15,19 +15,6 @@ const faces = {
     bottom: 5
 };
 
-// Reverse mapping: index to face name
-const faceNames = ['front', 'back', 'right', 'left', 'top', 'bottom'];
-
-// Human-readable face labels
-const faceLabels = {
-    front: 'Front',
-    back: 'Back',
-    right: 'Right',
-    left: 'Left',
-    top: 'Top',
-    bottom: 'Bottom'
-};
-
 // Valid MIME types for image uploads
 const VALID_MIME_TYPES = ['image/png', 'image/jpeg', 'image/webp'];
 
@@ -41,7 +28,7 @@ const MAX_TEXTURE_SIZE = 4096;
  * Creates a new image manager instance.
  * @returns {Object} Image manager with state and methods
  */
-export function createImageManager() {
+export function createTextureManager() {
     const state = {
         images: {
             front: null,
@@ -51,7 +38,7 @@ export function createImageManager() {
             top: null,
             bottom: null
         },
-        dataUrls: {
+        dataURLs: {
             front: null,
             back: null,
             right: null,
@@ -78,31 +65,6 @@ export function createImageManager() {
     };
 
     return {
-        /**
-         * Gets the face mapping object.
-         * @returns {Object} Face name to index mapping
-         */
-        getFaceMapping() {
-            return { ...faces };
-        },
-
-        /**
-         * Gets human-readable label for a face.
-         * @param {string} face - Face name
-         * @returns {string} Human-readable label
-         */
-        getFaceLabel(face) {
-            return faceLabels[face] || face;
-        },
-
-        /**
-         * Gets all face names.
-         * @returns {Array<string>} Array of face names
-         */
-        getAllFaceNames() {
-            return [...faceNames];
-        },
-
         /**
          * Validates an image file.
          * @param {File} file - The file to validate
@@ -133,9 +95,9 @@ export function createImageManager() {
         },
 
         /**
-         * Loads an image file and converts it to ImageBitmap and DataURL.
+         * Loads an image file and converts it to ImageBitmap and dataURL.
          * @param {File} file - The image file to load
-         * @returns {Promise<Object>} Object with imageBitmap and dataUrl
+         * @returns {Promise<Object>} Object with imageBitmap and dataURL
          */
         async loadImage(file) {
             const validation = this.validateImage(file);
@@ -143,8 +105,8 @@ export function createImageManager() {
                 throw new Error(validation.error);
             }
 
-            // Convert to DataURL using FileReader
-            const dataUrl = await new Promise((resolve, reject) => {
+            // Convert to dataURL using FileReader
+            const dataURL = await new Promise((resolve, reject) => {
                 const reader = new FileReader();
                 reader.onload = () => resolve(reader.result);
                 reader.onerror = () => reject(new Error('Failed to read file'));
@@ -164,7 +126,7 @@ export function createImageManager() {
                 imageBitmap = await this.resizeImage(imageBitmap);
             }
 
-            return { imageBitmap, dataUrl };
+            return { imageBitmap, dataURL };
         },
 
         /**
@@ -188,9 +150,7 @@ export function createImageManager() {
             }
 
             // Create canvas for resizing
-            const canvas = document.createElement('canvas');
-            canvas.width = width;
-            canvas.height = height;
+            const canvas = new OffscreenCanvas(width, height);
             const ctx = canvas.getContext('2d');
             ctx.drawImage(imageBitmap, 0, 0, width, height);
 
@@ -217,79 +177,19 @@ export function createImageManager() {
             state.loading[face] = true;
 
             try {
-                let imageBitmap;
-                let dataUrl;
-
-                if (image instanceof File) {
-                    const loaded = await this.loadImage(image);
-                    imageBitmap = loaded.imageBitmap;
-                    dataUrl = loaded.dataUrl;
-                } else if (image instanceof ImageBitmap) {
-                    // Check and resize if too large
-                    if (image.width > MAX_TEXTURE_SIZE || image.height > MAX_TEXTURE_SIZE) {
-                        imageBitmap = await this.resizeImage(image);
-                    } else {
-                        imageBitmap = image;
-                    }
-                    dataUrl = await this.imageBitmapToDataUrl(imageBitmap);
-                } else {
-                    throw new Error('Invalid image type. Expected File or ImageBitmap.');
-                }
+                const loaded = await this.loadImage(image);
+                const imageBitmap = loaded.imageBitmap;
+                const dataURL = loaded.dataURL;
 
                 // Update state
                 state.images[face] = imageBitmap;
                 state.imageBitmaps[face] = imageBitmap;
-                state.dataUrls[face] = dataUrl;
+                state.dataURLs[face] = dataURL;
 
-                return { imageBitmap, dataUrl };
+                return { imageBitmap, dataURL };
             } finally {
                 state.loading[face] = false;
             }
-        },
-
-        /**
-         * Converts an ImageBitmap to DataURL.
-         * @param {ImageBitmap} imageBitmap - The image bitmap
-         * @returns {Promise<string>} DataURL string
-         */
-        async imageBitmapToDataUrl(imageBitmap) {
-            const canvas = document.createElement('canvas');
-            canvas.width = imageBitmap.width;
-            canvas.height = imageBitmap.height;
-            const ctx = canvas.getContext('2d');
-            ctx.drawImage(imageBitmap, 0, 0);
-            return canvas.toDataURL('image/png');
-        },
-
-        /**
-         * Clears the image for a specific face.
-         * @param {string} face - Face name
-         */
-        clearImage(face) {
-            if (!faces.hasOwnProperty(face)) {
-                throw new Error(`Invalid face: ${face}`);
-            }
-
-            // Clean up ImageBitmap memory
-            if (state.imageBitmaps[face]) {
-                state.imageBitmaps[face].close?.();
-                state.imageBitmaps[face] = null;
-            }
-
-            state.images[face] = null;
-            state.dataUrls[face] = null;
-        },
-
-        /**
-         * Gets the image for a specific face.
-         * @param {string} face - Face name
-         * @returns {ImageBitmap|null} ImageBitmap or null
-         */
-        getImage(face) {
-            if (!faces.hasOwnProperty(face)) {
-                throw new Error(`Invalid face: ${face}`);
-            }
-            return state.images[face];
         },
 
         /**
@@ -302,127 +202,6 @@ export function createImageManager() {
                 throw new Error(`Invalid face: ${face}`);
             }
             return state.imageBitmaps[face];
-        },
-
-        /**
-         * Gets the DataURL for a specific face.
-         * @param {string} face - Face name
-         * @returns {string|null} DataURL or null
-         */
-        getDataUrl(face) {
-            if (!faces.hasOwnProperty(face)) {
-                throw new Error(`Invalid face: ${face}`);
-            }
-            return state.dataUrls[face];
-        },
-
-        /**
-         * Checks if a face has an image.
-         * @param {string} face - Face name
-         * @returns {boolean} True if face has an image
-         */
-        hasImage(face) {
-            if (!faces.hasOwnProperty(face)) {
-                throw new Error(`Invalid face: ${face}`);
-            }
-            return state.images[face] !== null;
-        },
-
-        /**
-         * Gets all images as an object.
-         * @returns {Object} Object with face names as keys and ImageBitmaps as values
-         */
-        getAllImages() {
-            return { ...state.images };
-        },
-
-        /**
-         * Gets all ImageBitmaps as an object.
-         * @returns {Object} Object with face names as keys and ImageBitmaps as values
-         */
-        getAllImageBitmaps() {
-            return { ...state.imageBitmaps };
-        },
-
-        /**
-         * Sets all images from an object.
-         * @param {Object} images - Object with face names as keys and ImageBitmaps as values
-         */
-        setAllImages(images) {
-            for (const face of faceNames) {
-                if (images[face]) {
-                    state.images[face] = images[face];
-                    state.imageBitmaps[face] = images[face];
-                }
-            }
-        },
-
-        /**
-         * Gets all images as DataURLs (for configuration save).
-         * @returns {Object} Object with face names as keys and DataURLs as values
-         */
-        getImageDataUrls() {
-            return { ...state.dataUrls };
-        },
-
-        /**
-         * Sets all images from DataURLs (for configuration load).
-         * @param {Object} dataUrls - Object with face names as keys and DataURLs as values
-         * @returns {Promise<void>}
-         */
-        async setImageDataUrls(dataUrls) {
-            for (const face of faceNames) {
-                if (dataUrls[face]) {
-                    try {
-                        const response = await fetch(dataUrls[face]);
-                        const blob = await response.blob();
-                        const imageBitmap = await createImageBitmap(blob);
-                        state.images[face] = imageBitmap;
-                        state.imageBitmaps[face] = imageBitmap;
-                        state.dataUrls[face] = dataUrls[face];
-                    } catch (e) {
-                        console.error(`Failed to load image for ${face}:`, e);
-                    }
-                }
-            }
-        },
-
-        /**
-         * Checks if any face has an image.
-         * @returns {boolean} True if any face has an image
-         */
-        hasAnyImage() {
-            return faceNames.some(face => state.images[face] !== null);
-        },
-
-        /**
-         * Gets the number of faces with images.
-         * @returns {number} Count of faces with images
-         */
-        getImageCount() {
-            return faceNames.filter(face => state.images[face] !== null).length;
-        },
-
-        /**
-         * Clears all images.
-         */
-        clearAllImages() {
-            for (const face of faceNames) {
-                this.clearImage(face);
-            }
-        },
-
-        /**
-         * Gets the internal state for debugging.
-         * @returns {Object} Copy of internal state
-         */
-        getState() {
-            return {
-                images: { ...state.images },
-                dataUrls: { ...state.dataUrls },
-                imageBitmaps: { ...state.imageBitmaps },
-                loading: { ...state.loading }
-            };
         },
 
         /**
@@ -441,11 +220,11 @@ export function createImageManager() {
 
 /**
  * Creates file input handlers for drag-and-drop and click uploads.
- * @param {Object} imageManager - Image manager instance
+ * @param {Object} textureManager - Image manager instance
  * @param {Object} options - Configuration options
  * @returns {Object} Event handlers
  */
-function createFileInputHandlers(imageManager, options = {}) {
+function createFileInputHandlers(textureManager, options = {}) {
     const {
         onImageLoad = () => {},
         onError = console.error,
@@ -463,7 +242,7 @@ function createFileInputHandlers(imageManager, options = {}) {
 
         try {
             onLoadingChange(face, true);
-            const data = await imageManager.setImage(face, file);
+            const data = await textureManager.setImage(face, file);
             if (data) {
                 onImageLoad(face, data);
             }
@@ -491,7 +270,7 @@ function createFileInputHandlers(imageManager, options = {}) {
         if (!file) return;
 
         // Validate and process
-        const validation = imageManager.validateImage(file);
+        const validation = textureManager.validateImage(file);
         if (!validation.isValid) {
             onError(new Error(validation.error));
             return;
@@ -499,7 +278,7 @@ function createFileInputHandlers(imageManager, options = {}) {
 
         try {
             onLoadingChange(face, true);
-            const data = await imageManager.setImage(face, file);
+            const data = await textureManager.setImage(face, file);
             if (data) {
                 onImageLoad(face, data);
             }
@@ -576,14 +355,14 @@ function createFileInputHandlers(imageManager, options = {}) {
 
 /**
  * Updates the preview element for a face.
- * @param {string|null} dataUrl - DataURL or null
+ * @param {string|null} dataURL - dataBlob or null
  * @param {HTMLElement} previewElement - Preview element
  */
-export function updatePreview(dataUrl, previewElement) {
+export function updatePreview(dataURL, previewElement) {
     if (!previewElement) return;
 
-    if (dataUrl) {
-        previewElement.style.backgroundImage = `url(${dataUrl})`;
+    if (dataURL) {
+        previewElement.style.backgroundImage = `url(${dataURL})`;
         previewElement.classList.add('has-image');
     } else {
         previewElement.style.backgroundImage = '';
@@ -593,11 +372,11 @@ export function updatePreview(dataUrl, previewElement) {
 
 /**
  * Initializes all file inputs in the document.
- * @param {Object} imageManager - Image manager instance
+ * @param {Object} textureManager - Image manager instance
  * @param {Object} options - Configuration options
  */
-export function initializeFileInputs(imageManager, options = {}) {
-    const handlers = createFileInputHandlers(imageManager, options);
+export function initializeFileInputs(textureManager, options = {}) {
+    const handlers = createFileInputHandlers(textureManager, options);
 
     // Find all upload items
     const uploadItems = document.querySelectorAll('.upload-item[data-face]');

@@ -5,8 +5,8 @@
  * Implements on-demand rendering for improved performance.
  */
 
-import { createThreeManager, faceIndexMap } from './managers/3dManager.js';
-import { createImageManager, initializeFileInputs, initializeColorInputs, updatePreview } from './managers/textureManager.js';
+import { createThreeManager, FACE_INDEX_MAP } from './managers/3dManager.js';
+import { createTextureManager, initializeFileInputs, initializeColorInputs, updatePreview } from './managers/textureManager.js';
 import { createConfigManagerUI } from './managers/configManager.js';
 import { createScreenshotManager } from './managers/screenshotManager.js';
 import { Zoom } from './components/zoom.js';
@@ -29,7 +29,7 @@ export class Cover3DApplication {
         
         // Managers
         this.threeManager = null;
-        this.imageManager = null;
+        this.textureManager = null;
         this.configManager = null;
         this.screenshotManager = null;
         
@@ -124,11 +124,10 @@ export class Cover3DApplication {
         this.threeManager.initCube();
         
         // Image manager
-        this.imageManager = createImageManager();
+        this.textureManager = createTextureManager();
         
         // Set image manager reference for texture updates
-        this.threeManager.imageManager = this.imageManager;
-        this.threeManager.faceIndexMap = faceIndexMap;
+        this.threeManager.textureManager = this.textureManager;
         
         // Config manager with UI integration
         this.configManager = createConfigManagerUI({
@@ -170,14 +169,14 @@ export class Cover3DApplication {
      */
     setupEventListeners() {
         // File inputs for image uploads
-        initializeFileInputs(this.imageManager, {
+        initializeFileInputs(this.textureManager, {
             onImageLoad: (face, data) => {
                 // Update preview
                 const uploadItem = document.querySelector(`.upload-item[data-face="${face}"]`);
                 if (uploadItem) {
                     const preview = uploadItem.querySelector('.preview');
                     if (preview) {
-                        updatePreview(data.dataUrl, preview);
+                        updatePreview(data.dataURL, preview);
                         uploadItem.classList.add('has-image');
                     }
                 }
@@ -205,7 +204,7 @@ export class Cover3DApplication {
         });
         
         // Color pickers for cube sides
-        initializeColorInputs(faceIndexMap, {
+        initializeColorInputs(FACE_INDEX_MAP, {
             onChange: (faceIndex, color) => {
                 updateCubeFaceColor(this.threeManager.cube, faceIndex, color);
                 this.threeManager.requestRender();

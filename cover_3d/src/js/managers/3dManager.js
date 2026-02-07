@@ -14,7 +14,7 @@ import { createCube, updateCubeFaceTexture } from '../objects/cube.js';
 import { defaultCameraConfig } from '../objects/camera.js';
 
 // Face index mapping (Three.js BoxGeometry uses different order)
-export const faceIndexMap = { front: 4, back: 5, right: 0, left: 1, top: 2, bottom: 3 };
+export const FACE_INDEX_MAP = { front: 4, back: 5, right: 0, left: 1, top: 2, bottom: 3 };
 
 /**
  * 3D Manager class for handling Three.js initialization and rendering
@@ -146,14 +146,14 @@ export class ThreeManager {
     /**
      * Update textures when images are loaded
      */
-    updateTextures(imageManager, faceIndexMap) {
+    updateTextures(textureManager) {
         if (!this.cube) return;
 
         const faceNames = ['front', 'back', 'right', 'left', 'top', 'bottom'];
         
         for (const face of faceNames) {
-            const imageBitmap = imageManager.getImageBitmap(face);
-            const faceIndex = faceIndexMap[face];
+            const imageBitmap = textureManager.getImageBitmap(face);
+            const faceIndex = FACE_INDEX_MAP[face];
             
             if (imageBitmap) {
                 const texture = new THREE.CanvasTexture(imageBitmap);
@@ -204,8 +204,8 @@ export class ThreeManager {
         this.controls.update();
         
         // Check if we need texture update
-        if (this.needsTextureUpdate && this.imageManager) {
-            this.updateTextures(this.imageManager, this.faceIndexMap);
+        if (this.needsTextureUpdate && this.textureManager) {
+            this.updateTextures(this.textureManager, FACE_INDEX_MAP);
             // Continue to render the scene after texture update
         }
         
