@@ -6,7 +6,7 @@
  */
 
 import { createThreeManager, faceIndexMap } from './managers/3dManager.js';
-import { createImageManager, initializeFileInputs, updatePreview } from './managers/imageManager.js';
+import { createImageManager, initializeFileInputs, initializeColorInputs, updatePreview } from './managers/textureManager.js';
 import { createConfigManagerUI } from './managers/configManager.js';
 import { createScreenshotManager } from './managers/screenshotManager.js';
 import { Zoom } from './components/zoom.js';
@@ -14,7 +14,7 @@ import { Loading } from './components/loading.js';
 import { Message } from './components/message.js';
 import { KeyboardShortcuts, KEYBOARD_SHORTCUTS } from './components/keyboardShortcuts.js';
 import { debounce } from './utils/debounce.js';
-import { setCubeDimensions } from './objects/cube.js';
+import { setCubeDimensions, updateCubeFaceColor } from './objects/cube.js';
 
 /**
  * Main application class that coordinates all modules.
@@ -201,6 +201,14 @@ export class Cover3DApplication {
                         }
                     }
                 }
+            }
+        });
+        
+        // Color pickers for cube sides
+        initializeColorInputs(faceIndexMap, {
+            onChange: (faceIndex, color) => {
+                updateCubeFaceColor(this.threeManager.cube, faceIndex, color);
+                this.threeManager.requestRender();
             }
         });
         

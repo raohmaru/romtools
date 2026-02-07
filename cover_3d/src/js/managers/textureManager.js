@@ -564,38 +564,13 @@ function createFileInputHandlers(imageManager, options = {}) {
         }
     }
 
-    /**
-     * Cleans up event listeners on an element.
-     * @param {HTMLElement} element - Element to clean up
-     * @param {string} face - Face name
-     */
-    function cleanupInput(element, face) {
-        const input = element.querySelector('input[type="file"]');
-        const preview = element.querySelector('.preview');
-
-        if (input) {
-            input.removeEventListener('change', (e) => handleFileSelect(e, face));
-        }
-
-        if (preview) {
-            preview.removeEventListener('click', () => {
-                input?.click();
-            });
-            preview.removeEventListener('dragover', handleDragOver);
-            preview.removeEventListener('dragenter', handleDragEnter);
-            preview.removeEventListener('dragleave', handleDragLeave);
-            preview.removeEventListener('drop', (e) => handleDrop(e, face));
-        }
-    }
-
     return {
         handleFileSelect,
         handleDrop,
         handleDragOver,
         handleDragEnter,
         handleDragLeave,
-        initializeInput,
-        cleanupInput
+        initializeInput
     };
 }
 
@@ -620,11 +595,9 @@ export function updatePreview(dataUrl, previewElement) {
  * Initializes all file inputs in the document.
  * @param {Object} imageManager - Image manager instance
  * @param {Object} options - Configuration options
- * @returns {Object} Cleanup function and handlers
  */
 export function initializeFileInputs(imageManager, options = {}) {
     const handlers = createFileInputHandlers(imageManager, options);
-    const cleanupFunctions = [];
 
     // Find all upload items
     const uploadItems = document.querySelectorAll('.upload-item[data-face]');
@@ -633,12 +606,24 @@ export function initializeFileInputs(imageManager, options = {}) {
         const face = item.dataset.face;
         if (face && faces.hasOwnProperty(face)) {
             handlers.initializeInput(item, face);
-            cleanupFunctions.push(() => handlers.cleanupInput(item, face));
         }
     });
+}
 
-    return {
-        handlers,
-        cleanup: () => cleanupFunctions.forEach(fn => fn())
-    };
+/**
+ * Initializes all file color inputs in the document.
+ * @param {Object} faceIndexMap - Face index mapping
+ * @param {Object} options - Configuration options
+ */
+export function initializeColorInputs(faceIndexMap, options = {}) {
+    const colorInputs = document.querySelectorAll('.color-picker[data-face]');
+    colorInputs.forEach(input => {
+        input.addEventListener('input', (e) => {
+            const face = e.target.dataset.face;
+            const faceIndex = faceIndexMap[face];
+            if (faceIndex !== undefined) {
+                options?.onChange?.(faceIndex, e.target.value);
+            }
+        });
+    });
 }

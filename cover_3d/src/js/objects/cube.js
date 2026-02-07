@@ -94,6 +94,21 @@ export function updateCubeFaceTexture(cube, faceIndex, texture) {
 }
 
 /**
+ * Updates the color for a specific face of the cube.
+ * @param {THREE.Mesh} cube - The cube mesh
+ * @param {number} faceIndex - Face index (0-5)
+ * @param {string|number} color - Color value (hex string or number)
+ */
+export function updateCubeFaceColor(cube, faceIndex, color) {
+    if (!cube || !cube.material || faceIndex < 0 || faceIndex > 5) {
+        return;
+    }
+
+    const material = cube.material[faceIndex];
+    material.color.set(color);
+}
+
+/**
  * Sets the dimensions of the cube geometry.
  * @param {THREE.Mesh} cube - The cube mesh
  * @param {Object} dimensions - Object with width, height, depth properties

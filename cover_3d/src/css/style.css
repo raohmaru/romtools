@@ -309,6 +309,30 @@ section {
     }
 }
 
+/* Color inputs */
+.color-picker {
+    width: 100%;
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    padding: 2px;
+    background-color: var(--color-bg-tertiary);
+    transition: all var(--transition-fast);
+
+    &:hover {
+        border-color: var(--color-accent);
+    }
+
+    &::-webkit-color-swatch-wrapper {
+        padding: 0;
+    }
+
+    &::-webkit-color-swatch {
+        border: none;
+        border-radius: 2px;
+    }
+}
+
 /* Camera Controls */
 .control-list {
     list-style: none;
