@@ -15,7 +15,7 @@ Navigate to the sub folders to find the available tools.
 - [**rom-name-finder**](https://github.com/raohmaru/romtools/tree/master/rom-name-finder)  
   Web application to get the MAME ROM names of a list of arcade games.
 - [**cover_3d**](https://github.com/raohmaru/romtools/tree/master/cover_3d)  
-  Web application to render game boxes and export a thumbnail.
+  Web application to render game boxes in 3D and export thumbnails.
 
 ## Requeriments
 - Ruby 2.0 or higher.
