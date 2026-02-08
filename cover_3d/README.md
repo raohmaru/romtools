@@ -2,6 +2,8 @@
 
 A web-based 3D application that lets you create and view video game box covers in interactive 3D. Upload custom images for each face of a cube, rotate around it, save your configurations, and capture screenshots.
 
+https://raohmaru.github.io/romtools/game-box-3d/
+
 ## Getting Started
 
 ### Prerequisites

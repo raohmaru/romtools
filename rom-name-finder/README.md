@@ -4,6 +4,8 @@
 
 A web application for searching MAME ROM names in local SQLite databases using SQL.js as a web worker. Designed for retro gaming enthusiasts to quickly find MAME ROM names in their collections.
 
+https://raohmaru.github.io/romtools/rom-name-finder/
+
 ## Project Overview
 
 **MAME ROM Name Finder** is a frontend-only web application that allows users to search for ROM files across multiple SQLite database files containing MAME arcade ROM information. The application provides a simple interface to input search terms and select which ROM set database to search in.
