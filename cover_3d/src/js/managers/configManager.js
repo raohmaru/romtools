@@ -5,7 +5,7 @@
  * Supports JSON serialization/deserialization with version checking.
  */
 
-import { CONFIG_VERSION, CONFIGS } from '../configs/views.js';
+import { CONFIG_VERSION, VIEWS } from '../configs/views.js';
 import { BOXES, BOX_SCALE_FACTOR } from '../configs/boxes.js';
 
 /**
@@ -39,37 +39,25 @@ function sanitizeFilename(str) {
 function createConfigManager() {
     return {
         /**
-         * Gets the default empty configuration.
-         * @returns {Object} Default configuration structure
-         */
-        getDefaultConfig() {
-            return {
-                version: CONFIG_VERSION,
-                camera: {
-                    radius: 5,
-                    theta: 0,
-                    phi: Math.PI / 3
-                }
-            };
-        },
-
-        /**
          * Saves the current camera and image state to a configuration object.
          * @param {Object} camera - Camera object from createCamera()
          * @returns {Object} Configuration object ready for serialization
          */
-        saveConfig(camera) {
-            // Get camera state
-            const cameraState = {
-                radius: camera.radius,
-                theta: camera.theta,
-                phi: camera.phi
-            };
-
+        saveConfig(camera, cube) {
             // Create configuration object
             const config = {
                 version: CONFIG_VERSION,
-                camera: cameraState,
+                camera: {
+                    radius: camera.radius,
+                    theta: camera.theta,
+                    phi: camera.phi
+                },
+                box: {
+                    name: cube.name,
+                    width: cube.geometry.parameters.width,
+                    height: cube.geometry.parameters.height,
+                    depth: cube.geometry.parameters.depth
+                },
                 metadata: {
                     createdAt: new Date().toISOString(),
                     application: 'Cover 3D'
@@ -194,35 +182,57 @@ function createConfigManager() {
                 }
             }
 
+            // Check box structure
+            if (config.box) {
+                if (typeof config.box !== 'object') {
+                    return { isValid: false, error: 'Invalid box configuration' };
+                }
+                
+                const boxKeys = ['width', 'height', 'depth'];
+                for (const key of boxKeys) {
+                    if (config.box[key] !== undefined && typeof config.box[key] !== 'number') {
+                        return { isValid: false, error: `Invalid box.${key}: must be a number` };
+                    }
+                }
+            }
+
             return { isValid: true, error: null };
         },
 
         /**
-         * Applies a configuration to the camera and image manager.
+         * Applies a configuration to the camera and cube.
          * @param {Object} config - Validated configuration object
          * @param {Object} camera - Camera state object to update
          * @param {THREE.Camera} threeCamera - Three.js camera to update
+         * @param {Object} cube - Cube state object to update
          * @returns {Promise<Object>} Result with applied faces and any errors
          */
-        async applyConfig(config, camera, threeCamera) {
-            // Import setCameraState and setCameraPosition from camera module
+        async applyConfig({ config, camera, threeCamera, cube }) {
             const { setCameraState, setCameraPosition } = await import('../objects/camera.js');
+            const { setCubeDimensions } = await import('../objects/cube.js');
             
             // Apply camera state
             if (config.camera) {
                 setCameraState(camera, config.camera);
                 setCameraPosition(camera, threeCamera);
             }
+            
+            // Apply cube state
+            if (config.box) {
+                setCubeDimensions(cube, config.box);
+                cube.name = config.box.name;
+            }
         },
 
         /**
          * Complete save operation: saves and downloads configuration.
          * @param {Object} camera - Camera object
+         * @param {Object} cube - Cube object
          * @param {string} customName - Optional custom filename
          * @returns {Promise<Object>} Result with filename and size info
          */
-        async save(camera, customName = null) {
-            const config = this.saveConfig(camera);
+        async save(camera, cube, customName = null) {
+            const config = this.saveConfig(camera, cube);
             const downloadResult = this.downloadConfig(config, customName);
             return downloadResult;
         },
@@ -232,9 +242,10 @@ function createConfigManager() {
          * @param {File} file - Configuration file to load
          * @param {Object} camera - Camera state object to update
          * @param {THREE.Camera} threeCamera - Three.js camera to update
+         * @param {Object} cube - Cube state object to update
          * @returns {Promise<Object>} Result with validation and application status
          */
-        async load(file, camera, threeCamera) {
+        async load(file, camera, threeCamera, cube) {
             // Load file
             let config;
             try {
@@ -256,7 +267,7 @@ function createConfigManager() {
             }
 
             // Apply
-            await this.applyConfig(config, camera, threeCamera);
+            await this.applyConfig({ config, camera, threeCamera, cube });
 
             return {
                 success: true,
@@ -276,6 +287,7 @@ export function createConfigManagerUI(options = {}) {
     const {
         onSave = () => {},
         onLoad = () => {},
+        onViewChange  = () => {},
         onBoxChange = () => {},
         onError = console.error,
         onProgress = () => {}
@@ -290,10 +302,10 @@ export function createConfigManagerUI(options = {}) {
          * Saves the current configuration and triggers download.
          * @param {Object} camera - Camera object
          */
-        async saveAndDownload(camera) {
+        async saveAndDownload(camera, cube) {
             try {
                 onProgress('Saving configuration...');
-                const result = await manager.save(camera);
+                const result = await manager.save(camera, cube);
                 onSave(result);
                 onProgress('');
                 return result;
@@ -309,11 +321,12 @@ export function createConfigManagerUI(options = {}) {
          * @param {File} file - Configuration file
          * @param {Object} camera - Camera state object
          * @param {THREE.Camera} threeCamera - Three.js camera
+         * @param {Object} cube - Cube state object
          */
-        async loadFromFile(file, camera, threeCamera) {
+        async loadFromFile(file, camera, threeCamera, cube) {
             try {
                 onProgress('Loading configuration...');
-                const result = await manager.load(file, camera, threeCamera);
+                const result = await manager.load(file, camera, threeCamera, cube);
                 onLoad(result);
                 onProgress('');
                 return result;
@@ -328,11 +341,11 @@ export function createConfigManagerUI(options = {}) {
          * Sets up UI event listeners for save/load buttons.
          * @param {Object} params - Parameters with camera, threeCamera and UI elements
          */
-        setupUI({ camera, threeCamera, saveButton, loadButton, fileInput, viewPreset, boxPreset }) {
+        setupUI({ camera, threeCamera, cube, saveButton, loadButton, fileInput, viewPreset, boxPreset }) {
             // Save button
             if (saveButton) {
                 saveButton.addEventListener('click', () => {
-                    this.saveAndDownload(camera);
+                    this.saveAndDownload(camera, cube);
                 });
             }
 
@@ -345,12 +358,26 @@ export function createConfigManagerUI(options = {}) {
 
             // File input change
             if (fileInput) {
-                fileInput.addEventListener('change', (e) => {
+                fileInput.addEventListener('change', async (e) => {
                     const file = e.target.files?.[0];
                     if (file) {
-                        this.loadFromFile(file, camera, threeCamera);
+                        const result = await this.loadFromFile(file, camera, threeCamera, cube);
                         // Reset input so same file can be selected again
                         e.target.value = '';
+                        if (result.success) {
+                            // Reset view seelct
+                            viewPreset.value = '';
+                            const { name } = result.config.box;
+                            if (name) {
+                                // Select box preset option from config
+                                for(const option of boxPreset.options) {
+                                    if (option.textContent === name) {
+                                        boxPreset.value = option.value;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
                     }
                 });
             }
@@ -358,35 +385,27 @@ export function createConfigManagerUI(options = {}) {
             // Config preset
             if (viewPreset) {
                 // Populate select with predefined configurations
-                for (const key of Object.keys(CONFIGS)) {
+                for (const key of Object.keys(VIEWS)) {
                     const option = document.createElement('option');
                     option.value = key;
-                    option.textContent = CONFIGS[key].name;
+                    option.textContent = VIEWS[key].name;
                     viewPreset.appendChild(option);
                 }
                 
                 // Add change event listener
                 viewPreset.addEventListener('change', async (event) => {
                     const selectedKey = event.target.value;
-                    if (!selectedKey) return;
-
-                    const { config } = CONFIGS[selectedKey];
-                    const validation = this.validateConfig(config);
-                    let result;
-                    if (!validation.isValid) {
-                        result = {
-                            success: false,
-                            error: validation.error
-                        };
-                    } else {
-                        await this.applyConfig(config, camera, threeCamera);
-                        result = {
-                            success: true,
-                            config,
-                            message: `View preset: ${CONFIGS[selectedKey].name}`
-                        };
+                    if (!selectedKey) {
+                        return;
                     }
-                    onLoad(result);
+                    const { config } = VIEWS[selectedKey];
+                    await this.applyConfig({ config, camera, threeCamera });
+                    const result = {
+                        success: true,
+                        config,
+                        message: `View preset: ${VIEWS[selectedKey].name}`
+                    };
+                    onViewChange(result);
                 });
             }
 
@@ -403,9 +422,12 @@ export function createConfigManagerUI(options = {}) {
                 // Add change event listener
                 boxPreset.addEventListener('change', async (event) => {
                     const selectedKey = event.target.value;
-                    if (!selectedKey) return;
+                    if (!selectedKey) {
+                        return;
+                    }
                     const box = BOXES[selectedKey];
                     const { width, height, depth } = box.config;
+                    await this.applyConfig({ config: box.config, cube });
                     onBoxChange({
                         ...box,
                         config: {

@@ -10,14 +10,13 @@ export const CONFIG_VERSION = '1.0';
 /**
  * Predefined configurations dictionary
  */
-export const CONFIGS = {
+export const VIEWS = {
     'l': {
         name: 'Left side view',
         config: {
-            version: CONFIG_VERSION,
             camera: {
                 radius: 4.631368393546749,
-                theta: 0.792941003573224,
+                theta: 0.692941003573224,
                 phi: 1.5592443670503562
             }
         }
@@ -25,10 +24,9 @@ export const CONFIGS = {
     'r': {
         name: 'Right side view',
         config: {
-            version: CONFIG_VERSION,
             camera: {
                 radius: 4.631368393546749,
-                theta: -0.792941003573224,
+                theta: -0.692941003573224,
                 phi: 1.5592443670503562
             }
         }
@@ -36,7 +34,6 @@ export const CONFIGS = {
     'tl': {
         name: 'Top-left view',
         config: {
-            version: CONFIG_VERSION,
             camera: {
                 radius: 4.631368393546749,
                 theta: 0.7552269194879576,
@@ -47,7 +44,6 @@ export const CONFIGS = {
     'tr': {
         name: 'Top-right view',
         config: {
-            version: CONFIG_VERSION,
             camera: {
                 radius: 4.631368393546749,
                 theta: -0.7552269194879576,
@@ -58,7 +54,6 @@ export const CONFIGS = {
     'bl': {
         name: 'Bottom-left view',
         config: {
-            version: CONFIG_VERSION,
             camera: {
                 radius: 4.631368393546749,
                 theta: 0.7476842574069325,
@@ -69,7 +64,6 @@ export const CONFIGS = {
     'br': {
         name: 'Bottom-right view',
         config: {
-            version: CONFIG_VERSION,
             camera: {
                 radius: 4.631368393546749,
                 theta: -0.7476842574069325,

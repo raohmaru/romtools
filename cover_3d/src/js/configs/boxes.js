@@ -2,7 +2,6 @@
  * Video games boxes dimension in centimeters
  */
 
-// 
 export const BOX_SCALE_FACTOR = 0.15;
 
 export const BOXES = {

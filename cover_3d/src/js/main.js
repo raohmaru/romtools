@@ -140,12 +140,22 @@ export class Cover3DApplication {
                     this.threeManager.needsTextureUpdate = true;
                     this.threeManager.requestRender();
                 } else {
+                    this.message?.error(`Failed to load configuration.\n${result.error}`);
+                }
+            },
+            onViewChange: (result) => {
+                if (result.success) {
+                    this.message?.success(result.message);
+                    this.threeManager.needsTextureUpdate = true;
+                    this.threeManager.requestRender();
+                } else {
                     this.message?.error('Failed to load configuration.');
                 }
             },
             onBoxChange: (box) => {
                 this.message?.success(`Game box preset: ${box.name}`);
                 setCubeDimensions(this.threeManager.cube, box.config);
+                this.threeManager.cube.name = box.name;
                 this.threeManager.requestRender();
             },
             onError: (error) => {
@@ -260,6 +270,7 @@ export class Cover3DApplication {
         this.configManager.setupUI({
             camera: this.cameraObj,
             threeCamera: this.threeManager.camera,
+            cube: this.threeManager.cube,
             saveButton: document.getElementById('save-config'),
             loadButton: document.getElementById('load-config'),
             fileInput: document.getElementById('config-file-input'),
