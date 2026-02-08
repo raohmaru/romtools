@@ -10,11 +10,8 @@ import * as THREE from 'three';
 import WebGL from 'three/addons/capabilities/WebGL.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-import { createCube, updateCubeFaceTexture } from '../objects/cube.js';
+import { createCube, updateCubeFaceTexture, FACE_INDEX_MAP } from '../objects/cube.js';
 import { defaultCameraConfig } from '../objects/camera.js';
-
-// Face index mapping (Three.js BoxGeometry uses different order)
-export const FACE_INDEX_MAP = { front: 4, back: 5, right: 0, left: 1, top: 2, bottom: 3 };
 
 /**
  * 3D Manager class for handling Three.js initialization and rendering
@@ -38,6 +35,7 @@ export class ThreeManager {
         
         // Canvas element
         this.canvas = options.canvas || null;
+        this.canvasBBRect = null;
         
         // Container element
         this.container = options.container || null;
@@ -54,6 +52,10 @@ export class ThreeManager {
         // Callbacks
         this.onRender = options.onRender || null;
         this.onCameraChange = options.onCameraChange || null;
+        
+        // Raycaster for hover detection
+        this.raycaster = new THREE.Raycaster();
+        this.mouse = new THREE.Vector2();
     }
 
     /**
@@ -81,8 +83,11 @@ export class ThreeManager {
         this.renderer.setPixelRatio(window.devicePixelRatio);
         // Fix texture color
         this.renderer.outputColorSpace = THREE.LinearSRGBColorSpace;
-        this.renderer.toneMapping = THREE.LinearToneMapping;
-        this.renderer.toneMappingExposure = 3.0;
+        // this.renderer.toneMapping = THREE.LinearToneMapping;
+        // this.renderer.toneMappingExposure = 1.1;
+
+        // Canvas boundix box user space
+        this.canvasBBRect = this.canvas.getBoundingClientRect();
         
         console.log('Three.js WebGL renderer initialized');
     }
@@ -282,6 +287,8 @@ export class ThreeManager {
         this.renderer.setSize(width, height);
         this.camera.aspect = width / height;
         this.camera.updateProjectionMatrix();
+
+        this.canvasBBRect = this.canvas.getBoundingClientRect();
         
         console.log(`Canvas resized to ${width}x${height}`);
     }
@@ -387,6 +394,32 @@ export class ThreeManager {
         };
         
         return bbox;
+    }
+
+    /**
+     * Returns the face that intersect at the given userspace coordinates
+     * @param {number} x 
+     * @param {number} y 
+     * @returns {number} Face index
+     */
+    getFaceAt(x, y) {
+        if (!this.cube) {
+            return;
+        }
+
+        this.mouse.x = ((x - this.canvasBBRect.left) / this.canvasBBRect.width) * 2 - 1;
+        this.mouse.y = -((y - this.canvasBBRect.top) / this.canvasBBRect.height) * 2 + 1;
+
+        // Cast ray from camera through mouse position
+        this.raycaster.setFromCamera(this.mouse, this.camera);
+        const intersects = this.raycaster.intersectObject(this.cube);
+
+        if (intersects.length > 0) {
+            const intersect = intersects[0];
+            // Each face is composed of two triangles
+            return Math.floor(intersect.faceIndex / 2);
+        }
+        return -1;
     }
 }
 

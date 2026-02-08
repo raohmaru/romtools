@@ -17,8 +17,8 @@ export const CONFIGS = {
             version: CONFIG_VERSION,
             camera: {
                 radius: 4.631368393546749,
-                theta: 0.7778553248224369,
-                phi: 1.5364042509689584
+                theta: 0.792941003573224,
+                phi: 1.5592443670503562
             }
         }
     },
@@ -28,8 +28,8 @@ export const CONFIGS = {
             version: CONFIG_VERSION,
             camera: {
                 radius: 4.631368393546749,
-                theta: -0.7778553248224369,
-                phi: 1.5364042509689584
+                theta: -0.792941003573224,
+                phi: 1.5592443670503562
             }
         }
     },

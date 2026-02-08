@@ -30,22 +30,6 @@ const MAX_TEXTURE_SIZE = 4096;
  */
 export function createTextureManager() {
     const state = {
-        images: {
-            front: null,
-            back: null,
-            right: null,
-            left: null,
-            top: null,
-            bottom: null
-        },
-        dataURLs: {
-            front: null,
-            back: null,
-            right: null,
-            left: null,
-            top: null,
-            bottom: null
-        },
         imageBitmaps: {
             front: null,
             back: null,
@@ -182,9 +166,7 @@ export function createTextureManager() {
                 const dataURL = loaded.dataURL;
 
                 // Update state
-                state.images[face] = imageBitmap;
                 state.imageBitmaps[face] = imageBitmap;
-                state.dataURLs[face] = dataURL;
 
                 return { imageBitmap, dataURL };
             } finally {
@@ -387,6 +369,18 @@ export function initializeFileInputs(textureManager, options = {}) {
             handlers.initializeInput(item, face);
         }
     });
+
+    return {
+        handleDrop(e, face) {
+            handlers.handleDrop(e, face);
+        },
+        trigger(face) {
+            const picker = document.querySelector(`.upload-item[data-face="${face}"] input[type="file"]`);
+            if (picker) {
+                picker.dispatchEvent(new MouseEvent('click'));
+            }
+        }
+    }
 }
 
 /**
@@ -405,4 +399,13 @@ export function initializeColorInputs(faceIndexMap, options = {}) {
             }
         });
     });
+
+    return {
+        trigger(face) {
+            const picker = document.querySelector(`.color-picker[data-face="${face}"]`);
+            if (picker) {
+                picker.dispatchEvent(new MouseEvent('click'));
+            }
+        }
+    }
 }

@@ -5,7 +5,7 @@
  * Implements on-demand rendering for improved performance.
  */
 
-import { createThreeManager, FACE_INDEX_MAP } from './managers/3dManager.js';
+import { createThreeManager } from './managers/3dManager.js';
 import { createTextureManager, initializeFileInputs, initializeColorInputs, updatePreview } from './managers/textureManager.js';
 import { createConfigManagerUI } from './managers/configManager.js';
 import { createScreenshotManager } from './managers/screenshotManager.js';
@@ -14,7 +14,7 @@ import { Loading } from './components/loading.js';
 import { Message } from './components/message.js';
 import { KeyboardShortcuts, KEYBOARD_SHORTCUTS } from './components/keyboardShortcuts.js';
 import { debounce } from './utils/debounce.js';
-import { setCubeDimensions, updateCubeFaceColor } from './objects/cube.js';
+import { setCubeDimensions, updateCubeFaceColor, highlightCubeFace, getCubeFaceName, FACE_INDEX_MAP } from './objects/cube.js';
 
 /**
  * Main application class that coordinates all modules.
@@ -81,7 +81,7 @@ export class Cover3DApplication {
             // Initial resize and render
             this.threeManager.handleResize();
             this.threeManager.requestRender();
-            
+
             this.isInitialized = true;
             this.message.success('Cover 3D ready! Press [?] for keyboard shortcuts.');
             this.loading.hide();
@@ -169,7 +169,7 @@ export class Cover3DApplication {
      */
     setupEventListeners() {
         // File inputs for image uploads
-        initializeFileInputs(this.textureManager, {
+        const fileInputManager = initializeFileInputs(this.textureManager, {
             onImageLoad: (face, data) => {
                 // Update preview
                 const uploadItem = document.querySelector(`.upload-item[data-face="${face}"]`);
@@ -203,11 +203,56 @@ export class Cover3DApplication {
             }
         });
         
+        // Image drop handlers
+        this.threeManager.canvas.addEventListener('dragover', (() => {
+            let mouseX = 0;
+            let mouseY = 0;
+            return (event) => {
+                event.preventDefault();
+                event.stopPropagation();
+                // Trigger only if mouse has moved
+                if (event.clientX !== mouseX && event.clientY !== mouseY) {
+                    mouseX = event.clientX;
+                    mouseY = event.clientY;
+                    const faceIndex = this.threeManager.getFaceAt(mouseX, mouseY);
+                    if (highlightCubeFace(this.threeManager.cube, faceIndex)) {
+                        this.threeManager.requestRender();
+                    }
+                }
+            }
+        })());
+
+        this.threeManager.canvas.addEventListener('drop', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            const { highlightedFace } = this.threeManager.cube;
+            const face = getCubeFaceName(highlightedFace);
+            if (face) {
+                fileInputManager.handleDrop(event, face);
+                // Reset hovered face
+                highlightCubeFace(this.threeManager.cube);
+            }
+        });
+
         // Color pickers for cube sides
-        initializeColorInputs(FACE_INDEX_MAP, {
+        const colorInputManager = initializeColorInputs(FACE_INDEX_MAP, {
             onChange: (faceIndex, color) => {
                 updateCubeFaceColor(this.threeManager.cube, faceIndex, color);
                 this.threeManager.requestRender();
+            }
+        });
+        
+        this.threeManager.canvas.addEventListener('mouseup', (event) => {
+            if (!this.threeManager.isAnimating) {
+                const faceIndex = this.threeManager.getFaceAt(event.clientX, event.clientY);
+                if (faceIndex > -1) {
+                    const face = getCubeFaceName(faceIndex);
+                    if (this.threeManager.cube.material[faceIndex].map) {
+                        fileInputManager.trigger(face);
+                    } else {
+                        colorInputManager.trigger(face);
+                    }
+                }
             }
         });
         

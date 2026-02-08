@@ -12,6 +12,13 @@ const CUBE_WIDTH = 2;
 const CUBE_HEIGHT = 2.5;
 const CUBE_DEPTH = 0.5;
 
+// Face index mapping (Three.js BoxGeometry uses different order)
+export const FACE_INDEX_MAP = { right: 0, left: 1, top: 2, bottom: 3, front: 4, back: 5 };
+export const FACE_NAME_MAP = ['right', 'left', 'top', 'bottom', 'front', 'back'];
+
+let highlightedFace = -1;
+let lightMapTexture;
+
 /**
  * Create geometry with 6 materials (one for each face)
  * @param {number} width
@@ -35,6 +42,20 @@ function createGeometry(width = CUBE_WIDTH, height = CUBE_HEIGHT, depth = CUBE_D
 }
 
 /**
+ * Creates a light map texture for mouse hover effects.
+ * @returns {THREE.Texture} Light map texture
+ */
+function createLightMapTexture() {
+    const canvas = new OffscreenCanvas(64, 64);
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#e94560';
+    ctx.fillRect(0, 0, 64, 64);
+    const texture = new THREE.CanvasTexture(canvas);
+    texture.colorSpace = THREE.LinearSRGBColorSpace;
+    return texture;
+}
+
+/**
  * Creates a cube mesh using Three.js BoxGeometry.
  * @param {THREE.Scene} scene - Three.js scene to add the cube to
  * @returns {Object} Object containing the cube mesh
@@ -43,18 +64,14 @@ export function createCube(scene) {
     const geometry = createGeometry();
 
     // Create materials for each face
-    // Order: right, left, top, bottom, front, back
     const materials = [
         new THREE.MeshBasicMaterial({ color: 0x444444 }), // right
         new THREE.MeshBasicMaterial({ color: 0x444444 }), // left
         new THREE.MeshBasicMaterial({ color: 0x666666 }), // top
-        new THREE.MeshBasicMaterial({ color: 0x222222 }), // bottom
+        new THREE.MeshBasicMaterial({ color: 0x333333 }), // bottom
         new THREE.MeshBasicMaterial({ color: 0x555555 }), // front
         new THREE.MeshBasicMaterial({ color: 0x555555 }), // back
     ];
-
-    // Don't apply renderer tone
-    materials.forEach((material) => material.toneMapped = false);
 
     // Create mesh
     const cube = new THREE.Mesh(geometry, materials);
@@ -89,8 +106,8 @@ export function updateCubeFaceTexture(cube, faceIndex, texture) {
     const material = cube.material[faceIndex];
     material.map = texture;
     material.needsUpdate = true;
-    // Apply renderer tone
-    material.toneMapped = true;
+    // Fix tone
+    material.color.set(0xFFFFFF);
 }
 
 /**
@@ -105,7 +122,9 @@ export function updateCubeFaceColor(cube, faceIndex, color) {
     }
 
     const material = cube.material[faceIndex];
-    material.color.set(color);
+    if (!material.map) {
+        material.color.set(color);
+    }
 }
 
 /**
@@ -128,4 +147,49 @@ export function setCubeDimensions(cube, dimensions) {
     const newGeometry = createGeometry(width, height, depth);
     // Replace the geometry
     cube.geometry = newGeometry;
+}
+
+/**
+ * Highlights the given face of the cube
+ * @param {THREE.Mesh} cube - The cube mesh
+ * @param {number} faceIndex - Face index (0-5)
+ */
+export function highlightCubeFace(cube, faceIndex = -1) {
+    if (!cube || !cube.material || faceIndex < -1 || faceIndex > 5 || faceIndex === highlightedFace) {
+        return false;
+    }
+
+    // Lightmap texture for mouse hover effect
+    if (!lightMapTexture) {
+        lightMapTexture = createLightMapTexture();
+        cube.material.forEach((m) => m.lightMapIntensity = 4);
+    }
+
+    // Reset previously hovered face
+    if (highlightedFace > -1) {
+        const prevMaterial = cube.material[highlightedFace];
+        prevMaterial.lightMap = null;
+        prevMaterial.needsUpdate = true;
+    }
+
+    // Highlight hovered face
+    if (faceIndex > -1) {
+        const material = cube.material[faceIndex];
+        material.lightMap = lightMapTexture;
+        material.needsUpdate = true;
+    }
+
+    highlightedFace = faceIndex;
+    cube.highlightedFace = faceIndex;
+
+    return true;
+}
+
+/**
+ * Returns the name of the cube face based on the given index
+ * @param {number} faceIndex 
+ * @returns {string|undefined}
+ */
+export function getCubeFaceName(faceIndex) {
+    return FACE_NAME_MAP[faceIndex];
 }
