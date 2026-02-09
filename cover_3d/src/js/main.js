@@ -4,7 +4,6 @@
  * Uses Three.js for 3D box cover visualization.
  * Implements on-demand rendering for improved performance.
  */
-
 import { createThreeManager } from './managers/3dManager.js';
 import { createTextureManager, initializeFileInputs, initializeColorInputs, updatePreview } from './managers/textureManager.js';
 import { createConfigManagerUI } from './managers/configManager.js';
@@ -137,7 +136,6 @@ export class Cover3DApplication {
             onLoad: (result) => {
                 if (result.success) {
                     this.message?.success(result.message);
-                    this.threeManager.needsTextureUpdate = true;
                     this.threeManager.requestRender();
                 } else {
                     this.message?.error(`Failed to load configuration.\n${result.error}`);
@@ -146,7 +144,6 @@ export class Cover3DApplication {
             onViewChange: (result) => {
                 if (result.success) {
                     this.message?.success(result.message);
-                    this.threeManager.needsTextureUpdate = true;
                     this.threeManager.requestRender();
                 } else {
                     this.message?.error('Failed to load configuration.');
@@ -192,7 +189,7 @@ export class Cover3DApplication {
                 }
                 
                 // Trigger texture update
-                this.threeManager.needsTextureUpdate = true;
+                this.threeManager.needsTextureUpdate.push(face);
                 this.threeManager.requestRender();
             },
             onError: (error) => {

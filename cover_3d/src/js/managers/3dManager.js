@@ -27,9 +27,6 @@ export class ThreeManager {
         // Cube mesh
         this.cube = null;
         
-        // Textures for each face
-        this.textures = [null, null, null, null, null, null];
-        
         // Camera state
         this.cameraObj = null;
         
@@ -42,7 +39,7 @@ export class ThreeManager {
         
         // State
         this.isInitialized = false;
-        this.needsTextureUpdate = false;
+        this.needsTextureUpdate = [];
         this.isAnimating = false;
         
         // On-demand rendering flags
@@ -152,11 +149,12 @@ export class ThreeManager {
      * Update textures when images are loaded
      */
     updateTextures(textureManager) {
-        if (!this.cube) return;
-
-        const faceNames = ['front', 'back', 'right', 'left', 'top', 'bottom'];
+        if (!this.cube) {
+            return;
+        }
         
-        for (const face of faceNames) {
+        for (let i = 0; i < this.needsTextureUpdate.length; i++) {
+            const face = this.needsTextureUpdate[i];
             const imageBitmap = textureManager.getImageBitmap(face);
             const faceIndex = FACE_INDEX_MAP[face];
             
@@ -165,11 +163,10 @@ export class ThreeManager {
                 texture.colorSpace = THREE.LinearSRGBColorSpace;
                 
                 updateCubeFaceTexture(this.cube, faceIndex, texture);
-                this.textures[faceIndex] = texture;
             }
         }
         
-        this.needsTextureUpdate = false;
+        this.needsTextureUpdate = [];
     }
 
     /**
