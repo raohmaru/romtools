@@ -214,23 +214,21 @@ export class Cover3DApplication {
         });
         
         // Image drop handlers
-        this.threeManager.canvas.addEventListener('dragover', (() => {
-            let mouseX = 0;
-            let mouseY = 0;
-            return (event) => {
-                event.preventDefault();
-                event.stopPropagation();
-                // Trigger only if mouse has moved
-                if (event.clientX !== mouseX && event.clientY !== mouseY) {
-                    mouseX = event.clientX;
-                    mouseY = event.clientY;
-                    const faceIndex = this.threeManager.getFaceAt(mouseX, mouseY);
-                    if (highlightCubeFace(this.threeManager.cube, faceIndex)) {
-                        this.threeManager.requestRender();
-                    }
+        let dragMouseX = 0;
+        let dragMouseY = 0;
+        this.threeManager.canvas.addEventListener('dragover', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            // Trigger only if mouse has moved
+            if (event.clientX !== dragMouseX && event.clientY !== dragMouseY) {
+                dragMouseX = event.clientX;
+                dragMouseY = event.clientY;
+                const faceIndex = this.threeManager.getFaceAt(dragMouseX, dragMouseY);
+                if (highlightCubeFace(this.threeManager.cube, faceIndex)) {
+                    this.threeManager.requestRender();
                 }
             }
-        })());
+        });
 
         this.threeManager.canvas.addEventListener('drop', (event) => {
             event.preventDefault();
@@ -252,8 +250,16 @@ export class Cover3DApplication {
             }
         });
         
+        let mouseDownX = 0;
+        let mouseDownY = 0;
+        this.threeManager.canvas.addEventListener('mousedown', (event) => {
+            mouseDownX = event.clientX;
+            mouseDownY = event.clientY;
+        });
+        
         this.threeManager.canvas.addEventListener('mouseup', (event) => {
-            if (!this.threeManager.isAnimating) {
+            // If mouse position hasn't changed...
+            if (event.clientX === mouseDownX && event.clientY === mouseDownY) {
                 const faceIndex = this.threeManager.getFaceAt(event.clientX, event.clientY);
                 if (faceIndex > -1) {
                     const face = getCubeFaceName(faceIndex);

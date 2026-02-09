@@ -1,6 +1,6 @@
 # MAME ROM Name Finder
 
-<img src="https://raohmaru.github.io/romtools/img/arcade.svg" width="80" alt="Arcade cabinet">
+<img src="https://raohmaru.github.io/romtools/rom-name-finder/img/arcade.svg" width="80" alt="Arcade cabinet">
 
 A web application for searching MAME ROM names in local SQLite databases using SQL.js as a web worker. Designed for retro gaming enthusiasts to quickly find MAME ROM names in their collections.
 
