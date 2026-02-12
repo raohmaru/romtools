@@ -50,13 +50,15 @@ function createConfigManager() {
                 camera: {
                     radius: camera.radius,
                     theta: camera.theta,
-                    phi: camera.phi
+                    phi: camera.phi,
+                    fov: parseInt(camera.fov, 10)
                 },
                 box: {
                     name: cube.name,
                     width: cube.geometry.parameters.width,
                     height: cube.geometry.parameters.height,
-                    depth: cube.geometry.parameters.depth
+                    depth: cube.geometry.parameters.depth,
+                    rotation: camera.rotation
                 },
                 metadata: {
                     createdAt: new Date().toISOString(),
@@ -174,9 +176,10 @@ function createConfigManager() {
                     return { isValid: false, error: 'Invalid camera configuration' };
                 }
                 
-                const cameraKeys = ['radius', 'theta', 'phi'];
+                const cameraKeys = ['radius', 'theta', 'phi', 'fov'];
                 for (const key of cameraKeys) {
-                    if (config.camera[key] !== undefined && typeof config.camera[key] !== 'number') {
+                    const value = config.camera[key];
+                    if (value !== undefined && typeof value !== 'number') {
                         return { isValid: false, error: `Invalid camera.${key}: must be a number` };
                     }
                 }
@@ -188,9 +191,14 @@ function createConfigManager() {
                     return { isValid: false, error: 'Invalid box configuration' };
                 }
                 
-                const boxKeys = ['width', 'height', 'depth'];
+                const boxKeys = ['width', 'height', 'depth', 'rotation'];
                 for (const key of boxKeys) {
-                    if (config.box[key] !== undefined && typeof config.box[key] !== 'number') {
+                    const value = config.box[key];
+                    if (key === 'rotation') {
+                        if (value !== undefined && (!Array.isArray(value) || !value.every((v) => typeof v === 'number'))) {
+                            return { isValid: false, error: `Invalid camera.${key}: must be an array with 3 numbers` };
+                        }
+                    } else if (value !== undefined && typeof value !== 'number') {
                         return { isValid: false, error: `Invalid box.${key}: must be a number` };
                     }
                 }
@@ -209,7 +217,7 @@ function createConfigManager() {
          */
         async applyConfig({ config, camera, threeCamera, cube }) {
             const { setCameraState, setCameraPosition } = await import('../objects/camera.js');
-            const { setCubeDimensions } = await import('../objects/cube.js');
+            const { setCubeDimensions, setCubeRotation } = await import('../objects/cube.js');
             
             // Apply camera state
             if (config.camera) {
@@ -220,6 +228,9 @@ function createConfigManager() {
             // Apply cube state
             if (config.box) {
                 setCubeDimensions(cube, config.box);
+                if (config.box.rotation) {
+                    setCubeRotation(cube, config.box.rotation);
+                }
                 cube.name = config.box.name;
             }
         },

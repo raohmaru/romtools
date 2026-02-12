@@ -13,8 +13,8 @@ const CUBE_HEIGHT = 2.5;
 const CUBE_DEPTH = 0.5;
 
 // Face index mapping (Three.js BoxGeometry uses different order)
-export const FACE_INDEX_MAP = { right: 0, left: 1, top: 2, bottom: 3, front: 4, back: 5 };
-export const FACE_NAME_MAP = ['right', 'left', 'top', 'bottom', 'front', 'back'];
+export const FACE_INDEX_MAP = { left: 0, right: 1, top: 2, bottom: 3, back: 4, front: 5 };
+export const FACE_NAME_MAP = Object.keys(FACE_INDEX_MAP);
 
 let highlightedFace = -1;
 let lightMapTexture;
@@ -76,8 +76,6 @@ export function createCube(scene) {
     // Create mesh
     const cube = new THREE.Mesh(geometry, materials);
     cube.name = 'box';
-    // Rotates 90º to the right
-    cube.rotation.y += Math.PI / 2;
 
     // Add to scene if provided
     if (scene) {
@@ -147,6 +145,19 @@ export function setCubeDimensions(cube, dimensions) {
     const newGeometry = createGeometry(width, height, depth);
     // Replace the geometry
     cube.geometry = newGeometry;
+}
+
+/**
+ * Sets the rotation of the cube.
+ * @param {THREE.Mesh} cube 
+ * @param {Array} rotation 
+ * @returns 
+ */
+export function setCubeRotation(cube, rotation) {
+    if (!cube || !rotation) {
+        return;
+    }
+    cube.rotation.fromArray(rotation);
 }
 
 /**

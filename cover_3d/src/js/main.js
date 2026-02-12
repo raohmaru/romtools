@@ -8,12 +8,15 @@ import { createThreeManager } from './managers/3dManager.js';
 import { createTextureManager, initializeFileInputs, initializeColorInputs, updatePreview } from './managers/textureManager.js';
 import { createConfigManagerUI } from './managers/configManager.js';
 import { createScreenshotManager } from './managers/screenshotManager.js';
+import { createGUIManager } from './managers/guiManager.js';
 import { Zoom } from './components/zoom.js';
 import { Loading } from './components/loading.js';
 import { Message } from './components/message.js';
 import { KeyboardShortcuts, KEYBOARD_SHORTCUTS } from './components/keyboardShortcuts.js';
 import { debounce } from './utils/debounce.js';
 import { setCubeDimensions, updateCubeFaceColor, highlightCubeFace, getCubeFaceName, FACE_INDEX_MAP } from './objects/cube.js';
+import { defaultCameraConfig } from './objects/camera.js';
+
 
 /**
  * Main application class that coordinates all modules.
@@ -22,22 +25,23 @@ export class Cover3DApplication {
     constructor() {
         // Three.js manager
         this.threeManager = null;
-        
+
         // Camera state (delegated to threeManager)
         this.cameraObj = null;
-        
+
         // Managers
         this.threeManager = null;
         this.textureManager = null;
         this.configManager = null;
         this.screenshotManager = null;
-        
+        this.GUIManager = null;
+
         // UI elements
         this.zoom = null;
         this.loading = null;
         this.message = null;
         this.keyboardShortcuts = null;
-        
+
         // State
         this.isInitialized = false;
     }
@@ -52,31 +56,31 @@ export class Cover3DApplication {
             this.loading.show();
             this.message = new Message(document.body);
             this.message.info('Initializing Cover 3D...');
-            
+
             // Get canvas and container
             const canvas = document.getElementById('webgl-canvas');
             const container = document.getElementById('canvas-container');
-            
+
             if (!canvas) {
                 throw new Error('Canvas element not found');
             }
-            
+
             // Initialize managers
             await this.initManagers(canvas, container);
-            
+
             // Get camera state reference
             this.cameraObj = this.threeManager.getCameraState();
-            
+
             // Create zoom indicator
             this.zoom = new Zoom(container, {
                 minRadius: this.cameraObj.minRadius,
                 maxRadius: this.cameraObj.maxRadius
             });
             this.zoom.update(this.cameraObj);
-            
+
             // Setup event listeners
             this.setupEventListeners();
-            
+
             // Initial resize and render
             this.threeManager.handleResize();
             this.threeManager.requestRender();
@@ -84,9 +88,9 @@ export class Cover3DApplication {
             this.isInitialized = true;
             this.message.success('Cover 3D ready! Press [?] for keyboard shortcuts.');
             this.loading.hide();
-            
+
             console.log('Cover 3D initialized successfully with Three.js WebGL');
-            
+
         } catch (error) {
             console.error('Failed to initialize Cover 3D:', error);
             this.message?.error(`Initialization failed: ${error.message}`);
@@ -112,22 +116,22 @@ export class Cover3DApplication {
                 }
             }
         });
-        
+
         // Initialize Three.js
         try {
             await this.threeManager.init();
-        } catch(err) {
+        } catch (err) {
             throw new Error('WebGL is not supported by your browser');
         }
         this.threeManager.initCamera();
         this.threeManager.initCube();
-        
+
         // Image manager
         this.textureManager = createTextureManager();
-        
+
         // Set image manager reference for texture updates
         this.threeManager.textureManager = this.textureManager;
-        
+
         // Config manager with UI integration
         this.configManager = createConfigManagerUI({
             onSave: (result) => {
@@ -137,6 +141,9 @@ export class Cover3DApplication {
                 if (result.success) {
                     this.message?.success(result.message);
                     this.threeManager.requestRender();
+                    if (this.GUIManager) {
+                        this.GUIManager.update({fov: this.threeManager.cameraObj.fov});
+                    }
                 } else {
                     this.message?.error(`Failed to load configuration.\n${result.error}`);
                 }
@@ -164,11 +171,49 @@ export class Cover3DApplication {
                 }
             }
         });
-        
+
         // Screenshot manager
         this.screenshotManager = createScreenshotManager();
-        
+
         console.log('Managers initialized');
+    }
+
+    /**
+     * Initialize the GUI manager for advanced options.
+     */
+    async initGUIManager() {
+        this.loading.show();
+        this.GUIManager = await createGUIManager(this, this.threeManager.container, {
+            defaults: {
+                fov: defaultCameraConfig.fov
+            },
+            async onToggleRotation(show) {
+                if (!this.threeManager.transformControls) {
+                    this.loading.show();
+                    await this.threeManager.initTransformControls();
+                    this.loading.hide();
+                } else {
+                    if (show) {
+                        this.threeManager.transformControls.attach(this.threeManager.cube);
+                    } else {
+                        this.threeManager.transformControls.detach(this.threeManager.cube);
+                    }
+                }
+                this.threeManager.requestRender();
+            },
+            onFOVChange(value) {
+                this.threeManager.camera.setFocalLength(value);
+                this.threeManager.requestRender();
+                this.threeManager.cameraObj.updateFromThreeCamera();
+            },
+            onReset() {
+                // Reset cube to its initial rotation
+                this.threeManager.cube.rotation.fromArray([0, 0, 0]);
+                this.threeManager.requestRender();
+            }
+        });
+        this.GUIManager.update({ fov: this.threeManager.cameraObj.fov });
+        this.loading.hide();
     }
 
     /**
@@ -187,7 +232,7 @@ export class Cover3DApplication {
                         uploadItem.classList.add('has-image');
                     }
                 }
-                
+
                 // Trigger texture update
                 this.threeManager.needsTextureUpdate.push(face);
                 this.threeManager.requestRender();
@@ -209,7 +254,7 @@ export class Cover3DApplication {
                 }
             }
         });
-        
+
         // Image drop handlers
         let dragMouseX = 0;
         let dragMouseY = 0;
@@ -246,14 +291,14 @@ export class Cover3DApplication {
                 this.threeManager.requestRender();
             }
         });
-        
+
         let mouseDownX = 0;
         let mouseDownY = 0;
         this.threeManager.canvas.addEventListener('mousedown', (event) => {
             mouseDownX = event.clientX;
             mouseDownY = event.clientY;
         });
-        
+
         this.threeManager.canvas.addEventListener('mouseup', (event) => {
             // If mouse position hasn't changed...
             if (event.clientX === mouseDownX && event.clientY === mouseDownY) {
@@ -268,7 +313,7 @@ export class Cover3DApplication {
                 }
             }
         });
-        
+
         // Config manager UI
         this.configManager.setupUI({
             camera: this.cameraObj,
@@ -280,7 +325,7 @@ export class Cover3DApplication {
             viewPreset: document.getElementById('view-preset'),
             boxPreset: document.getElementById('box-preset')
         });
-        
+
         // Screenshot button
         const screenshotBtn = document.getElementById('screenshot');
         if (screenshotBtn) {
@@ -299,26 +344,32 @@ export class Cover3DApplication {
                 }
             });
         }
-        
+
         // Reset camera button
-        const resetCameraBtn = document.getElementById('reset-camera');
-        if (resetCameraBtn) {
-            resetCameraBtn.addEventListener('click', () => this.doResetCamera());
+        const resetViewBtn = document.getElementById('reset-view');
+        if (resetViewBtn) {
+            resetViewBtn.addEventListener('click', () => this.doResetCamera());
         }
-        
+
+        // Show hint button
+        const showHintBtn = document.getElementById('show-hint');
+        if (showHintBtn) {
+            showHintBtn.addEventListener('click', () => this.showKeyboardShortcutsHelp());
+        }
+
         // Keyboard shortcuts
         this.keyboardShortcuts = new KeyboardShortcuts({
             shortcuts: KEYBOARD_SHORTCUTS,
             handler: (action) => this.handleKeyboardShortcut(action)
         });
         this.keyboardShortcuts.attach();
-        
+
         // Window resize (debounced)
         window.addEventListener('resize', debounce(() => {
             this.threeManager.handleResize();
             this.threeManager.requestRender();
         }, 300), { passive: true });
-        
+
         console.log('Event listeners set up');
     }
 
@@ -331,19 +382,28 @@ export class Cover3DApplication {
             case 'save':
                 document.getElementById('save-config')?.click();
                 break;
-            
+
             case 'load':
                 document.getElementById('load-config')?.click();
                 break;
-            
+
             case 'screenshot':
                 document.getElementById('screenshot')?.click();
                 break;
-            
+
             case 'reset':
                 this.doResetCamera();
                 break;
-            
+
+            case 'advanced':
+                // GUI manager
+                if (!this.GUIManager) {
+                    this.initGUIManager();
+                } else {
+                    this.GUIManager.show(this.GUIManager._hidden);
+                }
+                break;
+
             case 'help':
                 this.showKeyboardShortcutsHelp();
                 break;
@@ -361,16 +421,20 @@ export class Cover3DApplication {
         const controls = `Camera Controls:
             ‣ Drag: Rotate camera
             ‣ Scroll: Zoom in/out`;
-        
-        this.message?.info(`Keyboard Shortcuts:\n${shortcuts}\n\n${controls}`);
+
+        this.message?.info(`Keyboard Shortcuts:\n${shortcuts}\n\n${controls}`, true);
     }
 
     /**
      * Reset camera to default position.
      */
     doResetCamera() {
-        this.threeManager.resetCamera();
-        this.message?.info('Camera reset');
+        this.threeManager.reset();
+        this.message?.info('View reset');
+        const viewPreset = document.getElementById('view-preset');
+        if (viewPreset) {
+            viewPreset.value = '';
+        }
     }
 
     /**

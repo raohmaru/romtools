@@ -19,6 +19,7 @@ export class Message {
             maxMessages: options.maxMessages || 5,
             ...options
         };
+        this.singleInstances = new Map();
         this.create(container);
     }
 
@@ -42,9 +43,10 @@ export class Message {
      * Show a message notification
      * @param {string} text - The message text
      * @param {string} type - Message type: 'info', 'success', 'error'
+     * @param {boolean} single - Whether to only show one instance of this message text
      */
-    show(text, type = 'info') {
-        if (!this.container) {
+    show(text, type = 'info', single = false) {
+        if (!this.container || (single && this.singleInstances.has(text))) {
             return;
         }
 
@@ -60,19 +62,27 @@ export class Message {
             messages[0].remove();
         }
 
+        if (single) {
+            this.singleInstances.set(text, true);
+        }
+
         // Auto-remove after duration
         setTimeout(() => {
             message.style.animation = 'slideOut 0.3s ease';
-            setTimeout(() => message.remove(), 300);
+            message.addEventListener("animationend", () => {
+                message.remove();
+                this.singleInstances.delete(text);
+            });
         }, this.options.duration);
     }
 
     /**
      * Show an info message
      * @param {string} text - The message text
+     * @param {boolean} single - Whether to only show one instance of this message text
      */
-    info(text) {
-        this.show(text, 'info');
+    info(text, single) {
+        this.show(text, 'info', single);
     }
 
     /**

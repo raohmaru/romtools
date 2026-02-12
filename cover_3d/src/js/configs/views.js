@@ -16,7 +16,7 @@ export const VIEWS = {
         config: {
             camera: {
                 radius: 4.631368393546749,
-                theta: 0.692941003573224,
+                theta: -0.692941003573224,
                 phi: 1.5592443670503562
             }
         }
@@ -26,7 +26,7 @@ export const VIEWS = {
         config: {
             camera: {
                 radius: 4.631368393546749,
-                theta: -0.692941003573224,
+                theta: 0.692941003573224,
                 phi: 1.5592443670503562
             }
         }
@@ -36,7 +36,7 @@ export const VIEWS = {
         config: {
             camera: {
                 radius: 4.631368393546749,
-                theta: 0.7552269194879576,
+                theta: -0.7552269194879576,
                 phi: 1.174398244807168
             }
         }
@@ -46,7 +46,7 @@ export const VIEWS = {
         config: {
             camera: {
                 radius: 4.631368393546749,
-                theta: -0.7552269194879576,
+                theta: 0.7552269194879576,
                 phi: 1.174398244807168
             }
         }
@@ -56,7 +56,7 @@ export const VIEWS = {
         config: {
             camera: {
                 radius: 4.631368393546749,
-                theta: 0.7476842574069325,
+                theta: -0.7476842574069325,
                 phi: 1.8382147167154812
             }
         }
@@ -66,7 +66,7 @@ export const VIEWS = {
         config: {
             camera: {
                 radius: 4.631368393546749,
-                theta: -0.7476842574069325,
+                theta: 0.7476842574069325,
                 phi: 1.8382147167154812
             }
         }

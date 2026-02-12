@@ -92,12 +92,12 @@
 
             <section>
                 <div class="actions-group">
-                    <button id="reset-camera" class="primary" type="button" title="Reset camera (R)">Reset Camera</button>
-                    <button id="save-config" class="primary" type="button" title="Save configuration (S)">Save Configuration</button>
-                    <button id="load-config" class="primary" type="button" title="Load configuration (L)">Load Configuration</button>
+                    <button id="reset-view" class="primary" type="button" title="Reset view (R)">Reset View</button>
+                    <button id="save-config" class="primary" type="button" title="Save current box and view configuration (S)">Save Configuration</button>
+                    <button id="load-config" class="primary" type="button" title="Load box and view configuration (L)">Load Configuration</button>
                     <div class="actions-group horizontal">
                         <button id="screenshot" class="secondary flex1" type="button" title="Take screenshot (P)">Take Screenshot</button>
-                        <select id="screenshot-scale" title="Image quality multiplier">
+                        <select id="screenshot-scale" title="Screenshot quality multiplier">
                             <option value="1">x1</option>
                             <option value="2" selected>x2</option>
                             <option value="3">x3</option>
@@ -112,7 +112,7 @@
 
     <footer>
         <p>Game Box 3D - A Three.js 3D Game Box Viewer 🙟 Created by <a href="https://github.com/raohmaru" target="_blank">raohmaru</a></p>
-        <p class="keyboard-hint">Press <kbd>?</kbd> for keyboard shortcuts and camera controls</p>
+        <p class="keyboard-hint">Press <kbd id="show-hint" class="hover">?</kbd> for keyboard shortcuts and camera controls</p>
     </footer>
 
     <script type="module" src="js/main.js"></script>

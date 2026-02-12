@@ -12,7 +12,8 @@ export const KEYBOARD_SHORTCUTS = {
     'l': { action: 'load', description: 'Load configuration' },
     'p': { action: 'screenshot', description: 'Take screenshot' },
     'r': { action: 'reset', description: 'Reset camera' },
-    '?': { action: 'help', description: 'Show keyboard shortcuts help' }
+    'a': { action: 'advanced', description: 'Advanced options' },
+    '?': { action: 'help', description: 'Show this help' }
 };
 
 /**

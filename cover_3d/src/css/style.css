@@ -369,7 +369,6 @@ select {
     background-repeat: no-repeat;
     background-position: right 12px center;
     padding-right: 32px;
-    width: 100%;
 
     &:hover {
         background-color: var(--color-bg-primary);
@@ -450,9 +449,15 @@ footer {
 }
 
 .keyboard-hint {
+    display: none;
     margin-top: var(--spacing-sm);
     font-size: 0.75rem;
     opacity: 0.8;
+
+    /* For devices with mouse pointer */
+    @media (pointer: fine) {
+        display: block;
+    }
 
     & kbd {
         background: var(--color-bg-tertiary);
@@ -529,7 +534,7 @@ button[title] {
     }
 
     &.error {
-        background: rgba(255, 68, 68, 0.15);
+        background: color-mix(in srgb, var(--color-bg-primary), transparent 25%);
         color: var(--color-error);
         border-color: var(--color-error);
     }
@@ -542,7 +547,7 @@ button[title] {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(26, 26, 46, 0.9);
+    background: rgba(26, 26, 46, 0.4);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -573,6 +578,12 @@ button[title] {
     flex: 1;
 }
 
+.hover:hover {
+    cursor: pointer;
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
 /* Loading State */
 .loading {
     position: relative;
@@ -590,5 +601,27 @@ button[title] {
         border-top-color: var(--color-accent);
         border-radius: 50%;
         animation: spin 0.8s linear infinite;
+    }
+}
+
+/* GUI */
+
+.lil-gui.root {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background-color: var(--color-bg-secondary);
+    --title-background-color: var(--color-accent);
+    --widget-color: var(--color-bg-tertiary);
+    --hover-color: var(--color-accent);
+    --name-width: 25%;
+
+    & .title {
+        border-top-right-radius: 5px;
+    }
+
+    .controller.function {
+        display: inline-block;
+        width: 50%;
     }
 }

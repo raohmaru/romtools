@@ -13,13 +13,15 @@
  */
 export const defaultCameraConfig = {
     radius: 7.348469228349535,
-    theta: 0.7853981633974484,
+    theta: -0.7853981633974484,
     phi: 1.2951535275786312,
+    fov: 45,
     target: [0, 0, 0],
-    minRadius: 3,
-    maxRadius: 20,
+    minRadius: 2,
+    maxRadius: 30,
     minPhi: 0.1,
-    maxPhi: Math.PI - 0.1
+    maxPhi: Math.PI - 0.1,
+    rotation: [0, 0, 0]
 };
 
 /**
@@ -42,6 +44,9 @@ export function getCameraPosition(camera) {
 export function setCameraPosition(camera, threeCamera) {
     const [x, y, z] = getCameraPosition(camera);
     threeCamera.position.set(x, y, z);
+    if (camera.fov) {
+        threeCamera.setFocalLength(camera.fov);
+    }
 }
 
 /**
@@ -53,6 +58,7 @@ export function setCameraState(camera, state) {
     if (state.radius !== undefined) camera.radius = state.radius;
     if (state.theta !== undefined) camera.theta = state.theta;
     if (state.phi !== undefined) camera.phi = state.phi;
+    if (state.fov !== undefined) camera.fov = state.fov;
     if (state.target !== undefined) camera.target = [...state.target];
     
     // Clamp values
