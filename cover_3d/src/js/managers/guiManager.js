@@ -52,6 +52,14 @@ export async function createGUIManager(context, container, options = {}) {
         }
     });
 
+    const _gui_show = gui.show;
+    gui.show = (show) => {
+        _gui_show.call(gui, show);
+        if (!show) {
+            controllers.toggleRotation.reset();
+        }
+    };
+
     // Manual update GUI values
     gui.update = (obj) => {
         Object.keys(obj).forEach((param) => {

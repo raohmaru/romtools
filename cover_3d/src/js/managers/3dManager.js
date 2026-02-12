@@ -387,14 +387,16 @@ export class ThreeManager {
         if (!mesh.geometry.boundingBox) {
             mesh.geometry.computeBoundingBox();
         }
-        const box = mesh.geometry.boundingBox.clone();
+        const box = mesh.geometry.boundingBox;
 
-        // Transform to world space using object's world matrix
-        const worldBox = box.clone().applyMatrix4(mesh.matrixWorld);
+        // Ensure the world matrix is up-to-date in case of any TransformControls modifications
+        mesh.updateMatrixWorld(true);
 
-        // Project all 8 corners through the camera
-        const { x: minX, y: minY, z: minZ } = worldBox.min;
-        const { x: maxX, y: maxY, z: maxZ } = worldBox.max;
+        // Get local space bounding box corners
+        const { x: minX, y: minY, z: minZ } = box.min;
+        const { x: maxX, y: maxY, z: maxZ } = box.max;
+        
+        // Create all 8 corners in local space
         const corners = [
             new THREE.Vector3(minX, minY, minZ),
             new THREE.Vector3(minX, minY, maxZ),
@@ -406,15 +408,18 @@ export class ThreeManager {
             new THREE.Vector3(maxX, maxY, maxZ)
         ];
 
+        // Transform each corner to world space individually, then project to screen
         const screenBox = { minX: Infinity, minY: Infinity, maxX: -Infinity, maxY: -Infinity };
-        const { clientWidth, clientHeight } = this.canvas;
 
         for (const corner of corners) {
-            corner.project(this.camera);
+            // Transform local corner to world space
+            const worldCorner = corner.clone().applyMatrix4(mesh.matrixWorld);
+            // Project world corner to screen space
+            worldCorner.project(this.camera);
 
             // Convert from normalized device coordinates (-1 to +1) to screen pixels
-            const x = (corner.x * 0.5 + 0.5) * clientWidth;
-            const y = (-corner.y * 0.5 + 0.5) * clientHeight;
+            const x = (worldCorner.x * 0.5 + 0.5) * this.canvas.width;
+            const y = (-worldCorner.y * 0.5 + 0.5) * this.canvas.height;
 
             screenBox.minX = Math.min(screenBox.minX, x);
             screenBox.minY = Math.min(screenBox.minY, y);

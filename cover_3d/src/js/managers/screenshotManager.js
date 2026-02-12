@@ -71,12 +71,22 @@ export function createScreenshotManager() {
         try {
             const blob = await new Promise(async (resolve, reject) => {
                 try {
-                    const { canvas, scene, cube, renderer } = threeManager;
+                    const { canvas, scene, cube, renderer, camera } = threeManager;
                     const { background } = scene;
-                    const { width, height } = canvas;
+                    const { clientWidth, clientHeight } = canvas;
         
+                    // Store original camera aspect
+                    const originalAspect = camera.aspect;
+                    
                     // Set canvas to desired screenshot dimension
-                    renderer.setSize(width * scaleFactor, height * scaleFactor);
+                    const scaledWidth = canvas.width * scaleFactor;
+                    const scaledHeight = canvas.height * scaleFactor;
+                    renderer.setSize(scaledWidth, scaledHeight);
+                    
+                    // Update camera aspect ratio to match new canvas size
+                    camera.aspect = scaledWidth / scaledHeight;
+                    camera.updateProjectionMatrix();
+                    
                     const bbox = threeManager.getScreenSpaceBoundingBox(cube);
                     // Make background transparent
                     scene.background = null;
@@ -90,9 +100,11 @@ export function createScreenshotManager() {
                     // Draw the main canvas onto offset canvas at bbox coordinates
                     offscreenCtx.drawImage(canvas, bbox.x, bbox.y, bbox.width, bbox.height, 0, 0, bbox.width, bbox.height);
                     
-                    // Reset scene and renderer size
+                    // Reset scene, camera aspect, and renderer size
                     scene.background = background;
-                    renderer.setSize(width, height);
+                    camera.aspect = originalAspect;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize(clientWidth, clientHeight);
                     threeManager.renderFrame();
                     
                     // Create a blob object representing the image contained in the canvas

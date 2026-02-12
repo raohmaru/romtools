@@ -4,10 +4,6 @@
  * Provides camera state management and helper functions for Three.js OrbitControls.
  */
 
-// ============================================================================
-// CAMERA STATE
-// ============================================================================
-
 /**
  * Default camera configuration.
  */

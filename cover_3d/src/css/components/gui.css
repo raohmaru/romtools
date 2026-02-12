@@ -1,4 +1,4 @@
-.lil-gui.root {
+.lil-gui.lil-root {
     position: absolute;
     top: 6px;
     right: 6px;
@@ -8,11 +8,7 @@
     --hover-color: var(--color-accent);
     --name-width: 25%;
 
-    & .title {
-        border-top-right-radius: 5px;
-    }
-
-    .controller.function {
+    .lil-controller.lil-function {
         display: inline-block;
         width: 50%;
     }
