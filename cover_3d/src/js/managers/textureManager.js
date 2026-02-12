@@ -179,7 +179,7 @@ export function createTextureManager() {
         /**
          * Gets the ImageBitmap for a specific face.
          * @param {string} face - Face name
-         * @returns {ImageBitmap|null} ImageBitmap or null
+         * @returns {ImageBitmap|string|null} ImageBitmap, a string color or null
          */
         getImageBitmap(face) {
             if (!faces.hasOwnProperty(face)) {
@@ -198,6 +198,19 @@ export function createTextureManager() {
                 throw new Error(`Invalid face: ${face}`);
             }
             return state.loading[face];
+        },
+
+        /**
+         * Removes the image from a specific face, reverting it to a default color.
+         * @param {string} face - Face name
+         * @param {string} color - Hex color to replace the texture
+         */
+        removeImage(face, color = '') {
+            if (!faces.hasOwnProperty(face)) {
+                throw new Error(`Invalid face: ${face}`);
+            }
+            // Mark image for deletion, and replace with the given color
+            state.imageBitmaps[face] = color;
         }
     };
 }
@@ -211,6 +224,7 @@ export function createTextureManager() {
 function createFileInputHandlers(textureManager, options = {}) {
     const {
         onImageLoad = () => {},
+        onImageRemove = () => {},
         onError = console.error,
         onLoadingChange = () => {}
     } = options;
@@ -310,6 +324,8 @@ function createFileInputHandlers(textureManager, options = {}) {
     function initializeInput(element, face) {
         const input = element.querySelector('input[type="file"]');
         const preview = element.querySelector('.preview');
+        const remove = element.querySelector('.preview-remove');
+        const colorPicker = element.querySelector('input[type="color"]');
 
         if (input) {
             input.addEventListener('change', (e) => handleFileSelect(e, face));
@@ -327,6 +343,17 @@ function createFileInputHandlers(textureManager, options = {}) {
             preview.addEventListener('dragleave', handleDragLeave);
             preview.addEventListener('drop', (e) => handleDrop(e, face));
         }
+
+        if (remove) {
+            remove.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                textureManager.removeImage(face, colorPicker.value);
+                updatePreview(null, preview);
+                onImageRemove(face);
+            });
+        }
+
     }
 
     return {

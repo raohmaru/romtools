@@ -10,7 +10,7 @@ import * as THREE from 'three';
 import WebGL from 'three/addons/capabilities/WebGL.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-import { createCube, updateCubeFaceTexture, FACE_INDEX_MAP } from '../objects/cube.js';
+import { createCube, updateCubeFaceTexture, removeCubeFaceTexture, FACE_INDEX_MAP } from '../objects/cube.js';
 import { defaultCameraConfig, getCameraPosition } from '../objects/camera.js';
 
 /**
@@ -158,7 +158,7 @@ export class ThreeManager {
         this.transformControls.setSpace('local');
         this.scene.add(this.transformControls.getHelper());
 
-        this.transformControls.addEventListener('change', (event) => {
+        this.transformControls.addEventListener('change', () => {
             this.requestRender();
             this.cameraProps.updateFromThreeCamera();
         });
@@ -192,11 +192,13 @@ export class ThreeManager {
             const imageBitmap = this.textureManager.getImageBitmap(face);
             const faceIndex = FACE_INDEX_MAP[face];
 
-            if (imageBitmap) {
+            if (imageBitmap instanceof ImageBitmap) {
                 const texture = new THREE.CanvasTexture(imageBitmap);
                 texture.colorSpace = THREE.LinearSRGBColorSpace;
-
                 updateCubeFaceTexture(this.cube, faceIndex, texture);
+            } else if (typeof imageBitmap === 'string') {
+                // Texture marked for deletion
+                removeCubeFaceTexture(this.cube, faceIndex, imageBitmap);
             }
         }
 

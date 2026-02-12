@@ -16,6 +16,9 @@ const CUBE_DEPTH = 0.5;
 export const FACE_INDEX_MAP = { left: 0, right: 1, top: 2, bottom: 3, back: 4, front: 5 };
 export const FACE_NAME_MAP = Object.keys(FACE_INDEX_MAP);
 
+// Default materials for each face
+const materials = [];
+
 let highlightedFace = -1;
 let lightMapTexture;
 
@@ -64,14 +67,12 @@ export function createCube(scene) {
     const geometry = createGeometry();
 
     // Create materials for each face
-    const materials = [
-        new THREE.MeshBasicMaterial({ color: 0x444444 }), // right
-        new THREE.MeshBasicMaterial({ color: 0x444444 }), // left
-        new THREE.MeshBasicMaterial({ color: 0x666666 }), // top
-        new THREE.MeshBasicMaterial({ color: 0x333333 }), // bottom
-        new THREE.MeshBasicMaterial({ color: 0x555555 }), // front
-        new THREE.MeshBasicMaterial({ color: 0x555555 }), // back
-    ];
+    materials.push( new THREE.MeshBasicMaterial({ color: 0x444444 }) ); // left
+    materials.push( new THREE.MeshBasicMaterial({ color: 0x444444 }) ); // right
+    materials.push( new THREE.MeshBasicMaterial({ color: 0x666666 }) ); // top
+    materials.push( new THREE.MeshBasicMaterial({ color: 0x333333 }) ); // bottom
+    materials.push( new THREE.MeshBasicMaterial({ color: 0x555555 }) ); // back
+    materials.push( new THREE.MeshBasicMaterial({ color: 0x555555 }) ); // front
 
     // Create mesh
     const cube = new THREE.Mesh(geometry, materials);
@@ -84,8 +85,7 @@ export function createCube(scene) {
 
     return {
         mesh: cube,
-        geometry: geometry,
-        materials: materials
+        geometry: geometry
     };
 }
 
@@ -203,4 +203,24 @@ export function highlightCubeFace(cube, faceIndex = -1) {
  */
 export function getCubeFaceName(faceIndex) {
     return FACE_NAME_MAP[faceIndex];
+}
+
+/**
+ * Removes the texture from a specific face of the cube, reverting it to its default material color.
+ * @param {THREE.Mesh} cube - The cube mesh
+ * @param {number} faceIndex - Face index (0-5)
+ * @param {string|number|undefined} color - Color value (hex string or number)
+ * @returns 
+ */
+export function removeCubeFaceTexture(cube, faceIndex, color) {
+    if (!cube || faceIndex < 0 || faceIndex > 5) {
+        return;
+    }
+
+    // Create a new material with the texture
+    const material = cube.material[faceIndex];
+    const defaultMaterial = materials[faceIndex];
+    material.map = null;
+    material.color.set(color);
+    material.needsUpdate = true;
 }

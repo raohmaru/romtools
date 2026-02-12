@@ -1,21 +1,19 @@
-@layer components {
-    .lil-gui.root {
-        position: absolute;
-        top: 6px;
-        right: 6px;
-        background-color: var(--color-bg-secondary);
-        --title-background-color: var(--color-accent);
-        --widget-color: var(--color-bg-tertiary);
-        --hover-color: var(--color-accent);
-        --name-width: 25%;
+.lil-gui.root {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background-color: var(--color-bg-secondary);
+    --title-background-color: var(--color-accent);
+    --widget-color: var(--color-bg-tertiary);
+    --hover-color: var(--color-accent);
+    --name-width: 25%;
 
-        & .title {
-            border-top-right-radius: 5px;
-        }
+    & .title {
+        border-top-right-radius: 5px;
+    }
 
-        .controller.function {
-            display: inline-block;
-            width: 50%;
-        }
+    .controller.function {
+        display: inline-block;
+        width: 50%;
     }
 }

@@ -99,7 +99,7 @@ export class Cover3DApplication {
     async initManagers(canvas, container) {
         // Image manager
         this.textureManager = createTextureManager();
-        
+
         // Initialize Three.js manager
         this.threeManager = createThreeManager({
             canvas,
@@ -225,6 +225,13 @@ export class Cover3DApplication {
                 // Trigger texture update
                 this.threeManager.needsTextureUpdate.push(face);
                 this.threeManager.requestRender();
+            },
+            onImageRemove: (face) => {
+                // Trigger texture update
+                this.threeManager.needsTextureUpdate.push(face);
+                this.threeManager.requestRender();
+                const uploadItem = $(`.upload-item[data-face="${face}"]`);
+                uploadItem.classList.remove('has-image');
             },
             onError: (error) => {
                 this.message?.error(`Image load error: ${error.message}`);

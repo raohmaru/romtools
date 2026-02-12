@@ -21,6 +21,7 @@
         }
     
         & .preview {
+            position: relative;
             width: 100%;
             aspect-ratio: 1;
             background-color: var(--color-bg-tertiary);
@@ -72,6 +73,26 @@
             & .preview::before {
                 content: '';
             }
+
+            & .preview-remove {
+                display: block;
+            }
+        }
+    }
+    
+    .preview-remove {
+        display: none;
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        padding: 0px 3px;
+        color: var(--color-text-primary);
+        background-color: var(--color-bg-secondary);
+        border: 1px solid transparent;
+
+        &:hover {
+            background-color: var(--color-accent);
+            border-color: var(--color-text-primary);
         }
     }
 }

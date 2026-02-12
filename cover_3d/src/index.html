@@ -37,44 +37,56 @@
 
         <aside id="controls-panel">
             <section id="image-uploads">
-                <h2>Game Box Images</h2>
+                <h2>Images</h2>
                 <p class="instruction">Upload images for each side of the game box</p>
                 
                 <div class="upload-grid">
                     <div class="upload-item" data-face="front">
                         <label for="image-front">Front</label>
-                        <input type="file" accept="image/png,image/jpeg,image/gif,image/webp" data-face="front" id="image-front">
-                        <div class="preview"></div>
+                        <input type="file" accept="image/png,image/jpeg,image/gif,image/webp" id="image-front">
+                        <div class="preview">
+                            <button class="preview-remove" title="Remove image">&times;</button>
+                        </div>
                         <input type="color" class="color-picker" data-face="front" value="#555555">
                     </div>
                     <div class="upload-item" data-face="back">
                         <label for="image-back">Back</label>
-                        <input type="file" accept="image/png,image/jpeg,image/gif,image/webp" data-face="back" id="image-back">
-                        <div class="preview"></div>
+                        <input type="file" accept="image/png,image/jpeg,image/gif,image/webp" id="image-back">
+                        <div class="preview">
+                            <button class="preview-remove" title="Remove image">&times;</button>
+                        </div>
                         <input type="color" class="color-picker" data-face="back" value="#555555">
                     </div>
                     <div class="upload-item" data-face="left">
                         <label for="image-left">Spine</label>
-                        <input type="file" accept="image/png,image/jpeg,image/gif,image/webp" data-face="left" id="image-left">
-                        <div class="preview"></div>
+                        <input type="file" accept="image/png,image/jpeg,image/gif,image/webp" id="image-left">
+                        <div class="preview">
+                            <button class="preview-remove" title="Remove image">&times;</button>
+                        </div>
                         <input type="color" class="color-picker" data-face="left" value="#444444">
                     </div>
                     <div class="upload-item" data-face="right">
                         <label for="image-right">Right</label>
-                        <input type="file" accept="image/png,image/jpeg,image/gif,image/webp" data-face="right" id="image-right">
-                        <div class="preview"></div>
+                        <input type="file" accept="image/png,image/jpeg,image/gif,image/webp" id="image-right">
+                        <div class="preview">
+                            <button class="preview-remove" title="Remove image">&times;</button>
+                        </div>
                         <input type="color" class="color-picker" data-face="right" value="#444444">
                     </div>
                     <div class="upload-item" data-face="top">
                         <label for="image-top">Top</label>
-                        <input type="file" accept="image/png,image/jpeg,image/gif,image/webp" data-face="top" id="image-top">
-                        <div class="preview"></div>
+                        <input type="file" accept="image/png,image/jpeg,image/gif,image/webp" id="image-top">
+                        <div class="preview">
+                            <button class="preview-remove" title="Remove image">&times;</button>
+                        </div>
                         <input type="color" class="color-picker" data-face="top" value="#666666">
                     </div>
                     <div class="upload-item" data-face="bottom">
                         <label for="image-bottom">Bottom</label>
-                        <input type="file" accept="image/png,image/jpeg,image/gif,image/webp" data-face="bottom" id="image-bottom">
-                        <div class="preview"></div>
+                        <input type="file" accept="image/png,image/jpeg,image/gif,image/webp" id="image-bottom">
+                        <div class="preview">
+                            <button class="preview-remove" title="Remove image">&times;</button>
+                        </div>
                         <input type="color" class="color-picker" data-face="bottom" value="#333333">
                     </div>
                 </div>
