@@ -16,7 +16,10 @@ export async function createGUIManager(context, container, options = {}) {
     const params = {
         toggleRotation: false,
         fov: options.defaults.fov,
-        close() { gui.hide() },
+        close() {
+            controllers.toggleRotation.reset();
+            gui.hide();
+        },
         reset() {
             controllers.fov.reset();
             onReset.call(context);
@@ -28,7 +31,7 @@ export async function createGUIManager(context, container, options = {}) {
     gui.add(params, 'reset').name('Reset');
     gui.add(params, 'close').name('Close');
 
-    // Create a mapping of property names to controllers for easy updates
+    // Create a mapping of property names to controllers
     const controllers = gui.controllers.reduce((acc, curr) => {
         acc[curr.property] = curr;
         return acc;

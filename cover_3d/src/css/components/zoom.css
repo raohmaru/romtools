@@ -1,0 +1,25 @@
+@layer components {
+    .zoom-indicator {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(26, 26, 46, 0.9);
+        color: var(--color-text-secondary);
+        padding: 8px 16px;
+        border-radius: 4px;
+        font-size: 12px;
+        pointer-events: none;
+        transition: color 0.3s ease, opacity 0.1 linear;
+        border: 1px solid var(--color-border);
+        animation: fadeOut 0.1s linear forwards 1s;
+
+        &.at-min {
+            color: #ebdc10;
+        }
+
+        &.at-max {
+            color: var(--color-accent);
+        }
+    }
+}

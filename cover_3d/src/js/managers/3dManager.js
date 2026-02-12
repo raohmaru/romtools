@@ -11,7 +11,7 @@ import WebGL from 'three/addons/capabilities/WebGL.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 import { createCube, updateCubeFaceTexture, FACE_INDEX_MAP } from '../objects/cube.js';
-import { defaultCameraConfig } from '../objects/camera.js';
+import { defaultCameraConfig, getCameraPosition } from '../objects/camera.js';
 
 /**
  * 3D Manager class for handling Three.js initialization and rendering
@@ -29,7 +29,7 @@ export class ThreeManager {
         this.cube = null;
 
         // Camera state
-        this.cameraObj = null;
+        this.cameraProps = null;
 
         // Canvas element
         this.canvas = options.canvas || null;
@@ -39,7 +39,6 @@ export class ThreeManager {
         this.container = options.container || null;
 
         // State
-        this.isInitialized = false;
         this.needsTextureUpdate = [];
         this.isAnimating = false;
 
@@ -54,6 +53,8 @@ export class ThreeManager {
         // Raycaster for hover detection
         this.raycaster = new THREE.Raycaster();
         this.mouse = new THREE.Vector2();
+
+        this.textureManager = options.textureManager;
     }
 
     /**
@@ -84,7 +85,7 @@ export class ThreeManager {
         // this.renderer.toneMapping = THREE.LinearToneMapping;
         // this.renderer.toneMappingExposure = 1.1;
 
-        // Canvas boundix box user space
+        // Canvas bounding box user space
         this.canvasBBRect = this.canvas.getBoundingClientRect();
 
         console.log('Three.js WebGL renderer initialized');
@@ -96,48 +97,53 @@ export class ThreeManager {
     initCamera() {
         const width = this.container ? this.container.clientWidth : 800;
         const height = this.container ? this.container.clientHeight : 600;
+        const cameraPos = getCameraPosition(defaultCameraConfig);
 
         // Create Three.js camera
         this.camera = new THREE.PerspectiveCamera(defaultCameraConfig.fov, width / height, 0.1, 100);
-        this.camera.position.set(5, 2, -5);
+        this.camera.position.set(...cameraPos);
 
         // Create camera controls object for state tracking
-        this.cameraObj = {
+        this.cameraProps = {
             ...defaultCameraConfig,
             updateFromThreeCamera: () => {
                 const x = this.camera.position.x;
                 const y = this.camera.position.y;
                 const z = this.camera.position.z;
-                this.cameraObj.radius = Math.sqrt(x * x + y * y + z * z);
-                this.cameraObj.theta = Math.atan2(z, x);
-                this.cameraObj.phi = Math.acos(y / this.cameraObj.radius);
-                this.cameraObj.fov = this.camera.getFocalLength();
+                this.cameraProps.radius = Math.sqrt(x * x + y * y + z * z);
+                this.cameraProps.theta = Math.atan2(z, x);
+                this.cameraProps.phi = Math.acos(y / this.cameraProps.radius);
+                this.cameraProps.fov = this.camera.getFocalLength();
                 // Euler rotation without the last item (order)
-                this.cameraObj.rotation = this.cube.rotation.toArray().slice(0, -1);
+                this.cameraProps.rotation = this.cube.rotation.toArray().slice(0, -1);
 
                 // Notify camera change
                 if (this.onCameraChange) {
-                    this.onCameraChange(this.cameraObj);
+                    this.onCameraChange(this.cameraProps);
                 }
             }
         };
 
-        // Create OrbitControls
+        console.log('Camera initialized with OrbitControls');
+    }
+
+    /**
+     * Create OrbitControls
+     */
+    initOrbitControls() {
         this.orbitControls = new OrbitControls(this.camera, this.canvas);
         this.orbitControls.enableDamping = true;
         this.orbitControls.dampingFactor = 0.1;
-        this.orbitControls.minDistance = this.cameraObj.minRadius;
-        this.orbitControls.maxDistance = this.cameraObj.maxRadius;
+        this.orbitControls.minDistance = this.cameraProps.minRadius;
+        this.orbitControls.maxDistance = this.cameraProps.maxRadius;
         this.orbitControls.target.set(0, 0, 0);
 
         // Listen for control changes
         this.orbitControls.addEventListener('change', () => {
-            this.cameraObj.updateFromThreeCamera();
+            this.cameraProps.updateFromThreeCamera();
             this.startAnimationLoop();
             this.requestRender();
         });
-
-        console.log('Camera initialized with OrbitControls');
     }
 
     /**
@@ -154,7 +160,7 @@ export class ThreeManager {
 
         this.transformControls.addEventListener('change', (event) => {
             this.requestRender();
-            this.cameraObj.updateFromThreeCamera();
+            this.cameraProps.updateFromThreeCamera();
         });
         // Disable OrbitControls when TransformControls is dragging
         this.transformControls.addEventListener('dragging-changed', (event) => {
@@ -176,14 +182,14 @@ export class ThreeManager {
     /**
      * Update textures when images are loaded
      */
-    updateTextures(textureManager) {
+    updateTextures() {
         if (!this.cube) {
             return;
         }
 
         for (let i = 0; i < this.needsTextureUpdate.length; i++) {
             const face = this.needsTextureUpdate[i];
-            const imageBitmap = textureManager.getImageBitmap(face);
+            const imageBitmap = this.textureManager.getImageBitmap(face);
             const faceIndex = FACE_INDEX_MAP[face];
 
             if (imageBitmap) {
@@ -210,8 +216,10 @@ export class ThreeManager {
             return;
         }
 
-        // If already animating, just schedule a render
-        if (this.renderScheduled) return;
+        // If already scheduled, no need to schedule another render
+        if (this.renderScheduled) {
+            return;
+        }
 
         this.renderScheduled = true;
 
@@ -228,7 +236,9 @@ export class ThreeManager {
      * Render a single frame
      */
     renderFrame() {
-        if (!this.renderer || !this.scene || !this.camera) return;
+        if (!this.renderer || !this.scene || !this.camera) {
+            return;
+        }
 
         // Update controls (damping)
         this.orbitControls.update();
@@ -249,10 +259,12 @@ export class ThreeManager {
     }
 
     /**
-     * Start animation loop for auto-rotate or damping
+     * Start animation loop for damping
      */
     startAnimationLoop() {
-        if (this.isAnimating) return;
+        if (this.isAnimating) {
+            return;
+        }
 
         this.isAnimating = true;
 
@@ -261,10 +273,13 @@ export class ThreeManager {
         const stationaryThreshold = 10;
 
         const animate = () => {
-            if (!this.isAnimating) return;
+            if (!this.isAnimating) {
+                return;
+            }
 
             this.orbitControls.update();
 
+            // Camera is stationary if it hasn't moved significantly for a few frames
             const isMoving = this.orbitControls.enableDamping &&
                 this.camera.position.distanceTo(prevPosition) > 0.0001;
 
@@ -313,31 +328,25 @@ export class ThreeManager {
         this.camera.aspect = width / height;
         this.camera.updateProjectionMatrix();
 
+        // Update canvas bounding box for performance optimization
         this.canvasBBRect = this.canvas.getBoundingClientRect();
 
         console.log(`Canvas resized to ${width}x${height}`);
     }
-
-    /**
-     * Get camera state
-     */
-    getCameraState() {
-        return this.cameraObj;
-    }
-
+    
     /**
      * Set camera state
      */
     setCameraState(state) {
-        if (this.cameraObj && this.orbitControls) {
-            if (state.radius !== undefined) this.cameraObj.radius = state.radius;
-            if (state.theta !== undefined) this.cameraObj.theta = state.theta;
-            if (state.phi !== undefined) this.cameraObj.phi = state.phi;
+        if (this.cameraProps && this.orbitControls) {
+            if (state.radius !== undefined) this.cameraProps.radius = state.radius;
+            if (state.theta !== undefined) this.cameraProps.theta = state.theta;
+            if (state.phi !== undefined) this.cameraProps.phi = state.phi;
 
             // Update camera position
-            const x = this.cameraObj.radius * Math.sin(this.cameraObj.phi) * Math.cos(this.cameraObj.theta);
-            const y = this.cameraObj.radius * Math.cos(this.cameraObj.phi);
-            const z = this.cameraObj.radius * Math.sin(this.cameraObj.phi) * Math.sin(this.cameraObj.theta);
+            const x = this.cameraProps.radius * Math.sin(this.cameraProps.phi) * Math.cos(this.cameraProps.theta);
+            const y = this.cameraProps.radius * Math.cos(this.cameraProps.phi);
+            const z = this.cameraProps.radius * Math.sin(this.cameraProps.phi) * Math.sin(this.cameraProps.theta);
             this.camera.position.set(x, y, z);
 
             this.orbitControls.update();
@@ -349,10 +358,10 @@ export class ThreeManager {
      * Reset camera to default position
      */
     reset() {
-        if (this.cameraObj && this.camera && this.orbitControls) {
-            this.cameraObj.radius = defaultCameraConfig.radius;
-            this.cameraObj.theta = defaultCameraConfig.theta;
-            this.cameraObj.phi = defaultCameraConfig.phi;
+        if (this.cameraProps && this.camera && this.orbitControls) {
+            this.cameraProps.radius = defaultCameraConfig.radius;
+            this.cameraProps.theta = defaultCameraConfig.theta;
+            this.cameraProps.phi = defaultCameraConfig.phi;
 
             const x = defaultCameraConfig.radius * Math.sin(defaultCameraConfig.phi) * Math.cos(defaultCameraConfig.theta);
             const y = defaultCameraConfig.radius * Math.cos(defaultCameraConfig.phi);
@@ -444,6 +453,7 @@ export class ThreeManager {
             // Each face is composed of two triangles
             return Math.floor(intersect.faceIndex / 2);
         }
+
         return -1;
     }
 }

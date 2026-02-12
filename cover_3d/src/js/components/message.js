@@ -1,3 +1,5 @@
+import { parseDOMString } from 'rtkjs/dom.js';
+
 /**
  * Message Notification Component
  * 
@@ -30,8 +32,7 @@ export class Message {
      */
     create(container) {
         // Create indicator element
-        this.container = document.createElement('div');
-        this.container.id = 'message-container';
+        this.container = parseDOMString('<div id="message-container"></div>');
 
         // Append to container
         if (container) {
@@ -50,10 +51,7 @@ export class Message {
             return;
         }
 
-        const message = document.createElement('div');
-        message.className = `message ${type}`;
-        message.textContent = text;
-
+        const message = parseDOMString(`<div class="message ${type}">${text}</div>`);
         this.container.appendChild(message);
 
         // Limit number of messages

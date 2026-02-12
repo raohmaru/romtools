@@ -1,3 +1,5 @@
+import { parseDOMString } from 'rtkjs/dom.js';
+
 /**
  * Configuration Manager Module
  * 
@@ -92,10 +94,7 @@ function createConfigManager() {
             const url = URL.createObjectURL(blob);
             
             // Create download link
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = filename;
-            link.style.display = 'none';
+            const link = parseDOMString(`<a href="${url}" download="${filename}" class="hidden"></a>`);
             
             // Trigger download
             document.body.appendChild(link);
@@ -352,7 +351,52 @@ export function createConfigManagerUI(options = {}) {
          * Sets up UI event listeners for save/load buttons.
          * @param {Object} params - Parameters with camera, threeCamera and UI elements
          */
-        setupUI({ camera, threeCamera, cube, saveButton, loadButton, fileInput, viewPreset, boxPreset }) {
+        setupUI({ container, camera, threeCamera, cube, saveButton, loadButton, fileInput, viewPreset, boxPreset }) {
+            // Helper to handle config load results and update UI accordingly
+            const onLoadFromFile = (result) => {
+                if (!result.success) {
+                    return;
+                }
+                // Reset view seelct
+                viewPreset.value = '';
+                const { name } = result.config.box;
+                if (name) {
+                    // Select box preset option from config
+                    for(const option of boxPreset.options) {
+                        if (option.textContent === name) {
+                            boxPreset.value = option.value;
+                            break;
+                        }
+                    }
+                }
+            };
+
+            // Drag and drop
+            container.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+            });
+            container.addEventListener('dragenter', (e) => {
+                e.currentTarget.classList.add('drag-over');
+            });
+            container.addEventListener('dragleave', (e) => {
+                // Only remove drag-over class if leaving the container and not when hovering over children
+                if (!e.relatedTarget.closest(`#${container.id}`)) {
+                    e.currentTarget.classList.remove('drag-over');
+                }
+            });
+            container.addEventListener('drop', async (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                e.currentTarget.classList.remove('drag-over');
+                const file = e.dataTransfer?.files?.[0];
+                if (!file) {
+                    return;
+                }
+                const result = await this.loadFromFile(file, camera, threeCamera, cube);
+                onLoadFromFile(result);
+            });
+
             // Save button
             if (saveButton) {
                 saveButton.addEventListener('click', () => {
@@ -375,20 +419,7 @@ export function createConfigManagerUI(options = {}) {
                         const result = await this.loadFromFile(file, camera, threeCamera, cube);
                         // Reset input so same file can be selected again
                         e.target.value = '';
-                        if (result.success) {
-                            // Reset view seelct
-                            viewPreset.value = '';
-                            const { name } = result.config.box;
-                            if (name) {
-                                // Select box preset option from config
-                                for(const option of boxPreset.options) {
-                                    if (option.textContent === name) {
-                                        boxPreset.value = option.value;
-                                        break;
-                                    }
-                                }
-                            }
-                        }
+                        onLoadFromFile(result);
                     }
                 });
             }
@@ -396,12 +427,11 @@ export function createConfigManagerUI(options = {}) {
             // Config preset
             if (viewPreset) {
                 // Populate select with predefined configurations
+                let optionsHTML = viewPreset.innerHTML;
                 for (const key of Object.keys(VIEWS)) {
-                    const option = document.createElement('option');
-                    option.value = key;
-                    option.textContent = VIEWS[key].name;
-                    viewPreset.appendChild(option);
+                    optionsHTML += `<option value="${key}">${VIEWS[key].name}</<option>`;
                 }
+                viewPreset.innerHTML = optionsHTML;
                 
                 // Add change event listener
                 viewPreset.addEventListener('change', async (event) => {
@@ -423,12 +453,11 @@ export function createConfigManagerUI(options = {}) {
             // Config preset
             if (boxPreset) {
                 // Populate select with predefined configurations
+                let optionsHTML = boxPreset.innerHTML;
                 for (const key of Object.keys(BOXES)) {
-                    const option = document.createElement('option');
-                    option.value = key;
-                    option.textContent = BOXES[key].name;
-                    boxPreset.appendChild(option);
+                    optionsHTML += `<option value="${key}">${BOXES[key].name}</<option>`;
                 }
+                boxPreset.innerHTML = optionsHTML;
                 
                 // Add change event listener
                 boxPreset.addEventListener('change', async (event) => {

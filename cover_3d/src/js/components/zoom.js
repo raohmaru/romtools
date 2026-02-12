@@ -1,3 +1,5 @@
+import { parseDOMString } from 'rtkjs/dom.js';
+
 /**
  * Zoom class for managing zoom indicator UI
  */
@@ -21,10 +23,10 @@ export class Zoom {
      */
     create() {
         // Create indicator element
-        this.indicator = document.createElement('div');
-        this.indicator.id = 'zoom-indicator';
-        this.indicator.className = 'zoom-indicator';
-        this.indicator.textContent = 'Zoom: 0%';
+        this.indicator = parseDOMString(`
+            <div> id="zoom-indicator" class="zoom-indicator">
+                Zoom: 0%
+            </div>`);
 
         // Append to container
         if (this.container) {

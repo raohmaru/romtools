@@ -11,8 +11,9 @@
     <script type="importmap">
     {
         "imports": {
-            "three": "./libs/three.module.min.js",
-            "three/addons/": "./libs/jsm/"
+            "three": "./libs/three/three.module.min.js",
+            "three/addons/": "./libs/three/jsm/",
+            "rtkjs/": "./libs/rtkjs/"
         }
     }
     </script>
@@ -29,7 +30,7 @@
                 <h2>WebGL Not Supported</h2>
                 <p>Your browser does not support WebGL.</p>
                 <p>WebGL is required for hardware-accelerated 3D rendering.</p>
-                <p style="margin-top: 15px;"><a href="https://caniuse.com/webgl" target="_blank" style="color: #e94560;">Check WebGL browser support</a></p>
+                <p><a href="https://caniuse.com/webgl" target="_blank">Check WebGL browser support</a></p>
             </div>
             <canvas id="webgl-canvas"></canvas>
         </div>
@@ -41,38 +42,38 @@
                 
                 <div class="upload-grid">
                     <div class="upload-item" data-face="front">
-                        <label>Front</label>
-                        <input type="file" accept="image/png,image/jpeg,image/gif,image/webp" data-face="front">
+                        <label for="image-front">Front</label>
+                        <input type="file" accept="image/png,image/jpeg,image/gif,image/webp" data-face="front" id="image-front">
                         <div class="preview"></div>
                         <input type="color" class="color-picker" data-face="front" value="#555555">
                     </div>
                     <div class="upload-item" data-face="back">
-                        <label>Back</label>
-                        <input type="file" accept="image/png,image/jpeg,image/gif,image/webp" data-face="back">
+                        <label for="image-back">Back</label>
+                        <input type="file" accept="image/png,image/jpeg,image/gif,image/webp" data-face="back" id="image-back">
                         <div class="preview"></div>
                         <input type="color" class="color-picker" data-face="back" value="#555555">
                     </div>
                     <div class="upload-item" data-face="left">
-                        <label>Spine</label>
-                        <input type="file" accept="image/png,image/jpeg,image/gif,image/webp" data-face="left">
+                        <label for="image-left">Spine</label>
+                        <input type="file" accept="image/png,image/jpeg,image/gif,image/webp" data-face="left" id="image-left">
                         <div class="preview"></div>
                         <input type="color" class="color-picker" data-face="left" value="#444444">
                     </div>
                     <div class="upload-item" data-face="right">
-                        <label>Right</label>
-                        <input type="file" accept="image/png,image/jpeg,image/gif,image/webp" data-face="right">
+                        <label for="image-right">Right</label>
+                        <input type="file" accept="image/png,image/jpeg,image/gif,image/webp" data-face="right" id="image-right">
                         <div class="preview"></div>
                         <input type="color" class="color-picker" data-face="right" value="#444444">
                     </div>
                     <div class="upload-item" data-face="top">
-                        <label>Top</label>
-                        <input type="file" accept="image/png,image/jpeg,image/gif,image/webp" data-face="top">
+                        <label for="image-top">Top</label>
+                        <input type="file" accept="image/png,image/jpeg,image/gif,image/webp" data-face="top" id="image-top">
                         <div class="preview"></div>
                         <input type="color" class="color-picker" data-face="top" value="#666666">
                     </div>
                     <div class="upload-item" data-face="bottom">
-                        <label>Bottom</label>
-                        <input type="file" accept="image/png,image/jpeg,image/gif,image/webp" data-face="bottom">
+                        <label for="image-bottom">Bottom</label>
+                        <input type="file" accept="image/png,image/jpeg,image/gif,image/webp" data-face="bottom" id="image-bottom">
                         <div class="preview"></div>
                         <input type="color" class="color-picker" data-face="bottom" value="#333333">
                     </div>
@@ -90,7 +91,7 @@
                 </div>
             </section>
 
-            <section>
+            <section id="config-container">
                 <div class="actions-group">
                     <button id="reset-view" class="primary" type="button" title="Reset view (R)">Reset View</button>
                     <button id="save-config" class="primary" type="button" title="Save current box and view configuration (S)">Save Configuration</button>

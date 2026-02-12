@@ -1,3 +1,5 @@
+import { $, $$ } from 'rtkjs/dom.js';
+
 /**
  * Image Manager Module
  * 
@@ -249,7 +251,9 @@ function createFileInputHandlers(textureManager, options = {}) {
         dropZone.classList.remove('drag-over');
 
         const file = event.dataTransfer?.files?.[0];
-        if (!file) return;
+        if (!file) {
+            return;
+        }
 
         // Validate and process
         const validation = textureManager.validateImage(file);
@@ -361,7 +365,7 @@ export function initializeFileInputs(textureManager, options = {}) {
     const handlers = createFileInputHandlers(textureManager, options);
 
     // Find all upload items
-    const uploadItems = document.querySelectorAll('.upload-item[data-face]');
+    const uploadItems = $$('.upload-item[data-face]');
 
     uploadItems.forEach(item => {
         const face = item.dataset.face;
@@ -375,7 +379,7 @@ export function initializeFileInputs(textureManager, options = {}) {
             handlers.handleDrop(e, face);
         },
         trigger(face) {
-            const picker = document.querySelector(`.upload-item[data-face="${face}"] input[type="file"]`);
+            const picker = $(`.upload-item[data-face="${face}"] input[type="file"]`);
             if (picker) {
                 picker.dispatchEvent(new MouseEvent('click'));
             }
@@ -389,7 +393,7 @@ export function initializeFileInputs(textureManager, options = {}) {
  * @param {Object} options - Configuration options
  */
 export function initializeColorInputs(faceIndexMap, options = {}) {
-    const colorInputs = document.querySelectorAll('.color-picker[data-face]');
+    const colorInputs = $$('.color-picker[data-face]');
     colorInputs.forEach(input => {
         input.addEventListener('input', (e) => {
             const face = e.target.dataset.face;
@@ -402,7 +406,7 @@ export function initializeColorInputs(faceIndexMap, options = {}) {
 
     return {
         trigger(face) {
-            const picker = document.querySelector(`.color-picker[data-face="${face}"]`);
+            const picker = $(`.color-picker[data-face="${face}"]`);
             if (picker) {
                 picker.dispatchEvent(new MouseEvent('click'));
             }

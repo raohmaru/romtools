@@ -1,3 +1,5 @@
+import { parseDOMString } from 'rtkjs/dom.js';
+
 /**
  * Screenshot Manager
  * 
@@ -27,7 +29,7 @@ export function createScreenshotManager() {
         const minutes = String(now.getMinutes()).padStart(2, '0');
         const seconds = String(now.getSeconds()).padStart(2, '0');
         
-        return `cover3d_screenshot_${year}-${month}-${day}_${hours}-${minutes}-${seconds}.png`;
+        return `gamebox_screenshot_${year}-${month}-${day}_${hours}-${minutes}-${seconds}.png`;
     }
     
     /**
@@ -37,9 +39,7 @@ export function createScreenshotManager() {
      */
     function downloadScreenshot(blob, filename) {
         const url = URL.createObjectURL(blob);
-        const anchor = document.createElement('a');
-        anchor.href = url;
-        anchor.download = filename;
+        const anchor = parseDOMString(`<a href="${url}" download="${filename}" class="hidden"></a>`);
         
         // Trigger download
         document.body.appendChild(anchor);

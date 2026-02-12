@@ -1,3 +1,5 @@
+import { parseDOMString } from 'rtkjs/dom.js';
+
 /**
  * Loading Overlay Component
  * 
@@ -27,13 +29,12 @@ export class Loading {
             return;
         }
 
-        this.overlay = document.createElement('div');
-        this.overlay.id = 'loading-overlay';
-        this.overlay.innerHTML = `
-            <div class="loading-spinner"></div>
-            <p>${this.options.text}</p>
-        `;
-
+        this.overlay = parseDOMString(`
+            <div id="loading-overlay">
+                <div class="loading-spinner"></div>
+                <p>${this.options.text}</p>
+            </div>
+        `);
         document.body.appendChild(this.overlay);
     }
 
