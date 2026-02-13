@@ -147,6 +147,8 @@ export class Cover3DApplication {
             },
             onBoxChange: (box) => {
                 this.message?.success(`Game box preset: ${box.name}`);
+                // Reset custom scaling
+                this.threeManager.cube.scale.fromArray([1, 1, 1]);
                 setCubeDimensions(this.threeManager.cube, box.config);
                 this.threeManager.cube.name = box.name;
                 this.threeManager.requestRender();
@@ -176,10 +178,16 @@ export class Cover3DApplication {
             defaults: {
                 fov: defaultCameraConfig.fov
             },
-            async onToggleRotation(show) {
+            async onToggleTransformation(mode, show) {
                 if (!this.threeManager.transformControls) {
                     this.loading.show();
                     await this.threeManager.initTransformControls();
+                    // Fired when user interaction has ended
+                    this.threeManager.transformControls.addEventListener('mouseUp', () => {
+                        if(this.threeManager.transformControls.getMode() === 'scale') {
+                            $('#box-preset').value = '';
+                        }
+                    });
                     this.loading.hide();
                 } else {
                     if (show) {
@@ -187,6 +195,10 @@ export class Cover3DApplication {
                     } else {
                         this.threeManager.transformControls.detach(this.threeManager.cube);
                     }
+                }
+                if (show) {
+                    // Sets the given transformation mode
+                    this.threeManager.transformControls.setMode(mode);
                 }
                 this.threeManager.requestRender();
             },
@@ -196,8 +208,9 @@ export class Cover3DApplication {
                 this.threeManager.cameraProps.updateFromThreeCamera();
             },
             onReset() {
-                // Reset cube to its initial rotation
+                // Reset cube to its initial rotation and scale
                 this.threeManager.cube.rotation.fromArray([0, 0, 0]);
+                this.threeManager.cube.scale.fromArray([1, 1, 1]);
                 this.threeManager.requestRender();
             }
         });

@@ -46,6 +46,7 @@ function createConfigManager() {
          * @returns {Object} Configuration object ready for serialization
          */
         saveConfig(camera, cube) {
+            const { scale } = cube;
             // Create configuration object
             const config = {
                 version: CONFIG_VERSION,
@@ -57,9 +58,9 @@ function createConfigManager() {
                 },
                 box: {
                     name: cube.name,
-                    width: cube.geometry.parameters.width,
-                    height: cube.geometry.parameters.height,
-                    depth: cube.geometry.parameters.depth,
+                    width: cube.geometry.parameters.width * scale.x,
+                    height: cube.geometry.parameters.height * scale.y,
+                    depth: cube.geometry.parameters.depth * scale.z,
                     rotation: camera.rotation
                 },
                 metadata: {
@@ -357,9 +358,12 @@ export function createConfigManagerUI(options = {}) {
                 if (!result.success) {
                     return;
                 }
-                // Reset view seelct
+                // Reset view select
                 viewPreset.value = '';
                 const { name } = result.config.box;
+                if (name === 'custom') {
+                    boxPreset.value = '';
+                }
                 if (name) {
                     // Select box preset option from config
                     for(const option of boxPreset.options) {

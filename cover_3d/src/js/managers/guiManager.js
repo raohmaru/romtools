@@ -2,7 +2,7 @@ export async function createGUIManager(context, container, options = {}) {
     const { GUI } = await import('three/addons/libs/lil-gui.module.min.js');
     
     const {
-        onToggleRotation = () => {},
+        onToggleTransformation = () => {},
         onFOVChange = () => {},
         onReset = () => {},
     } = options;
@@ -13,11 +13,17 @@ export async function createGUIManager(context, container, options = {}) {
     });
     gui.title('Advanced options');
 
+    const reset = () => {
+        controllers.toggleRotation.reset();
+        controllers.toggleScale.reset();
+    };
+
     const params = {
         toggleRotation: false,
+        toggleScale: false,
         fov: options.defaults.fov,
         close() {
-            controllers.toggleRotation.reset();
+            reset();
             gui.hide();
         },
         reset() {
@@ -27,6 +33,7 @@ export async function createGUIManager(context, container, options = {}) {
     };
 
     gui.add(params, 'toggleRotation').name('Show rotation controls');
+    gui.add(params, 'toggleScale').name('Show scaling controls');
     gui.add(params, 'fov', 10, 200, 1).name('FOV');
     gui.add(params, 'reset').name('Reset');
     gui.add(params, 'close').name('Close');
@@ -38,13 +45,20 @@ export async function createGUIManager(context, container, options = {}) {
     }, {});
 
     gui.onChange(event => {
+        const { value } = event;
         switch (event.property) {
             case 'toggleRotation':
-                onToggleRotation.call(context, event.value);
+                controllers.toggleScale.disable(value);
+                onToggleTransformation.call(context, 'rotate', value);
+                break;
+            
+            case 'toggleScale':
+                controllers.toggleRotation.disable(value);
+                onToggleTransformation.call(context, 'scale', value);
                 break;
 
             case 'fov':
-                onFOVChange.call(context, event.value);
+                onFOVChange.call(context, value);
                 break;
         
             default:
@@ -56,7 +70,7 @@ export async function createGUIManager(context, container, options = {}) {
     gui.show = (show) => {
         _gui_show.call(gui, show);
         if (!show) {
-            controllers.toggleRotation.reset();
+            reset();
         }
     };
 

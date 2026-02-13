@@ -16,9 +16,6 @@ const CUBE_DEPTH = 0.5;
 export const FACE_INDEX_MAP = { left: 0, right: 1, top: 2, bottom: 3, back: 4, front: 5 };
 export const FACE_NAME_MAP = Object.keys(FACE_INDEX_MAP);
 
-// Default materials for each face
-const materials = [];
-
 let highlightedFace = -1;
 let lightMapTexture;
 
@@ -51,7 +48,7 @@ function createGeometry(width = CUBE_WIDTH, height = CUBE_HEIGHT, depth = CUBE_D
 function createLightMapTexture() {
     const canvas = new OffscreenCanvas(64, 64);
     const ctx = canvas.getContext('2d');
-    ctx.fillStyle = '#e94560';
+    ctx.fillStyle = '#fb7533';
     ctx.fillRect(0, 0, 64, 64);
     const texture = new THREE.CanvasTexture(canvas);
     texture.colorSpace = THREE.LinearSRGBColorSpace;
@@ -67,12 +64,14 @@ export function createCube(scene) {
     const geometry = createGeometry();
 
     // Create materials for each face
-    materials.push( new THREE.MeshBasicMaterial({ color: 0x444444 }) ); // left
-    materials.push( new THREE.MeshBasicMaterial({ color: 0x444444 }) ); // right
-    materials.push( new THREE.MeshBasicMaterial({ color: 0x666666 }) ); // top
-    materials.push( new THREE.MeshBasicMaterial({ color: 0x333333 }) ); // bottom
-    materials.push( new THREE.MeshBasicMaterial({ color: 0x555555 }) ); // back
-    materials.push( new THREE.MeshBasicMaterial({ color: 0x555555 }) ); // front
+    const materials = [
+        new THREE.MeshBasicMaterial({ color: 0x444444 }), // left
+        new THREE.MeshBasicMaterial({ color: 0x444444 }), // right
+        new THREE.MeshBasicMaterial({ color: 0x666666 }), // top
+        new THREE.MeshBasicMaterial({ color: 0x333333 }), // bottom
+        new THREE.MeshBasicMaterial({ color: 0x555555 }), // back
+        new THREE.MeshBasicMaterial({ color: 0x555555 }) // front
+    ];
 
     // Create mesh
     const cube = new THREE.Mesh(geometry, materials);
@@ -173,7 +172,7 @@ export function highlightCubeFace(cube, faceIndex = -1) {
     // Lightmap texture for mouse hover effect
     if (!lightMapTexture) {
         lightMapTexture = createLightMapTexture();
-        cube.material.forEach((m) => m.lightMapIntensity = 4);
+        cube.material.forEach((m) => m.lightMapIntensity = 6);
     }
 
     // Reset previously hovered face
@@ -219,7 +218,6 @@ export function removeCubeFaceTexture(cube, faceIndex, color) {
 
     // Create a new material with the texture
     const material = cube.material[faceIndex];
-    const defaultMaterial = materials[faceIndex];
     material.map = null;
     material.color.set(color);
     material.needsUpdate = true;

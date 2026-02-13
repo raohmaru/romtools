@@ -154,7 +154,6 @@ export class ThreeManager {
 
         this.transformControls = new TransformControls(this.camera, this.canvas);
         this.transformControls.attach(this.cube);
-        this.transformControls.setMode('rotate');
         this.transformControls.setSpace('local');
         this.scene.add(this.transformControls.getHelper());
 
@@ -162,9 +161,17 @@ export class ThreeManager {
             this.requestRender();
             this.cameraProps.updateFromThreeCamera();
         });
+        
         // Disable OrbitControls when TransformControls is dragging
         this.transformControls.addEventListener('dragging-changed', (event) => {
             this.orbitControls.enabled = !event.value;
+        });
+
+        // Fired when mouse is no longer active.
+        this.transformControls.addEventListener('mouseUp', () => {
+            if(this.transformControls.getMode() === 'scale') {
+                this.cube.name = 'custom';
+            }
         });
 
         console.log('TransformControls initialized with rotation mode');
