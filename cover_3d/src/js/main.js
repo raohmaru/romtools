@@ -281,7 +281,7 @@ export class Cover3DApplication {
             event.preventDefault();
             event.stopPropagation();
             // Trigger only if mouse has moved
-            if (event.clientX !== dragMouseX && event.clientY !== dragMouseY) {
+            if (event.clientX !== dragMouseX || event.clientY !== dragMouseY) {
                 dragMouseX = event.clientX;
                 dragMouseY = event.clientY;
                 const faceIndex = this.threeManager.getFaceAt(dragMouseX, dragMouseY);
@@ -300,6 +300,14 @@ export class Cover3DApplication {
                 fileInputManager.handleDrop(event, face);
                 // Reset hovered face
                 highlightCubeFace(this.threeManager.cube);
+            }
+        });
+
+        // Reset hovered face on drag cancel (ESC key pressed)
+        this.threeManager.canvas.addEventListener('dragleave', (event) => {
+            if (!event.dataTransfer?.files?.length) {
+                highlightCubeFace(this.threeManager.cube);
+                this.threeManager.requestRender();
             }
         });
 
@@ -324,11 +332,7 @@ export class Cover3DApplication {
                 const faceIndex = this.threeManager.getFaceAt(event.clientX, event.clientY);
                 if (faceIndex > -1) {
                     const face = getCubeFaceName(faceIndex);
-                    if (this.threeManager.cube.material[faceIndex].map) {
-                        fileInputManager.trigger(face);
-                    } else {
-                        colorInputManager.trigger(face);
-                    }
+                    fileInputManager.trigger(face);
                 }
             }
         });

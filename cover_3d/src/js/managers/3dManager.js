@@ -100,8 +100,9 @@ export class ThreeManager {
         const cameraPos = getCameraPosition(defaultCameraConfig);
 
         // Create Three.js camera
-        this.camera = new THREE.PerspectiveCamera(defaultCameraConfig.fov, width / height, 0.1, 100);
+        this.camera = new THREE.PerspectiveCamera(50, width / height, 0.1, 100);
         this.camera.position.set(...cameraPos);
+        this.camera.setFocalLength(defaultCameraConfig.fov);
 
         // Create camera controls object for state tracking
         this.cameraProps = {
@@ -161,7 +162,7 @@ export class ThreeManager {
             this.requestRender();
             this.cameraProps.updateFromThreeCamera();
         });
-        
+
         // Disable OrbitControls when TransformControls is dragging
         this.transformControls.addEventListener('dragging-changed', (event) => {
             this.orbitControls.enabled = !event.value;

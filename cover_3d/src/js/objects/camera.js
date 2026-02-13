@@ -11,7 +11,7 @@ export const defaultCameraConfig = {
     radius: 7.348469228349535,
     theta: -0.7853981633974484,
     phi: 1.2951535275786312,
-    fov: 45,
+    fov: 50,
     target: [0, 0, 0],
     minRadius: 2,
     maxRadius: 30,

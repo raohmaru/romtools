@@ -251,6 +251,8 @@ function createFileInputHandlers(textureManager, options = {}) {
         } finally {
             onLoadingChange(face, false);
         }
+        // Reset input so same file can be selected again
+        event.target.value = '';
     }
 
     /**
@@ -345,8 +347,14 @@ function createFileInputHandlers(textureManager, options = {}) {
 
             // Drag and drop
             preview.addEventListener('dragover', handleDragOver);
-            preview.addEventListener('dragenter', handleDragEnter);
-            preview.addEventListener('dragleave', handleDragLeave);
+            preview.addEventListener('dragenter', (event) => {
+                handleDragEnter(event);
+                onMouseOver(face);
+            });
+            preview.addEventListener('dragleave', (event) => {
+                handleDragLeave(event);
+                onMouseOut(face);
+            });
             preview.addEventListener('drop', (e) => handleDrop(e, face));
         }
 

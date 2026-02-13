@@ -15,9 +15,9 @@ export const VIEWS = {
         name: 'Left side view',
         config: {
             camera: {
-                radius: 4.631368393546749,
-                theta: -0.692941003573224,
-                phi: 1.5592443670503562
+                radius: 5.850468947313968,
+                theta: -0.9853981633974483,
+                phi: 1.5738195872579297
             }
         }
     },
@@ -25,9 +25,9 @@ export const VIEWS = {
         name: 'Right side view',
         config: {
             camera: {
-                radius: 4.631368393546749,
-                theta: 0.692941003573224,
-                phi: 1.5592443670503562
+                radius: 5.850468947313968,
+                theta: -2.1513558925213587,
+                phi: 1.5738195872579297
             }
         }
     },
@@ -35,9 +35,9 @@ export const VIEWS = {
         name: 'Top-left view',
         config: {
             camera: {
-                radius: 4.631368393546749,
-                theta: -0.7552269194879576,
-                phi: 1.174398244807168
+                radius: 5.850468947313981,
+                theta: -0.9633981477043863,
+                phi: 1.3244868817320397
             }
         }
     },
@@ -45,9 +45,9 @@ export const VIEWS = {
         name: 'Top-right view',
         config: {
             camera: {
-                radius: 4.631368393546749,
-                theta: 0.7552269194879576,
-                phi: 1.174398244807168
+                radius: 5.850468947313981,
+                theta: -2.1513558925213587,
+                phi: 1.3244868817320397
             }
         }
     },
@@ -55,9 +55,9 @@ export const VIEWS = {
         name: 'Bottom-left view',
         config: {
             camera: {
-                radius: 4.631368393546749,
-                theta: -0.7476842574069325,
-                phi: 1.8382147167154812
+                radius: 5.850468947313991,
+                theta: -0.8619797958441361,
+                phi: 1.7644859871064902
             }
         }
     },
@@ -65,9 +65,9 @@ export const VIEWS = {
         name: 'Bottom-right view',
         config: {
             camera: {
-                radius: 4.631368393546749,
-                theta: 0.7476842574069325,
-                phi: 1.8382147167154812
+                radius: 5.850468947313991,
+                theta: -2.2513558925213587,
+                phi: 1.7644859871064902
             }
         }
     }
