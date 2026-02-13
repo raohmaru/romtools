@@ -312,11 +312,15 @@ export class Cover3DApplication {
         });
 
         // Color pickers for cube sides
-        const colorInputManager = initializeColorInputs(FACE_INDEX_MAP, {
+        initializeColorInputs(FACE_INDEX_MAP, {
             onChange: (faceIndex, color) => {
                 updateCubeFaceColor(this.threeManager.cube, faceIndex, color);
                 this.threeManager.requestRender();
-            }
+            },
+            onClick: () => {
+                highlightCubeFace(this.threeManager.cube);
+                this.threeManager.requestRender();
+            },
         });
 
         let mouseDownX = 0;

@@ -443,6 +443,11 @@ export function initializeColorInputs(faceIndexMap, options = {}) {
                 options?.onChange?.(faceIndex, e.target.value);
             }
         });
+
+        input.addEventListener('click', (e) => {
+            const face = e.target.dataset.face;
+            options?.onClick?.(face, e.target.value);
+        });
     });
 
     return {
