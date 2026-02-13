@@ -224,6 +224,16 @@ export class Cover3DApplication {
     setupEventListeners() {
         // File inputs for image uploads
         const fileInputManager = initializeFileInputs(this.textureManager, {
+            onMouseOver: (face) => {
+                const faceIndex = FACE_INDEX_MAP[face];
+                if (highlightCubeFace(this.threeManager.cube, faceIndex)) {
+                    this.threeManager.requestRender();
+                }
+            },
+            onMouseOut: () => {
+                highlightCubeFace(this.threeManager.cube);
+                this.threeManager.requestRender();
+            },
             onImageLoad: (face, data) => {
                 // Update preview
                 const uploadItem = $(`.upload-item[data-face="${face}"]`);

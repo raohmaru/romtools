@@ -223,6 +223,8 @@ export function createTextureManager() {
  */
 function createFileInputHandlers(textureManager, options = {}) {
     const {
+        onMouseOver  = () => {},
+        onMouseOut  = () => {},
         onImageLoad = () => {},
         onImageRemove = () => {},
         onError = console.error,
@@ -336,6 +338,10 @@ function createFileInputHandlers(textureManager, options = {}) {
             preview.addEventListener('click', () => {
                 input?.click();
             });
+
+            // Container mouse events
+            element.addEventListener('mouseenter', () => onMouseOver(face) );
+            element.addEventListener('mouseleave', () => onMouseOut(face) );
 
             // Drag and drop
             preview.addEventListener('dragover', handleDragOver);
