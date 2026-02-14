@@ -20,8 +20,7 @@
 </head>
 <body>
     <header>
-        <h1>Game Box 3D</h1>
-        <p class="subtitle">Game Box Cover Creator & Viewer</p>
+        <h1><img src="assets/game-box-3d.png" alt="Game Box 3D" width="280" class="logo"></h1>
     </header>
 
     <main>
@@ -49,14 +48,6 @@
                         </div>
                         <input type="color" class="color-picker" data-face="front" value="#555555">
                     </div>
-                    <div class="upload-item" data-face="top">
-                        <label for="image-top">Top</label>
-                        <input type="file" accept="image/png,image/jpeg,image/gif,image/webp" id="image-top">
-                        <div class="preview">
-                            <button class="preview-remove" title="Remove image">&times;</button>
-                        </div>
-                        <input type="color" class="color-picker" data-face="top" value="#666666">
-                    </div>
                     <div class="upload-item" data-face="left">
                         <label for="image-left">Spine</label>
                         <input type="file" accept="image/png,image/jpeg,image/gif,image/webp" id="image-left">
@@ -64,6 +55,14 @@
                             <button class="preview-remove" title="Remove image">&times;</button>
                         </div>
                         <input type="color" class="color-picker" data-face="left" value="#444444">
+                    </div>
+                    <div class="upload-item" data-face="top">
+                        <label for="image-top">Top</label>
+                        <input type="file" accept="image/png,image/jpeg,image/gif,image/webp" id="image-top">
+                        <div class="preview">
+                            <button class="preview-remove" title="Remove image">&times;</button>
+                        </div>
+                        <input type="color" class="color-picker" data-face="top" value="#666666">
                     </div>
                     <div class="upload-item" data-face="back">
                         <label for="image-back">Back</label>
@@ -73,14 +72,6 @@
                         </div>
                         <input type="color" class="color-picker" data-face="back" value="#555555">
                     </div>
-                    <div class="upload-item" data-face="bottom">
-                        <label for="image-bottom">Bottom</label>
-                        <input type="file" accept="image/png,image/jpeg,image/gif,image/webp" id="image-bottom">
-                        <div class="preview">
-                            <button class="preview-remove" title="Remove image">&times;</button>
-                        </div>
-                        <input type="color" class="color-picker" data-face="bottom" value="#333333">
-                    </div>
                     <div class="upload-item" data-face="right">
                         <label for="image-right">Right</label>
                         <input type="file" accept="image/png,image/jpeg,image/gif,image/webp" id="image-right">
@@ -88,6 +79,14 @@
                             <button class="preview-remove" title="Remove image">&times;</button>
                         </div>
                         <input type="color" class="color-picker" data-face="right" value="#444444">
+                    </div>
+                    <div class="upload-item" data-face="bottom">
+                        <label for="image-bottom">Bottom</label>
+                        <input type="file" accept="image/png,image/jpeg,image/gif,image/webp" id="image-bottom">
+                        <div class="preview">
+                            <button class="preview-remove" title="Remove image">&times;</button>
+                        </div>
+                        <input type="color" class="color-picker" data-face="bottom" value="#333333">
                     </div>
                 </div>
             </section>
@@ -109,7 +108,7 @@
                     <button id="save-config" class="primary" type="button" title="Save current box and view configuration (S)">Save Configuration</button>
                     <button id="load-config" class="primary" type="button" title="Load box and view configuration (L)">Load Configuration</button>
                     <div class="actions-group horizontal">
-                        <button id="screenshot" class="primary flex1" type="button" title="Take screenshot (P)">Take Screenshot</button>
+                        <button id="screenshot" class="secondary flex1" type="button" title="Take screenshot (P)">Take Screenshot</button>
                         <select id="screenshot-scale" title="Screenshot quality multiplier">
                             <option value="1">x1</option>
                             <option value="2" selected>x2</option>
@@ -124,7 +123,7 @@
     </main>
 
     <footer>
-        <p>Game Box 3D - A Three.js 3D Game Box Viewer 🙟 Created by <a href="https://github.com/raohmaru" target="_blank">raohmaru</a></p>
+        <p>3D Game Box Creator & Viewer ◇ Created by <a href="https://github.com/raohmaru" target="_blank">raohmaru</a> ◇ <a href="https://github.com/raohmaru/romtools/tree/master/cover_3d" target="_blank">Source code <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="vertical-align: text-bottom;"><path d="M12 1C5.923 1 1 5.923 1 12c0 4.867 3.149 8.979 7.521 10.436.55.096.756-.233.756-.522 0-.262-.013-1.128-.013-2.049-2.764.509-3.479-.674-3.699-1.292-.124-.317-.66-1.293-1.127-1.554-.385-.207-.936-.715-.014-.729.866-.014 1.485.797 1.691 1.128.99 1.663 2.571 1.196 3.204.907.096-.715.385-1.196.701-1.471-2.448-.275-5.005-1.224-5.005-5.432 0-1.196.426-2.186 1.128-2.956-.111-.275-.496-1.402.11-2.915 0 0 .921-.288 3.024 1.128a10.193 10.193 0 0 1 2.75-.371c.936 0 1.871.123 2.75.371 2.104-1.43 3.025-1.128 3.025-1.128.605 1.513.221 2.64.111 2.915.701.77 1.127 1.747 1.127 2.956 0 4.222-2.571 5.157-5.019 5.432.399.344.743 1.004.743 2.035 0 1.471-.014 2.654-.014 3.025 0 .289.206.632.756.522C19.851 20.979 23 16.854 23 12c0-6.077-4.922-11-11-11Z"></path></svg></a></p>
         <p class="keyboard-hint">Press <kbd id="show-hint" class="hover">?</kbd> for keyboard shortcuts and camera controls</p>
     </footer>
 
