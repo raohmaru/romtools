@@ -42,26 +42,27 @@ function createConfigManager() {
     return {
         /**
          * Saves the current camera and image state to a configuration object.
-         * @param {Object} camera - Camera object from createCamera()
+         * @param {Object} cameraState - Camera state object
+         * @param {THREE.Mesh} cube - Cube mesh object
          * @returns {Object} Configuration object ready for serialization
          */
-        saveConfig(camera, cube) {
+        saveConfig(cameraState, cube) {
             const { scale } = cube;
             // Create configuration object
             const config = {
                 version: CONFIG_VERSION,
                 camera: {
-                    radius: camera.radius,
-                    theta: camera.theta,
-                    phi: camera.phi,
-                    fov: parseInt(camera.fov, 10)
+                    radius: cameraState.radius,
+                    theta: cameraState.theta,
+                    phi: cameraState.phi,
+                    fov: parseInt(cameraState.fov, 10)
                 },
                 box: {
                     name: cube.name,
                     width: cube.geometry.parameters.width * scale.x,
                     height: cube.geometry.parameters.height * scale.y,
                     depth: cube.geometry.parameters.depth * scale.z,
-                    rotation: camera.rotation
+                    rotation: cameraState.rotation
                 },
                 metadata: {
                     createdAt: new Date().toISOString(),
@@ -208,42 +209,14 @@ function createConfigManager() {
         },
 
         /**
-         * Applies a configuration to the camera and cube.
-         * @param {Object} config - Validated configuration object
-         * @param {Object} camera - Camera state object to update
-         * @param {THREE.Camera} threeCamera - Three.js camera to update
-         * @param {Object} cube - Cube state object to update
-         * @returns {Promise<Object>} Result with applied faces and any errors
-         */
-        async applyConfig({ config, camera, threeCamera, cube }) {
-            const { setCameraState, setCameraPosition } = await import('../objects/camera.js');
-            const { setCubeDimensions, setCubeRotation } = await import('../objects/cube.js');
-            
-            // Apply camera state
-            if (config.camera) {
-                setCameraState(camera, config.camera);
-                setCameraPosition(camera, threeCamera);
-            }
-            
-            // Apply cube state
-            if (config.box) {
-                setCubeDimensions(cube, config.box);
-                if (config.box.rotation) {
-                    setCubeRotation(cube, config.box.rotation);
-                }
-                cube.name = config.box.name;
-            }
-        },
-
-        /**
          * Complete save operation: saves and downloads configuration.
-         * @param {Object} camera - Camera object
-         * @param {Object} cube - Cube object
+         * @param {Object} cameraState - Camera object
+         * @param {THREE.Mesh} cube - Cube mesh object
          * @param {string} customName - Optional custom filename
          * @returns {Promise<Object>} Result with filename and size info
          */
-        async save(camera, cube, customName = null) {
-            const config = this.saveConfig(camera, cube);
+        async save(cameraState, cube, customName = null) {
+            const config = this.saveConfig(cameraState, cube);
             const downloadResult = this.downloadConfig(config, customName);
             return downloadResult;
         },
@@ -251,12 +224,11 @@ function createConfigManager() {
         /**
          * Complete load operation: reads, validates, and applies configuration.
          * @param {File} file - Configuration file to load
-         * @param {Object} camera - Camera state object to update
-         * @param {THREE.Camera} threeCamera - Three.js camera to update
-         * @param {Object} cube - Cube state object to update
+         * @param {Object} cameraState - Camera state object to update
+         * @param {ThreeManager} threeManager - Three.js manager
          * @returns {Promise<Object>} Result with validation and application status
          */
-        async load(file, camera, threeCamera, cube) {
+        async load(file, cameraState, threeManager) {
             // Load file
             let config;
             try {
@@ -276,9 +248,6 @@ function createConfigManager() {
                     error: validation.error
                 };
             }
-
-            // Apply
-            await this.applyConfig({ config, camera, threeCamera, cube });
 
             return {
                 success: true,
@@ -311,12 +280,13 @@ export function createConfigManagerUI(options = {}) {
 
         /**
          * Saves the current configuration and triggers download.
-         * @param {Object} camera - Camera object
+         * @param {Object} cameraState - Camera state object
+         * @param {THREE.Mesh} cube - Cube mesh object
          */
-        async saveAndDownload(camera, cube) {
+        async saveAndDownload(cameraState, cube) {
             try {
                 onProgress('Saving configuration...');
-                const result = await manager.save(camera, cube);
+                const result = await manager.save(cameraState, cube);
                 onSave(result);
                 onProgress('');
                 return result;
@@ -330,14 +300,13 @@ export function createConfigManagerUI(options = {}) {
         /**
          * Loads a configuration from a file.
          * @param {File} file - Configuration file
-         * @param {Object} camera - Camera state object
-         * @param {THREE.Camera} threeCamera - Three.js camera
-         * @param {Object} cube - Cube state object
+         * @param {Object} cameraState - Camera state object
+         * @param {ThreeManager} threeManager - Three.js manager
          */
-        async loadFromFile(file, camera, threeCamera, cube) {
+        async loadFromFile(file, cameraState, threeManager) {
             try {
                 onProgress('Loading configuration...');
-                const result = await manager.load(file, camera, threeCamera, cube);
+                const result = await manager.load(file, cameraState, threeManager);
                 onLoad(result);
                 onProgress('');
                 return result;
@@ -350,9 +319,9 @@ export function createConfigManagerUI(options = {}) {
 
         /**
          * Sets up UI event listeners for save/load buttons.
-         * @param {Object} params - Parameters with camera, threeCamera and UI elements
+         * @param {Object} params - Parameters with camera, threeManager and UI elements
          */
-        setupUI({ container, camera, threeCamera, cube, saveButton, loadButton, fileInput, viewPreset, boxPreset }) {
+        setupUI({ container, cameraState, threeManager, saveButton, loadButton, fileInput, viewPreset, boxPreset }) {
             // Helper to handle config load results and update UI accordingly
             const onLoadFromFile = (result) => {
                 if (!result.success) {
@@ -397,14 +366,14 @@ export function createConfigManagerUI(options = {}) {
                 if (!file) {
                     return;
                 }
-                const result = await this.loadFromFile(file, camera, threeCamera, cube);
+                const result = await this.loadFromFile(file, cameraState, threeManager);
                 onLoadFromFile(result);
             });
 
             // Save button
             if (saveButton) {
                 saveButton.addEventListener('click', () => {
-                    this.saveAndDownload(camera, cube);
+                    this.saveAndDownload(cameraState, threeManager.cube);
                 });
             }
 
@@ -420,7 +389,7 @@ export function createConfigManagerUI(options = {}) {
                 fileInput.addEventListener('change', async (e) => {
                     const file = e.target.files?.[0];
                     if (file) {
-                        const result = await this.loadFromFile(file, camera, threeCamera, cube);
+                        const result = await this.loadFromFile(file, cameraState, threeManager);
                         // Reset input so same file can be selected again
                         e.target.value = '';
                         onLoadFromFile(result);
@@ -444,7 +413,6 @@ export function createConfigManagerUI(options = {}) {
                         return;
                     }
                     const { config } = VIEWS[selectedKey];
-                    await this.applyConfig({ config, camera, threeCamera });
                     const result = {
                         success: true,
                         config,
@@ -471,7 +439,6 @@ export function createConfigManagerUI(options = {}) {
                     }
                     const box = BOXES[selectedKey];
                     const { width, height, depth } = box.config;
-                    await this.applyConfig({ config: box.config, cube });
                     onBoxChange({
                         ...box,
                         config: {

@@ -11,7 +11,7 @@ import WebGL from 'three/addons/capabilities/WebGL.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 import { createCube, updateCubeFaceTexture, removeCubeFaceTexture, FACE_INDEX_MAP } from '../objects/cube.js';
-import { defaultCameraConfig, getCameraPosition } from '../objects/camera.js';
+import { defaultCameraConfig, getCameraPosition, setCameraState, setCameraPosition } from '../objects/camera.js';
 
 /**
  * 3D Manager class for handling Three.js initialization and rendering
@@ -29,7 +29,7 @@ export class ThreeManager {
         this.cube = null;
 
         // Camera state
-        this.cameraProps = null;
+        this.cameraState = null;
 
         // Canvas element
         this.canvas = options.canvas || null;
@@ -105,22 +105,22 @@ export class ThreeManager {
         this.camera.setFocalLength(defaultCameraConfig.fov);
 
         // Create camera controls object for state tracking
-        this.cameraProps = {
+        this.cameraState = {
             ...defaultCameraConfig,
             updateFromThreeCamera: () => {
                 const x = this.camera.position.x;
                 const y = this.camera.position.y;
                 const z = this.camera.position.z;
-                this.cameraProps.radius = Math.sqrt(x * x + y * y + z * z);
-                this.cameraProps.theta = Math.atan2(z, x);
-                this.cameraProps.phi = Math.acos(y / this.cameraProps.radius);
-                this.cameraProps.fov = this.camera.getFocalLength();
+                this.cameraState.radius = Math.sqrt(x * x + y * y + z * z);
+                this.cameraState.theta = Math.atan2(z, x);
+                this.cameraState.phi = Math.acos(y / this.cameraState.radius);
+                this.cameraState.fov = this.camera.getFocalLength();
                 // Euler rotation without the last item (order)
-                this.cameraProps.rotation = this.cube.rotation.toArray().slice(0, -1);
+                this.cameraState.rotation = this.cube.rotation.toArray().slice(0, -1);
 
                 // Notify camera change
                 if (this.onCameraChange) {
-                    this.onCameraChange(this.cameraProps);
+                    this.onCameraChange(this.cameraState);
                 }
             }
         };
@@ -135,13 +135,13 @@ export class ThreeManager {
         this.orbitControls = new OrbitControls(this.camera, this.canvas);
         this.orbitControls.enableDamping = true;
         this.orbitControls.dampingFactor = 0.1;
-        this.orbitControls.minDistance = this.cameraProps.minRadius;
-        this.orbitControls.maxDistance = this.cameraProps.maxRadius;
+        this.orbitControls.minDistance = this.cameraState.minRadius;
+        this.orbitControls.maxDistance = this.cameraState.maxRadius;
         this.orbitControls.target.set(0, 0, 0);
 
         // Listen for control changes
         this.orbitControls.addEventListener('change', () => {
-            this.cameraProps.updateFromThreeCamera();
+            this.cameraState.updateFromThreeCamera();
             this.startAnimationLoop();
             this.requestRender();
         });
@@ -160,7 +160,7 @@ export class ThreeManager {
 
         this.transformControls.addEventListener('change', () => {
             this.requestRender();
-            this.cameraProps.updateFromThreeCamera();
+            this.cameraState.updateFromThreeCamera();
         });
 
         // Disable OrbitControls when TransformControls is dragging
@@ -343,43 +343,19 @@ export class ThreeManager {
 
         console.log(`Canvas resized to ${width}x${height}`);
     }
-    
-    /**
-     * Set camera state
-     */
-    setCameraState(state) {
-        if (this.cameraProps && this.orbitControls) {
-            if (state.radius !== undefined) this.cameraProps.radius = state.radius;
-            if (state.theta !== undefined) this.cameraProps.theta = state.theta;
-            if (state.phi !== undefined) this.cameraProps.phi = state.phi;
-
-            // Update camera position
-            const x = this.cameraProps.radius * Math.sin(this.cameraProps.phi) * Math.cos(this.cameraProps.theta);
-            const y = this.cameraProps.radius * Math.cos(this.cameraProps.phi);
-            const z = this.cameraProps.radius * Math.sin(this.cameraProps.phi) * Math.sin(this.cameraProps.theta);
-            this.camera.position.set(x, y, z);
-
-            this.orbitControls.update();
-            this.requestRender();
-        }
-    }
 
     /**
      * Reset camera to default position
+     * @param {Object} state - Camera state object to copy from
      */
-    reset() {
-        if (this.cameraProps && this.camera && this.orbitControls) {
-            this.cameraProps.radius = defaultCameraConfig.radius;
-            this.cameraProps.theta = defaultCameraConfig.theta;
-            this.cameraProps.phi = defaultCameraConfig.phi;
+    reset(state = defaultCameraConfig) {
+        if (this.cameraState && this.camera && this.orbitControls) {
+            setCameraState(this.cameraState, state);
+            setCameraPosition(this.cameraState, this.camera);
 
-            const x = defaultCameraConfig.radius * Math.sin(defaultCameraConfig.phi) * Math.cos(defaultCameraConfig.theta);
-            const y = defaultCameraConfig.radius * Math.cos(defaultCameraConfig.phi);
-            const z = defaultCameraConfig.radius * Math.sin(defaultCameraConfig.phi) * Math.sin(defaultCameraConfig.theta);
-
-            this.camera.position.set(x, y, z);
             this.orbitControls.target.set(0, 0, 0);
             this.orbitControls.update();
+
             this.requestRender();
         }
     }

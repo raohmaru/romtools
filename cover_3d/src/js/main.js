@@ -14,7 +14,7 @@ import { Loading } from './components/loading.js';
 import { Message } from './components/message.js';
 import { KeyboardShortcuts, KEYBOARD_SHORTCUTS } from './components/keyboardShortcuts.js';
 import { debounce } from './utils/debounce.js';
-import { setCubeDimensions, updateCubeFaceColor, highlightCubeFace, getCubeFaceName, FACE_INDEX_MAP } from './objects/cube.js';
+import { setCubeDimensions, setCubeRotation, updateCubeFaceColor, highlightCubeFace, getCubeFaceName, FACE_INDEX_MAP } from './objects/cube.js';
 import { defaultCameraConfig } from './objects/camera.js';
 import { $ } from 'rtkjs/dom.js';
 
@@ -65,10 +65,10 @@ export class Cover3DApplication {
 
             // Create zoom indicator
             this.zoom = new Zoom(container, {
-                minRadius: this.threeManager.cameraProps.minRadius,
-                maxRadius: this.threeManager.cameraProps.maxRadius
+                minRadius: this.threeManager.cameraState.minRadius,
+                maxRadius: this.threeManager.cameraState.maxRadius
             });
-            this.zoom.update(this.threeManager.cameraProps);
+            this.zoom.update(this.threeManager.cameraState);
 
             // Setup event listeners
             this.setupEventListeners();
@@ -129,9 +129,22 @@ export class Cover3DApplication {
             onLoad: (result) => {
                 if (result.success) {
                     this.message?.success(result.message);
-                    this.threeManager.requestRender();
+                    const { config } = result;
+                    // Apply new camera config
+                    if (config.camera) {
+                        this.threeManager.reset(config.camera);
+                    }
+                    // Apply cube state
+                    if (config.box) {
+                        setCubeDimensions(this.threeManager.cube, config.box);
+                        if (config.box.rotation) {
+                            setCubeRotation(this.threeManager.cube, config.box.rotation);
+                        }
+                        this.threeManager.cube.name = config.box.name;
+                    }
+                    // Update advanced config
                     if (this.GUIManager) {
-                        this.GUIManager.update({ fov: this.threeManager.cameraProps.fov });
+                        this.GUIManager.update({ fov: this.threeManager.cameraState.fov });
                     }
                 } else {
                     this.message?.error(`Failed to load configuration.\n${result.error}`);
@@ -140,7 +153,10 @@ export class Cover3DApplication {
             onViewChange: (result) => {
                 if (result.success) {
                     this.message?.success(result.message);
-                    this.threeManager.requestRender();
+                    // Apply new camera config
+                    if (result.config.camera) {
+                        this.threeManager.reset(result.config.camera);
+                    }
                 } else {
                     this.message?.error('Failed to load configuration.');
                 }
@@ -205,7 +221,7 @@ export class Cover3DApplication {
             onFOVChange(value) {
                 this.threeManager.camera.setFocalLength(value);
                 this.threeManager.requestRender();
-                this.threeManager.cameraProps.updateFromThreeCamera();
+                this.threeManager.cameraState.updateFromThreeCamera();
             },
             onReset() {
                 // Reset cube to its initial rotation and scale
@@ -214,7 +230,7 @@ export class Cover3DApplication {
                 this.threeManager.requestRender();
             }
         });
-        this.GUIManager.update({ fov: this.threeManager.cameraProps.fov });
+        this.GUIManager.update({ fov: this.threeManager.cameraState.fov });
         this.loading.hide();
     }
 
@@ -344,9 +360,8 @@ export class Cover3DApplication {
         // Config manager UI
         this.configManager.setupUI({
             container: $('#config-container'),
-            camera: this.threeManager.cameraProps,
-            threeCamera: this.threeManager.camera,
-            cube: this.threeManager.cube,
+            cameraState: this.threeManager.cameraState,
+            threeManager: this.threeManager,
             saveButton: $('#save-config'),
             loadButton: $('#load-config'),
             fileInput: $('#config-file-input'),

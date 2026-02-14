@@ -34,30 +34,30 @@ export function getCameraPosition(camera) {
 
 /**
  * Sets the camera position from spherical coordinates.
- * @param {Object} camera - Camera state object
+ * @param {Object} state - Camera state object
  * @param {THREE.Camera} threeCamera - Three.js camera
  */
-export function setCameraPosition(camera, threeCamera) {
-    const [x, y, z] = getCameraPosition(camera);
+export function setCameraPosition(state, threeCamera) {
+    const [x, y, z] = getCameraPosition(state);
     threeCamera.position.set(x, y, z);
-    if (camera.fov) {
-        threeCamera.setFocalLength(camera.fov);
+    if (state.fov) {
+        threeCamera.setFocalLength(state.fov);
     }
 }
 
 /**
  * Sets the camera state from a serialized object.
- * @param {Object} camera - Camera state object
  * @param {Object} state - Camera state object
+ * @param {Object} newState - Camera state object
  */
-export function setCameraState(camera, state) {
-    if (state.radius !== undefined) camera.radius = state.radius;
-    if (state.theta !== undefined) camera.theta = state.theta;
-    if (state.phi !== undefined) camera.phi = state.phi;
-    if (state.fov !== undefined) camera.fov = state.fov;
-    if (state.target !== undefined) camera.target = [...state.target];
+export function setCameraState(state, newState) {
+    if (newState.radius !== undefined) state.radius = newState.radius;
+    if (newState.theta !== undefined) state.theta = newState.theta;
+    if (newState.phi !== undefined) state.phi = newState.phi;
+    if (newState.fov !== undefined) state.fov = newState.fov;
+    if (newState.target !== undefined) state.target = [...newState.target];
     
     // Clamp values
-    camera.radius = Math.max(camera.minRadius, Math.min(camera.maxRadius, camera.radius));
-    camera.phi = Math.max(camera.minPhi, Math.min(camera.maxPhi, camera.phi));
+    state.radius = Math.max(state.minRadius, Math.min(state.maxRadius, state.radius));
+    state.phi = Math.max(state.minPhi, Math.min(state.maxPhi, state.phi));
 }
