@@ -316,6 +316,7 @@ export class Cover3DApplication {
                 fileInputManager.handleDrop(event, face);
                 // Reset hovered face
                 highlightCubeFace(this.threeManager.cube);
+                this.threeManager.requestRender();
             }
         });
 

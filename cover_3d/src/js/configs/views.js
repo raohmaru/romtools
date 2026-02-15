@@ -16,7 +16,7 @@ export const VIEWS = {
         config: {
             camera: {
                 radius: 5.850468947313968,
-                theta: -0.9853981633974483,
+                theta: -0.8853981633974483,
                 phi: 1.5738195872579297
             }
         }
@@ -26,7 +26,7 @@ export const VIEWS = {
         config: {
             camera: {
                 radius: 5.850468947313968,
-                theta: -2.1513558925213587,
+                theta: -2.2513558925213587,
                 phi: 1.5738195872579297
             }
         }
