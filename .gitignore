@@ -18,7 +18,3 @@ dist-ssr
 .vscode/*
 !.vscode/extensions.json
 .DS_Store
-
-coverage
-rom-name-finder/frontend/public/db/*.db
-rom-name-finder/frontend/public/wasm/
